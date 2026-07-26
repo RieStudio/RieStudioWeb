@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme ? (savedTheme === 'dark') : true;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Ganot - Gizlilik Politikası / Privacy Policy</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        html.dark,
+        html.dark body {
+            background-color: #050505 !important;
+        }
+        html:not(.dark),
+        html:not(.dark) body {
+            background-color: #f9fafb !important;
+            color: #1f2937 !important;
+        }
+        html:not(.dark) nav {
+            background-color: rgba(255, 255, 255, 0.45) !important;
+            border-color: rgba(229, 231, 235, 0.4) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+        html:not(.dark) nav a,
+        html:not(.dark) nav button {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) nav a.rounded-full {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+        html:not(.dark) nav a.rounded-full:hover {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+        }
+        html:not(.dark) #themeToggleBtn {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) h1,
+        html:not(.dark) h2,
+        html:not(.dark) h3,
+        html:not(.dark) .text-white,
+        html:not(.dark) .text-zinc-100 {
+            color: #111827 !important;
+        }
+        html:not(.dark) p,
+        html:not(.dark) li,
+        html:not(.dark) .text-zinc-400 {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) .bg-gray-800\/30 {
+            background-color: #ffffff !important;
+            border-color: rgba(229, 231, 235, 0.8) !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+        html:not(.dark) footer {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(229, 231, 235, 0.7) !important;
+        }
+    </style>
+</head>
+
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-zinc-950/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] transition-all duration-300">
+        <div class="w-full px-8">
+            <div class="flex justify-between items-center h-16 md:h-24 w-full">
+                <!-- Back Button & Logo on the left -->
+                <div class="flex items-center gap-3 md:gap-5">
+                    <a href="index.html" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all hover:scale-105 active:scale-95 flex-shrink-0" aria-label="Geri">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </a>
+                    <!-- Logo (slightly larger, matching other pages) -->
+                    <a href="../index.html" class="flex items-center">
+                        <img id="navbarLogo" src="../assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-36">
+                    </a>
+                </div>
+                
+                <!-- Right side items (Theme Toggle Only) -->
+                <div>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-zinc-800/50 flex items-center justify-center">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-12 space-y-12">
+            
+            <!-- Turkish Version -->
+            <section class="space-y-6">
+                <div class="border-b border-white/5 pb-4">
+                    <h1 class="text-3xl font-bold text-white mb-2">Ganot - Gizlilik Politikası</h1>
+                    <p class="text-sm text-zinc-500">Son Güncelleme: 10 Temmuz 2026</p>
+                </div>
+
+                <p class="leading-relaxed">
+                    RieStudio olarak geliştirdiğimiz <strong>Ganot</strong> uygulamasıyla ilgili gizliliğinizi korumayı taahhüt ediyoruz. Bu belge, uygulamamızın kullanımı sırasında geçerli olan gizlilik prensiplerini açıklamaktadır.
+                </p>
+
+                <h2 class="text-xl font-semibold text-white mt-6">1. Bilgi Toplama ve Kullanımı</h2>
+                <p class="leading-relaxed">
+                    Ganot, akademik süreçlerinizi yönetmek amacıyla tasarlanmış bir araçtır. Uygulama, doğrudan kullanıcı kimliği ile eşleşen kişisel bilgileri (ad, e-posta vb.) <strong>toplamaz ve üçüncü taraflarla paylaşmaz</strong>.
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Ders, Not ve Devamsızlık Verileri:</strong> Uygulamaya girdiğiniz dersler, vize/final notları, sınav takvimleri ve devamsızlık kayıtları sadece cihazınızın yerel depolama biriminde saklanır.</li>
+                    <li><strong>Ders Paylaşım Özelliği:</strong> Eklemiş olduğunuz ders programını bir kod yardımıyla arkadaşlarınızla paylaşmak istediğinizde, ders isimleri ve saatlerini içeren veriler sunucularımıza şifrelenmiş olarak geçici olarak aktarılır. Bu veriler herhangi bir kişisel bilgi (ad, e-posta vb.) içermez ve sadece paylaşım kodunun oluşturulması ve eşleşmesi amacıyla kullanılır.</li>
+                    <li><strong>İnternet İzinleri:</strong> Ders paylaşım sistemi ve olası güncellemelerin kontrolü için internet bağlantısı kullanılır.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-white mt-6">2. Üçüncü Taraf Servisler</h2>
+                <p class="leading-relaxed">
+                    Uygulamamız, kararlılık analizi yapmak amacıyla Google ve Huawei tarafından sağlanan standart kütüphaneleri kullanabilir. Bu servislerin kendi politikaları geçerlidir:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><a href="https://policies.google.com/privacy" target="_blank" class="text-blue-400 hover:underline">Google Play Hizmetleri (Google Play Services)</a></li>
+                    <li><a href="https://consumer.huawei.com/en/privacy/privacy-policy/" target="_blank" class="text-blue-400 hover:underline">Huawei AppGallery Hizmetleri</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-white mt-6">3. Çocukların Gizliliği</h2>
+                <p class="leading-relaxed">
+                    Ganot, 13 yaşın altındaki çocuklardan doğrudan veya dolaylı olarak veri toplamaz. Akademik amaçlı bir araç olup her yaş grubu için güvenle kullanılabilir.
+                </p>
+
+                <h2 class="text-xl font-semibold text-white mt-6">4. İletişim</h2>
+                <p class="leading-relaxed">
+                    Gizlilik politikamızla ilgili sorularınız veya geri bildirimleriniz için bizimle iletişime geçebilirsiniz:
+                    <a href="mailto:contact@riestudio.com.tr" class="text-blue-400 hover:underline block mt-2">contact@riestudio.com.tr</a>
+                </p>
+            </section>
+
+            <hr class="border-white/5 my-12" />
+
+            <!-- English Version -->
+            <section class="space-y-6">
+                <div class="border-b border-white/5 pb-4">
+                    <h1 class="text-3xl font-bold text-white mb-2">Ganot - Privacy Policy</h1>
+                    <p class="text-sm text-zinc-500">Last Updated: July 10, 2026</p>
+                </div>
+
+                <p class="leading-relaxed">
+                    At RieStudio, we are committed to protecting your privacy regarding our application <strong>Ganot</strong>. This document explains the privacy principles applicable during the use of our app.
+                </p>
+
+                <h2 class="text-xl font-semibold text-white mt-6">1. Information Collection and Use</h2>
+                <p class="leading-relaxed">
+                    Ganot is a tool designed to manage your academic processes. The app <strong>does not collect or share</strong> any personally identifiable information (such as name, email, etc.) directly linked to a user.
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Course, Grade, and Attendance Data:</strong> The courses, exam grades, calendars, and attendance logs you enter are saved only in your device's local storage.</li>
+                    <li><strong>Course Sharing Feature:</strong> When you share your course list with your friends using a share code, the course details and schedule are temporarily transmitted to our servers securely. This data is anonymous and does not contain any personal identifier. It is processed solely to generate the sharing code.</li>
+                    <li><strong>Internet Permissions:</strong> Internet access is utilized for course sharing functionality and update checks.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-white mt-6">2. Third-Party Services</h2>
+                <p class="leading-relaxed">
+                    Our app may use standard services provided by Google and Huawei for app optimization and crash reporting. These services govern their own policies:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><a href="https://policies.google.com/privacy" target="_blank" class="text-blue-400 hover:underline">Google Play Services</a></li>
+                    <li><a href="https://consumer.huawei.com/en/privacy/privacy-policy/" target="_blank" class="text-blue-400 hover:underline">Huawei AppGallery Services</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-white mt-6">3. Children's Privacy</h2>
+                <p class="leading-relaxed">
+                    Ganot does not knowingly collect data from children under 13. It is an educational tool and is safe to use by student users of all ages.
+                </p>
+
+                <h2 class="text-xl font-semibold text-white mt-6">4. Contact Us</h2>
+                <p class="leading-relaxed">
+                    If you have any questions or suggestions regarding our privacy policy, do not hesitate to contact us:
+                    <a href="mailto:contact@riestudio.com.tr" class="text-blue-400 hover:underline block mt-2">contact@riestudio.com.tr</a>
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs text-gray-400">© 2026 RieStudio. Tüm hakları saklıdır. / All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeUI(isDark);
+        }
+
+        function updateThemeUI(isDark) {
+            const navbarLogo = document.getElementById('navbarLogo');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+
+            if (isDark) {
+                if (navbarLogo) navbarLogo.src = '../assets/hedef.png';
+                if (sunIcon) sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                if (navbarLogo) navbarLogo.src = '../assets/beyazrs.png';
+                if (sunIcon) sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateThemeUI(document.documentElement.classList.contains('dark'));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme ? (savedTheme === 'dark') : true;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>RieStudio - Gizlilik Politikası / Privacy Policy</title>
+    <link class="favicon" rel="icon" type="image/png" href="../assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            600: '#2563eb',
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.25s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+            }
+            html:not(.dark) .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-xl hover:shadow-pink-500/5;
+            }
+        }
+        html.dark,
+        html.dark body {
+            background-color: #050505 !important;
+        }
+        html:not(.dark),
+        html:not(.dark) body {
+            background-color: #f9fafb !important;
+            color: #1f2937 !important;
+        }
+        html:not(.dark) nav {
+            background-color: rgba(255, 255, 255, 0.45) !important;
+            border-color: rgba(229, 231, 235, 0.4) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+        html:not(.dark) nav a,
+        html:not(.dark) nav button {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) nav a:hover,
+        html:not(.dark) nav button:hover {
+            color: #111827 !important;
+        }
+        html:not(.dark) #themeToggleBtn {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #themeToggleBtn:hover {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            color: #111827 !important;
+        }
+        html:not(.dark) #languageDropdown,
+        html:not(.dark) #mobileLanguageDropdown {
+            background-color: rgba(255, 255, 255, 0.98) !important;
+            border-color: rgba(229, 231, 235, 0.8) !important;
+        }
+        html:not(.dark) #languageDropdown a,
+        html:not(.dark) #mobileLanguageDropdown a {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #languageDropdown a:hover,
+        html:not(.dark) #mobileLanguageDropdown a:hover {
+            background-color: rgba(243, 244, 246, 0.8) !important;
+            color: #111827 !important;
+        }
+
+        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+            background-color: rgba(229, 231, 235, 0.9) !important;
+            color: #111827 !important;
+            font-weight: 600 !important;
+        }
+        html:not(.dark) #mobile-menu {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-color: rgba(229, 231, 235, 0.8) !important;
+        }
+        html:not(.dark) #mobile-menu a {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) h1:not(.gradient-text),
+        html:not(.dark) h2:not(.gradient-text),
+        html:not(.dark) h3:not(.gradient-text),
+        html:not(.dark) .text-white,
+        html:not(.dark) .text-zinc-100 {
+            color: #111827 !important;
+        }
+        html:not(.dark) p:not(.gradient-text),
+        html:not(.dark) .text-zinc-400,
+        html:not(.dark) .text-gray-400,
+        html:not(.dark) .text-zinc-500,
+        html:not(.dark) .text-gray-500 {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) .bg-gray-800\/30,
+        html:not(.dark) .bg-zinc-900\/40,
+        html:not(.dark) .bg-zinc-950\/40,
+        html:not(.dark) .bg-gray-900\/40 {
+            background-color: #ffffff !important;
+            border-color: rgba(229, 231, 235, 0.8) !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+        }
+        html:not(.dark) footer {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(229, 231, 235, 0.7) !important;
+        }
+        html:not(.dark) footer p,
+        html:not(.dark) footer span,
+        html:not(.dark) footer a {
+            color: #4b5563 !important;
+        }
+        .hover-thick {
+            transition: color 0.2s ease, text-shadow 0.2s ease !important;
+        }
+        .hover-thick:hover {
+            text-shadow: 0.03em 0 0 currentColor;
+        }
+    </style>
+</head>
+
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
+        <div class="w-full px-8">
+            <div class="flex justify-between items-center h-16 md:h-24 w-full">
+                <!-- Logo -->
+                <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
+                    <a href="../index.html" class="flex items-center">
+                        <img id="navbarLogo" src="../assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-44">
+                    </a>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-zinc-800/50 flex items-center justify-center"
+                        aria-label="Temayı Değiştir">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="home">Ana Sayfa</span>
+                    </a>
+                    <a href="../app.html"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="apps">Uygulamalar</span>
+                    </a>
+
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button id="languageButton"
+                            class="flex items-center px-3 py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="current-lang-text" class="mr-2">TR</span>
+                                <svg class="w-4 h-4 transition-transform duration-200 transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="languageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu container -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Mobile Language Selector -->
+                    <div class="relative group">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="mobile-lang-text" class="mr-2">TR</span>
+                                <svg class="w-3 h-3 transition-transform duration-200 transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="mobileLanguageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu button -->
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
+                        aria-label="Menüyü Aç">
+                        <svg id="menu-icon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3">
+        <a href="../index.html"
+            class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+            Ana Sayfa
+        </a>
+        <a href="../app.html"
+            class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+            Uygulamalar
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-6 gradient-text py-2 leading-normal"
+                data-i18n="privacyTitle">
+                Gizlilik Politikaları
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto" data-i18n="privacyDesc">
+                RieStudio olarak gizliliğinize önem veriyoruz. Web sitemiz ve mobil uygulamalarımızın gizlilik politikalarına buradan ulaşabilirsiniz.
+            </p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Web Site Privacy Policy -->
+            <div class="bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 card-hover">
+                <h2 class="text-2xl font-bold text-white mb-4" data-i18n="webPolicyTitle">Web Sitesi Gizlilik Politikası</h2>
+                <p class="text-gray-400 mb-4 leading-relaxed" data-i18n="webPolicyDesc">
+                    RieStudio resmi web sitesini (riestudio.com.tr) kullanırken paylaştığınız veya otomatik olarak toplanan bilgilerin nasıl işlendiğine ve korunduğuna dair detaylar.
+                </p>
+                <p class="text-gray-400 mb-6 leading-relaxed border-t border-white/5 pt-4" data-i18n="webPolicyForm">
+                    Sitemiz üzerinden doldurduğunuz Proje Talep Formu bilgileri (E-posta, Proje Kategorisi, Proje Detayları) yalnızca talebinizi işlemek ve size ulaşmak amacıyla kullanılır. Bu veriler üçüncü taraflarla reklam veya ticari amaçlarla paylaşılmaz.
+                </p>
+                <div class="border-t border-white/5 pt-4">
+                    <p class="text-xs text-zinc-500 mb-2" data-i18n="webPolicyNote">
+                        * Bu site çerezleri yalnızca temel site işlevlerini optimize etmek amacıyla kullanır. Üçüncü taraflarla kişisel veri paylaşımı yapılmamaktadır.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mobile Apps Directory (List Style) -->
+            <div class="bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+                <h3 class="text-xl font-bold text-white mb-4" data-i18n="mobileAppsTitle">Mobil Uygulamalarımız</h3>
+                <div class="divide-y divide-white/5">
+                    <!-- Öneri Bul -->
+                    <div class="flex items-center justify-between py-4 first:pt-0 last:pb-0">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-pink-500/10 flex-shrink-0">
+                                <img src="../assets/oneribullogo.png" alt="Öneri Bul" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-white text-base">Öneri Bul</span>
+                        </div>
+                        <a href="oneribul.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                            <span data-i18n="readPolicy">Politikayı Oku</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Ganot -->
+                    <div class="flex items-center justify-between py-4 last:pb-0">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-blue-500/10 flex-shrink-0">
+                                <img src="../assets/ganotlogo.png" alt="Ganot" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-white text-base">Ganot</span>
+                        </div>
+                        <a href="ganot.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                            <span data-i18n="readPolicy">Politikayı Oku</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Planca -->
+                    <div class="flex items-center justify-between py-4 last:pb-0">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-sky-500/10 flex-shrink-0">
+                                <img src="../assets/plancalogo.png" alt="Planca" class="w-full h-full object-cover">
+                            </div>
+                            <span class="font-bold text-white text-base">Planca</span>
+                        </div>
+                        <a href="planca.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                            <span data-i18n="readPolicy">Politikayı Oku</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="../index.html" class="flex items-center">
+                        <img id="footerLogo" src="../assets/hedef.png" alt="Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-xs text-gray-400">© 2026 RieStudio. <span data-i18n="allRightsReserved">Tüm hakları saklıdır.</span></p>
+                    <a href="mailto:contact@riestudio.com.tr"
+                        class="text-gray-400 hover:text-white hover-thick text-xs transition-colors duration-200">
+                        contact@riestudio.com.tr
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                home: 'Ana Sayfa',
+                apps: 'Uygulamalar',
+                privacyTitle: 'Gizlilik Politikaları',
+                privacyDesc: 'RieStudio olarak gizliliğinize önem veriyoruz. Web sitemiz ve mobil uygulamalarımızın gizlilik politikalarına buradan ulaşabilirsiniz.',
+                webPolicyTitle: 'Web Sitesi Gizlilik Politikası',
+                webPolicyDesc: 'RieStudio resmi web sitesini (riestudio.com.tr) kullanırken paylaştığınız veya otomatik olarak toplanan bilgilerin nasıl işlendiğine ve korunduğuna dair detaylar.',
+                webPolicyForm: 'Sitemiz üzerinden doldurduğunuz Proje Talep Formu bilgileri (E-posta, Proje Kategorisi, Proje Detayları) yalnızca talebinizi işlemek ve size ulaşmak amacıyla kullanılır. Bu veriler üçüncü taraflarla reklam veya ticari amaçlarla paylaşılmaz.',
+                webPolicyNote: '* Bu site çerezleri yalnızca temel site işlevlerini optimize etmek amacıyla kullanır. Üçüncü taraflarla kişisel veri paylaşımı yapılmamaktadır.',
+                mobileAppsTitle: 'Mobil Uygulamalarımız',
+                readPolicy: 'Politikayı Oku',
+                allRightsReserved: 'Tüm hakları saklıdır.'
+            },
+            en: {
+                home: 'Home',
+                apps: 'Apps',
+                privacyTitle: 'Privacy Policies',
+                privacyDesc: 'At RieStudio, we value your privacy. You can access the privacy policies of our website and mobile applications here.',
+                webPolicyTitle: 'Website Privacy Policy',
+                webPolicyDesc: 'Details on how information you share or that is automatically collected when using the official RieStudio website (riestudio.com.tr) is processed and protected.',
+                webPolicyForm: 'The Project Request Form details you fill out on our website (Email, Project Category, Project Details) are used solely to process your request and communicate with you. This data is never shared with third parties for marketing or commercial purposes.',
+                webPolicyNote: '* This site uses cookies only to optimize basic site functions. No personal data is shared with third parties.',
+                mobileAppsTitle: 'Our Mobile Applications',
+                readPolicy: 'Read Policy',
+                allRightsReserved: 'All rights reserved.'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('userLanguage', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            const currentLangElements = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
+            currentLangElements.forEach(el => {
+                el.textContent = lang.toUpperCase();
+            });
+
+            updateLanguageSelectors(lang);
+        }
+
+        // Update active state of language selectors
+        function updateLanguageSelectors(lang) {
+            const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
+            selectors.forEach(item => {
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('bg-gray-700/50', 'text-white');
+                    item.classList.remove('text-gray-300');
+                } else {
+                    item.classList.remove('bg-gray-700/50', 'text-white');
+                    item.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('userLanguage');
+            const browserLang = navigator.language.startsWith('tr') ? 'tr' : 'en';
+            const defaultLang = savedLang || browserLang;
+            setLanguage(defaultLang);
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeUI(isDark);
+        }
+
+        function updateThemeUI(isDark) {
+            const navbarLogo = document.getElementById('navbarLogo');
+            const footerLogo = document.getElementById('footerLogo');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+
+            if (isDark) {
+                if (navbarLogo) navbarLogo.src = '../assets/hedef.png';
+                if (footerLogo) footerLogo.src = '../assets/hedef.png';
+                if (sunIcon) sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                if (navbarLogo) navbarLogo.src = '../assets/beyazrs.png';
+                if (footerLogo) footerLogo.src = '../assets/beyazrs.png';
+                if (sunIcon) sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initLanguage();
+            updateThemeUI(document.documentElement.classList.contains('dark'));
+
+            // Language selectors
+            const languageButton = document.getElementById('languageButton');
+            const languageDropdown = document.getElementById('languageDropdown');
+            const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+            const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+
+            if (languageButton && languageDropdown) {
+                languageButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = languageDropdown.classList.toggle('hidden');
+                    const arrow = languageButton.querySelector('svg');
+                    if (arrow) {
+                        if (isHidden) {
+                            arrow.classList.remove('rotate-180');
+                        } else {
+                            arrow.classList.add('rotate-180');
+                        }
+                    }
+                    if (mobileLanguageDropdown) {
+                        mobileLanguageDropdown.classList.add('hidden');
+                        const mobileArrow = mobileLanguageButton ? mobileLanguageButton.querySelector('svg') : null;
+                        if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            if (mobileLanguageButton && mobileLanguageDropdown) {
+                mobileLanguageButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = mobileLanguageDropdown.classList.toggle('hidden');
+                    const mobileArrow = mobileLanguageButton.querySelector('svg');
+                    if (mobileArrow) {
+                        if (isHidden) {
+                            mobileArrow.classList.remove('rotate-180');
+                        } else {
+                            mobileArrow.classList.add('rotate-180');
+                        }
+                    }
+                    if (languageDropdown) {
+                        languageDropdown.classList.add('hidden');
+                        const arrow = languageButton ? languageButton.querySelector('svg') : null;
+                        if (arrow) arrow.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            document.querySelectorAll('[data-lang]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = button.getAttribute('data-lang');
+                    setLanguage(lang);
+                    if (languageDropdown) {
+                        languageDropdown.classList.add('hidden');
+                        const arrow = languageButton.querySelector('svg');
+                        if (arrow) arrow.classList.remove('rotate-180');
+                    }
+                    if (mobileLanguageDropdown) {
+                        mobileLanguageDropdown.classList.add('hidden');
+                        const mobileArrow = mobileLanguageButton.querySelector('svg');
+                        if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+            }
+
+            // Close dropdowns on outside click
+            document.addEventListener('click', (e) => {
+                if (languageDropdown && !languageDropdown.contains(e.target) &&
+                    languageButton && !languageButton.contains(e.target)) {
+                    languageDropdown.classList.add('hidden');
+                    const arrow = languageButton.querySelector('svg');
+                    if (arrow) arrow.classList.remove('rotate-180');
+                }
+
+                if (mobileLanguageDropdown && !mobileLanguageDropdown.contains(e.target) &&
+                    mobileLanguageButton && !mobileLanguageButton.contains(e.target)) {
+                    mobileLanguageDropdown.classList.add('hidden');
+                    const mobileArrow = mobileLanguageButton.querySelector('svg');
+                    if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
