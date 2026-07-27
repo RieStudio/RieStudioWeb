@@ -1,25 +1,19 @@
 # ============================================================
-#  RieStudio — robots.txt
+# RieStudio — robots.txt
 # ============================================================
 
 User-agent: *
-Disallow: /downloads/   # Hassas indirme dosyalarını gizle
-Disallow: /private/     # Özel dizinleri gizle
+Allow: /
 
-# Yapay Zeka ve Veri Kazıma Botlarını Engelle
+# AI training crawlers
+
 User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
 User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-Web
 Disallow: /
 
 User-agent: Applebot-Extended
