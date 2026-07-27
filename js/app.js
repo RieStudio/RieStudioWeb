@@ -1,0 +1,362 @@
+/* RieStudio Shared JavaScript Functions */
+
+// Theme Initialization (Instant execution in head to prevent FOUC)
+(function () {
+    const savedTheme = localStorage.getItem('theme');
+    const isDark = savedTheme ? (savedTheme === 'dark') : true;
+    if (isDark) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+})();
+
+// Tailwind Configuration
+if (typeof tailwind !== 'undefined') {
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    primary: {
+                        600: '#2563eb',
+                    },
+                    gray: {
+                        50: '#f9fafb',
+                        100: '#f3f4f6',
+                        200: '#e5e7eb',
+                        300: '#d1d5db',
+                        400: '#9ca3af',
+                        500: '#6b7280',
+                        600: '#4b5563',
+                        700: '#374151',
+                        800: '#1f2937',
+                        900: '#111827',
+                    }
+                }
+            }
+        }
+    };
+}
+
+// Theme Toggle Functionality
+function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+}
+
+function updateThemeUI(isDark) {
+    const navbarLogo = document.getElementById('navbarLogo');
+    const footerLogo = document.getElementById('footerLogo');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    if (isDark) {
+        if (navbarLogo) navbarLogo.src = 'assets/hedef.png';
+        if (footerLogo) footerLogo.src = 'assets/hedef.png';
+        if (sunIcon) sunIcon.classList.remove('hidden');
+        if (moonIcon) moonIcon.classList.add('hidden');
+    } else {
+        if (navbarLogo) navbarLogo.src = 'assets/beyazrs.png';
+        if (footerLogo) footerLogo.src = 'assets/beyazrs.png';
+        if (sunIcon) sunIcon.classList.add('hidden');
+        if (moonIcon) moonIcon.classList.remove('hidden');
+    }
+}
+
+// Mobile Menu Control
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const overlay = document.getElementById('overlay');
+
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        if (menuIcon) menuIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        if (overlay) overlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function initMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const overlay = document.getElementById('overlay');
+
+    if (!mobileMenuButton || !mobileMenu || !menuIcon || !closeIcon) return;
+
+    function toggleMobileMenu() {
+        const isExpanded = mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        if (overlay) overlay.classList.toggle('hidden');
+
+        if (isExpanded) {
+            document.body.style.overflow = 'auto';
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    mobileMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileMenu);
+    }
+}
+
+// Contact Modal & Webhook Handler
+function initContactModal() {
+    const modal = document.getElementById('contactModal');
+    const contactBtn = document.getElementById('contactBtn');
+    const mobileContactBtn = document.getElementById('mobileContactBtn');
+    const closeBtn = document.getElementById('closeModal');
+
+    const step1 = document.getElementById('modalStep1');
+    const step2 = document.getElementById('modalStep2');
+    const step3 = document.getElementById('modalStep3');
+
+    const startProjectBtn = document.getElementById('startProjectBtn');
+    const backToStep1Btn = document.getElementById('backToStep1Btn');
+    const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+    const projectForm = document.getElementById('projectForm');
+
+    if (!modal) return;
+
+    function resetModalSteps() {
+        if (step1) step1.classList.remove('hidden');
+        if (step2) step2.classList.add('hidden');
+        if (step3) step3.classList.add('hidden');
+        if (projectForm) projectForm.reset();
+    }
+
+    function openModal() {
+        resetModalSteps();
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (contactBtn) contactBtn.addEventListener('click', openModal);
+
+    if (mobileContactBtn) {
+        mobileContactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMobileMenu();
+            openModal();
+        });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeModal);
+
+    if (startProjectBtn) {
+        startProjectBtn.addEventListener('click', () => {
+            if (step1) step1.classList.add('hidden');
+            if (step2) step2.classList.remove('hidden');
+        });
+    }
+
+    if (backToStep1Btn) {
+        backToStep1Btn.addEventListener('click', () => {
+            if (step2) step2.classList.add('hidden');
+            if (step1) step1.classList.remove('hidden');
+        });
+    }
+
+    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzbUvHSAW_cb1s3kJ9UDQq1Zk-B21DeBGZ0NUKe0qSwqnUZGV_nCInrlK0XKbM59DpoZA/exec";
+
+    if (projectForm) {
+        projectForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('projectEmail').value.trim();
+            const category = document.getElementById('projectCategory').value;
+            const details = document.getElementById('projectDetails').value.trim();
+            const page = window.location.pathname.split('/').pop() || 'index.html';
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email || !emailRegex.test(email) || email.length > 150) {
+                alert("Lütfen geçerli bir e-posta adresi giriniz.");
+                return;
+            }
+
+            if (!details || details.length > 5000) {
+                alert("Lütfen geçerli bir açıklama giriniz (en fazla 5000 karakter).");
+                return;
+            }
+
+            const sanitizeHTML = (str) => {
+                return str
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;")
+                    .replace(/\//g, "&#x2F;");
+            };
+
+            const sanitizedEmail = sanitizeHTML(email);
+            const sanitizedCategory = sanitizeHTML(category);
+            const sanitizedDetails = sanitizeHTML(details);
+            const sanitizedPage = sanitizeHTML(page);
+
+            const submitBtn = projectForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>';
+
+            try {
+                const res = await fetch(WEBHOOK_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        email: sanitizedEmail,
+                        category: sanitizedCategory,
+                        details: sanitizedDetails,
+                        page: sanitizedPage
+                    }),
+                });
+
+                const json = await res.json();
+                if (json.status === "ok") {
+                    if (step2) step2.classList.add('hidden');
+                    if (step3) step3.classList.remove('hidden');
+                    if (projectForm) projectForm.reset();
+                } else {
+                    throw new Error(json.message || "Sunucu hatası");
+                }
+            } catch (err) {
+                console.error("Form gönderme hatası:", err);
+                alert("Gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+}
+
+// Update Active State of Language Selectors
+function updateLanguageSelectors(lang) {
+    const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
+    selectors.forEach(item => {
+        if (item.getAttribute('data-lang') === lang) {
+            item.classList.add('bg-gray-700/50', 'text-white');
+            item.classList.remove('text-gray-300');
+        } else {
+            item.classList.remove('bg-gray-700/50', 'text-white');
+            item.classList.add('text-gray-300');
+        }
+    });
+}
+
+// Initialize Language Selectors Dropdown Event Listeners
+function initLanguageSelector() {
+    const languageButton = document.getElementById('languageButton');
+    const languageDropdown = document.getElementById('languageDropdown');
+    const mobileLanguageButton = document.getElementById('mobileLanguageButton');
+    const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+
+    if (languageButton && languageDropdown) {
+        languageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = languageDropdown.classList.toggle('hidden');
+            const arrow = languageButton.querySelector('svg');
+            if (arrow) {
+                if (isHidden) {
+                    arrow.classList.remove('rotate-180');
+                } else {
+                    arrow.classList.add('rotate-180');
+                }
+            }
+            if (mobileLanguageDropdown) {
+                mobileLanguageDropdown.classList.add('hidden');
+                const mobileArrow = mobileLanguageButton ? mobileLanguageButton.querySelector('svg') : null;
+                if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+            }
+        });
+    }
+
+    if (mobileLanguageButton && mobileLanguageDropdown) {
+        mobileLanguageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = mobileLanguageDropdown.classList.toggle('hidden');
+            const mobileArrow = mobileLanguageButton.querySelector('svg');
+            if (mobileArrow) {
+                if (isHidden) {
+                    mobileArrow.classList.remove('rotate-180');
+                } else {
+                    mobileArrow.classList.add('rotate-180');
+                }
+            }
+            if (languageDropdown) {
+                languageDropdown.classList.add('hidden');
+                const arrow = languageButton ? languageButton.querySelector('svg') : null;
+                if (arrow) arrow.classList.remove('rotate-180');
+            }
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (languageDropdown && !languageDropdown.contains(e.target) &&
+            languageButton && !languageButton.contains(e.target)) {
+            languageDropdown.classList.add('hidden');
+            const arrow = languageButton ? languageButton.querySelector('svg') : null;
+            if (arrow) arrow.classList.remove('rotate-180');
+        }
+
+        if (mobileLanguageDropdown && !mobileLanguageDropdown.contains(e.target) &&
+            mobileLanguageButton && !mobileLanguageButton.contains(e.target)) {
+            mobileLanguageDropdown.classList.add('hidden');
+            const mobileArrow = mobileLanguageButton.querySelector('svg');
+            if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+        }
+    });
+
+    document.querySelectorAll('[data-lang]').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = button.getAttribute('data-lang');
+            if (typeof setLanguage === 'function') {
+                setLanguage(lang);
+            }
+            if (languageDropdown) {
+                languageDropdown.classList.add('hidden');
+                const arrow = languageButton ? languageButton.querySelector('svg') : null;
+                if (arrow) arrow.classList.remove('rotate-180');
+            }
+            if (mobileLanguageDropdown) {
+                mobileLanguageDropdown.classList.add('hidden');
+                const mobileArrow = mobileLanguageButton ? mobileLanguageButton.querySelector('svg') : null;
+                if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+            }
+        });
+    });
+}
