@@ -1159,11 +1159,15 @@
             const TRANSITION_DURATION = 1800; // ms
 
             function generateTargets() {
-                // 1. Float Mode (Random stardust cloud targets)
+                // 1. Float Mode (Infinite organic stardust field - no rectangular box boundaries)
+                const cx = 200, cy = 175;
                 for (let i = 0; i < particleCount; i++) {
+                    const angle = Math.random() * Math.PI * 2;
+                    // Power distribution creates a dense glowing core with a wide infinite radial halo
+                    const r = Math.pow(Math.random(), 0.72) * 310;
                     targetsFloat.push({
-                        x: Math.random() * 400,
-                        y: Math.random() * 350
+                        x: cx + Math.cos(angle) * r,
+                        y: cy + Math.sin(angle) * r
                     });
                 }
 
@@ -1370,16 +1374,18 @@
             class Particle {
                 constructor(idx) {
                     this.index = idx;
-                    this.x = Math.random() * 400;
-                    this.y = Math.random() * 350;
+                    const initialFloat = targetsFloat[idx] || { x: 200, y: 175 };
+                    this.x = initialFloat.x;
+                    this.y = initialFloat.y;
                     this.vx = (Math.random() - 0.5) * 1.5;
                     this.vy = (Math.random() - 0.5) * 1.5;
-                    this.size = Math.random() * 1.1 + 0.8;
+                    this.size = Math.random() * 1.1 + 0.7;
 
-                    // Float mode base positions
-                    this.driftX = Math.random() * 400;
-                    this.driftY = Math.random() * 350;
+                    // Float mode base drift target & organic wave parameters
+                    this.driftX = initialFloat.x;
+                    this.driftY = initialFloat.y;
                     this.seed = Math.random() * 100;
+                    this.speed = 0.5 + Math.random() * 0.8;
                 }
                 update() {
                     const time = Date.now() * 0.0012;
@@ -1393,8 +1399,8 @@
                     let txNew, tyNew, txPrev, tyPrev;
 
                     if (mode === 'float') {
-                        txNew = this.driftX + Math.sin(time + this.seed) * 20;
-                        tyNew = this.driftY + Math.cos(time + this.seed) * 20;
+                        txNew = this.driftX + Math.sin(time * this.speed + this.seed) * 28 + Math.cos(time * 0.6 * this.speed + this.seed * 1.4) * 18;
+                        tyNew = this.driftY + Math.cos(time * this.speed + this.seed) * 28 + Math.sin(time * 0.6 * this.speed + this.seed * 1.4) * 18;
                     } else {
                         const tgt = getTargetForMode(mode, this.index);
                         txNew = tgt ? tgt.x : this.x;
@@ -1402,8 +1408,8 @@
                     }
 
                     if (prevMode === 'float') {
-                        txPrev = this.driftX + Math.sin(time + this.seed) * 20;
-                        tyPrev = this.driftY + Math.cos(time + this.seed) * 20;
+                        txPrev = this.driftX + Math.sin(time * this.speed + this.seed) * 28 + Math.cos(time * 0.6 * this.speed + this.seed * 1.4) * 18;
+                        tyPrev = this.driftY + Math.cos(time * this.speed + this.seed) * 28 + Math.sin(time * 0.6 * this.speed + this.seed * 1.4) * 18;
                     } else {
                         const tgtP = getTargetForMode(prevMode, this.index);
                         txPrev = tgtP ? tgtP.x : this.x;
@@ -1459,7 +1465,10 @@
                     const getColor = (m) => {
                         const isDarkTheme = document.documentElement.classList.contains('dark');
                         if (m === 'float') {
-                            return isDarkTheme ? [200, 200, 255, 0.35] : [75, 85, 99, 0.6];
+                            const distFromCenter = Math.hypot(this.x - 200, this.y - 175);
+                            const radialAlphaFactor = Math.max(0.08, 1 - Math.pow(distFromCenter / 290, 1.4));
+                            const alpha = isDarkTheme ? (0.42 * radialAlphaFactor) : (0.65 * radialAlphaFactor);
+                            return isDarkTheme ? [200, 210, 255, alpha] : [75, 85, 99, alpha];
                         }
                         if (m === 'web') {
                             return isDarkTheme ? [139, 92, 246, 0.75] : [109, 40, 217, 0.9];
