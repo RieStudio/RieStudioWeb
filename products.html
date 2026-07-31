@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme ? (savedTheme === 'dark') : true;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>RieStudio - Ürünlerimiz</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" type="text/tailwindcss" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            600: '#2563eb',
+                        },
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'floatReverse 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        floatReverse: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(-2deg)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
+        <div class="w-full px-8">
+            <div class="flex justify-between items-center h-16 md:h-24 w-full">
+                <!-- Logo -->
+                <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
+                    <a href="index.html" class="flex items-center">
+                        <img id="navbarLogo" src="assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-44">
+                    </a>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-zinc-800/50 flex items-center justify-center"
+                        aria-label="Temayı Değiştir">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html#about"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="about">Hakkımızda</span>
+                        <span
+                            class="absolute inset-0 rounded-md bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/10 group-hover:to-red-600/10 transition-all duration-300"></span>
+                    </a>
+                    <a href="products.html"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-white btn-gradient transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="products">Ürünlerimiz</span>
+                    </a>
+                    <a href="services.html"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="services">Hizmetlerimiz</span>
+                        <span
+                            class="absolute inset-0 rounded-md bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/10 group-hover:to-red-600/10 transition-all duration-300"></span>
+                    </a>
+                    <button id="contactBtn"
+                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
+                        <span class="relative z-10" data-i18n="contact">İletişim</span>
+                        <span
+                            class="absolute inset-0 rounded-md bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/10 group-hover:to-red-600/10 transition-all duration-300"></span>
+                    </button>
+
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button id="languageButton"
+                            class="flex items-center px-3 py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="current-lang-text" class="mr-2">TR</span>
+                                <svg class="w-4 h-4 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="languageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu container -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Mobile Language Selector -->
+                    <div class="relative group">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="mobile-lang-text" class="mr-2">TR</span>
+                                <svg class="w-3 h-3 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="mobileLanguageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
+                            aria-label="Menüyü Aç">
+                            <svg id="menu-icon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu"
+        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3 transition-all duration-300">
+        <div class="space-y-1 w-full">
+            <a href="index.html#about"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                        </path>
+                    </svg>
+                    Hakkımızda
+                </div>
+            </a>
+            <a href="products.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-white btn-gradient rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                        </path>
+                    </svg>
+                    Ürünlerimiz
+                </div>
+            </a>
+            <a href="services.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    Hizmetlerimiz
+                </div>
+            </a>
+            <button id="mobileContactBtn"
+                class="w-full px-4 py-3 text-left text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    İletişim
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+
+    <!-- Main Content -->
+    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 gradient-text py-2 leading-normal"
+                data-i18n="productsTitle">
+                Ürünlerimiz
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto" data-i18n="productsSubtitle">
+                RieStudio tarafından geliştirilen yenilikçi mobil ürünler, web uygulamaları ve yazılım araçları.
+            </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
+            <button data-filter="mobile"
+                class="tab-btn active-tab px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 border border-white/10 bg-white/10 text-white shadow-lg shadow-orange-500/10">
+                <span data-i18n="tabMobileProducts">Mobil Ürünler</span>
+            </button>
+            <button data-filter="web"
+                class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
+                <span data-i18n="tabWebApps">Web Uygulamaları</span>
+            </button>
+            <button data-filter="tools"
+                class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
+                <span data-i18n="tabSoftwareTools">Yazılım Araçları</span>
+            </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+
+            <!-- 1. Planca (Mobile) -->
+            <div data-category="mobile"
+                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-sky-500/30 group">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-sky-500/20">
+                            <img src="assets/plancalogo.png" alt="Planca Icon"
+                                class="w-full h-full object-cover transform scale-125">
+                        </div>
+                        <div class="ml-6">
+                            <h2 class="text-3xl font-bold text-white" data-i18n="plancaTitle">Planca</h2>
+                            <span class="text-sm text-sky-400 font-medium">v1.5.2 - Live</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="plancaDesc">
+                        Planca, karmaşık özelliklerden arındırılmış minimalist bir günlük görev takip uygulamasıdır.
+                        Açık ve net arayüzü sayesinde bugününüzü organize edin.
+                    </p>
+
+                    <div class="space-y-4 mb-4">
+                        <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download
+                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
+                            </div>
+                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://github.com/RieStudio/planca" target="_blank"
+                                class="flex items-center justify-center p-3 bg-gray-900/40 rounded-xl border border-gray-700/50 hover:bg-gray-900 transition-all">
+                                <svg class="w-5 h-5 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm font-medium text-gray-300" data-i18n="btnGithub">Kaynak
+                                    Kodlar</span>
+                            </a>
+                            <a href="https://www.virustotal.com/gui/file/82bfc6ac840e33a5d4f20cb12ec54eca69c7980bd5dccc4ce56fadaecb8b55f7?nocache=1"
+                                target="_blank"
+                                class="flex items-center justify-center p-3 bg-blue-600/10 rounded-xl border border-blue-500/20 hover:bg-blue-600/20 transition-all">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span class="text-sm font-medium text-blue-400" data-i18n="btnVirus">Rapor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ÖneriBul (Mobile) -->
+            <div data-category="mobile"
+                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-pink-500/30 group">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-pink-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-pink-500/20">
+                            <img src="assets/oneribullogo.png" alt="Öneri Bul Icon"
+                                class="w-full h-full object-cover transform scale-125">
+                        </div>
+                        <div class="ml-6">
+                            <h2 class="text-3xl font-bold text-white" data-i18n="appTitle">Öneri Bul</h2>
+                            <span class="text-sm text-pink-400 font-medium">v5.0.1 - Live</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="appDesc">
+                        Kararsız kaldığınız anlarda yapay zeka yanınızda. Öneri Bul, ruh halinizi analiz ederek size en
+                        uygun film, kitap ve oyunları saniyeler içinde listeler.
+                    </p>
+
+                    <div class="space-y-4 mb-4">
+                        <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download
+                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
+                            </div>
+                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="https://github.com/RieStudio/oneri-bul" target="_blank"
+                                class="flex items-center justify-center p-3 bg-gray-900/40 rounded-xl border border-gray-700/50 hover:bg-gray-900 transition-all">
+                                <svg class="w-5 h-5 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm font-medium text-gray-300" data-i18n="btnGithub">Kaynak
+                                    Kodlar</span>
+                            </a>
+                            <a href="https://www.virustotal.com/gui/file/a6a904e8fde082f4ee253222ae498d005c412854c17262ba6a67e86355b539b6/behavior"
+                                target="_blank"
+                                class="flex items-center justify-center p-3 bg-blue-600/10 rounded-xl border border-blue-500/20 hover:bg-blue-600/20 transition-all">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span class="text-sm font-medium text-blue-400" data-i18n="btnVirus">Rapor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Ganot (Mobile) -->
+            <div data-category="mobile"
+                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-blue-500/30 group">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-blue-500/20">
+                            <img src="assets/ganotlogo.png" alt="Ganot Icon"
+                                class="w-full h-full object-cover transform scale-125">
+                        </div>
+                        <div class="ml-6 flex-1">
+                            <div class="flex items-center gap-4">
+                                <h2 class="text-3xl font-bold text-white" data-i18n="ganotTitle">Ganot</h2>
+                                <a href="https://appgallery.cloud.huawei.com/ag/n/app/C118083177?locale=tr_TR&source=appshare&subsource=C118083177&shareTo=com.android.bluetooth&shareFrom=appmarket&shareIds=13a8c569bd0e4d10a551f2e27687ca77_com.android.bluetooth&callType=SHARE"
+                                    target="_blank"
+                                    class="w-8 h-8 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
+                                    title="Huawei AppGallery">
+                                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                                        <rect width="100" height="100" rx="22" fill="#D61226" />
+                                        <path d="M30 25 A 20 20 0 0 0 70 25" fill="none" stroke="white"
+                                            stroke-width="4.5" stroke-linecap="round" />
+                                        <text x="50" y="76" font-family="system-ui, -apple-system, sans-serif"
+                                            font-weight="900" font-size="17" fill="white" text-anchor="middle"
+                                            letter-spacing="0.2">HUAWEI</text>
+                                    </svg>
+                                </a>
+                            </div>
+                            <span class="text-sm text-blue-400 font-medium">v2.10.4 - Live</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="ganotDesc">
+                        Akademik döneminizi tek ekrandan kontrol edin. Harf notu hesaplama, sınav takvimi takibi ve
+                        devamsızlık sınırı kontrolü süreçlerini kolaylaştırır.
+                    </p>
+
+                    <div class="space-y-4 mb-4">
+                        <a href="https://github.com/RieStudio/Ganot/releases/latest/download/Ganot.apk" download
+                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
+                            <div class="flex items-center">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
+                            </div>
+                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Web Uygulamaları - Çok Yakında (Web) -->
+            <div data-category="web"
+                class="product-card bg-gradient-to-br from-purple-950/20 to-zinc-900/40 border border-purple-500/20 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-purple-500/40 group flex flex-col justify-between">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-purple-950/60 rounded-2xl flex items-center justify-center border border-purple-500/30 text-purple-400">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                        </div>
+                        <div class="ml-6">
+                            <span class="text-xs font-bold tracking-widest text-purple-400 uppercase">●
+                                GELİŞTİRİLİYOR</span>
+                            <h2 class="text-3xl font-bold text-white mt-1" data-i18n="webAppsTitle">Yeni Web
+                                Platformlarımız</h2>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="webAppsDesc">
+                        Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web
+                        uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!
+                    </p>
+                </div>
+
+                <div class="relative z-10 pt-4">
+                    <span
+                        class="inline-flex items-center justify-center w-full py-4 bg-purple-950/40 border border-purple-500/20 text-purple-300 font-bold rounded-xl text-sm tracking-wider uppercase cursor-default">
+                        🚀 Çok Yakında Yayında
+                    </span>
+                </div>
+            </div>
+
+            <!-- 6. OpsBare (Software Tools) -->
+            <div data-category="tools"
+                class="product-card bg-gradient-to-br from-emerald-950/20 to-zinc-900/40 border border-emerald-500/20 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-emerald-500/40 group flex flex-col justify-between">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-emerald-950/60 rounded-2xl flex items-center justify-center border border-emerald-500/30 text-emerald-400">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="ml-6">
+                            <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">● YAZILIM
+                                ARAÇLARI</span>
+                            <h2 class="text-3xl font-bold text-white mt-1">OpsBare</h2>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="opsBareDesc">
+                        Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif
+                        altyapı otomasyon aracı.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span
+                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">CLI
+                            & Automation</span>
+                        <span
+                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">Bare-Metal</span>
+                        <span
+                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="relative z-10 pt-4">
+                    <a href="https://github.com/RieStudio" target="_blank"
+                        class="inline-flex items-center justify-center w-full py-4 bg-emerald-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 font-bold rounded-xl text-sm tracking-wider uppercase transition-all">
+                        GitHub Üzerinde İncele
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Relocated Security Info Notice -->
+        <div class="max-w-2xl mx-auto mt-12">
+            <div id="app-security-note"
+                class="bg-zinc-950/40 backdrop-blur-md rounded-2xl p-6 flex items-start gap-4 border border-zinc-800/50 shadow-lg">
+                <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p class="text-sm text-zinc-400 leading-relaxed" data-i18n="appSecurityNote">
+                    Bilgi: Android cihazlarda Play Store dışından uygulama yüklerken 'Bilinmeyen Kaynaklar' uyarısı
+                    alabilirsiniz. Uygulamalarımız için ayarlardan güvenle izin verebilirsiniz.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img id="footerLogo" src="assets/hedef.png" alt="Logo" class="h-16 w-auto">
+                    </a>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-xs text-gray-400">© 2026 RieStudio. <span data-i18n="allRightsReserved">Tüm hakları
+                            saklıdır.</span> • <a href="privacy/index.html"
+                            class="hover:text-white hover-thick transition-colors duration-200"
+                            data-i18n="privacyPolicy">Gizlilik Politikası</a></p>
+                    <a href="mailto:contact@riestudio.com.tr"
+                        class="text-gray-400 hover:text-white hover-thick text-xs transition-colors duration-200">
+                        contact@riestudio.com.tr
+                    </a>
+                    <div class="flex justify-center md:justify-end space-x-4 mt-2">
+                        <a href="https://github.com/RieStudio" target="_blank"
+                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://t.me/riestudioterminal" target="_blank"
+                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
+                            <span class="sr-only">Telegram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.83 8.217l-1.717 8.07c-.126.57-.449.71-1.11.45l-3.07-1.25-1.48 1.41c-.163.163-.3.3-.616.3l.221-3.13 5.7-5.15c.247-.22-.054-.34-.383-.12l-7.12 4.65-3.05-.95c-.62-.2-.63-.62.14-.92l11.9-4.58c.51-.24.96.15.78.92z" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/riestudio" target="_blank"
+                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[9999] hidden">
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity z-[9998]"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4 z-[10000]">
+            <div
+                class="relative bg-zinc-950/95 backdrop-blur-md rounded-2xl p-8 max-w-md w-full border border-zinc-800/80 shadow-2xl z-[10001]">
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Step 1: Social Links -->
+                <div id="modalStep1" class="text-center w-full">
+                    <h3 class="text-3xl font-bold mb-8 gradient-text" data-i18n="contactUs">Bize Ulaşın</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <span class="font-medium text-gray-300 group-hover:text-white">Instagram</span>
+                            </div>
+                        </a>
+                        <a href="https://t.me/riestudioterminal" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <span class="font-medium text-gray-300 group-hover:text-white">Telegram</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/company/riestudio" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <span class="font-medium text-gray-300 group-hover:text-white">LinkedIn</span>
+                            </div>
+                        </a>
+                        <a href="mailto:contact@riestudio.com.tr"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <span class="font-medium text-gray-300 group-hover:text-white"
+                                    data-i18n="email">E-posta</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button id="startProjectBtn"
+                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
+                        <span data-i18n="startProject">Projenizi Bizimle Başlatın</span>
+                    </button>
+                </div>
+
+                <!-- Step 2: Project Form -->
+                <div id="modalStep2" class="w-full hidden text-left">
+                    <button id="backToStep1Btn" type="button"
+                        class="absolute top-4 left-4 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </button>
+                    <h3 class="text-2xl font-bold text-white gradient-text text-center mb-6"
+                        data-i18n="startProjectTitle">Projenizi Başlatın</h3>
+
+                    <form id="projectForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formEmail">E-posta Adresiniz</label>
+                            <input type="email" id="projectEmail" required placeholder="name@example.com"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 transition-all text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formCategory">Proje Kategorisi</label>
+                            <select id="projectCategory"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 transition-all text-sm">
+                                <option value="Mobil Uygulama" data-i18n="optMobile">Mobil Uygulama</option>
+                                <option value="Web Sitesi" data-i18n="optWeb">Web Sitesi</option>
+                                <option value="Özel Yazılım / SaaS" data-i18n="optSaaS">Özel Yazılım / SaaS</option>
+                                <option value="Diğer" data-i18n="optOther">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formDetails">Proje Detayları</label>
+                            <textarea id="projectDetails" rows="3" required placeholder="Proje Detayları..."
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 transition-all text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] text-center block">
+                            <span data-i18n="btnSubmit">Talebi Gönder</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Success -->
+                <div id="modalStep3" class="text-center w-full hidden">
+                    <h3 class="text-2xl font-bold text-white mb-8 gradient-text" data-i18n="formSuccessTitle">Talebiniz
+                        Alındı!</h3>
+                    <button id="closeSuccessModalBtn"
+                        class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300"
+                        data-i18n="btnClose">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // i18n Dictionary
+        const translations = {
+            tr: {
+                about: 'Hakkımızda',
+                products: 'Ürünlerimiz',
+                services: 'Hizmetlerimiz',
+                contact: 'İletişim',
+                productsTitle: 'Ürünlerimiz',
+                productsSubtitle: 'RieStudio tarafından geliştirilen yenilikçi mobil uygulamalar, web çözümleri ve yazılım araçları.',
+                tabAllProducts: 'Tüm Ürünler',
+                tabMobileProducts: 'Mobil Ürünler',
+                tabWebApps: 'Web Uygulamaları',
+                tabSoftwareTools: 'Yazılım Araçları',
+                kelimeGoTitle: 'KelimeGo',
+                kelimeGoDesc: 'Zihninizi tazeleyen, eğlenceli ve öğretici kelime bulmaca oyunu. Günlük kelime meydan okumalarıyla kelime haznenizi geliştirin.',
+                appTitle: 'Öneri Bul',
+                appDesc: 'Kararsız kaldığınız anlarda yapay zeka yanınızda. Öneri Bul, ruh halinizi analiz ederek size en uygun film, kitap ve oyunları saniyeler içinde listeler.',
+                ganotTitle: 'Ganot',
+                ganotDesc: 'Akademik döneminizi tek ekrandan kontrol edin. Harf notu hesaplama, sınav takvimi takibi ve devamsızlık sınırı kontrolü süreçlerini kolaylaştırır.',
+                plancaTitle: 'Planca',
+                plancaDesc: 'Planca, karmaşık özelliklerden arındırılmış minimalist bir günlük görev takip uygulamasıdır. Açık ve net arayüzü sayesinde bugününüzü organize edin.',
+                webAppsTitle: 'Yeni Web Platformlarımız',
+                webAppsDesc: 'Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!',
+                opsBareDesc: 'Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif altyapı otomasyon aracı.',
+                btnDownload: 'APK İndir',
+                btnGithub: 'Kaynak Kodlar',
+                btnVirus: 'Rapor',
+                appSecurityNote: 'Bilgi: Android cihazlarda Play Store dışından uygulama yüklerken \'Bilinmeyen Kaynaklar\' uyarısı alabilirsiniz. Uygulamalarımız için ayarlardan güvenle izin verebilirsiniz.',
+                allRightsReserved: 'Tüm hakları saklıdır.',
+                privacyPolicy: 'Gizlilik Politikası',
+                contactUs: 'Bize Ulaşın',
+                email: 'E-posta',
+                startProject: 'Projenizi Bizimle Başlatın',
+                startProjectTitle: 'Projenizi Başlatın',
+                formEmail: 'E-posta Adresiniz',
+                formCategory: 'Proje Kategorisi',
+                formDetails: 'Proje Detayları',
+                optMobile: 'Mobil Uygulama',
+                optWeb: 'Web Sitesi',
+                optSaaS: 'Özel Yazılım / SaaS',
+                optOther: 'Diğer',
+                btnSubmit: 'Talebi Gönder',
+                formSuccessTitle: 'Talebiniz Alındı!',
+                btnClose: 'Kapat'
+            },
+            en: {
+                about: 'About',
+                products: 'Products',
+                services: 'Services',
+                contact: 'Contact',
+                productsTitle: 'Our Products',
+                productsSubtitle: 'Innovative mobile applications, web solutions, and software tools developed by RieStudio.',
+                tabAllProducts: 'All Products',
+                tabMobileProducts: 'Mobile Products',
+                tabWebApps: 'Web Applications',
+                tabSoftwareTools: 'Software Tools',
+                kelimeGoTitle: 'KelimeGo',
+                kelimeGoDesc: 'A fun and educational word puzzle game to refresh your mind. Expand your vocabulary with daily challenges.',
+                appTitle: 'Öneri Bul',
+                appDesc: 'AI is by your side in moments of indecision. Öneri Bul analyzes your mood and lists the most suitable movies, books, and games for you.',
+                ganotTitle: 'Ganot',
+                ganotDesc: 'Control your academic term from a single screen. Easily manage grade calculations, exam schedules, and absence limits.',
+                plancaTitle: 'Planca',
+                plancaDesc: 'Planca is a minimalist daily task tracking app stripped of complex features. Organize your day effortlessly.',
+                webAppsTitle: 'New Web Platforms',
+                webAppsDesc: 'We are working on next-generation web applications shaping modern web standards. Coming soon!',
+                opsBareDesc: 'A powerful infrastructure automation tool simplifying server management, bare-metal automation, and monitoring.',
+                btnDownload: 'Download APK',
+                btnGithub: 'Source Code',
+                btnVirus: 'Report',
+                appSecurityNote: 'Note: You may receive an \'Unknown Sources\' warning when installing apps outside the Play Store on Android devices. You can safely grant permission in settings for our apps.',
+                allRightsReserved: 'All rights reserved.',
+                privacyPolicy: 'Privacy Policy',
+                contactUs: 'Contact Us',
+                email: 'Email',
+                startProject: 'Start Your Project With Us',
+                startProjectTitle: 'Start Your Project',
+                formEmail: 'Your Email Address',
+                formCategory: 'Project Category',
+                formDetails: 'Project Details',
+                optMobile: 'Mobile Application',
+                optWeb: 'Website',
+                optSaaS: 'Custom Software / SaaS',
+                optOther: 'Other',
+                btnSubmit: 'Submit Request',
+                formSuccessTitle: 'Request Received!',
+                btnClose: 'Close'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('userLanguage', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            const currentLangElements = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
+            currentLangElements.forEach(el => {
+                el.textContent = lang.toUpperCase();
+            });
+
+            if (typeof updateLanguageSelectors === 'function') {
+                updateLanguageSelectors(lang);
+            }
+        }
+
+        // Filter Functionality with smooth transitions
+        function initCategoryFiltering() {
+            const filterBtns = document.querySelectorAll('.tab-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+
+                    // Active button styling
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active-tab', 'bg-white/10', 'text-white', 'border-white/10', 'shadow-lg', 'shadow-orange-500/10');
+                        b.classList.add('text-gray-400', 'border-transparent');
+                    });
+                    btn.classList.add('active-tab', 'bg-white/10', 'text-white', 'border-white/10', 'shadow-lg', 'shadow-orange-500/10');
+                    btn.classList.remove('text-gray-400', 'border-transparent');
+
+                    // Card visibility filter with smooth transition
+                    productCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 30);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 250);
+                        }
+                    });
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initLanguageSelector === 'function') initLanguageSelector();
+            if (typeof initContactModal === 'function') initContactModal();
+            initCategoryFiltering();
+
+            const activeBtn = document.querySelector('.tab-btn.active-tab');
+            if (activeBtn) activeBtn.click();
+
+            const savedLang = localStorage.getItem('userLanguage') || 'tr';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+
+</html>
