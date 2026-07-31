@@ -49,21 +49,7 @@
                             800: '#1f2937',
                             900: '#111827',
                         }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-reverse': 'floatReverse 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-                        },
-                        floatReverse: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(-2deg)' },
-                        },
-                    },
+                    }
                 }
             }
         }
@@ -273,293 +259,327 @@
         </div>
 
         <!-- Category Filter Tabs -->
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
+        <div class="flex flex-row flex-nowrap items-center justify-center gap-1 sm:gap-3 mb-8 sm:mb-12 max-w-full w-full px-1">
             <button data-filter="mobile"
-                class="tab-btn active-tab px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 border border-white/10 bg-white/10 text-white shadow-lg shadow-orange-500/10">
+                class="tab-btn active-tab px-2 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-semibold text-[11px] sm:text-sm whitespace-nowrap transition-all duration-300 border border-white/10 bg-white/10 text-white shadow-lg shadow-orange-500/10">
                 <span data-i18n="tabMobileProducts">Mobil Ürünler</span>
             </button>
             <button data-filter="web"
-                class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
+                class="tab-btn px-2 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-semibold text-[11px] sm:text-sm whitespace-nowrap text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
                 <span data-i18n="tabWebApps">Web Uygulamaları</span>
             </button>
             <button data-filter="tools"
-                class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
+                class="tab-btn px-2 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-semibold text-[11px] sm:text-sm whitespace-nowrap text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
                 <span data-i18n="tabSoftwareTools">Yazılım Araçları</span>
             </button>
         </div>
 
-        <!-- Products Grid -->
-        <div id="productsGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <!-- Compact Rows Container -->
+        <div id="productsGrid" class="flex flex-col gap-8 md:gap-5 mb-16">
 
-            <!-- 1. Planca (Mobile) -->
+            <!-- 1. Ganot (Mobile Row) -->
             <div data-category="mobile"
-                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-sky-500/30 group">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-sky-500/10 rounded-full blur-3xl"></div>
-
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-sky-500/20">
-                            <img src="assets/plancalogo.png" alt="Planca Icon"
-                                class="w-full h-full object-cover transform scale-125">
-                        </div>
-                        <div class="ml-6">
-                            <h2 class="text-3xl font-bold text-white" data-i18n="plancaTitle">Planca</h2>
-                            <span class="text-sm text-sky-400 font-medium">v1.5.2 - Live</span>
-                        </div>
-                    </div>
-
-                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="plancaDesc">
-                        Planca, karmaşık özelliklerden arındırılmış minimalist bir günlük görev takip uygulamasıdır.
-                        Açık ve net arayüzü sayesinde bugününüzü organize edin.
-                    </p>
-
-                    <div class="space-y-4 mb-4">
-                        <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download
-                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
-                            <div class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
-                            </div>
-                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="https://github.com/RieStudio/planca" target="_blank"
-                                class="flex items-center justify-center p-3 bg-gray-900/40 rounded-xl border border-gray-700/50 hover:bg-gray-900 transition-all">
-                                <svg class="w-5 h-5 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-sm font-medium text-gray-300" data-i18n="btnGithub">Kaynak
-                                    Kodlar</span>
-                            </a>
-                            <a href="https://www.virustotal.com/gui/file/82bfc6ac840e33a5d4f20cb12ec54eca69c7980bd5dccc4ce56fadaecb8b55f7?nocache=1"
-                                target="_blank"
-                                class="flex items-center justify-center p-3 bg-blue-600/10 rounded-xl border border-blue-500/20 hover:bg-blue-600/20 transition-all">
-                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                                <span class="text-sm font-medium text-blue-400" data-i18n="btnVirus">Rapor</span>
-                            </a>
-                        </div>
-                    </div>
+                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-5 sm:p-7 md:p-8 min-h-[220px] hover:border-zinc-700/80 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
+                
+                <!-- Top Right: Ekran Görüntüleri (Mobile Icon) & Güvenlik Raporu Button -->
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex items-center gap-3">
+                    <button onclick="openScreenshotModal('ganot')" title="Ekran Görüntüleri"
+                        class="md:hidden text-zinc-400 hover:text-white transition-colors p-0 bg-transparent border-0 focus:outline-none">
+                        <svg class="w-4 h-4 text-zinc-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                    <a href="https://www.virustotal.com/gui/file/547e08d68e18a4dd3d282a6747c96933c5a0b16efa091957bf8e8dbddba1058a?nocache=1" target="_blank" title="Güvenlik Raporu"
+                        class="inline-flex items-center gap-1.5 p-0 bg-transparent border-0 text-[#D1D5DB] md:px-3.5 md:py-1.5 md:rounded-full md:bg-[#1F1F23] md:border md:border-[#32353B] text-xs font-semibold transition-all md:shadow-sm">
+                        <svg class="w-4 h-4 md:w-3.5 md:h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span class="hidden md:inline" data-i18n="btnSecurityReport">Güvenlik Raporu</span>
+                    </a>
                 </div>
-            </div>
 
-            <!-- 3. ÖneriBul (Mobile) -->
-            <div data-category="mobile"
-                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-pink-500/30 group">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-pink-500/10 rounded-full blur-3xl"></div>
-
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-pink-500/20">
-                            <img src="assets/oneribullogo.png" alt="Öneri Bul Icon"
-                                class="w-full h-full object-cover transform scale-125">
+                <!-- Left & Middle: App Logo + Details + Actions -->
+                <div class="flex-1 flex flex-col justify-between gap-4 pr-0 lg:pr-10">
+                    <div class="flex items-start gap-3 sm:gap-4 pr-16 md:pr-0">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 rounded-2xl flex items-center justify-center border border-zinc-800 flex-shrink-0 overflow-hidden shadow-sm">
+                            <img src="assets/ganotlogo.png" alt="Ganot Logo" class="w-full h-full object-cover scale-110">
                         </div>
-                        <div class="ml-6">
-                            <h2 class="text-3xl font-bold text-white" data-i18n="appTitle">Öneri Bul</h2>
-                            <span class="text-sm text-pink-400 font-medium">v5.0.1 - Live</span>
+                        <div>
+                            <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+                                <h2 class="text-xl sm:text-2xl font-bold text-white"
+                                    data-i18n="ganotTitle">Ganot</h2>
+                                <span class="text-[11px] sm:text-xs p-0 bg-transparent border-0 text-zinc-400 font-semibold md:px-2.5 md:py-0.5 md:rounded-full md:bg-zinc-800 md:border md:border-zinc-700/50">v2.10.4</span>
+                            </div>
+                            <span class="text-xs text-zinc-500 font-medium">Akademik Asistan & Not Hesaplama</span>
                         </div>
                     </div>
 
-                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="appDesc">
-                        Kararsız kaldığınız anlarda yapay zeka yanınızda. Öneri Bul, ruh halinizi analiz ederek size en
-                        uygun film, kitap ve oyunları saniyeler içinde listeler.
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl" data-i18n="ganotDesc">
+                        Akademik döneminizi tek ekrandan kontrol edin. Harf notu hesaplama, sınav takvimi takibi ve devamsızlık sınırı kontrolü süreçlerini kolaylaştırır.
                     </p>
 
-                    <div class="space-y-4 mb-4">
-                        <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download
-                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
-                            <div class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
-                            </div>
-                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                        </a>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <a href="https://github.com/RieStudio/oneri-bul" target="_blank"
-                                class="flex items-center justify-center p-3 bg-gray-900/40 rounded-xl border border-gray-700/50 hover:bg-gray-900 transition-all">
-                                <svg class="w-5 h-5 text-gray-300 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <span class="text-sm font-medium text-gray-300" data-i18n="btnGithub">Kaynak
-                                    Kodlar</span>
-                            </a>
-                            <a href="https://www.virustotal.com/gui/file/a6a904e8fde082f4ee253222ae498d005c412854c17262ba6a67e86355b539b6/behavior"
-                                target="_blank"
-                                class="flex items-center justify-center p-3 bg-blue-600/10 rounded-xl border border-blue-500/20 hover:bg-blue-600/20 transition-all">
-                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                                <span class="text-sm font-medium text-blue-400" data-i18n="btnVirus">Rapor</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Ganot (Mobile) -->
-            <div data-category="mobile"
-                class="product-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-blue-500/30 group">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-blue-500/20">
-                            <img src="assets/ganotlogo.png" alt="Ganot Icon"
-                                class="w-full h-full object-cover transform scale-125">
-                        </div>
-                        <div class="ml-6 flex-1">
-                            <div class="flex items-center gap-4">
-                                <h2 class="text-3xl font-bold text-white" data-i18n="ganotTitle">Ganot</h2>
-                                <a href="https://appgallery.cloud.huawei.com/ag/n/app/C118083177?locale=tr_TR&source=appshare&subsource=C118083177&shareTo=com.android.bluetooth&shareFrom=appmarket&shareIds=13a8c569bd0e4d10a551f2e27687ca77_com.android.bluetooth&callType=SHARE"
-                                    target="_blank"
-                                    class="w-8 h-8 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-                                    title="Huawei AppGallery">
-                                    <svg viewBox="0 0 100 100" class="w-full h-full">
-                                        <rect width="100" height="100" rx="22" fill="#D61226" />
-                                        <path d="M30 25 A 20 20 0 0 0 70 25" fill="none" stroke="white"
-                                            stroke-width="4.5" stroke-linecap="round" />
-                                        <text x="50" y="76" font-family="system-ui, -apple-system, sans-serif"
-                                            font-weight="900" font-size="17" fill="white" text-anchor="middle"
-                                            letter-spacing="0.2">HUAWEI</text>
-                                    </svg>
-                                </a>
-                            </div>
-                            <span class="text-sm text-blue-400 font-medium">v2.10.4 - Live</span>
-                        </div>
-                    </div>
-
-                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="ganotDesc">
-                        Akademik döneminizi tek ekrandan kontrol edin. Harf notu hesaplama, sınav takvimi takibi ve
-                        devamsızlık sınırı kontrolü süreçlerini kolaylaştırır.
-                    </p>
-
-                    <div class="space-y-4 mb-4">
+                    <div class="hidden md:flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+                        <button onclick="openScreenshotModal('ganot')"
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60 px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
+                        </button>
                         <a href="https://github.com/RieStudio/Ganot/releases/latest/download/Ganot.apk" download
-                            class="flex items-center justify-between p-4 bg-green-600/20 rounded-xl border border-green-500/30 hover:bg-green-600/30 transition-all group">
-                            <div class="flex items-center">
-                                <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                                <span class="font-bold text-green-400" data-i18n="btnDownload">APK İndir</span>
-                            </div>
-                            <svg class="w-5 h-5 text-green-500 transform group-hover:translate-x-1 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span data-i18n="btnDownload">APK İndir</span>
                         </a>
                     </div>
                 </div>
+
+                <!-- Right: Vertical Store Image Badges Stack (Responsive row on mobile, column on desktop) -->
+                <div class="flex flex-row flex-nowrap items-center justify-start lg:justify-end gap-1.5 sm:gap-2.5 flex-shrink-0 pt-4 lg:pt-8 border-t lg:border-t-0 border-zinc-800/60 w-full lg:w-36 lg:flex-col lg:items-end lg:gap-1.5 overflow-x-auto scrollbar-none">
+                    <a href="https://play.google.com/store/apps/details?id=com.ganot.app" target="_blank"
+                        class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 flex items-center justify-start lg:justify-end hover:scale-105 transition-transform flex-shrink-0" title="Google Play Store">
+                        <img src="assets/playstore.png" alt="Google Play Store" class="h-full w-auto object-contain">
+                    </a>
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="App Store (Pek Yakında)">
+                        <img src="assets/appstore.png" alt="App Store" class="h-full w-auto object-contain">
+                    </div>
+                    <a href="https://appgallery.cloud.huawei.com/ag/n/app/C118083177?locale=tr_TR&source=appshare&subsource=C118083177&shareTo=com.android.bluetooth&shareFrom=appmarket&shareIds=13a8c569bd0e4d10a551f2e27687ca77_com.android.bluetooth&callType=SHARE"
+                        target="_blank" class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 flex items-center justify-start lg:justify-end hover:scale-105 transition-transform flex-shrink-0" title="Huawei AppGallery">
+                        <img src="assets/appgallery.png" alt="Huawei AppGallery" class="h-full w-auto object-contain">
+                    </a>
+                    <a href="https://github.com/RieStudio/Ganot/releases/latest/download/Ganot.apk" download title="APK İndir"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span class="hidden sm:inline" data-i18n="btnDownload">APK İndir</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- 5. Web Uygulamaları - Çok Yakında (Web) -->
-            <div data-category="web"
-                class="product-card bg-gradient-to-br from-purple-950/20 to-zinc-900/40 border border-purple-500/20 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-purple-500/40 group flex flex-col justify-between">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <!-- 2. ÖneriBul (Mobile Row) -->
+            <div data-category="mobile"
+                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-5 sm:p-7 md:p-8 min-h-[220px] hover:border-zinc-700/80 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
+                
+                <!-- Top Right: GitHub (Mobile Icon), Ekran Görüntüleri (Mobile Icon) & Güvenlik Raporu Button -->
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex items-center gap-3">
+                    <a href="https://github.com/RieStudio/oneri-bul" target="_blank" title="Kaynak Kodlar"
+                        class="md:hidden text-zinc-400 hover:text-white transition-colors p-0 bg-transparent border-0 focus:outline-none">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <button onclick="openScreenshotModal('oneribul')" title="Ekran Görüntüleri"
+                        class="md:hidden text-zinc-400 hover:text-white transition-colors p-0 bg-transparent border-0 focus:outline-none">
+                        <svg class="w-4 h-4 text-zinc-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                    <a href="https://www.virustotal.com/gui/file/a6a904e8fde082f4ee253222ae498d005c412854c17262ba6a67e86355b539b6/behavior" target="_blank" title="Güvenlik Raporu"
+                        class="inline-flex items-center gap-1.5 p-0 bg-transparent border-0 text-[#D1D5DB] md:px-3.5 md:py-1.5 md:rounded-full md:bg-[#1F1F23] md:border md:border-[#32353B] text-xs font-semibold transition-all md:shadow-sm">
+                        <svg class="w-4 h-4 md:w-3.5 md:h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span class="hidden md:inline" data-i18n="btnSecurityReport">Güvenlik Raporu</span>
+                    </a>
+                </div>
 
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-purple-950/60 rounded-2xl flex items-center justify-center border border-purple-500/30 text-purple-400">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                            </svg>
+                <!-- Left & Middle: App Logo + Details + Actions -->
+                <div class="flex-1 flex flex-col justify-between gap-4 pr-0 lg:pr-10">
+                    <div class="flex items-start gap-3 sm:gap-4 pr-20 md:pr-0">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 rounded-2xl flex items-center justify-center border border-zinc-800 flex-shrink-0 overflow-hidden shadow-sm">
+                            <img src="assets/oneribullogo.png" alt="Öneri Bul Logo" class="w-full h-full object-cover scale-110">
                         </div>
-                        <div class="ml-6">
-                            <span class="text-xs font-bold tracking-widest text-purple-400 uppercase">●
-                                GELİŞTİRİLİYOR</span>
-                            <h2 class="text-3xl font-bold text-white mt-1" data-i18n="webAppsTitle">Yeni Web
-                                Platformlarımız</h2>
+                        <div>
+                            <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+                                <h2 class="text-xl sm:text-2xl font-bold text-white"
+                                    data-i18n="appTitle">Öneri Bul</h2>
+                                <span class="text-[11px] sm:text-xs p-0 bg-transparent border-0 text-zinc-400 font-semibold md:px-2.5 md:py-0.5 md:rounded-full md:bg-zinc-800 md:border md:border-zinc-700/50">v5.0.1</span>
+                            </div>
+                            <span class="text-xs text-zinc-500 font-medium">Yapay Zeka İçerik Önerisi</span>
                         </div>
                     </div>
 
-                    <p class="text-gray-400 mb-8 leading-relaxed" data-i18n="webAppsDesc">
-                        Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web
-                        uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl" data-i18n="appDesc">
+                        Kararsız kaldığınız anlarda yapay zeka yanınızda. Öneri Bul, ruh halinizi analiz ederek size en uygun film, kitap ve oyunları saniyeler içinde listeler.
+                    </p>
+
+                    <div class="hidden md:flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+                        <button onclick="openScreenshotModal('oneribul')"
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60 px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
+                        </button>
+                        <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span data-i18n="btnDownload">APK İndir</span>
+                        </a>
+                        <a href="https://github.com/RieStudio/oneri-bul" target="_blank" title="Kaynak Kodlar"
+                            class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-white bg-zinc-950/80 hover:bg-zinc-900 border border-zinc-800 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Vertical Store Image Badges Stack (Responsive row on mobile, column on desktop) -->
+                <div class="flex flex-row flex-nowrap items-center justify-start lg:justify-end gap-1.5 sm:gap-2.5 flex-shrink-0 pt-4 lg:pt-8 border-t lg:border-t-0 border-zinc-800/60 w-full lg:w-36 lg:flex-col lg:items-end lg:gap-1.5 overflow-x-auto scrollbar-none">
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="Google Play Store (Pek Yakında)">
+                        <img src="assets/playstore.png" alt="Google Play Store" class="h-full w-auto object-contain">
+                    </div>
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="App Store (Pek Yakında)">
+                        <img src="assets/appstore.png" alt="App Store" class="h-full w-auto object-contain">
+                    </div>
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="AppGallery (Pek Yakında)">
+                        <img src="assets/appgallery.png" alt="Huawei AppGallery" class="h-full w-auto object-contain">
+                    </div>
+                    <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download title="APK İndir"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span class="hidden sm:inline" data-i18n="btnDownload">APK İndir</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Planca (Mobile Row) -->
+            <div data-category="mobile"
+                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-5 sm:p-7 md:p-8 min-h-[220px] hover:border-zinc-700/80 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
+                
+                <!-- Top Right: GitHub (Mobile Icon), Ekran Görüntüleri (Mobile Icon) & Güvenlik Raporu Button -->
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 z-10 flex items-center gap-3">
+                    <a href="https://github.com/RieStudio/planca" target="_blank" title="Kaynak Kodlar"
+                        class="md:hidden text-zinc-400 hover:text-white transition-colors p-0 bg-transparent border-0 focus:outline-none">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <button onclick="openScreenshotModal('planca')" title="Ekran Görüntüleri"
+                        class="md:hidden text-zinc-400 hover:text-white transition-colors p-0 bg-transparent border-0 focus:outline-none">
+                        <svg class="w-4 h-4 text-zinc-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                    <a href="https://www.virustotal.com/gui/file/82bfc6ac840e33a5d4f20cb12ec54eca69c7980bd5dccc4ce56fadaecb8b55f7?nocache=1" target="_blank" title="Güvenlik Raporu"
+                        class="inline-flex items-center gap-1.5 p-0 bg-transparent border-0 text-[#D1D5DB] md:px-3.5 md:py-1.5 md:rounded-full md:bg-[#1F1F23] md:border md:border-[#32353B] text-xs font-semibold transition-all md:shadow-sm">
+                        <svg class="w-4 h-4 md:w-3.5 md:h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span class="hidden md:inline" data-i18n="btnSecurityReport">Güvenlik Raporu</span>
+                    </a>
+                </div>
+
+                <!-- Left & Middle: App Logo + Details + Actions -->
+                <div class="flex-1 flex flex-col justify-between gap-4 pr-0 lg:pr-10">
+                    <div class="flex items-start gap-3 sm:gap-4 pr-16 md:pr-0">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 rounded-2xl flex items-center justify-center border border-zinc-800 flex-shrink-0 overflow-hidden shadow-sm">
+                            <img src="assets/plancalogo.png" alt="Planca Logo" class="w-full h-full object-cover scale-110">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+                                <h2 class="text-xl sm:text-2xl font-bold text-white"
+                                    data-i18n="plancaTitle">Planca</h2>
+                                <span class="text-[11px] sm:text-xs p-0 bg-transparent border-0 text-zinc-400 font-semibold md:px-2.5 md:py-0.5 md:rounded-full md:bg-zinc-800 md:border md:border-zinc-700/50">v1.5.2</span>
+                            </div>
+                            <span class="text-xs text-zinc-500 font-medium">Görev Takip Uygulaması</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-2xl" data-i18n="plancaDesc">
+                        Planca, karmaşık özelliklerden arındırılmış minimalist bir günlük görev takip uygulamasıdır. Açık ve net arayüzü sayesinde bugününüzü organize edin.
+                    </p>
+
+                    <div class="hidden md:flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+                        <button onclick="openScreenshotModal('planca')"
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60 px-3 sm:px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
+                        </button>
+                        <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3 sm:px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span data-i18n="btnDownload">APK İndir</span>
+                        </a>
+                        <a href="https://github.com/RieStudio/planca" target="_blank" title="Kaynak Kodlar"
+                            class="inline-flex items-center justify-center p-2 text-zinc-400 hover:text-white bg-zinc-950/80 hover:bg-zinc-900 border border-zinc-800 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Vertical Store Image Badges Stack (Responsive row on mobile, column on desktop) -->
+                <div class="flex flex-row flex-nowrap items-center justify-start lg:justify-end gap-1.5 sm:gap-2.5 flex-shrink-0 pt-4 lg:pt-8 border-t lg:border-t-0 border-zinc-800/60 w-full lg:w-36 lg:flex-col lg:items-end lg:gap-1.5 overflow-x-auto scrollbar-none">
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="Google Play Store (Pek Yakında)">
+                        <img src="assets/playstore.png" alt="Google Play Store" class="h-full w-auto object-contain">
+                    </div>
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="App Store (Pek Yakında)">
+                        <img src="assets/appstore.png" alt="App Store" class="h-full w-auto object-contain">
+                    </div>
+                    <div class="h-7 sm:h-9 w-auto max-w-[95px] min-[380px]:max-w-[115px] sm:max-w-[144px] lg:w-36 opacity-30 pointer-events-none cursor-not-allowed flex items-center justify-start lg:justify-end flex-shrink-0" title="AppGallery (Pek Yakında)">
+                        <img src="assets/appgallery.png" alt="Huawei AppGallery" class="h-full w-auto object-contain">
+                    </div>
+                    <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download title="APK İndir"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span class="hidden sm:inline" data-i18n="btnDownload">APK İndir</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Web Apps - (Web Row) -->
+            <div data-category="web"
+                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-7 md:p-8 min-h-[170px] hover:border-purple-500/40 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
+                <div class="flex items-center gap-4 min-w-[220px]">
+                    <div class="w-16 h-16 bg-purple-950/50 rounded-2xl flex items-center justify-center border border-purple-500/30 text-purple-400 flex-shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-bold text-white"
+                                data-i18n="webAppsTitle">Yeni Web Platformlarımız</h2>
+                            <span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-950/60 text-purple-400 font-semibold border border-purple-500/30 uppercase">● Geliştiriliyor</span>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-medium">Bulut & SaaS Çözümleri</span>
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <p class="text-sm text-zinc-300 leading-relaxed max-w-xl" data-i18n="webAppsDesc">
+                        Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!
                     </p>
                 </div>
 
-                <div class="relative z-10 pt-4">
-                    <span
-                        class="inline-flex items-center justify-center w-full py-4 bg-purple-950/40 border border-purple-500/20 text-purple-300 font-bold rounded-xl text-sm tracking-wider uppercase cursor-default">
-                        🚀 Çok Yakında Yayında
+                <div class="pt-2 lg:pt-0">
+                    <span class="inline-flex items-center justify-center px-4 py-2 bg-purple-950/40 border border-purple-500/20 text-purple-300 font-semibold rounded-xl text-xs uppercase tracking-wider">
+                        🚀 Çok Yakında
                     </span>
                 </div>
             </div>
 
-            <!-- 6. OpsBare (Software Tools) -->
+            <!-- 6. OpsBare - (Tools Row) -->
             <div data-category="tools"
-                class="product-card bg-gradient-to-br from-emerald-950/20 to-zinc-900/40 border border-emerald-500/20 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-emerald-500/40 group flex flex-col justify-between">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
-
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-emerald-950/60 rounded-2xl flex items-center justify-center border border-emerald-500/30 text-emerald-400">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div class="ml-6">
-                            <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase">● YAZILIM
-                                ARAÇLARI</span>
-                            <h2 class="text-3xl font-bold text-white mt-1">OpsBare</h2>
-                        </div>
+                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-7 md:p-8 min-h-[170px] hover:border-emerald-500/40 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
+                <div class="flex items-center gap-4 min-w-[220px]">
+                    <div class="w-16 h-16 bg-emerald-950/50 rounded-2xl flex items-center justify-center border border-emerald-500/30 text-emerald-400 flex-shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
                     </div>
-
-                    <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="opsBareDesc">
-                        Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif
-                        altyapı otomasyon aracı.
-                    </p>
-
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">CLI
-                            & Automation</span>
-                        <span
-                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">Bare-Metal</span>
-                        <span
-                            class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-950/50 border border-emerald-500/20 text-emerald-300">DevOps</span>
+                    <div>
+                        <div class="flex items-center gap-2.5">
+                            <h2 class="text-xl font-bold text-white">OpsBare</h2>
+                            <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 font-semibold border border-emerald-500/30 uppercase">● CLI Tool</span>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-medium">Bare-Metal & Sunucu Otomasyonu</span>
                     </div>
                 </div>
 
-                <div class="relative z-10 pt-4">
+                <div class="flex-1 flex flex-col gap-2">
+                    <p class="text-sm text-zinc-300 leading-relaxed max-w-xl" data-i18n="opsBareDesc">
+                        Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif altyapı otomasyon aracı.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-zinc-950 border border-zinc-800 text-zinc-400">CLI & Automation</span>
+                        <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-zinc-950 border border-zinc-800 text-zinc-400">Bare-Metal</span>
+                        <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-zinc-950 border border-zinc-800 text-zinc-400">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="pt-2 lg:pt-0">
                     <a href="https://github.com/RieStudio" target="_blank"
-                        class="inline-flex items-center justify-center w-full py-4 bg-emerald-600/20 border border-emerald-500/30 hover:bg-emerald-600/30 text-emerald-300 font-bold rounded-xl text-sm tracking-wider uppercase transition-all">
+                        class="inline-flex items-center justify-center px-4 py-2.5 bg-zinc-950 border border-zinc-800 hover:border-emerald-500/40 text-emerald-400 font-semibold rounded-xl text-xs uppercase tracking-wider transition-all">
                         GitHub Üzerinde İncele
                     </a>
                 </div>
@@ -641,6 +661,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Screenshots Lightbox Modal (Horizontal Scrollable Gallery) -->
+    <div id="screenshotModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 sm:p-6">
+        <div class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity" onclick="closeScreenshotModal()"></div>
+        <div class="relative bg-zinc-950 border border-zinc-800/90 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl z-10 flex flex-col">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800/80 bg-zinc-900/80">
+                <div class="flex items-center gap-2.5">
+                    <h3 id="screenshotModalTitle" class="text-lg font-bold text-white">Ekran Görüntüleri</h3>
+                </div>
+                <button onclick="closeScreenshotModal()" class="text-zinc-400 hover:text-white p-1.5 rounded-xl hover:bg-zinc-800 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Horizontal Scroll Gallery Container -->
+            <div id="screenshotGalleryContent" class="p-4 sm:p-6 overflow-x-auto flex flex-row items-center gap-3 sm:gap-4 snap-x scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-900">
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Modal -->
     <div id="contactModal" class="fixed inset-0 z-[9999] hidden">
@@ -760,7 +801,7 @@
                 services: 'Hizmetlerimiz',
                 contact: 'İletişim',
                 productsTitle: 'Ürünlerimiz',
-                productsSubtitle: 'RieStudio tarafından geliştirilen yenilikçi mobil uygulamalar, web çözümleri ve yazılım araçları.',
+                productsSubtitle: 'RieStudio tarafından geliştirilen yenilikçi mobil ürünler, web uygulamaları ve yazılım araçları.',
                 tabAllProducts: 'Tüm Ürünler',
                 tabMobileProducts: 'Mobil Ürünler',
                 tabWebApps: 'Web Uygulamaları',
@@ -776,10 +817,12 @@
                 webAppsTitle: 'Yeni Web Platformlarımız',
                 webAppsDesc: 'Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!',
                 opsBareDesc: 'Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif altyapı otomasyon aracı.',
+                btnScreenshots: 'Ekran Görüntüleri',
+                btnSecurityReport: 'Güvenlik Raporu',
                 btnDownload: 'APK İndir',
                 btnGithub: 'Kaynak Kodlar',
                 btnVirus: 'Rapor',
-                appSecurityNote: 'Bilgi: Android cihazlarda Play Store dışından uygulama yüklerken \'Bilinmeyen Kaynaklar\' uyarısı alabilirsiniz. Uygulamalarımız için ayarlardan güvenle izin verebilirsiniz.',
+                appSecurityNote: 'Bilgi: Android cihazlarda Play Store dışından uygulama yüklerken \'Bilinmeyen Kaynaklar\' uyarısı alabilirsiniz. Uygulamalarımız için ayarlardan güvenle izin mektubu verebilirsiniz.',
                 allRightsReserved: 'Tüm hakları saklıdır.',
                 privacyPolicy: 'Gizlilik Politikası',
                 contactUs: 'Bize Ulaşın',
@@ -803,7 +846,7 @@
                 services: 'Services',
                 contact: 'Contact',
                 productsTitle: 'Our Products',
-                productsSubtitle: 'Innovative mobile applications, web solutions, and software tools developed by RieStudio.',
+                productsSubtitle: 'Innovative mobile products, web applications, and software tools developed by RieStudio.',
                 tabAllProducts: 'All Products',
                 tabMobileProducts: 'Mobile Products',
                 tabWebApps: 'Web Applications',
@@ -819,6 +862,8 @@
                 webAppsTitle: 'New Web Platforms',
                 webAppsDesc: 'We are working on next-generation web applications shaping modern web standards. Coming soon!',
                 opsBareDesc: 'A powerful infrastructure automation tool simplifying server management, bare-metal automation, and monitoring.',
+                btnScreenshots: 'Screenshots',
+                btnSecurityReport: 'Security Report',
                 btnDownload: 'Download APK',
                 btnGithub: 'Source Code',
                 btnVirus: 'Report',
@@ -842,6 +887,76 @@
             }
         };
 
+        const screenshotsData = {
+            kelimego: [
+                { src: 'assets/hedef.png', title: 'KelimeGo Önizleme' }
+            ],
+            planca: [
+                { src: 'assets/planca1.jpg', title: 'Görev Takip Ekranı' },
+                { src: 'assets/planca2.jpg', title: 'Kategori Yönetimi' },
+                { src: 'assets/planca3.jpg', title: 'Minimalist Arayüz' },
+                { src: 'assets/planca4.jpg', title: 'Günlük Planlayıcı' }
+            ],
+            oneribul: [
+                { src: 'assets/oneribul1.jpg', title: 'Film Önerileri' },
+                { src: 'assets/oneribul2.jpg', title: 'Kitap Seçenekleri' },
+                { src: 'assets/oneribul3.jpg', title: 'Yapay Zeka Analizi' }
+            ],
+            ganot: [
+                { src: 'assets/ganot1.jpg', title: 'Not Hesaplama' },
+                { src: 'assets/ganot2.jpg', title: 'Dönem Takibi' },
+                { src: 'assets/ganot3.jpg', title: 'Sınav Takvimi' },
+                { src: 'assets/ganot4.jpg', title: 'Devamsızlık Kontrolü' },
+                { src: 'assets/ganot5.jpg', title: 'Ortalama Analizi' },
+                { src: 'assets/ganot6.jpg', title: 'Akademik Özet' }
+            ]
+        };
+
+        let activeAppKey = null;
+
+        function openScreenshotModal(appKey) {
+            activeAppKey = appKey;
+            const modal = document.getElementById('screenshotModal');
+            const gallery = document.getElementById('screenshotGalleryContent');
+            const titleEl = document.getElementById('screenshotModalTitle');
+
+            gallery.innerHTML = '';
+            const items = screenshotsData[appKey] || [];
+            const currentLang = localStorage.getItem('userLanguage') || 'tr';
+
+            const appNames = {
+                planca: 'Planca',
+                oneribul: 'Öneri Bul',
+                ganot: 'Ganot'
+            };
+
+            const suffix = currentLang === 'en' ? 'Screenshots' : 'Ekran Görüntüleri';
+            const appName = appNames[appKey] || (currentLang === 'en' ? 'App' : 'Uygulama');
+            titleEl.textContent = `${appName} - ${suffix}`;
+
+            if (items.length === 0) {
+                const noImgText = currentLang === 'en' ? 'No screenshots found.' : 'Ekran görüntüsü bulunamadı.';
+                gallery.innerHTML = `<p class="text-zinc-500 text-sm w-full text-center py-8">${noImgText}</p>`;
+            } else {
+                items.forEach(item => {
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.title || (currentLang === 'en' ? 'Screenshot' : 'Ekran Görüntüsü');
+                    img.className = 'h-[70vh] max-h-[640px] w-auto object-contain rounded-2xl shadow-2xl flex-shrink-0 snap-center border border-zinc-800/40';
+                    gallery.appendChild(img);
+                });
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeScreenshotModal() {
+            const modal = document.getElementById('screenshotModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         function setLanguage(lang) {
             document.documentElement.lang = lang;
             localStorage.setItem('userLanguage', lang);
@@ -852,6 +967,13 @@
                     element.textContent = translations[lang][key];
                 }
             });
+
+            if (activeAppKey) {
+                const modal = document.getElementById('screenshotModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    openScreenshotModal(activeAppKey);
+                }
+            }
 
             const currentLangElements = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
             currentLangElements.forEach(el => {
@@ -891,7 +1013,7 @@
                             }, 30);
                         } else {
                             card.style.opacity = '0';
-                            card.style.transform = 'scale(0.95)';
+                            card.style.transform = 'scale(0.98)';
                             setTimeout(() => {
                                 card.style.display = 'none';
                             }, 250);

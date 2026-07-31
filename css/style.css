@@ -213,6 +213,170 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
         }
 
+        /* Products Page Light Mode Overrides */
+        html:not(.dark) .product-card {
+            background-color: #ffffff !important;
+            border-color: #e5e7eb !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+        }
+
+        html:not(.dark) .product-card:hover {
+            border-color: #d1d5db !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        html:not(.dark) .product-card h2 {
+            color: #111827 !important;
+        }
+
+        html:not(.dark) .product-card p {
+            color: #4b5563 !important;
+        }
+
+        html:not(.dark) .product-card .bg-zinc-950 {
+            background-color: #f3f4f6 !important;
+            border-color: #e5e7eb !important;
+        }
+
+        html:not(.dark) .product-card .bg-zinc-800 {
+            background-color: #f3f4f6 !important;
+            border-color: #e5e7eb !important;
+            color: #4b5563 !important;
+        }
+
+        /* Store Stack Divider in Light Mode */
+        html:not(.dark) .border-zinc-800\/60 {
+            border-color: #f3f4f6 !important;
+        }
+
+        /* Filter Tabs in Light Mode */
+        html:not(.dark) .tab-btn {
+            color: #6b7280 !important;
+        }
+
+        html:not(.dark) .tab-btn:hover {
+            color: #111827 !important;
+            border-color: #e5e7eb !important;
+            background-color: rgba(0, 0, 0, 0.04) !important;
+        }
+
+        html:not(.dark) .tab-btn.active-tab {
+            background-color: #ffffff !important;
+            color: #111827 !important;
+            border-color: #e5e7eb !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        /* Action Buttons in Light Mode */
+        html:not(.dark) button[onclick^="openScreenshotModal"] {
+            background-color: #f3f4f6 !important;
+            border-color: #e5e7eb !important;
+            color: #1f2937 !important;
+        }
+
+        html:not(.dark) button[onclick^="openScreenshotModal"]:hover {
+            background-color: #e5e7eb !important;
+            color: #111827 !important;
+        }
+
+        html:not(.dark) a[download][href*=".apk"] {
+            background-color: #65D46E !important;
+            border-color: transparent !important;
+            color: #000000 !important;
+        }
+
+        html:not(.dark) a[download][href*=".apk"] svg {
+            color: #000000 !important;
+        }
+
+        html:not(.dark) a[download][href*=".apk"]:hover {
+            background-color: #4CC45B !important;
+            color: #000000 !important;
+        }
+
+        html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"] {
+            background-color: #f3f4f6 !important;
+            border-color: #e5e7eb !important;
+            color: #374151 !important;
+        }
+
+        html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"]:hover {
+            background-color: #e5e7eb !important;
+            color: #111827 !important;
+        }
+
+        html:not(.dark) a[href*="virustotal.com"] {
+            background-color: #F8F9FA !important;
+            border-color: #D1D5DB !important;
+            color: #374151 !important;
+        }
+
+        html:not(.dark) a[href*="virustotal.com"] svg {
+            color: #3B82F6 !important;
+        }
+
+        html:not(.dark) a[href*="virustotal.com"]:hover {
+            background-color: #e5e7eb !important;
+            color: #111827 !important;
+        }
+
+        /* Web & Tools Cards in Light Mode */
+        html:not(.dark) .bg-purple-950\/50 {
+            background-color: #faf5ff !important;
+            border-color: #e9d5ff !important;
+        }
+
+        html:not(.dark) .bg-purple-950\/60 {
+            background-color: #f3e8ff !important;
+            border-color: #e9d5ff !important;
+            color: #7e22ce !important;
+        }
+
+        html:not(.dark) .bg-emerald-950\/50 {
+            background-color: #ecfdf5 !important;
+            border-color: #a7f3d0 !important;
+        }
+
+        html:not(.dark) .bg-emerald-950\/60 {
+            background-color: #d1fae5 !important;
+            border-color: #a7f3d0 !important;
+            color: #047857 !important;
+        }
+
+        html:not(.dark) #app-security-note {
+            background-color: #ffffff !important;
+            border-color: #e5e7eb !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+        }
+
+        html:not(.dark) #app-security-note p {
+            color: #4b5563 !important;
+        }
+
+        /* Screenshot Lightbox Modal Light Mode */
+        html:not(.dark) #screenshotModal .bg-zinc-950 {
+            background-color: #ffffff !important;
+            border-color: #e5e7eb !important;
+        }
+
+        html:not(.dark) #screenshotModal .bg-zinc-900\/80 {
+            background-color: #f9fafb !important;
+            border-color: #e5e7eb !important;
+        }
+
+        html:not(.dark) #screenshotModal h3 {
+            color: #111827 !important;
+        }
+
+        html:not(.dark) #screenshotModal button {
+            color: #6b7280 !important;
+        }
+
+        html:not(.dark) #screenshotModal button:hover {
+            background-color: #f3f4f6 !important;
+            color: #111827 !important;
+        }
+
         html:not(.dark) #contactModal input,
         html:not(.dark) #contactModal textarea,
         html:not(.dark) #contactModal select {
