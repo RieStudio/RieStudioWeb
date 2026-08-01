@@ -1819,3 +1819,51 @@ html:not(.dark) .service-card::before,
 html:not(.dark) .spotlight-card::before {
     display: none !important;
 }
+
+/* App Action Buttons Hover Growth & Zoom Effect (APK İndir, Güvenlik Raporu, Ekran Görüntüleri) */
+.product-card button,
+.product-card a,
+.service-card button,
+.service-card a,
+a[download],
+button[onclick*="openScreenshotModal"],
+a[title="Güvenlik Raporu"] {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+.product-card button:hover,
+.product-card a:not(.pointer-events-none):hover,
+.service-card button:hover,
+.service-card a:not(.pointer-events-none):hover,
+a[download]:hover,
+button[onclick*="openScreenshotModal"]:hover,
+a[title="Güvenlik Raporu"]:hover {
+    transform: scale(1.03) !important;
+}
+
+/* Store Badges Right-Edge Anchor Fix (Prevents right-side clipping on hover) */
+.product-card a[title*="Store"],
+.product-card a[title*="AppGallery"],
+.product-card a[title*="Google Play"],
+.product-card a[title*="App Store"] {
+    transform-origin: right center !important;
+}
+
+@media (max-width: 1023px) {
+    .product-card a[title*="Store"],
+    .product-card a[title*="AppGallery"],
+    .product-card a[title*="Google Play"],
+    .product-card a[title*="App Store"] {
+        transform-origin: left center !important;
+    }
+}
+
+.product-card button:active,
+.product-card a:not(.pointer-events-none):active,
+.service-card button:active,
+.service-card a:not(.pointer-events-none):active,
+a[download]:active,
+button[onclick*="openScreenshotModal"]:active,
+a[title="Güvenlik Raporu"]:active {
+    transform: scale(0.985) !important;
+}
