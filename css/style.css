@@ -1,1629 +1,1859 @@
 /* RieStudio Shared Stylesheet */
 
 .scrollbar-none::-webkit-scrollbar {
-            display: none;
-        }
-
-        .scrollbar-none {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        html,
-        body {
-            background-color: #050505 !important;
-            background-image: none !important;
-            position: relative;
-            overflow-x: hidden;
-            overflow-y: auto;
-            width: 100%;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.04), transparent 70%) !important;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle at 0% 100%, rgba(249, 115, 22, 0.02), transparent 70%) !important;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* --- Light Mode CSS Overrides --- */
-        html:not(.dark),
-        html:not(.dark) body {
-            background-color: #f9fafb !important;
-            background-image: none !important;
-            color: #1f2937 !important;
-        }
-
-        /* --- Light Mode CSS Overrides --- */
-        /* Navbar background & border with frosted glass */
-        html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-        }
-        /* Navbar links & buttons color */
-        html:not(.dark) nav a,
-        html:not(.dark) nav button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) nav a:hover,
-        html:not(.dark) nav button:hover {
-            color: #111827 !important;
-        }
-        /* Theme Toggle specific style */
-        html:not(.dark) #themeToggleBtn {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            color: #111827 !important;
-        }
-        /* Mobile-only black icons in light mode */
-        @media (max-width: 767px) {
-            html:not(.dark) #themeToggleBtn,
-            html:not(.dark) #mobileLanguageButton,
-            html:not(.dark) #mobile-menu-button {
-                color: #000000 !important;
-            }
-        }
-
-        /* Language Dropdowns */
-        html:not(.dark) #languageDropdown,
-        html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        html:not(.dark) #languageDropdown a,
-        html:not(.dark) #mobileLanguageDropdown a {
-            color: #4b5563 !important;
-        }
-
-        html:not(.dark) #languageDropdown a:hover,
-        html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-
-        /* Mobile menu */
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-
-        html:not(.dark) #mobile-menu a,
-        html:not(.dark) #mobile-menu button {
-            color: #4b5563 !important;
-        }
-
-        html:not(.dark) #mobile-menu a:hover,
-        html:not(.dark) #mobile-menu button:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-
-        /* Heading elements color */
-        html:not(.dark) h1:not(.gradient-text),
-        html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
-            color: #111827 !important;
-        }
-
-        /* Subtext / Description color */
-        html:not(.dark) p:not(.gradient-text),
-        html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
-        html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
-            color: #4b5563 !important;
-        }
-
-        /* Cards */
-        html:not(.dark) .bg-gray-800\/30,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40,
-        html:not(.dark) .bg-\[\#0a0f1d\],
-        html:not(.dark) .bg-slate-950\/20,
-        html:not(.dark) .bg-gray-800\/50,
-        html:not(.dark) .bg-white\/5 {
-            background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-
-        /* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
-        html:not(.dark) .group:hover {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
-        }
-
-        /* Coming soon dashed border cards */
-        html:not(.dark) .border-dashed {
-            border-color: rgba(209, 213, 219, 0.8) !important;
-            background-color: rgba(249, 250, 251, 0.5) !important;
-        }
-
-        /* SVG icons & shapes that shouldn't be dark on white */
-        html:not(.dark) svg.text-gray-300,
-        html:not(.dark) svg.text-zinc-500 {
-            color: #4b5563 !important;
-        }
-
-        /* APK details / buttons styling in light mode */
-        html:not(.dark) #btn-github,
-        html:not(.dark) a[id^="btn-github"] {
-            background-color: #f3f4f6 !important;
-            border-color: #d1d5db !important;
-            color: #1f2937 !important;
-        }
-
-        html:not(.dark) #btn-github span,
-        html:not(.dark) a[id^="btn-github"] span {
-            color: #1f2937 !important;
-        }
-
-        /* Screenshots gallery icon inside cards */
-        html:not(.dark) button[onclick^="openGallery"] {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: rgba(0, 0, 0, 0.08) !important;
-            color: #374151 !important;
-        }
-
-        html:not(.dark) button[onclick^="openGallery"]:hover {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-        }
-
-        html:not(.dark) button[onclick^="openGallery"] svg {
-            color: #374151 !important;
-        }
-
-        /* Contact & Gallery Modals */
-        html:not(.dark) #contactModal>div>div,
-        html:not(.dark) #galleryModal>div>div {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        /* Products Page Light Mode Overrides */
-        html:not(.dark) .product-card {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-
-        html:not(.dark) .product-card:hover {
-            border-color: #d1d5db !important;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
-        }
-
-        html:not(.dark) .product-card h2 {
-            color: #111827 !important;
-        }
-
-        html:not(.dark) .product-card p {
-            color: #4b5563 !important;
-        }
-
-        html:not(.dark) .product-card .bg-zinc-950 {
-            background-color: #f3f4f6 !important;
-            border-color: #e5e7eb !important;
-        }
-
-        html:not(.dark) .product-card .bg-zinc-800 {
-            background-color: #f3f4f6 !important;
-            border-color: #e5e7eb !important;
-            color: #6b7280 !important;
-        }
-
-        html:not(.dark) .app-version {
-            color: #6b7280 !important;
-        }
-
-        @media (min-width: 768px) {
-            html:not(.dark) .app-version {
-                background-color: #f3f4f6 !important;
-                border-color: #e5e7eb !important;
-                color: #4b5563 !important;
-            }
-        }
-
-        /* Store Stack Divider in Light Mode */
-        html:not(.dark) .border-zinc-800\/60 {
-            border-color: #f3f4f6 !important;
-        }
-
-        /* Filter Tabs in Light Mode */
-        html:not(.dark) .tab-btn {
-            color: #6b7280 !important;
-        }
-
-        html:not(.dark) .tab-btn:hover {
-            color: #111827 !important;
-            border-color: #e5e7eb !important;
-            background-color: rgba(0, 0, 0, 0.04) !important;
-        }
-
-        html:not(.dark) .tab-btn.active-tab {
-            background-color: #ffffff !important;
-            color: #111827 !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
-        }
-
-        /* Action Buttons in Light Mode */
-        html:not(.dark) button[onclick^="openScreenshotModal"] {
-            background-color: #f3f4f6 !important;
-            border-color: #e5e7eb !important;
-            color: #1f2937 !important;
-        }
-
-        html:not(.dark) button[onclick^="openScreenshotModal"]:hover {
-            background-color: #e5e7eb !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) a[download][href*=".apk"] {
-            background-color: #65D46E !important;
-            border-color: transparent !important;
-            color: #000000 !important;
-        }
-
-        html:not(.dark) a[download][href*=".apk"] svg {
-            color: #000000 !important;
-        }
-
-        html:not(.dark) a[download][href*=".apk"]:hover {
-            background-color: #4CC45B !important;
-            color: #000000 !important;
-        }
-
-        html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"] {
-            background-color: #f3f4f6 !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-
-        html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"]:hover {
-            background-color: #e5e7eb !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) a[href*="virustotal.com"] {
-            background-color: #F8F9FA !important;
-            border-color: #D1D5DB !important;
-            color: #374151 !important;
-        }
-
-        html:not(.dark) a[href*="virustotal.com"] svg {
-            color: #3B82F6 !important;
-        }
-
-        html:not(.dark) a[href*="virustotal.com"]:hover {
-            background-color: #e5e7eb !important;
-            color: #111827 !important;
-        }
-
-        /* Web & Tools Cards in Light Mode */
-        html:not(.dark) .bg-purple-950\/50 {
-            background-color: #faf5ff !important;
-            border-color: #e9d5ff !important;
-        }
-
-        html:not(.dark) .bg-purple-950\/60 {
-            background-color: #f3e8ff !important;
-            border-color: #e9d5ff !important;
-            color: #7e22ce !important;
-        }
-
-        html:not(.dark) .bg-emerald-950\/50 {
-            background-color: #ecfdf5 !important;
-            border-color: #a7f3d0 !important;
-        }
-
-        html:not(.dark) .bg-emerald-950\/60 {
-            background-color: #d1fae5 !important;
-            border-color: #a7f3d0 !important;
-            color: #047857 !important;
-        }
-
-        html:not(.dark) #app-security-note {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
-        }
-
-        html:not(.dark) #app-security-note p {
-            color: #4b5563 !important;
-        }
-
-        /* Screenshot Lightbox Modal Light Mode */
-        html:not(.dark) #screenshotModal .bg-zinc-950 {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-        }
-
-        html:not(.dark) #screenshotModal .bg-zinc-900\/80 {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-        }
-
-        html:not(.dark) #screenshotModal h3 {
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #screenshotModal button {
-            color: #6b7280 !important;
-        }
-
-        html:not(.dark) #screenshotModal button:hover {
-            background-color: #f3f4f6 !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #contactModal input,
-        html:not(.dark) #contactModal textarea,
-        html:not(.dark) #contactModal select {
-            background-color: #f9fafb !important;
-            border-color: #d1d5db !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #contactModal input::placeholder,
-        html:not(.dark) #contactModal textarea::placeholder {
-            color: #9ca3af !important;
-        }
-
-        html:not(.dark) #contactModal label {
-            color: #374151 !important;
-        }
-
-        html:not(.dark) #heroContactBtn {
-            border-color: #111827 !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #heroContactBtn:hover {
-            background-color: rgba(17, 24, 39, 0.05) !important;
-            border-color: #000000 !important;
-            color: #000000 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"],
-        html:not(.dark) #contactModal a[href^="mailto:"] {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"] .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
-            background-color: #f3f4f6 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"] svg,
-        html:not(.dark) #contactModal a[href^="mailto:"] svg {
-            color: #1f2937 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"] span,
-        html:not(.dark) #contactModal a[href^="mailto:"] span {
-            color: #374151 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"]:hover,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover {
-            background-color: #f3f4f6 !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
-            background-color: #e5e7eb !important;
-        }
-
-        html:not(.dark) #contactModal a[target="_blank"]:hover svg,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #contactModal #modalStep3 svg {
-            color: #ffffff !important;
-        }
-
-        /* Footer styling */
-        html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
-        }
-
-        html:not(.dark) footer p,
-        html:not(.dark) footer span,
-        html:not(.dark) footer a {
-            color: #4b5563 !important;
-        }
-
-        /* Mobile menu slide-down animation */
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -10px) scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0) scale(1);
-            }
-        }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
-        }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
-        }
+    display: none;
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html,
+body {
+    background-color: #050505 !important;
+    background-image: none !important;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.04), transparent 70%) !important;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at 0% 100%, rgba(249, 115, 22, 0.02), transparent 70%) !important;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- Light Mode CSS Overrides --- */
+html:not(.dark),
+html:not(.dark) body {
+    background-color: #f9fafb !important;
+    background-image: none !important;
+    color: #1f2937 !important;
+}
+
+/* --- Light Mode CSS Overrides --- */
+/* Navbar background & border with frosted glass */
+html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(229, 231, 235, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+/* Navbar links & buttons color */
+html:not(.dark) nav a,
+html:not(.dark) nav button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) nav a:hover,
+html:not(.dark) nav button:hover {
+    color: #111827 !important;
+}
+
+/* Theme Toggle specific style */
+html:not(.dark) #themeToggleBtn {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+}
+
+/* Mobile-only black icons in light mode */
+@media (max-width: 767px) {
+
+    html:not(.dark) #themeToggleBtn,
+    html:not(.dark) #mobileLanguageButton,
+    html:not(.dark) #mobile-menu-button {
+        color: #000000 !important;
+    }
+}
+
+/* Language Dropdowns */
+html:not(.dark) #languageDropdown,
+html:not(.dark) #mobileLanguageDropdown {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #languageDropdown a,
+html:not(.dark) #mobileLanguageDropdown a {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #languageDropdown a:hover,
+html:not(.dark) #mobileLanguageDropdown a:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+    background-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile menu */
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+/* Heading elements color */
+html:not(.dark) h1:not(.gradient-text),
+html:not(.dark) h2:not(.gradient-text),
+html:not(.dark) h3:not(.gradient-text),
+html:not(.dark) .text-white,
+html:not(.dark) .text-zinc-100 {
+    color: #111827 !important;
+}
+
+/* Subtext / Description color */
+html:not(.dark) p:not(.gradient-text),
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500 {
+    color: #4b5563 !important;
+}
+
+/* Cards */
+html:not(.dark) .bg-gray-800\/30,
+html:not(.dark) .bg-zinc-900\/40,
+html:not(.dark) .bg-zinc-950\/40,
+html:not(.dark) .bg-gray-900\/40,
+html:not(.dark) .bg-\[\#0a0f1d\],
+html:not(.dark) .bg-slate-950\/20,
+html:not(.dark) .bg-gray-800\/50,
+html:not(.dark) .bg-white\/5 {
+    background-color: #ffffff !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
+html:not(.dark) .group:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Coming soon dashed border cards */
+html:not(.dark) .border-dashed {
+    border-color: rgba(209, 213, 219, 0.8) !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+}
+
+/* SVG icons & shapes that shouldn't be dark on white */
+html:not(.dark) svg.text-gray-300,
+html:not(.dark) svg.text-zinc-500 {
+    color: #4b5563 !important;
+}
+
+/* APK details / buttons styling in light mode */
+html:not(.dark) #btn-github,
+html:not(.dark) a[id^="btn-github"] {
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #btn-github span,
+html:not(.dark) a[id^="btn-github"] span {
+    color: #1f2937 !important;
+}
+
+/* Screenshots gallery icon inside cards */
+html:not(.dark) button[onclick^="openGallery"] {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"]:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"] svg {
+    color: #374151 !important;
+}
+
+/* Contact & Gallery Modals */
+html:not(.dark) #contactModal>div>div,
+html:not(.dark) #galleryModal>div>div {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Products Page Light Mode Overrides */
+html:not(.dark) .product-card {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .product-card:hover {
+    border-color: #d1d5db !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .product-card h2 {
+    color: #111827 !important;
+}
+
+html:not(.dark) .product-card p {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) .product-card .bg-zinc-950 {
+    background-color: #f3f4f6 !important;
+    border-color: #e5e7eb !important;
+}
+
+html:not(.dark) .product-card .bg-zinc-800 {
+    background-color: #f3f4f6 !important;
+    border-color: #e5e7eb !important;
+    color: #6b7280 !important;
+}
+
+html:not(.dark) .app-version {
+    color: #6b7280 !important;
+}
+
+@media (min-width: 768px) {
+    html:not(.dark) .app-version {
+        background-color: #f3f4f6 !important;
+        border-color: #e5e7eb !important;
+        color: #4b5563 !important;
+    }
+}
+
+/* Store Stack Divider in Light Mode */
+html:not(.dark) .border-zinc-800\/60 {
+    border-color: #f3f4f6 !important;
+}
+
+/* Filter Tabs in Light Mode */
+html:not(.dark) .tab-btn {
+    color: #6b7280 !important;
+}
+
+html:not(.dark) .tab-btn:hover {
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .tab-btn.active-tab {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Action Buttons in Light Mode */
+html:not(.dark) button[onclick^="openScreenshotModal"] {
+    background-color: #f3f4f6 !important;
+    border-color: #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+html:not(.dark) button[onclick^="openScreenshotModal"]:hover {
+    background-color: #e5e7eb !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) a[download][href*=".apk"] {
+    background-color: #65D46E !important;
+    border-color: transparent !important;
+    color: #000000 !important;
+}
+
+html:not(.dark) a[download][href*=".apk"] svg {
+    color: #000000 !important;
+}
+
+html:not(.dark) a[download][href*=".apk"]:hover {
+    background-color: #4CC45B !important;
+    color: #000000 !important;
+}
+
+html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"] {
+    background-color: #f3f4f6 !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"]:hover {
+    background-color: #e5e7eb !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) a[href*="virustotal.com"] {
+    background-color: #F8F9FA !important;
+    border-color: #D1D5DB !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) a[href*="virustotal.com"] svg {
+    color: #3B82F6 !important;
+}
+
+html:not(.dark) a[href*="virustotal.com"]:hover {
+    background-color: #e5e7eb !important;
+    color: #111827 !important;
+}
+
+/* Web & Tools Cards in Light Mode */
+html:not(.dark) .bg-purple-950\/50 {
+    background-color: #faf5ff !important;
+    border-color: #e9d5ff !important;
+}
+
+html:not(.dark) .bg-purple-950\/60 {
+    background-color: #f3e8ff !important;
+    border-color: #e9d5ff !important;
+    color: #7e22ce !important;
+}
+
+html:not(.dark) .bg-emerald-950\/50 {
+    background-color: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+}
+
+html:not(.dark) .bg-emerald-950\/60 {
+    background-color: #d1fae5 !important;
+    border-color: #a7f3d0 !important;
+    color: #047857 !important;
+}
+
+html:not(.dark) #app-security-note {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) #app-security-note p {
+    color: #4b5563 !important;
+}
+
+/* Screenshot Lightbox Modal Light Mode */
+html:not(.dark) #screenshotModal .bg-zinc-950 {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+html:not(.dark) #screenshotModal .bg-zinc-900\/80 {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+}
+
+html:not(.dark) #screenshotModal h3 {
+    color: #111827 !important;
+}
+
+html:not(.dark) #screenshotModal button {
+    color: #6b7280 !important;
+}
+
+html:not(.dark) #screenshotModal button:hover {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input,
+html:not(.dark) #contactModal textarea,
+html:not(.dark) #contactModal select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input::placeholder,
+html:not(.dark) #contactModal textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+html:not(.dark) #contactModal label {
+    color: #374151 !important;
+}
+
+html:not(.dark) #heroContactBtn {
+    border-color: #111827 !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #heroContactBtn:hover {
+    background-color: rgba(17, 24, 39, 0.05) !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"],
+html:not(.dark) #contactModal a[href^="mailto:"] {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] svg,
+html:not(.dark) #contactModal a[href^="mailto:"] svg {
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] span,
+html:not(.dark) #contactModal a[href^="mailto:"] span {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
+    background-color: #e5e7eb !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover svg,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal #modalStep3 svg {
+    color: #ffffff !important;
+}
+
+/* Footer styling */
+html:not(.dark) footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(229, 231, 235, 0.7) !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+html:not(.dark) footer a {
+    color: #4b5563 !important;
+}
+
+/* Mobile menu slide-down animation */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.hover-thick {
+    transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.hover-thick:hover {
+    text-shadow: 0.03em 0 0 currentColor;
+}
 
 @layer utilities {
-            .font-caveat {
-                font-family: 'Caveat', cursive;
-            }
-            .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
-            }
-            .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            html:not(.dark) .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
-            }
-            html:not(.dark) .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
-            }
-            .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
-            }
-        }
+    .font-caveat {
+        font-family: 'Caveat', cursive;
+    }
+
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+    }
+
+    .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    html:not(.dark) .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
+    }
+
+    html:not(.dark) .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
+    }
+
+    .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
+    }
+}
 
 /* Smooth transitions for all interactive elements */
-        a,
-        button {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+a,
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        /* Card hover effect */
-        .hover-scale {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+/* Card hover effect */
+.hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .hover-scale:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-@layer utilities {
-            .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
-            }
-            .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
-            }
-            html:not(.dark) .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
-            }
-            .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            html:not(.dark) .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
-            }
-            html:not(.dark) .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
-            }
-            .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
-            }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
-            }
-        }
-        html.dark,
-        html.dark body {
-            background-color: #050505 !important;
-        }
-        html:not(.dark),
-        html:not(.dark) body {
-            background-color: #f9fafb !important;
-            color: #1f2937 !important;
-        }
-        
-        /* --- Light Mode CSS Overrides --- */
-        /* Navbar background & border with frosted glass */
-        html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-        }
-        /* Navbar links & buttons color */
-        html:not(.dark) nav a,
-        html:not(.dark) nav button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) nav a:hover,
-        html:not(.dark) nav button:hover {
-            color: #111827 !important;
-        }
-        /* Theme Toggle specific style */
-        html:not(.dark) #themeToggleBtn {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            color: #111827 !important;
-        }
-        /* Mobile-only black icons in light mode */
-        @media (max-width: 767px) {
-            html:not(.dark) #themeToggleBtn,
-            html:not(.dark) #mobileLanguageButton,
-            html:not(.dark) #mobile-menu-button {
-                color: #000000 !important;
-            }
-        }
-
-        /* Language Dropdowns */
-        html:not(.dark) #languageDropdown,
-        html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
-        }
-        html:not(.dark) #languageDropdown a,
-        html:not(.dark) #mobileLanguageDropdown a {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #languageDropdown a:hover,
-        html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-
-        /* Mobile menu */
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-        html:not(.dark) #mobile-menu a,
-        html:not(.dark) #mobile-menu button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #mobile-menu a:hover,
-        html:not(.dark) #mobile-menu button:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-        /* Heading elements color */
-        html:not(.dark) h1:not(.gradient-text),
-        html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
-            color: #111827 !important;
-        }
-        /* Subtext / Description color */
-        html:not(.dark) p:not(.gradient-text),
-        html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
-        html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
-            color: #4b5563 !important;
-        }
-        /* Cards */
-        html:not(.dark) .bg-gray-800\/30,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40,
-        html:not(.dark) .bg-\[\#0a0f1d\],
-        html:not(.dark) .bg-slate-950\/20,
-        html:not(.dark) .bg-gray-800\/50,
-        html:not(.dark) .bg-white\/5 {
-            background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-        /* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
-        html:not(.dark) .group:hover {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
-        }
-        /* Coming soon dashed border cards */
-        html:not(.dark) .border-dashed {
-            border-color: rgba(209, 213, 219, 0.8) !important;
-            background-color: rgba(249, 250, 251, 0.5) !important;
-        }
-        /* SVG icons & shapes that shouldn't be dark on white */
-        html:not(.dark) svg.text-gray-300,
-        html:not(.dark) svg.text-zinc-500 {
-            color: #4b5563 !important;
-        }
-        /* APK details / buttons styling in light mode */
-        html:not(.dark) #btn-github,
-        html:not(.dark) a[id^="btn-github"] {
-            background-color: #f3f4f6 !important;
-            border-color: #d1d5db !important;
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #btn-github span,
-        html:not(.dark) a[id^="btn-github"] span {
-            color: #1f2937 !important;
-        }
-        /* Screenshots gallery icon inside cards */
-        html:not(.dark) button[onclick^="openGallery"] {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: rgba(0, 0, 0, 0.08) !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"]:hover {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"] svg {
-            color: #374151 !important;
-        }
-        /* Contact & Gallery Modals */
-        html:not(.dark) #contactModal > div > div,
-        html:not(.dark) #galleryModal > div > div {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
-        }
-        /* Gallery Modal - Light Mode */
-        html:not(.dark) #galleryModal #galleryOverlay {
-            background-color: rgba(0, 0, 0, 0.4) !important;
-            backdrop-filter: blur(8px) !important;
-        }
-        html:not(.dark) #galleryModal #galleryTitle {
-            color: #111827 !important;
-        }
-        html:not(.dark) #galleryModal button[onclick="closeGallery()"] {
-            color: #6b7280 !important;
-        }
-        html:not(.dark) #galleryModal button[onclick="closeGallery()"]:hover {
-            color: #111827 !important;
-            background-color: rgba(0, 0, 0, 0.05) !important;
-        }
-        html:not(.dark) #galleryModal .relative.w-full {
-            background-color: #ffffff !important;
-            border-radius: 1rem !important;
-            padding: 1.5rem !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
-        }
-        html:not(.dark) #galleryModal #galleryContainer {
-            background-color: #f9fafb !important;
-            border-radius: 0.75rem !important;
-            padding: 1rem !important;
-        }
-        html:not(.dark) #galleryModal #galleryContainer img {
-            border: 1px solid #e5e7eb !important;
-            border-radius: 0.75rem !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
-        }
-        html:not(.dark) #contactModal input,
-        html:not(.dark) #contactModal textarea,
-        html:not(.dark) #contactModal select {
-            background-color: #f9fafb !important;
-            border-color: #d1d5db !important;
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal input::placeholder,
-        html:not(.dark) #contactModal textarea::placeholder {
-            color: #9ca3af !important;
-        }
-        html:not(.dark) #contactModal label {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"],
-        html:not(.dark) #contactModal a[href^="mailto:"] {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] svg,
-        html:not(.dark) #contactModal a[href^="mailto:"] svg {
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] span,
-        html:not(.dark) #contactModal a[href^="mailto:"] span {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
-            background-color: #e5e7eb !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover svg,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal #modalStep3 svg {
-            color: #ffffff !important;
-        }
-        /* Footer styling */
-        html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
-        }
-        html:not(.dark) footer p,
-        html:not(.dark) footer span,
-        html:not(.dark) footer a {
-            color: #4b5563 !important;
-        }
-        /* Mobile menu slide-down animation */
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -10px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0) scale(1);
-            }
-        }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
-        }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
-        }
+.hover-scale:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 
 @layer utilities {
-            .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
-            }
-            .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
-            }
-            html:not(.dark) .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
-            }
-            .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            html:not(.dark) .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
-            }
-            html:not(.dark) .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
-            }
-            .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
-            }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
-            }
-        }
-        html.dark,
-        html.dark body {
-            background-color: #050505 !important;
-        }
-        html:not(.dark),
-        html:not(.dark) body {
-            background-color: #f9fafb !important;
-            color: #1f2937 !important;
-        }
-        
-        /* --- Light Mode CSS Overrides --- */
-        /* Navbar background & border with frosted glass */
-        html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-        }
-        /* Navbar links & buttons color */
-        html:not(.dark) nav a,
-        html:not(.dark) nav button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) nav a:hover,
-        html:not(.dark) nav button:hover {
-            color: #111827 !important;
-        }
-        /* Theme Toggle specific style */
-        html:not(.dark) #themeToggleBtn {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            color: #111827 !important;
-        }
-        /* Mobile-only black icons in light mode */
-        @media (max-width: 767px) {
-            html:not(.dark) #themeToggleBtn,
-            html:not(.dark) #mobileLanguageButton,
-            html:not(.dark) #mobile-menu-button {
-                color: #000000 !important;
-            }
-        }
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
 
-        /* Language Dropdowns */
-        html:not(.dark) #languageDropdown,
-        html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
-        }
-        html:not(.dark) #languageDropdown a,
-        html:not(.dark) #mobileLanguageDropdown a {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #languageDropdown a:hover,
-        html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
+    html:not(.dark) .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+    }
 
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-        /* Mobile menu */
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-        html:not(.dark) #mobile-menu a,
-        html:not(.dark) #mobile-menu button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #mobile-menu a:hover,
-        html:not(.dark) #mobile-menu button:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-        /* Heading elements color */
-        html:not(.dark) h1:not(.gradient-text),
-        html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
-            color: #111827 !important;
-        }
-        /* Subtext / Description color */
-        html:not(.dark) p:not(.gradient-text),
-        html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
-        html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
-            color: #4b5563 !important;
-        }
-        /* Cards */
-        html:not(.dark) .bg-gray-800\/30,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40,
-        html:not(.dark) .bg-\[\#0a0f1d\],
-        html:not(.dark) .bg-slate-950\/20,
-        html:not(.dark) .bg-gray-800\/50,
-        html:not(.dark) .bg-white\/5 {
-            background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-        /* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
-        html:not(.dark) .group:hover {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
-        }
-        /* Coming soon dashed border cards */
-        html:not(.dark) .border-dashed {
-            border-color: rgba(209, 213, 219, 0.8) !important;
-            background-color: rgba(249, 250, 251, 0.5) !important;
-        }
-        /* SVG icons & shapes that shouldn't be dark on white */
-        html:not(.dark) svg.text-gray-300,
-        html:not(.dark) svg.text-zinc-500 {
-            color: #4b5563 !important;
-        }
-        /* APK details / buttons styling in light mode */
-        html:not(.dark) #btn-github,
-        html:not(.dark) a[id^="btn-github"] {
-            background-color: #f3f4f6 !important;
-            border-color: #d1d5db !important;
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #btn-github span,
-        html:not(.dark) a[id^="btn-github"] span {
-            color: #1f2937 !important;
-        }
-        /* Screenshots gallery icon inside cards */
-        html:not(.dark) button[onclick^="openGallery"] {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: rgba(0, 0, 0, 0.08) !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"]:hover {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"] svg {
-            color: #374151 !important;
-        }
-        /* Contact & Gallery Modals */
-        html:not(.dark) #contactModal > div > div,
-        html:not(.dark) #galleryModal > div > div {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) #contactModal input,
-        html:not(.dark) #contactModal textarea,
-        html:not(.dark) #contactModal select {
-            background-color: #f9fafb !important;
-            border-color: #d1d5db !important;
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal input::placeholder,
-        html:not(.dark) #contactModal textarea::placeholder {
-            color: #9ca3af !important;
-        }
-        html:not(.dark) #contactModal label {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"],
-        html:not(.dark) #contactModal a[href^="mailto:"] {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] svg,
-        html:not(.dark) #contactModal a[href^="mailto:"] svg {
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] span,
-        html:not(.dark) #contactModal a[href^="mailto:"] span {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
-            background-color: #e5e7eb !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover svg,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal #modalStep3 svg {
-            color: #ffffff !important;
-        }
-        /* Footer styling */
-        html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
-        }
-        html:not(.dark) footer p,
-        html:not(.dark) footer span,
-        html:not(.dark) footer a {
-            color: #4b5563 !important;
-        }
-        /* Mobile menu slide-down animation */
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -10px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0) scale(1);
-            }
-        }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
-        }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
-        }
+    .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
+    }
 
-@layer utilities {
-            .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
-            }
-            .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
-            }
-            html:not(.dark) .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
-            }
-            .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            html:not(.dark) .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
-            }
-            html:not(.dark) .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
-            }
-            .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
-            }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
-            }
-        }
-        html,
-        body {
-            position: relative;
-            overflow-x: hidden;
-            overflow-y: auto;
-            width: 100%;
-        }
-        html.dark,
-        html.dark body {
-            background-color: #050505 !important;
-        }
-        html:not(.dark),
-        html:not(.dark) body {
-            background-color: #f9fafb !important;
-            color: #1f2937 !important;
-        }
-        
-        /* Navbar background & border with frosted glass */
-        html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-        }
-        /* Navbar links & buttons color */
-        html:not(.dark) nav a,
-        html:not(.dark) nav button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) nav a:hover,
-        html:not(.dark) nav button:hover {
-            color: #111827 !important;
-        }
-        /* Theme Toggle specific style */
-        html:not(.dark) #themeToggleBtn {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            color: #111827 !important;
-        }
-        
-        /* Language Dropdowns */
-        html:not(.dark) #languageDropdown,
-        html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
-        }
-        html:not(.dark) #languageDropdown a,
-        html:not(.dark) #mobileLanguageDropdown a {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #languageDropdown a:hover,
-        html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
+    html:not(.dark) .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
+    }
 
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-        /* Mobile menu */
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-        html:not(.dark) #mobile-menu a,
-        html:not(.dark) #mobile-menu button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #mobile-menu a:hover,
-        html:not(.dark) #mobile-menu button:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-        /* Heading elements color */
-        html:not(.dark) h1:not(.gradient-text),
-        html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
-            color: #111827 !important;
-        }
-        /* Subtext / Description color */
-        html:not(.dark) p:not(.gradient-text),
-        html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
-        html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
-            color: #4b5563 !important;
-        }
-        /* Cards */
-        html:not(.dark) .bg-gray-800\/50,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40,
-        html:not(.dark) .bg-\[\#0a0f1d\],
-        html:not(.dark) .bg-slate-950\/20,
-        html:not(.dark) .bg-white\/5 {
-            background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-        /* Coming soon dashed border cards */
-        html:not(.dark) .border-dashed {
-            border-color: rgba(209, 213, 219, 0.8) !important;
-            background-color: rgba(249, 250, 251, 0.5) !important;
-        }
-        /* SVG icons & shapes that shouldn't be dark on white */
-        html:not(.dark) svg.text-gray-300,
-        html:not(.dark) svg.text-zinc-500 {
-            color: #4b5563 !important;
-        }
-        /* Contact & Gallery Modals */
-        html:not(.dark) #contactModal > div > div {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) #contactModal input,
-        html:not(.dark) #contactModal textarea,
-        html:not(.dark) #contactModal select {
-            background-color: #f9fafb !important;
-            border-color: #d1d5db !important;
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal input::placeholder,
-        html:not(.dark) #contactModal textarea::placeholder {
-            color: #9ca3af !important;
-        }
-        html:not(.dark) #contactModal label {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"],
-        html:not(.dark) #contactModal a[href^="mailto:"] {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] svg,
-        html:not(.dark) #contactModal a[href^="mailto:"] svg {
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] span,
-        html:not(.dark) #contactModal a[href^="mailto:"] span {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
-            background-color: #e5e7eb !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover svg,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal #modalStep3 svg {
-            color: #ffffff !important;
-        }
-        /* Footer styling */
-        html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
-        }
-        html:not(.dark) footer p,
-        html:not(.dark) footer span,
-        html:not(.dark) footer a {
-            color: #4b5563 !important;
-        }
-        /* Mobile menu slide-down animation */
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -10px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0) scale(1);
-            }
-        }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
-        }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
-        }
+    .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    html:not(.dark) .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
+    }
+
+    html:not(.dark) .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
+    }
+
+    .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
+    }
+}
 
 html.dark,
-        html.dark body {
-            background-color: #050505 !important;
-        }
-        html:not(.dark),
-        html:not(.dark) body {
-            background-color: #f9fafb !important;
-            color: #1f2937 !important;
-        }
+html.dark body {
+    background-color: #050505 !important;
+}
 
-        /* --- Light Mode CSS Overrides --- */
-        /* Navbar background & border with frosted glass */
-        html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-        }
-        /* Navbar links & buttons color */
-        html:not(.dark) nav a,
-        html:not(.dark) nav button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) nav a:hover,
-        html:not(.dark) nav button:hover {
-            color: #111827 !important;
-        }
-        /* Theme Toggle specific style */
-        html:not(.dark) #themeToggleBtn {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            color: #111827 !important;
-        }
-        /* Mobile-only black icons in light mode */
-        @media (max-width: 767px) {
-            html:not(.dark) #themeToggleBtn,
-            html:not(.dark) #mobileLanguageButton,
-            html:not(.dark) #mobile-menu-button {
-                color: #000000 !important;
-            }
-        }
+html:not(.dark),
+html:not(.dark) body {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+}
 
-        /* Language Dropdowns */
-        html:not(.dark) #languageDropdown,
-        html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
-        }
-        html:not(.dark) #languageDropdown a,
-        html:not(.dark) #mobileLanguageDropdown a {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #languageDropdown a:hover,
-        html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
+/* --- Light Mode CSS Overrides --- */
+/* Navbar background & border with frosted glass */
+html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(229, 231, 235, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
 
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-        /* Mobile menu */
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-        html:not(.dark) #mobile-menu a,
-        html:not(.dark) #mobile-menu button {
-            color: #4b5563 !important;
-        }
-        html:not(.dark) #mobile-menu a:hover,
-        html:not(.dark) #mobile-menu button:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
-            color: #111827 !important;
-        }
-        /* Heading elements color */
-        html:not(.dark) h1:not(.gradient-text),
-        html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
-            color: #111827 !important;
-        }
-        /* Subtext / Description color */
-        html:not(.dark) p:not(.gradient-text),
-        html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
-        html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
-            color: #4b5563 !important;
-        }
-        /* Cards */
-        html:not(.dark) .bg-gray-800\/30,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40,
-        html:not(.dark) .bg-\[\#0a0f1d\],
-        html:not(.dark) .bg-slate-950\/20,
-        html:not(.dark) .bg-gray-800\/50,
-        html:not(.dark) .bg-white\/5 {
-            background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
-        }
-        /* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
-        html:not(.dark) .group:hover {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
-        }
-        /* Coming soon dashed border cards */
-        html:not(.dark) .border-dashed {
-            border-color: rgba(209, 213, 219, 0.8) !important;
-            background-color: rgba(249, 250, 251, 0.5) !important;
-        }
-        /* SVG icons & shapes that shouldn't be dark on white */
-        html:not(.dark) svg.text-gray-300,
-        html:not(.dark) svg.text-zinc-500 {
-            color: #4b5563 !important;
-        }
-        /* Project card tag badges readability in light mode */
-        html:not(.dark) .bg-slate-950\/40 {
-            background-color: #f3f4f6 !important;
-            border-color: #e5e7eb !important;
-            color: #4b5563 !important;
-        }
-        html:not(.dark) .group:hover .bg-slate-950\/40 {
-            border-color: rgba(249, 115, 22, 0.25) !important;
-            color: #111827 !important;
-        }
-        /* APK details / buttons styling in light mode */
-        html:not(.dark) #btn-github,
-        html:not(.dark) a[id^="btn-github"] {
-            background-color: #f3f4f6 !important;
-            border-color: #d1d5db !important;
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #btn-github span,
-        html:not(.dark) a[id^="btn-github"] span {
-            color: #1f2937 !important;
-        }
-        /* Screenshots gallery icon inside cards */
-        html:not(.dark) button[onclick^="openGallery"] {
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: rgba(0, 0, 0, 0.08) !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"]:hover {
-            background-color: rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) button[onclick^="openGallery"] svg {
-            color: #374151 !important;
-        }
-        /* Contact & Gallery Modals */
-        html:not(.dark) #contactModal > div > div,
-        html:not(.dark) #galleryModal > div > div {
-            background-color: #ffffff !important;
-            border-color: #e5e7eb !important;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
-        }
-        html:not(.dark) #contactModal input,
-        html:not(.dark) #contactModal textarea,
-        html:not(.dark) #contactModal select {
-            background-color: #f9fafb !important;
-            border-color: #d1d5db !important;
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal input::placeholder,
-        html:not(.dark) #contactModal textarea::placeholder {
-            color: #9ca3af !important;
-        }
-        html:not(.dark) #contactModal label {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"],
-        html:not(.dark) #contactModal a[href^="mailto:"] {
-            background-color: #f9fafb !important;
-            border-color: #e5e7eb !important;
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] svg,
-        html:not(.dark) #contactModal a[href^="mailto:"] svg {
-            color: #1f2937 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"] span,
-        html:not(.dark) #contactModal a[href^="mailto:"] span {
-            color: #374151 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover {
-            background-color: #f3f4f6 !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
-            background-color: #e5e7eb !important;
-        }
-        html:not(.dark) #contactModal a[target="_blank"]:hover svg,
-        html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
-            color: #111827 !important;
-        }
-        html:not(.dark) #contactModal #modalStep3 svg {
-            color: #ffffff !important;
-        }
-        /* Footer styling */
-        html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
-        }
-        html:not(.dark) footer p,
-        html:not(.dark) footer span,
-        html:not(.dark) footer a {
-            color: #4b5563 !important;
-        }
-        /* Mobile menu slide-down animation */
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -10px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0) scale(1);
-            }
-        }
+/* Navbar links & buttons color */
+html:not(.dark) nav a,
+html:not(.dark) nav button {
+    color: #4b5563 !important;
+}
 
-        @layer utilities {
-            .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .gradient-text {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
-            }
-            .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
-            }
-            html:not(.dark) .gradient-bg {
-                @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
-            }
-            .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            html:not(.dark) .btn-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
-            }
-            .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
-            }
-            html:not(.dark) .box-gradient-hover {
-                @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
-            }
-            .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
-            }
-            html:not(.dark) .glow-gradient {
-                @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
-            }
-            .gradient-text-hover {
-                @apply group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:via-[#8a004b] group-hover:to-red-600;
-            }
-            html:not(.dark) .gradient-text-hover {
-                @apply group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-rose-500 group-hover:to-red-600;
-            }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-red-500/10;
-            }
-        }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
-        }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
-        }
+html:not(.dark) nav a:hover,
+html:not(.dark) nav button:hover {
+    color: #111827 !important;
+}
+
+/* Theme Toggle specific style */
+html:not(.dark) #themeToggleBtn {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+}
+
+/* Mobile-only black icons in light mode */
+@media (max-width: 767px) {
+
+    html:not(.dark) #themeToggleBtn,
+    html:not(.dark) #mobileLanguageButton,
+    html:not(.dark) #mobile-menu-button {
+        color: #000000 !important;
+    }
+}
+
+/* Language Dropdowns */
+html:not(.dark) #languageDropdown,
+html:not(.dark) #mobileLanguageDropdown {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #languageDropdown a,
+html:not(.dark) #mobileLanguageDropdown a {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #languageDropdown a:hover,
+html:not(.dark) #mobileLanguageDropdown a:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+    background-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile menu */
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+/* Heading elements color */
+html:not(.dark) h1:not(.gradient-text),
+html:not(.dark) h2:not(.gradient-text),
+html:not(.dark) h3:not(.gradient-text),
+html:not(.dark) .text-white,
+html:not(.dark) .text-zinc-100 {
+    color: #111827 !important;
+}
+
+/* Subtext / Description color */
+html:not(.dark) p:not(.gradient-text),
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500 {
+    color: #4b5563 !important;
+}
+
+/* Cards */
+html:not(.dark) .bg-gray-800\/30,
+html:not(.dark) .bg-zinc-900\/40,
+html:not(.dark) .bg-zinc-950\/40,
+html:not(.dark) .bg-gray-900\/40,
+html:not(.dark) .bg-\[\#0a0f1d\],
+html:not(.dark) .bg-slate-950\/20,
+html:not(.dark) .bg-gray-800\/50,
+html:not(.dark) .bg-white\/5 {
+    background-color: #ffffff !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
+html:not(.dark) .group:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Coming soon dashed border cards */
+html:not(.dark) .border-dashed {
+    border-color: rgba(209, 213, 219, 0.8) !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+}
+
+/* SVG icons & shapes that shouldn't be dark on white */
+html:not(.dark) svg.text-gray-300,
+html:not(.dark) svg.text-zinc-500 {
+    color: #4b5563 !important;
+}
+
+/* APK details / buttons styling in light mode */
+html:not(.dark) #btn-github,
+html:not(.dark) a[id^="btn-github"] {
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #btn-github span,
+html:not(.dark) a[id^="btn-github"] span {
+    color: #1f2937 !important;
+}
+
+/* Screenshots gallery icon inside cards */
+html:not(.dark) button[onclick^="openGallery"] {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"]:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"] svg {
+    color: #374151 !important;
+}
+
+/* Contact & Gallery Modals */
+html:not(.dark) #contactModal>div>div,
+html:not(.dark) #galleryModal>div>div {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Gallery Modal - Light Mode */
+html:not(.dark) #galleryModal #galleryOverlay {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+html:not(.dark) #galleryModal #galleryTitle {
+    color: #111827 !important;
+}
+
+html:not(.dark) #galleryModal button[onclick="closeGallery()"] {
+    color: #6b7280 !important;
+}
+
+html:not(.dark) #galleryModal button[onclick="closeGallery()"]:hover {
+    color: #111827 !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #galleryModal .relative.w-full {
+    background-color: #ffffff !important;
+    border-radius: 1rem !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark) #galleryModal #galleryContainer {
+    background-color: #f9fafb !important;
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
+}
+
+html:not(.dark) #galleryModal #galleryContainer img {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) #contactModal input,
+html:not(.dark) #contactModal textarea,
+html:not(.dark) #contactModal select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input::placeholder,
+html:not(.dark) #contactModal textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+html:not(.dark) #contactModal label {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"],
+html:not(.dark) #contactModal a[href^="mailto:"] {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] svg,
+html:not(.dark) #contactModal a[href^="mailto:"] svg {
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] span,
+html:not(.dark) #contactModal a[href^="mailto:"] span {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
+    background-color: #e5e7eb !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover svg,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal #modalStep3 svg {
+    color: #ffffff !important;
+}
+
+/* Footer styling */
+html:not(.dark) footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(229, 231, 235, 0.7) !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+html:not(.dark) footer a {
+    color: #4b5563 !important;
+}
+
+/* Mobile menu slide-down animation */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.hover-thick {
+    transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.hover-thick:hover {
+    text-shadow: 0.03em 0 0 currentColor;
+}
+
+@layer utilities {
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+    }
+
+    .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
+    }
+
+    html:not(.dark) .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
+    }
+
+    .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    html:not(.dark) .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
+    }
+
+    html:not(.dark) .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
+    }
+
+    .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
+    }
+}
+
+html.dark,
+html.dark body {
+    background-color: #050505 !important;
+}
+
+html:not(.dark),
+html:not(.dark) body {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+}
+
+/* --- Light Mode CSS Overrides --- */
+/* Navbar background & border with frosted glass */
+html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(229, 231, 235, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+/* Navbar links & buttons color */
+html:not(.dark) nav a,
+html:not(.dark) nav button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) nav a:hover,
+html:not(.dark) nav button:hover {
+    color: #111827 !important;
+}
+
+/* Theme Toggle specific style */
+html:not(.dark) #themeToggleBtn {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+}
+
+/* Mobile-only black icons in light mode */
+@media (max-width: 767px) {
+
+    html:not(.dark) #themeToggleBtn,
+    html:not(.dark) #mobileLanguageButton,
+    html:not(.dark) #mobile-menu-button {
+        color: #000000 !important;
+    }
+}
+
+/* Language Dropdowns */
+html:not(.dark) #languageDropdown,
+html:not(.dark) #mobileLanguageDropdown {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #languageDropdown a,
+html:not(.dark) #mobileLanguageDropdown a {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #languageDropdown a:hover,
+html:not(.dark) #mobileLanguageDropdown a:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+    background-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile menu */
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+/* Heading elements color */
+html:not(.dark) h1:not(.gradient-text),
+html:not(.dark) h2:not(.gradient-text),
+html:not(.dark) h3:not(.gradient-text),
+html:not(.dark) .text-white,
+html:not(.dark) .text-zinc-100 {
+    color: #111827 !important;
+}
+
+/* Subtext / Description color */
+html:not(.dark) p:not(.gradient-text),
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500 {
+    color: #4b5563 !important;
+}
+
+/* Cards */
+html:not(.dark) .bg-gray-800\/30,
+html:not(.dark) .bg-zinc-900\/40,
+html:not(.dark) .bg-zinc-950\/40,
+html:not(.dark) .bg-gray-900\/40,
+html:not(.dark) .bg-\[\#0a0f1d\],
+html:not(.dark) .bg-slate-950\/20,
+html:not(.dark) .bg-gray-800\/50,
+html:not(.dark) .bg-white\/5 {
+    background-color: #ffffff !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
+html:not(.dark) .group:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Coming soon dashed border cards */
+html:not(.dark) .border-dashed {
+    border-color: rgba(209, 213, 219, 0.8) !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+}
+
+/* SVG icons & shapes that shouldn't be dark on white */
+html:not(.dark) svg.text-gray-300,
+html:not(.dark) svg.text-zinc-500 {
+    color: #4b5563 !important;
+}
+
+/* APK details / buttons styling in light mode */
+html:not(.dark) #btn-github,
+html:not(.dark) a[id^="btn-github"] {
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #btn-github span,
+html:not(.dark) a[id^="btn-github"] span {
+    color: #1f2937 !important;
+}
+
+/* Screenshots gallery icon inside cards */
+html:not(.dark) button[onclick^="openGallery"] {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"]:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"] svg {
+    color: #374151 !important;
+}
+
+/* Contact & Gallery Modals */
+html:not(.dark) #contactModal>div>div,
+html:not(.dark) #galleryModal>div>div {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #contactModal input,
+html:not(.dark) #contactModal textarea,
+html:not(.dark) #contactModal select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input::placeholder,
+html:not(.dark) #contactModal textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+html:not(.dark) #contactModal label {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"],
+html:not(.dark) #contactModal a[href^="mailto:"] {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] svg,
+html:not(.dark) #contactModal a[href^="mailto:"] svg {
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] span,
+html:not(.dark) #contactModal a[href^="mailto:"] span {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
+    background-color: #e5e7eb !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover svg,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal #modalStep3 svg {
+    color: #ffffff !important;
+}
+
+/* Footer styling */
+html:not(.dark) footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(229, 231, 235, 0.7) !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+html:not(.dark) footer a {
+    color: #4b5563 !important;
+}
+
+/* Mobile menu slide-down animation */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.hover-thick {
+    transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.hover-thick:hover {
+    text-shadow: 0.03em 0 0 currentColor;
+}
+
+@layer utilities {
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+    }
+
+    .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
+    }
+
+    html:not(.dark) .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
+    }
+
+    .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    html:not(.dark) .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
+    }
+
+    html:not(.dark) .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
+    }
+
+    .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10;
+    }
+}
+
+html,
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+html.dark,
+html.dark body {
+    background-color: #050505 !important;
+}
+
+html:not(.dark),
+html:not(.dark) body {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+}
+
+/* Navbar background & border with frosted glass */
+html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(229, 231, 235, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+/* Navbar links & buttons color */
+html:not(.dark) nav a,
+html:not(.dark) nav button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) nav a:hover,
+html:not(.dark) nav button:hover {
+    color: #111827 !important;
+}
+
+/* Theme Toggle specific style */
+html:not(.dark) #themeToggleBtn {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+}
+
+/* Language Dropdowns */
+html:not(.dark) #languageDropdown,
+html:not(.dark) #mobileLanguageDropdown {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #languageDropdown a,
+html:not(.dark) #mobileLanguageDropdown a {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #languageDropdown a:hover,
+html:not(.dark) #mobileLanguageDropdown a:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+    background-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile menu */
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+/* Heading elements color */
+html:not(.dark) h1:not(.gradient-text),
+html:not(.dark) h2:not(.gradient-text),
+html:not(.dark) h3:not(.gradient-text),
+html:not(.dark) .text-white,
+html:not(.dark) .text-zinc-100 {
+    color: #111827 !important;
+}
+
+/* Subtext / Description color */
+html:not(.dark) p:not(.gradient-text),
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500 {
+    color: #4b5563 !important;
+}
+
+/* Cards */
+html:not(.dark) .bg-gray-800\/50,
+html:not(.dark) .bg-zinc-900\/40,
+html:not(.dark) .bg-zinc-950\/40,
+html:not(.dark) .bg-gray-900\/40,
+html:not(.dark) .bg-\[\#0a0f1d\],
+html:not(.dark) .bg-slate-950\/20,
+html:not(.dark) .bg-white\/5 {
+    background-color: #ffffff !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Coming soon dashed border cards */
+html:not(.dark) .border-dashed {
+    border-color: rgba(209, 213, 219, 0.8) !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+}
+
+/* SVG icons & shapes that shouldn't be dark on white */
+html:not(.dark) svg.text-gray-300,
+html:not(.dark) svg.text-zinc-500 {
+    color: #4b5563 !important;
+}
+
+/* Contact & Gallery Modals */
+html:not(.dark) #contactModal>div>div {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #contactModal input,
+html:not(.dark) #contactModal textarea,
+html:not(.dark) #contactModal select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input::placeholder,
+html:not(.dark) #contactModal textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+html:not(.dark) #contactModal label {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"],
+html:not(.dark) #contactModal a[href^="mailto:"] {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] svg,
+html:not(.dark) #contactModal a[href^="mailto:"] svg {
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] span,
+html:not(.dark) #contactModal a[href^="mailto:"] span {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
+    background-color: #e5e7eb !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover svg,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal #modalStep3 svg {
+    color: #ffffff !important;
+}
+
+/* Footer styling */
+html:not(.dark) footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(229, 231, 235, 0.7) !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+html:not(.dark) footer a {
+    color: #4b5563 !important;
+}
+
+/* Mobile menu slide-down animation */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.hover-thick {
+    transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.hover-thick:hover {
+    text-shadow: 0.03em 0 0 currentColor;
+}
+
+html.dark,
+html.dark body {
+    background-color: #050505 !important;
+}
+
+html:not(.dark),
+html:not(.dark) body {
+    background-color: #f9fafb !important;
+    color: #1f2937 !important;
+}
+
+/* --- Light Mode CSS Overrides --- */
+/* Navbar background & border with frosted glass */
+html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(229, 231, 235, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+/* Navbar links & buttons color */
+html:not(.dark) nav a,
+html:not(.dark) nav button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) nav a:hover,
+html:not(.dark) nav button:hover {
+    color: #111827 !important;
+}
+
+/* Theme Toggle specific style */
+html:not(.dark) #themeToggleBtn {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #themeToggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+}
+
+/* Mobile-only black icons in light mode */
+@media (max-width: 767px) {
+
+    html:not(.dark) #themeToggleBtn,
+    html:not(.dark) #mobileLanguageButton,
+    html:not(.dark) #mobile-menu-button {
+        color: #000000 !important;
+    }
+}
+
+/* Language Dropdowns */
+html:not(.dark) #languageDropdown,
+html:not(.dark) #mobileLanguageDropdown {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) #languageDropdown a,
+html:not(.dark) #mobileLanguageDropdown a {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #languageDropdown a:hover,
+html:not(.dark) #mobileLanguageDropdown a:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #languageDropdown a.bg-gray-700\/50,
+html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
+    background-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile menu */
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #4b5563 !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(243, 244, 246, 0.8) !important;
+    color: #111827 !important;
+}
+
+/* Heading elements color */
+html:not(.dark) h1:not(.gradient-text),
+html:not(.dark) h2:not(.gradient-text),
+html:not(.dark) h3:not(.gradient-text),
+html:not(.dark) .text-white,
+html:not(.dark) .text-zinc-100 {
+    color: #111827 !important;
+}
+
+/* Subtext / Description color */
+html:not(.dark) p:not(.gradient-text),
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-zinc-500,
+html:not(.dark) .text-gray-500 {
+    color: #4b5563 !important;
+}
+
+/* Cards */
+html:not(.dark) .bg-gray-800\/30,
+html:not(.dark) .bg-zinc-900\/40,
+html:not(.dark) .bg-zinc-950\/40,
+html:not(.dark) .bg-gray-900\/40,
+html:not(.dark) .bg-\[\#0a0f1d\],
+html:not(.dark) .bg-slate-950\/20,
+html:not(.dark) .bg-gray-800\/50,
+html:not(.dark) .bg-white\/5 {
+    background-color: #ffffff !important;
+    border-color: rgba(229, 231, 235, 0.8) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Custom card background colors for kurumsal sites like kadayıfçıoğlu */
+html:not(.dark) .group:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Coming soon dashed border cards */
+html:not(.dark) .border-dashed {
+    border-color: rgba(209, 213, 219, 0.8) !important;
+    background-color: rgba(249, 250, 251, 0.5) !important;
+}
+
+/* SVG icons & shapes that shouldn't be dark on white */
+html:not(.dark) svg.text-gray-300,
+html:not(.dark) svg.text-zinc-500 {
+    color: #4b5563 !important;
+}
+
+/* Project card tag badges readability in light mode */
+html:not(.dark) .bg-slate-950\/40 {
+    background-color: #f3f4f6 !important;
+    border-color: #e5e7eb !important;
+    color: #4b5563 !important;
+}
+
+html:not(.dark) .group:hover .bg-slate-950\/40 {
+    border-color: rgba(249, 115, 22, 0.25) !important;
+    color: #111827 !important;
+}
+
+/* APK details / buttons styling in light mode */
+html:not(.dark) #btn-github,
+html:not(.dark) a[id^="btn-github"] {
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #btn-github span,
+html:not(.dark) a[id^="btn-github"] span {
+    color: #1f2937 !important;
+}
+
+/* Screenshots gallery icon inside cards */
+html:not(.dark) button[onclick^="openGallery"] {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"]:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) button[onclick^="openGallery"] svg {
+    color: #374151 !important;
+}
+
+/* Contact & Gallery Modals */
+html:not(.dark) #contactModal>div>div,
+html:not(.dark) #galleryModal>div>div {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #contactModal input,
+html:not(.dark) #contactModal textarea,
+html:not(.dark) #contactModal select {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal input::placeholder,
+html:not(.dark) #contactModal textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+html:not(.dark) #contactModal label {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"],
+html:not(.dark) #contactModal a[href^="mailto:"] {
+    background-color: #f9fafb !important;
+    border-color: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"] .w-12 {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] svg,
+html:not(.dark) #contactModal a[href^="mailto:"] svg {
+    color: #1f2937 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"] span,
+html:not(.dark) #contactModal a[href^="mailto:"] span {
+    color: #374151 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover {
+    background-color: #f3f4f6 !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover .w-12,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover .w-12 {
+    background-color: #e5e7eb !important;
+}
+
+html:not(.dark) #contactModal a[target="_blank"]:hover svg,
+html:not(.dark) #contactModal a[href^="mailto:"]:hover svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) #contactModal #modalStep3 svg {
+    color: #ffffff !important;
+}
+
+/* Footer styling */
+html:not(.dark) footer {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(229, 231, 235, 0.7) !important;
+}
+
+html:not(.dark) footer p,
+html:not(.dark) footer span,
+html:not(.dark) footer a {
+    color: #4b5563 !important;
+}
+
+/* Mobile menu slide-down animation */
+#mobile-menu:not(.hidden) {
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+@layer utilities {
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+    }
+
+    .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/10 via-[#8a004b]/10 to-red-600/10;
+    }
+
+    html:not(.dark) .gradient-bg {
+        @apply bg-gradient-to-r from-orange-500/5 via-rose-500/5 to-red-500/5;
+    }
+
+    .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    html:not(.dark) .btn-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600 hover:from-orange-600 hover:to-red-700;
+    }
+
+    .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-[#8a004b] hover:to-red-600;
+    }
+
+    html:not(.dark) .box-gradient-hover {
+        @apply hover:bg-gradient-to-br hover:from-orange-500 hover:via-rose-500 hover:to-red-600;
+    }
+
+    .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+    }
+
+    html:not(.dark) .glow-gradient {
+        @apply bg-gradient-to-r from-orange-500 via-rose-500 to-red-600;
+    }
+
+    .gradient-text-hover {
+        @apply group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:via-[#8a004b] group-hover:to-red-600;
+    }
+
+    html:not(.dark) .gradient-text-hover {
+        @apply group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:via-rose-500 group-hover:to-red-600;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-red-500/10;
+    }
+}
+
+.hover-thick {
+    transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.hover-thick:hover {
+    text-shadow: 0.03em 0 0 currentColor;
+}
 
 
 /* === Pure Vanilla CSS Overrides for Utilities & Hover Effects === */
@@ -1635,6 +1865,7 @@ html.dark,
     background-clip: text !important;
     color: transparent !important;
 }
+
 html:not(.dark) .gradient-text {
     background-image: linear-gradient(to right, #ea580c, #f43f5e, #dc2626) !important;
     -webkit-background-clip: text !important;
@@ -1646,6 +1877,7 @@ html:not(.dark) .gradient-text {
 .gradient-bg {
     background-image: linear-gradient(to right, rgba(249, 115, 22, 0.1), rgba(138, 0, 75, 0.1), rgba(220, 38, 38, 0.1)) !important;
 }
+
 html:not(.dark) .gradient-bg {
     background-image: linear-gradient(to right, rgba(249, 115, 22, 0.05), rgba(244, 63, 94, 0.05), rgba(239, 68, 68, 0.05)) !important;
 }
@@ -1655,14 +1887,17 @@ html:not(.dark) .gradient-bg {
     background-image: linear-gradient(to right, #f97316, #8a004b, #dc2626) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 .btn-gradient:hover {
     background-image: linear-gradient(to right, #ea580c, #8a004b, #b91c1c) !important;
     box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.35) !important;
     transform: scale(1.02) !important;
 }
+
 html:not(.dark) .btn-gradient {
     background-image: linear-gradient(to right, #f97316, #f43f5e, #dc2626) !important;
 }
+
 html:not(.dark) .btn-gradient:hover {
     background-image: linear-gradient(to right, #ea580c, #f43f5e, #b91c1c) !important;
     box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.35) !important;
@@ -1673,10 +1908,12 @@ html:not(.dark) .btn-gradient:hover {
 .box-gradient-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 .box-gradient-hover:hover {
     background-image: linear-gradient(to bottom right, #f97316, #8a004b, #dc2626) !important;
     border-color: rgba(249, 115, 22, 0.4) !important;
 }
+
 html:not(.dark) .box-gradient-hover:hover {
     background-image: linear-gradient(to bottom right, #f97316, #f43f5e, #dc2626) !important;
     border-color: rgba(249, 115, 22, 0.4) !important;
@@ -1686,6 +1923,7 @@ html:not(.dark) .box-gradient-hover:hover {
 .glow-gradient {
     background-image: linear-gradient(to right, #f97316, #8a004b, #dc2626) !important;
 }
+
 html:not(.dark) .glow-gradient {
     background-image: linear-gradient(to right, #f97316, #f43f5e, #dc2626) !important;
 }
@@ -1694,6 +1932,7 @@ html:not(.dark) .glow-gradient {
 .card-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 .card-hover:hover {
     transform: scale(1.02) !important;
     box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.15) !important;
@@ -1703,17 +1942,21 @@ html:not(.dark) .glow-gradient {
 #contactModal a.group {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 #contactModal a.group:hover {
     background-image: linear-gradient(to bottom right, rgba(249, 115, 22, 0.2), rgba(138, 0, 75, 0.2), rgba(220, 38, 38, 0.2)) !important;
     border-color: rgba(249, 115, 22, 0.4) !important;
     transform: scale(1.02) !important;
 }
+
 #contactModal a.group:hover .w-12 {
     background-color: transparent !important;
 }
+
 #contactModal a.group:hover svg {
     color: #ffffff !important;
 }
+
 #contactModal a.group:hover span {
     color: #ffffff !important;
 }
@@ -1722,6 +1965,7 @@ html:not(.dark) #contactModal a.group:hover {
     background-image: linear-gradient(to bottom right, rgba(249, 115, 22, 0.12), rgba(244, 63, 94, 0.12), rgba(239, 68, 68, 0.12)) !important;
     border-color: rgba(249, 115, 22, 0.4) !important;
 }
+
 html:not(.dark) #contactModal a.group:hover span,
 html:not(.dark) #contactModal a.group:hover svg {
     color: #111827 !important;
@@ -1733,6 +1977,7 @@ a[data-i18n="btnExamine"] {
     background-image: linear-gradient(to right, #f97316, #8a004b, #dc2626) !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 #startProjectBtn:hover,
 a[data-i18n="btnExamine"]:hover {
     background-image: linear-gradient(to right, #ea580c, #8a004b, #b91c1c) !important;
@@ -1744,6 +1989,7 @@ html:not(.dark) #startProjectBtn,
 html:not(.dark) a[data-i18n="btnExamine"] {
     background-image: linear-gradient(to right, #f97316, #f43f5e, #dc2626) !important;
 }
+
 html:not(.dark) #startProjectBtn:hover,
 html:not(.dark) a[data-i18n="btnExamine"]:hover {
     background-image: linear-gradient(to right, #ea580c, #f43f5e, #b91c1c) !important;
@@ -1850,6 +2096,7 @@ a[title="Güvenlik Raporu"]:hover {
 }
 
 @media (max-width: 1023px) {
+
     .product-card a[title*="Store"],
     .product-card a[title*="AppGallery"],
     .product-card a[title*="Google Play"],
@@ -1886,4 +2133,91 @@ html:not(.dark) .skeleton-dev-card span {
 
 html:not(.dark) .skeleton-dev-card div.animate-pulse {
     background-color: rgba(209, 213, 219, 0.7) !important;
+}
+
+/* 3D Tools Revolver Card Aesthetics (Clean Monolithic Pill) */
+.tools-3d-card {
+    transform-style: preserve-3d;
+}
+
+.tools-3d-card .slab-front {
+    background: #18181b !important;
+    border: 1px solid rgba(63, 63, 70, 0.8) !important;
+    box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.tools-3d-card img {
+    -webkit-user-drag: none !important;
+    user-drag: none !important;
+    user-select: none !important;
+    pointer-events: none !important;
+}
+
+/* OpsBare Logo Light/Dark Mode Switching */
+.opsbare-dark-logo {
+    display: block !important;
+}
+
+.opsbare-light-logo {
+    display: none !important;
+}
+
+html:not(.dark) .opsbare-dark-logo {
+    display: none !important;
+}
+
+html:not(.dark) .opsbare-light-logo {
+    display: block !important;
+}
+
+.tools-3d-card .slab-front span {
+    color: #ffffff !important;
+}
+
+.tools-3d-card .slab-front svg {
+    color: #e4e4e7 !important;
+}
+
+/* Light Mode Clean Finish */
+html:not(.dark) #tools3DViewport {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+html:not(.dark) .tools-3d-card .slab-front {
+    background: #ffffff !important;
+    border: 1px solid rgba(229, 231, 235, 0.9) !important;
+    box-shadow: 0 12px 24px -2px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .tools-3d-card .slab-front span {
+    color: #111827 !important;
+}
+
+html:not(.dark) .tools-3d-card .slab-front svg {
+    color: #111827 !important;
+}
+
+html:not(.dark) .tools-3d-card .slab-side-right,
+html:not(.dark) .tools-3d-card .slab-side-left,
+html:not(.dark) .tools-3d-card .slab-top,
+html:not(.dark) .tools-3d-card .slab-bottom {
+    background: linear-gradient(to right, #e4e4e7, #d4d4d8) !important;
+    border-color: #d4d4d8 !important;
+}
+
+html:not(.dark) #tools3DPrevBtn,
+html:not(.dark) #tools3DNextBtn {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(229, 231, 235, 0.9) !important;
+    color: #111827 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .tools-3d-card span {
+    color: #111827 !important;
+}
+
+html:not(.dark) .tools-3d-dot.bg-white {
+    background-color: #111827 !important;
 }
