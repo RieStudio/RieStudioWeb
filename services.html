@@ -273,15 +273,24 @@
         </div>
 
         <!-- Category Filter Tabs -->
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
-            <button data-filter="mobile"
-                class="tab-btn active-tab px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 border border-white/10 bg-white/10 text-white shadow-lg shadow-orange-500/10">
-                <span data-i18n="tabMobileDev">Mobil Uygulama Geliştirme</span>
-            </button>
-            <button data-filter="web"
-                class="tab-btn px-5 py-2.5 rounded-xl font-semibold text-sm text-gray-400 hover:text-white transition-all duration-300 border border-transparent hover:border-white/10 hover:bg-white/5">
-                <span data-i18n="tabWebDev">Web Geliştirme</span>
-            </button>
+        <div class="flex items-center justify-center mb-14 w-full px-1">
+            <div id="servicesTabContainer"
+                class="relative bg-zinc-950/90 backdrop-blur-xl border border-zinc-800/80 rounded-full p-1.5 sm:p-2 inline-flex items-center gap-1 sm:gap-2 shadow-2xl max-w-full overflow-hidden">
+                
+                <!-- Dynamic Curved Light Mask / Glow Element -->
+                <div class="tab-glow-indicator absolute bottom-0 h-2 pointer-events-none transition-all duration-300 ease-out z-0"
+                     style="background: radial-gradient(ellipse at bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 50%, transparent 100%); filter: drop-shadow(0 -2px 4px rgba(255,255,255,0.6)); border-radius: 50% 50% 0 0 / 100% 100% 0 0;">
+                </div>
+
+                <button data-filter="mobile"
+                    class="tab-btn active-tab relative z-10 px-5 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold text-white hover:text-white hover:bg-zinc-800/50 transition-all duration-200">
+                    <span data-i18n="tabMobileDev">Mobil Uygulama Geliştirme</span>
+                </button>
+                <button data-filter="web"
+                    class="tab-btn relative z-10 px-5 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all duration-200">
+                    <span data-i18n="tabWebDev">Web Geliştirme</span>
+                </button>
+            </div>
         </div>
 
         <!-- Services Grid -->
@@ -648,19 +657,12 @@
 
         // Service Filter Functionality
         function initServiceFiltering() {
-            const filterBtns = document.querySelectorAll('.tab-btn');
+            const filterBtns = document.querySelectorAll('#servicesTabContainer .tab-btn');
             const serviceCards = document.querySelectorAll('.service-card');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const filter = btn.getAttribute('data-filter');
-
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active-tab', 'bg-white/10', 'text-white', 'border-white/10', 'shadow-lg', 'shadow-orange-500/10');
-                        b.classList.add('text-gray-400', 'border-transparent');
-                    });
-                    btn.classList.add('active-tab', 'bg-white/10', 'text-white', 'border-white/10', 'shadow-lg', 'shadow-orange-500/10');
-                    btn.classList.remove('text-gray-400', 'border-transparent');
 
                     serviceCards.forEach(card => {
                         const category = card.getAttribute('data-category');
@@ -686,8 +688,9 @@
             if (typeof initLanguageSelector === 'function') initLanguageSelector();
             if (typeof initContactModal === 'function') initContactModal();
             initServiceFiltering();
+            if (typeof initCurvedSegmentedTabs === 'function') initCurvedSegmentedTabs('servicesTabContainer');
 
-            const activeBtn = document.querySelector('.tab-btn.active-tab');
+            const activeBtn = document.querySelector('#servicesTabContainer .tab-btn.active-tab');
             if (activeBtn) activeBtn.click();
 
             const savedLang = localStorage.getItem('userLanguage') || 'tr';

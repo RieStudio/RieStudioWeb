@@ -367,3 +367,85 @@ function initLanguageSelector() {
         });
     });
 }
+
+// Glowing Curved Tab Controller (Modern CSS Radial Glow Mask Style)
+function initCurvedSegmentedTabs(containerId) {
+    const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
+    if (!container) return;
+
+    const glowIndicator = container.querySelector('.tab-glow-indicator');
+    const tabBtns = Array.from(container.querySelectorAll('.tab-btn'));
+
+    if (!glowIndicator || tabBtns.length === 0) return;
+
+    let targetLeft = 0;
+    let targetWidth = 0;
+    let currentLeft = 0;
+    let currentWidth = 0;
+    let animFrame = null;
+
+    function getActiveTab() {
+        return container.querySelector('.tab-btn.active-tab') || tabBtns[0];
+    }
+
+    function updatePositions() {
+        const activeTab = getActiveTab();
+        const containerRect = container.getBoundingClientRect();
+        const tabRect = activeTab.getBoundingClientRect();
+
+        targetLeft = tabRect.left - containerRect.left;
+        targetWidth = tabRect.width;
+
+        if (currentLeft === 0 && currentWidth === 0) {
+            currentLeft = targetLeft;
+            currentWidth = targetWidth;
+        }
+    }
+
+    function animate() {
+        currentLeft += (targetLeft - currentLeft) * 0.16;
+        currentWidth += (targetWidth - currentWidth) * 0.16;
+
+        glowIndicator.style.left = `${currentLeft.toFixed(1)}px`;
+        glowIndicator.style.width = `${currentWidth.toFixed(1)}px`;
+
+        const delta = Math.abs(targetLeft - currentLeft) + Math.abs(targetWidth - currentWidth);
+
+        if (delta > 0.02) {
+            animFrame = requestAnimationFrame(animate);
+        } else {
+            animFrame = null;
+        }
+    }
+
+    function startAnim() {
+        if (!animFrame) {
+            animFrame = requestAnimationFrame(animate);
+        }
+    }
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => {
+                b.classList.remove('active-tab', 'text-white', 'font-semibold');
+                b.classList.add('text-zinc-400', 'font-medium');
+            });
+            btn.classList.add('active-tab', 'text-white', 'font-semibold');
+            btn.classList.remove('text-zinc-400', 'font-medium');
+
+            updatePositions();
+            startAnim();
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        updatePositions();
+        startAnim();
+    });
+
+    setTimeout(() => {
+        updatePositions();
+        startAnim();
+    }, 30);
+}
+

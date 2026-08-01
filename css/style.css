@@ -1748,3 +1748,35 @@ html:not(.dark) #startProjectBtn:hover,
 html:not(.dark) a[data-i18n="btnExamine"]:hover {
     background-image: linear-gradient(to right, #ea580c, #f43f5e, #b91c1c) !important;
 }
+
+/* --- Segmented Tab Controller Light Mode Styles --- */
+html:not(.dark) #segmentedTabContainer,
+html:not(.dark) #servicesTabContainer {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(229, 231, 235, 0.9) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02) !important;
+}
+
+html:not(.dark) .tab-btn {
+    color: #6b7280 !important;
+}
+
+html:not(.dark) .tab-btn:hover {
+    color: #111827 !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .tab-btn.active-tab {
+    color: #09090b !important;
+    font-weight: 600 !important;
+}
+
+html:not(.dark) .tab-btn.active-tab:hover {
+    color: #000000 !important;
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .tab-glow-indicator {
+    background: radial-gradient(ellipse at bottom, rgba(24, 24, 27, 0.9) 0%, rgba(24, 24, 27, 0.35) 50%, transparent 100%) !important;
+    filter: drop-shadow(0 -2px 4px rgba(24, 24, 27, 0.25)) !important;
+}
