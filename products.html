@@ -609,41 +609,42 @@
                 </div>
             </div>
 
-            <!-- 5. Web Apps - (Web Row) -->
+            <!-- 5. Yeni Web Projelerimiz (Skeleton UI In-Development Box for Web) -->
             <div data-category="web"
-                class="product-card relative bg-zinc-900/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl p-7 md:p-8 min-h-[170px] hover:border-purple-500/40 transition-all duration-300 flex flex-col lg:flex-row lg:items-center justify-between gap-6 group">
-                <div class="flex items-center gap-4 min-w-[220px]">
+                class="relative bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-6 sm:p-7 min-h-[140px] flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden skeleton-dev-card">
+
+                <!-- Left: Skeleton UI (Web Icon, Title, Subtitle & Description Placeholders) -->
+                <div class="flex-1 flex items-center gap-4 w-full opacity-45 select-none pointer-events-none">
+                    <!-- Web Icon Skeleton -->
                     <div
-                        class="w-16 h-16 bg-purple-950/50 rounded-2xl flex items-center justify-center border border-purple-500/30 text-purple-400 flex-shrink-0">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-zinc-800/80 rounded-2xl flex-shrink-0 animate-pulse border border-zinc-700/50">
                     </div>
-                    <div>
+
+                    <!-- Text Skeleton Lines -->
+                    <div class="flex-1 space-y-2">
                         <div class="flex items-center gap-2.5">
-                            <h2 class="text-xl font-bold text-white" data-i18n="webAppsTitle">Yeni Web Platformlarımız
-                            </h2>
-                            <span
-                                class="text-xs px-2.5 py-0.5 rounded-full bg-purple-950/60 text-purple-400 font-semibold border border-purple-500/30 uppercase"
-                                data-i18n="webAppsBadge">● Geliştiriliyor</span>
+                            <div class="w-32 sm:w-40 h-3.5 bg-zinc-700/80 rounded-full animate-pulse"></div>
+                            <div class="w-14 h-3 bg-zinc-800/80 rounded-full animate-pulse"></div>
                         </div>
-                        <span
-                            class="text-[10px] min-[360px]:text-[11px] sm:text-xs text-zinc-500 font-medium whitespace-nowrap block truncate max-w-[220px] min-[400px]:max-w-none"
-                            data-i18n="webAppsSub">Bulut & SaaS Çözümleri</span>
+                        <div class="w-24 sm:w-28 h-2.5 bg-zinc-800/60 rounded-full animate-pulse"></div>
+                        <div class="space-y-1 pt-1 hidden sm:block">
+                            <div class="w-full max-w-xs h-2 bg-zinc-800/40 rounded-full animate-pulse"></div>
+                            <div class="w-2/3 max-w-[180px] h-2 bg-zinc-800/30 rounded-full animate-pulse"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex-1">
-                    <p class="text-sm text-zinc-300 leading-relaxed max-w-xl" data-i18n="webAppsDesc">
-                        Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web
-                        uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!
+                <!-- Center: "Yeni web uygulamalarımız geliştiriliyor..." Text -->
+                <div class="text-center flex-1 px-2 z-10 w-full md:w-auto">
+                    <p class="text-sm sm:text-base font-semibold text-zinc-300 tracking-wide" data-i18n="newWebAppDesc">
+                        Yeni web uygulamalarımız geliştiriliyor...
                     </p>
                 </div>
 
-                <div class="pt-2 lg:pt-0">
+                <!-- Right: "Çok Yakında" Neutral Badge -->
+                <div class="flex-shrink-0 z-10">
                     <span
-                        class="inline-flex items-center justify-center px-4 py-2 bg-purple-950/40 border border-purple-500/20 text-purple-300 font-semibold rounded-xl text-xs uppercase tracking-wider"
+                        class="inline-flex items-center justify-center px-4 py-2 bg-zinc-800/70 border border-zinc-700/60 text-zinc-300 font-semibold rounded-xl text-xs uppercase tracking-wider shadow-sm"
                         data-i18n="comingSoon">
                         Çok Yakında
                     </span>
@@ -744,7 +745,7 @@
         </div>
 
         <!-- Relocated Security Info Notice -->
-        <div class="max-w-2xl mx-auto mt-12">
+        <div id="app-security-container" class="max-w-2xl mx-auto mt-12">
             <div id="app-security-note"
                 class="bg-zinc-950/40 backdrop-blur-md rounded-2xl p-6 flex items-start gap-4 border border-zinc-800/50 shadow-lg">
                 <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
@@ -983,6 +984,7 @@
                 webAppsSub: 'Bulut & SaaS Çözümleri',
                 webAppsDesc: 'Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!',
                 newMobileAppDesc: 'Yeni ürünlerimiz geliştiriliyor...',
+                newWebAppDesc: 'Yeni web uygulamalarımız geliştiriliyor...',
                 comingSoon: 'Çok Yakında',
                 opsBareTitle: 'OpsBare',
                 opsBareSub: 'Bare-Metal & Sunucu Otomasyonu',
@@ -1038,6 +1040,7 @@
                 webAppsSub: 'Cloud & SaaS Solutions',
                 webAppsDesc: 'We are working on next-generation web applications shaping modern web standards. Coming soon!',
                 newMobileAppDesc: 'Our new products are under development...',
+                newWebAppDesc: 'Our new web projects are under development...',
                 comingSoon: 'Coming Soon',
                 opsBareTitle: 'OpsBare',
                 opsBareSub: 'Bare-Metal & Server Automation',
@@ -1170,10 +1173,20 @@
         function initCategoryFiltering() {
             const filterBtns = document.querySelectorAll('#segmentedTabContainer .tab-btn');
             const productCards = document.querySelectorAll('#productsGrid > div');
+            const securityContainer = document.getElementById('app-security-container');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const filter = btn.getAttribute('data-filter');
+
+                    // Toggle Android Security Info Box visibility (Only show for mobile or all)
+                    if (securityContainer) {
+                        if (filter === 'web' || filter === 'tools') {
+                            securityContainer.style.display = 'none';
+                        } else {
+                            securityContainer.style.display = 'block';
+                        }
+                    }
 
                     productCards.forEach(card => {
                         if (card._animTimeout) {
@@ -1187,7 +1200,7 @@
                             card.style.transition = 'none';
                             card.style.opacity = '0';
                             card.style.transform = 'scale(0.97)';
-                            
+
                             // Force reflow so initial state takes effect before animation
                             void card.offsetHeight;
 
