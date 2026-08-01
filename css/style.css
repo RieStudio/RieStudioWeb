@@ -1867,3 +1867,23 @@ button[onclick*="openScreenshotModal"]:active,
 a[title="Güvenlik Raporu"]:active {
     transform: scale(0.985) !important;
 }
+
+/* Skeleton Dev Card Light Mode Styles */
+html:not(.dark) .skeleton-dev-card {
+    background-color: rgba(243, 244, 246, 0.75) !important;
+    border-color: rgba(229, 231, 235, 0.9) !important;
+}
+
+html:not(.dark) .skeleton-dev-card p {
+    color: #374151 !important;
+}
+
+html:not(.dark) .skeleton-dev-card span {
+    background-color: rgba(229, 231, 235, 0.85) !important;
+    border-color: rgba(209, 213, 219, 0.9) !important;
+    color: #4b5563 !important;
+}
+
+html:not(.dark) .skeleton-dev-card div.animate-pulse {
+    background-color: rgba(209, 213, 219, 0.7) !important;
+}
