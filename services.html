@@ -655,7 +655,7 @@
             }
         }
 
-        // Service Filter Functionality
+        // Service Filter Functionality with instant layout cleanup & smooth fade-in
         function initServiceFiltering() {
             const filterBtns = document.querySelectorAll('#servicesTabContainer .tab-btn');
             const serviceCards = document.querySelectorAll('.service-card');
@@ -665,19 +665,33 @@
                     const filter = btn.getAttribute('data-filter');
 
                     serviceCards.forEach(card => {
+                        if (card._animTimeout) {
+                            clearTimeout(card._animTimeout);
+                            card._animTimeout = null;
+                        }
+
                         const category = card.getAttribute('data-category');
                         if (filter === 'all' || category === filter) {
                             card.style.display = 'flex';
-                            setTimeout(() => {
+                            card.style.transition = 'none';
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.97)';
+                            
+                            // Force reflow so initial state takes effect before animation
+                            void card.offsetHeight;
+
+                            card.style.transition = 'opacity 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 220ms cubic-bezier(0.16, 1, 0.3, 1)';
+                            card._animTimeout = setTimeout(() => {
                                 card.style.opacity = '1';
                                 card.style.transform = 'scale(1)';
-                            }, 30);
+                                card._animTimeout = null;
+                            }, 20);
                         } else {
+                            // Immediately hide non-matching cards so they never flicker or shift layout
+                            card.style.transition = 'none';
                             card.style.opacity = '0';
-                            card.style.transform = 'scale(0.95)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 250);
+                            card.style.transform = 'scale(0.97)';
+                            card.style.display = 'none';
                         }
                     });
                 });
