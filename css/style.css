@@ -241,7 +241,19 @@
         html:not(.dark) .product-card .bg-zinc-800 {
             background-color: #f3f4f6 !important;
             border-color: #e5e7eb !important;
-            color: #4b5563 !important;
+            color: #6b7280 !important;
+        }
+
+        html:not(.dark) .app-version {
+            color: #6b7280 !important;
+        }
+
+        @media (min-width: 768px) {
+            html:not(.dark) .app-version {
+                background-color: #f3f4f6 !important;
+                border-color: #e5e7eb !important;
+                color: #4b5563 !important;
+            }
         }
 
         /* Store Stack Divider in Light Mode */

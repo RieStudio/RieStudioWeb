@@ -1682,15 +1682,18 @@
 
         function updateThemeUI(isDark) {
             const navbarLogo = document.getElementById('navbarLogo');
+            const footerLogo = document.getElementById('footerLogo');
             const sunIcon = document.getElementById('sunIcon');
             const moonIcon = document.getElementById('moonIcon');
 
             if (isDark) {
                 if (navbarLogo) navbarLogo.src = 'assets/hedef.png';
+                if (footerLogo) footerLogo.src = 'assets/hedef.png';
                 if (sunIcon) sunIcon.classList.remove('hidden');
                 if (moonIcon) moonIcon.classList.add('hidden');
             } else {
                 if (navbarLogo) navbarLogo.src = 'assets/beyazrs.png';
+                if (footerLogo) footerLogo.src = 'assets/beyazrs.png';
                 if (sunIcon) sunIcon.classList.add('hidden');
                 if (moonIcon) moonIcon.classList.remove('hidden');
             }

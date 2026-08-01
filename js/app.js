@@ -56,18 +56,25 @@ function updateThemeUI(isDark) {
     const sunIcon = document.getElementById('sunIcon');
     const moonIcon = document.getElementById('moonIcon');
 
+    const pathPrefix = window.location.pathname.includes('/privacy/') ? '../assets/' : 'assets/';
+
     if (isDark) {
-        if (navbarLogo) navbarLogo.src = 'assets/hedef.png';
-        if (footerLogo) footerLogo.src = 'assets/hedef.png';
+        if (navbarLogo) navbarLogo.src = pathPrefix + 'hedef.png';
+        if (footerLogo) footerLogo.src = pathPrefix + 'hedef.png';
         if (sunIcon) sunIcon.classList.remove('hidden');
         if (moonIcon) moonIcon.classList.add('hidden');
     } else {
-        if (navbarLogo) navbarLogo.src = 'assets/beyazrs.png';
-        if (footerLogo) footerLogo.src = 'assets/beyazrs.png';
+        if (navbarLogo) navbarLogo.src = pathPrefix + 'beyazrs.png';
+        if (footerLogo) footerLogo.src = pathPrefix + 'beyazrs.png';
         if (sunIcon) sunIcon.classList.add('hidden');
         if (moonIcon) moonIcon.classList.remove('hidden');
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    updateThemeUI(isDark);
+});
 
 // Mobile Menu Control
 function closeMobileMenu() {

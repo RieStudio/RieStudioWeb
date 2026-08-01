@@ -302,7 +302,7 @@
                             </svg>
                         </div>
                         <div class="ml-6">
-                            <span class="text-xs font-bold tracking-widest text-orange-400 uppercase">● ÖZEL YAZILIM</span>
+                            <span class="text-xs font-bold tracking-widest text-orange-400 uppercase" data-i18n="badgeCustomSoftware">● ÖZEL YAZILIM</span>
                             <h2 class="text-3xl font-bold text-white mt-1" data-i18n="mobileDevTitle">Mobil Uygulama Geliştirme</h2>
                         </div>
                     </div>
@@ -314,15 +314,15 @@
                     <div class="space-y-2 mb-8 text-sm text-gray-300">
                         <div class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Flutter & Native Çözümler</span>
+                            <span data-i18n="mobileBullet1">Flutter & Native Çözümler</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Play Store & App Store Yayınlama Desteği</span>
+                            <span data-i18n="mobileBullet2">Play Store & App Store Yayınlama Desteği</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span>Güvenli API ve Backend Entegrasyonları</span>
+                            <span data-i18n="mobileBullet3">Güvenli API ve Backend Entegrasyonları</span>
                         </div>
                     </div>
                 </div>
@@ -330,7 +330,7 @@
                 <div class="relative z-10 pt-4">
                     <button onclick="if(typeof openContactModal === 'function') openContactModal();"
                         class="w-full py-4 bg-gradient-to-r from-orange-500 via-magenta to-red-600 hover:opacity-95 text-white font-bold rounded-xl text-sm tracking-wider uppercase transition-all shadow-lg shadow-orange-500/20">
-                        Hemen Başlayın
+                        <span data-i18n="btnGetStarted">Hemen Başlayın</span>
                     </button>
                 </div>
             </div>
@@ -349,7 +349,7 @@
                         </div>
                         <div class="ml-6">
                             <h2 class="text-3xl font-bold text-white mt-1" data-i18n="kadayifciogluTitle">Kadayıfçıoğlu Gıda</h2>
-                            <span class="text-sm text-red-400 font-medium">Kurumsal Web Platformu</span>
+                            <span class="text-sm text-red-400 font-medium" data-i18n="kadayifciogluSub">Kurumsal Web Platformu</span>
                         </div>
                     </div>
 
@@ -358,16 +358,16 @@
                     </p>
 
                     <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300">Kurumsal Tasarım</span>
-                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300">SEO & Performans</span>
-                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300">Ürün Kataloğu</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300" data-i18n="badgeCorporate">Kurumsal Tasarım</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300" data-i18n="badgeSeo">SEO & Performans</span>
+                        <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-red-950/50 border border-red-500/20 text-red-300" data-i18n="badgeCatalog">Ürün Kataloğu</span>
                     </div>
                 </div>
 
                 <div class="relative z-10 pt-4">
                     <a href="https://kadayifcioglugida.com" target="_blank"
                         class="flex items-center justify-center w-full py-4 bg-gray-900/60 border border-gray-700/50 hover:bg-gray-900 text-white font-bold rounded-xl text-sm tracking-wider uppercase transition-all gap-2">
-                        <span>Web Sitesini Ziyaret Et</span>
+                        <span data-i18n="btnVisitWebsite">Web Sitesini Ziyaret Et</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     </a>
                 </div>
@@ -547,10 +547,20 @@
                 tabAllServices: 'Tüm Hizmetler',
                 tabMobileDev: 'Mobil Uygulama Geliştirme',
                 tabWebDev: 'Web Geliştirme',
+                badgeCustomSoftware: '● ÖZEL YAZILIM',
                 mobileDevTitle: 'Mobil Uygulama Geliştirme',
                 mobileDevDesc: 'iOS ve Android platformları için yüksek performanslı, akıcı kullanıcı deneyimine (UX) sahip ve ölçeklenebilir yerel ve çapraz platform mobil uygulamalar tasarlıyor ve geliştiriyoruz.',
+                mobileBullet1: 'Flutter & Native Çözümler',
+                mobileBullet2: 'Play Store & App Store Yayınlama Desteği',
+                mobileBullet3: 'Güvenli API ve Backend Entegrasyonları',
+                btnGetStarted: 'Hemen Başlayın',
                 kadayifciogluTitle: 'Kadayıfçıoğlu Gıda',
+                kadayifciogluSub: 'Kurumsal Web Platformu',
                 kadayifciogluDesc: 'Gıda sektöründe öncü markalardan Kadayıfçıoğlu Gıda için hazırladığımız modern, hızlı ve mobil uyumlu kurumsal web portalı projemiz.',
+                badgeCorporate: 'Kurumsal Tasarım',
+                badgeSeo: 'SEO & Performans',
+                badgeCatalog: 'Ürün Kataloğu',
+                btnVisitWebsite: 'Web Sitesini Ziyaret Et',
                 webDevTitle: 'Web & SaaS Geliştirme',
                 webDevDesc: 'İşletmeniz veya girişiminiz için yüksek dönüşüm sağlayan modern web siteleri, SaaS ürünleri ve kurumsal yönetim panelleri inşa ediyoruz.',
                 allRightsReserved: 'Tüm hakları saklıdır.',
@@ -580,10 +590,20 @@
                 tabAllServices: 'All Services',
                 tabMobileDev: 'Mobile App Development',
                 tabWebDev: 'Web Development',
+                badgeCustomSoftware: '● CUSTOM SOFTWARE',
                 mobileDevTitle: 'Mobile App Development',
                 mobileDevDesc: 'We design and build high-performance, smooth UX, scalable native and cross-platform mobile apps for iOS and Android.',
-                kadayifciogluTitle: 'Kadayıfçıoğlu Gıda',
-                kadayifciogluDesc: 'A modern, fast, and mobile-friendly corporate web portal designed for Kadayıfçıoğlu Gıda, a leading brand in the food sector.',
+                mobileBullet1: 'Flutter & Native Solutions',
+                mobileBullet2: 'Play Store & App Store Publishing Support',
+                mobileBullet3: 'Secure API & Backend Integrations',
+                btnGetStarted: 'Get Started Now',
+                kadayifciogluTitle: 'Kadayıfçıoğlu Food',
+                kadayifciogluSub: 'Corporate Web Platform',
+                kadayifciogluDesc: 'A modern, fast, and mobile-friendly corporate web portal designed for Kadayıfçıoğlu Food, a leading brand in the food sector.',
+                badgeCorporate: 'Corporate Design',
+                badgeSeo: 'SEO & Performance',
+                badgeCatalog: 'Product Catalog',
+                btnVisitWebsite: 'Visit Website',
                 webDevTitle: 'Web & SaaS Development',
                 webDevDesc: 'We build high-converting modern websites, SaaS products, and corporate management dashboards tailored for your business or startup.',
                 allRightsReserved: 'All rights reserved.',
@@ -672,6 +692,10 @@
 
             const savedLang = localStorage.getItem('userLanguage') || 'tr';
             setLanguage(savedLang);
+
+            if (typeof updateThemeUI === 'function') {
+                updateThemeUI(document.documentElement.classList.contains('dark'));
+            }
         });
     </script>
 </body>
