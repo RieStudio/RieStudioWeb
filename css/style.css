@@ -1780,3 +1780,42 @@ html:not(.dark) .tab-glow-indicator {
     background: radial-gradient(ellipse at bottom, rgba(24, 24, 27, 0.9) 0%, rgba(24, 24, 27, 0.35) 50%, transparent 100%) !important;
     filter: drop-shadow(0 -2px 4px rgba(24, 24, 27, 0.25)) !important;
 }
+
+/* --- Interactive Mouse Spotlight Proximity Glow for Cards --- */
+.product-card,
+.service-card,
+.spotlight-card {
+    position: relative;
+    overflow: hidden !important;
+}
+
+.product-card::before,
+.service-card::before,
+.spotlight-card::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y, -9999px);
+    left: var(--mouse-x, -9999px);
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.product-card:hover::before,
+.service-card:hover::before,
+.spotlight-card:hover::before {
+    opacity: 1;
+}
+
+/* Light mode spotlight glow disabled */
+html:not(.dark) .product-card::before,
+html:not(.dark) .service-card::before,
+html:not(.dark) .spotlight-card::before {
+    display: none !important;
+}

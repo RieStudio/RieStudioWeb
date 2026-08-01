@@ -449,3 +449,33 @@ function initCurvedSegmentedTabs(containerId) {
     }, 30);
 }
 
+// Interactive Card Cursor Spotlight Glow Controller
+function initCardSpotlightGlow() {
+    const updateSpotlight = (e) => {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    };
+
+    const attachListeners = () => {
+        const cards = document.querySelectorAll('.product-card, .service-card, .spotlight-card');
+        cards.forEach(card => {
+            if (!card.dataset.spotlightBound) {
+                card.dataset.spotlightBound = 'true';
+                card.addEventListener('mousemove', updateSpotlight);
+            }
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachListeners);
+    } else {
+        attachListeners();
+    }
+}
+
+initCardSpotlightGlow();
+
