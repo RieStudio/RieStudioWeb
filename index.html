@@ -58,6 +58,9 @@
 </head>
 
 <body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
+    <div id="navBgBeam" class="nav-bg-beam"></div>
+
     <!-- Navbar -->
     <nav
         class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
@@ -171,16 +174,9 @@
                     <div class="flex items-center">
                         <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
                             aria-label="Menüyü Aç">
-                            <!-- Hamburger Icon -->
                             <svg id="menu-icon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                            <!-- Close Icon (hidden by default) -->
-                            <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
@@ -195,10 +191,10 @@
         class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3 transition-all duration-300">
         <div class="space-y-1 w-full">
             <a href="#about"
-                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                class="block w-full px-4 py-3 text-base font-semibold text-white mobile-active-link rounded-xl transition-all duration-200"
                 onclick="closeMobileMenu()">
                 <div class="flex items-center">
-                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
@@ -545,6 +541,8 @@
         const translations = {
             tr: {
                 about: "Hakkımızda",
+                products: "Ürünlerimiz",
+                services: "Hizmetlerimiz",
                 projects: "Projeler",
                 contact: "İletişim",
                 heroSubtitle: "Sınırların Ötesinde:",
@@ -582,6 +580,8 @@
             },
             en: {
                 about: "About Us",
+                products: "Products",
+                services: "Services",
                 projects: "Projects",
                 contact: "Contact",
                 heroSubtitle: "Beyond Boundaries:",
@@ -669,11 +669,9 @@
             const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
             selectors.forEach(item => {
                 if (item.getAttribute('data-lang') === lang) {
-                    item.classList.add('bg-gray-700/50', 'text-white');
-                    item.classList.remove('text-gray-300');
+                    item.classList.add('active-lang-option');
                 } else {
-                    item.classList.remove('bg-gray-700/50', 'text-white');
-                    item.classList.add('text-gray-300');
+                    item.classList.remove('active-lang-option');
                 }
             });
         }
@@ -853,92 +851,7 @@
             }
         }
 
-        // Mobile Menu Elements
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const overlay = document.getElementById('overlay');
 
-        // Toggle mobile menu function
-        function toggleMobileMenu() {
-            const isExpanded = mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-            overlay.classList.toggle('hidden');
-
-            if (isExpanded) {
-                document.body.style.overflow = 'auto';
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        // Initialize mobile menu functionality
-        function initMobileMenu() {
-            // Mobile menu button click handler
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    toggleMobileMenu();
-                });
-            }
-
-            // Close menu when clicking on overlay
-            if (overlay) {
-                overlay.addEventListener('click', closeMobileMenu);
-            }
-
-            // Close menu when clicking outside the menu
-            document.addEventListener('click', function (e) {
-                if (!mobileMenu.classList.contains('hidden') &&
-                    !mobileMenu.contains(e.target) &&
-                    e.target !== mobileMenuButton &&
-                    !mobileMenuButton.contains(e.target)) {
-                    closeMobileMenu();
-                }
-            });
-
-            // Handle mobile menu links
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') {
-                        e.preventDefault();
-                        closeMobileMenu();
-                        return;
-                    }
-
-                    if (targetId.startsWith('#')) {
-                        e.preventDefault();
-                        closeMobileMenu();
-
-                        // Smooth scroll to section
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            setTimeout(() => {
-                                targetElement.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }, 100);
-                        }
-                    }
-                });
-            });
-
-            // Mobile contact button will be handled in the main modal script
-        }
-
-        // Initialize mobile menu functionality
-        initMobileMenu();
-
-        // Close menu when window is resized to desktop view
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-                toggleMobileMenu();
-            }
-        });
 
         function initContactModal() {
             const modal = document.getElementById('contactModal');

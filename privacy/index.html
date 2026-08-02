@@ -270,11 +270,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
                     </button>
                 </div>
             </div>
@@ -457,11 +452,9 @@
             const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
             selectors.forEach(item => {
                 if (item.getAttribute('data-lang') === lang) {
-                    item.classList.add('bg-gray-700/50', 'text-white');
-                    item.classList.remove('text-gray-300');
+                    item.classList.add('active-lang-option');
                 } else {
-                    item.classList.remove('bg-gray-700/50', 'text-white');
-                    item.classList.add('text-gray-300');
+                    item.classList.remove('active-lang-option');
                 }
             });
         }

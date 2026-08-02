@@ -270,19 +270,20 @@ html:not(.dark) .border-zinc-800\/60 {
 /* Filter Tabs in Light Mode */
 html:not(.dark) .tab-btn {
     color: #6b7280 !important;
+    background-color: transparent !important;
 }
 
 html:not(.dark) .tab-btn:hover {
     color: #111827 !important;
-    border-color: #e5e7eb !important;
-    background-color: rgba(0, 0, 0, 0.04) !important;
+    background-color: transparent !important;
 }
 
 html:not(.dark) .tab-btn.active-tab {
-    background-color: #ffffff !important;
-    color: #111827 !important;
-    border-color: #e5e7eb !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    background-color: transparent !important;
+    color: #09090b !important;
+    font-weight: 600 !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* Action Buttons in Light Mode */
@@ -297,19 +298,29 @@ html:not(.dark) button[onclick^="openScreenshotModal"]:hover {
     color: #111827 !important;
 }
 
-html:not(.dark) a[download][href*=".apk"] {
-    background-color: #65D46E !important;
-    border-color: transparent !important;
-    color: #000000 !important;
+html:not(.dark) a[download][href*=".apk"],
+html:not(.dark) a[title="APK İndir"] {
+    background-color: #9C035D !important;
+    border-color: #9C035D !important;
+    color: #ffffff !important;
 }
 
-html:not(.dark) a[download][href*=".apk"] svg {
-    color: #000000 !important;
+html:not(.dark) a[download][href*=".apk"] span,
+html:not(.dark) a[title="APK İndir"] span {
+    color: #ffffff !important;
 }
 
-html:not(.dark) a[download][href*=".apk"]:hover {
-    background-color: #4CC45B !important;
-    color: #000000 !important;
+html:not(.dark) a[download][href*=".apk"] svg,
+html:not(.dark) a[title="APK İndir"] svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+html:not(.dark) a[download][href*=".apk"]:hover,
+html:not(.dark) a[title="APK İndir"]:hover {
+    background-color: #b8046e !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(156, 3, 93, 0.4) !important;
 }
 
 html:not(.dark) a[target="_blank"][title="Kaynak Kodlar"] {
@@ -2005,21 +2016,25 @@ html:not(.dark) #servicesTabContainer {
 
 html:not(.dark) .tab-btn {
     color: #6b7280 !important;
+    background-color: transparent !important;
 }
 
 html:not(.dark) .tab-btn:hover {
     color: #111827 !important;
-    background-color: rgba(0, 0, 0, 0.05) !important;
+    background-color: transparent !important;
 }
 
 html:not(.dark) .tab-btn.active-tab {
     color: #09090b !important;
     font-weight: 600 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 html:not(.dark) .tab-btn.active-tab:hover {
     color: #000000 !important;
-    background-color: rgba(0, 0, 0, 0.06) !important;
+    background-color: transparent !important;
 }
 
 html:not(.dark) .tab-glow-indicator {
@@ -2075,6 +2090,68 @@ a[download],
 button[onclick*="openScreenshotModal"],
 a[title="Güvenlik Raporu"] {
     transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+/* APK Download Buttons (#9C035D Theme across Light & Dark Modes) */
+html.dark a[download],
+html:not(.dark) a[download],
+html.dark a[title="APK İndir"],
+html:not(.dark) a[title="APK İndir"],
+html.dark a[href*=".apk"],
+html:not(.dark) a[href*=".apk"] {
+    background-color: #9C035D !important;
+    color: #ffffff !important;
+    border-color: #9C035D !important;
+}
+
+html.dark a[download] span,
+html:not(.dark) a[download] span,
+html.dark a[title="APK İndir"] span,
+html:not(.dark) a[title="APK İndir"] span,
+html.dark a[href*=".apk"] span,
+html:not(.dark) a[href*=".apk"] span {
+    color: #ffffff !important;
+}
+
+html.dark a[download]:hover,
+html:not(.dark) a[download]:hover,
+html.dark a[title="APK İndir"]:hover,
+html:not(.dark) a[title="APK İndir"]:hover,
+html.dark a[href*=".apk"]:hover,
+html:not(.dark) a[href*=".apk"]:hover {
+    background-color: #b8046e !important;
+    box-shadow: 0 4px 15px rgba(156, 3, 93, 0.4) !important;
+}
+
+html.dark a[download] svg,
+html:not(.dark) a[download] svg,
+html.dark a[title="APK İndir"] svg,
+html:not(.dark) a[title="APK İndir"] svg,
+html.dark a[href*=".apk"] svg,
+html:not(.dark) a[href*=".apk"] svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* Active Language Dropdown Option (#9C035D Magenta Theme - No Hover Reaction) */
+#languageDropdown [data-lang].active-lang-option,
+#mobileLanguageDropdown [data-lang].active-lang-option,
+#languageDropdown [data-lang].active-lang-option:hover,
+#mobileLanguageDropdown [data-lang].active-lang-option:hover,
+#languageDropdown [data-lang].active-lang-option:focus,
+#mobileLanguageDropdown [data-lang].active-lang-option:focus {
+    background-color: #9C035D !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    cursor: default !important;
+}
+
+#languageDropdown [data-lang].active-lang-option span,
+#mobileLanguageDropdown [data-lang].active-lang-option span,
+#languageDropdown [data-lang].active-lang-option:hover span,
+#mobileLanguageDropdown [data-lang].active-lang-option:hover span {
+    color: #ffffff !important;
 }
 
 .product-card button:hover,
@@ -2477,53 +2554,125 @@ html:not(.dark) .opsbare-showcase-box .opsbare-subheading {
     color: #52525b !important;
 }
 
-/* Animated Parallelogram (-15deg) Navbar Indicator */
-.nav-sliding-indicator {
-    position: absolute;
+/* Full Viewport Background Parallelogram Beam (Behind Page Content) */
+.nav-bg-beam {
+    position: fixed;
     top: 0;
     bottom: 0;
-    height: 100%;
+    height: 100vh;
     transform: skewX(-15deg);
-    border-radius: 0 !important;
-    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    transform-origin: 0 0 !important;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    filter: blur(14px);
+    transition: opacity 0.15s ease;
+}
+
+html.dark .nav-bg-beam,
+.dark .nav-bg-beam {
+    background: linear-gradient(180deg, rgba(156, 3, 93, 0.22) 0%, rgba(156, 3, 93, 0.05) 50%, rgba(156, 3, 93, 0.22) 100%) !important;
+    border: none !important;
+}
+
+html:not(.dark) .nav-bg-beam {
+    background: linear-gradient(180deg, rgba(156, 3, 93, 0.16) 0%, rgba(156, 3, 93, 0.04) 50%, rgba(156, 3, 93, 0.16) 100%) !important;
+    border: none !important;
+}
+
+/* Parallelogram (-15deg) Navbar Indicator (#9C035D Magenta) */
+.nav-sliding-indicator {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    height: calc(100% - 6px);
+    transform: skewX(-15deg);
+    transform-origin: 0 0 !important;
+    background-color: #9C035D !important;
+    box-shadow: 0 4px 20px rgba(156, 3, 93, 0.45) !important;
+    border-radius: 4px !important;
+    transition: opacity 0.15s ease;
     pointer-events: none;
     z-index: 1;
     opacity: 0;
 }
 
-/* KOYU MOD (Dark Mode): Opak Sıcak Krem Beyazı (#FAF8F5) + Siyah Yazı */
-html.dark .nav-sliding-indicator,
-.dark .nav-sliding-indicator {
-    background-color: #FAF8F5 !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
-}
-
-html.dark #navTabsContainer .nav-link-item {
-    color: #a1a1aa !important;
+#navTabsContainer .nav-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    color: #a1a1aa;
     transition: color 0.2s ease;
 }
 
-html.dark #navTabsContainer .nav-link-item.active-nav-item,
-html.dark #navTabsContainer .nav-link-item.active-nav-item span {
-    color: #09090b !important;
+#navTabsContainer .nav-link-item span {
+    display: inline-block;
+    transform: translateX(-3px);
+}
+
+#navTabsContainer .nav-link-item.active-nav-item,
+#navTabsContainer .nav-link-item.active-nav-item span {
+    color: #ffffff !important;
     font-weight: 600 !important;
 }
 
-/* AÇIK MOD (Light Mode): #0B0B0B Koyu Paralelkenar + Beyaz Yazı */
-html:not(.dark) .nav-sliding-indicator {
-    background-color: #0B0B0B !important;
-    box-shadow: 0 4px 15px rgba(11, 11, 11, 0.3) !important;
-}
-
-html:not(.dark) #navTabsContainer .nav-link-item {
+html:not(.dark) #navTabsContainer .nav-link-item:not(.active-nav-item) {
     color: #52525b !important;
-    transition: color 0.2s ease;
 }
 
 html:not(.dark) #navTabsContainer .nav-link-item.active-nav-item,
 html:not(.dark) #navTabsContainer .nav-link-item.active-nav-item span {
     color: #ffffff !important;
     font-weight: 600 !important;
+}
+
+/* Remove unwanted click focus/outline/background box on tabs in Light & Dark modes */
+.nav-link-item,
+.tab-btn,
+#segmentedTabContainer button,
+#servicesTabContainer button,
+#navTabsContainer a,
+#navTabsContainer button {
+    outline: none !important;
+    border: 0 !important;
+    border-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.nav-link-item:focus,
+.nav-link-item:focus-visible,
+.nav-link-item:active,
+.tab-btn:focus,
+.tab-btn:focus-visible,
+.tab-btn:active,
+.tab-btn:hover,
+.tab-btn.active-tab,
+.tab-btn.active-tab:hover {
+    outline: none !important;
+    border: 0 !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html:not(.dark) .nav-link-item,
+html:not(.dark) .nav-link-item:hover,
+html:not(.dark) .nav-link-item:focus,
+html:not(.dark) .nav-link-item:active,
+html:not(.dark) .tab-btn,
+html:not(.dark) .tab-btn:hover,
+html:not(.dark) .tab-btn:focus,
+html:not(.dark) .tab-btn:active,
+html:not(.dark) .tab-btn.active-tab,
+html:not(.dark) .tab-btn.active-tab:hover {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Koyu Mod (Dark Mode): Navbar İnce & Şık Kalınlaştırılmış Beyaz Çerçeve */
@@ -2533,8 +2682,148 @@ html.dark nav,
     border-color: rgba(255, 255, 255, 0.18) !important;
 }
 
-/* Açık Mod (Light Mode): Navbar Yumuşatılmış Şeffaf Siyah Çerçeve */
+/* Açık Mod (Light Mode): Navbar Parlak Beyaz Zemin & Şeffaf Siyah Çerçeve */
 html:not(.dark) nav {
+    background-color: rgba(255, 255, 255, 0.98) !important;
     border-width: 1.5px !important;
-    border-color: rgba(0, 0, 0, 0.2) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark) #mobile-menu {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #mobile-menu a,
+html:not(.dark) #mobile-menu button {
+    color: #18181b !important;
+}
+
+html:not(.dark) #mobile-menu a:hover,
+html:not(.dark) #mobile-menu button:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #000000 !important;
+}
+
+html:not(.dark) body.page-products nav,
+html:not(.dark) body.page-services nav {
+    box-shadow: none !important;
+}
+
+/* Hamburger İkon Döndürme Animasyonu: Yatay → Dikey */
+#mobile-menu-button {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu-button #menu-icon {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu-button.is-active #menu-icon {
+    transform: rotate(90deg);
+}
+
+/* Mobile Menu: Navbar ile Birleşik Görünüm */
+@media (max-width: 767px) {
+    /* Menü açıkken navbar alt köşelerini düzleştir ve alt çizgiyi kaldır */
+    nav.mobile-menu-open {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-color: transparent !important;
+    }
+
+    /* Mobil menü: üst köşeler düz, navbar'a yapışık, aynı genişlik */
+    #mobile-menu {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        border-top: none !important;
+        margin-top: 0 !important;
+        top: auto !important;
+    }
+
+    /* Menüyü navbar'ın hemen altına yerleştir */
+    #mobile-menu:not(.hidden) {
+        position: fixed;
+        top: calc(1.25rem + 3.5rem) !important; /* top-5 (1.25rem) + h-14 (3.5rem) */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    /* Koyu modda menü arkaplanını navbar ile eşle */
+    .dark #mobile-menu,
+    html.dark #mobile-menu {
+        background-color: rgba(9, 9, 11, 0.95) !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+    }
+}
+
+/* Mobile Menu Active Page Link: #9C035D Magenta */
+.mobile-active-link {
+    background-color: #9C035D !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+.mobile-active-link:hover {
+    background-color: #b3046b !important;
+    background-image: none !important;
+}
+
+html:not(.dark) #mobile-menu .mobile-active-link,
+html:not(.dark) #mobile-menu a.mobile-active-link {
+    background-color: #9C035D !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) #mobile-menu .mobile-active-link svg,
+html:not(.dark) #mobile-menu a.mobile-active-link svg {
+    color: #ffffff !important;
+}
+
+html:not(.dark) #mobile-menu .mobile-active-link:hover,
+html:not(.dark) #mobile-menu a.mobile-active-link:hover {
+    background-color: #b3046b !important;
+    background-image: none !important;
+    color: #ffffff !important;
+}
+
+/* Outer Card Opacity Shield: Hides background beam behind outer card containers without breaking skeleton UI or buttons */
+html.dark .product-card,
+html.dark .service-card,
+html.dark .opsbare-showcase-box,
+html.dark .tools-3d-card .slab-front {
+    background-color: #09090b !important;
+}
+
+html:not(.dark) .product-card,
+html:not(.dark) .service-card,
+html:not(.dark) .opsbare-showcase-box,
+html:not(.dark) .tools-3d-card .slab-front {
+    background-color: #ffffff !important;
+}
+
+footer.bg-transparent {
+    background-color: transparent !important;
+}
+
+/* Mobile OpsBare Showcase Box Max-Width & Side Border Expansion */
+@media (max-width: 640px) {
+    #tools3DStageContainer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #opsbareShowcaseBox {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .opsbare-showcase-box {
+        padding: 1.25rem 0.85rem !important;
+        border-radius: 1.25rem !important;
+        width: 100% !important;
+    }
 }

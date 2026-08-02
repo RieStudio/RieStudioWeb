@@ -56,7 +56,10 @@
     </script>
 </head>
 
-<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
+<body class="page-products bg-transparent text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
+    <div id="navBgBeam" class="nav-bg-beam"></div>
+
     <!-- Navbar -->
     <nav
         class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
@@ -176,11 +179,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
-                            <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
                         </button>
                     </div>
                 </div>
@@ -205,7 +203,7 @@
                 </div>
             </a>
             <a href="products.html"
-                class="block w-full px-4 py-3 text-base font-semibold text-white btn-gradient rounded-xl transition-all duration-200"
+                class="block w-full px-4 py-3 text-base font-semibold text-white mobile-active-link rounded-xl transition-all duration-200"
                 onclick="closeMobileMenu()">
                 <div class="flex items-center">
                     <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,7 +244,7 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
     <!-- Main Content -->
-    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto max-w-full overflow-x-hidden">
+    <main class="pt-24 md:pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto max-w-full overflow-x-hidden">
 
         <!-- Category Filter Tabs -->
         <div class="flex items-center justify-center mb-8 sm:mb-12 w-full px-1">
@@ -333,8 +331,8 @@
                             <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
                         </button>
                         <a href="https://github.com/RieStudio/Ganot/releases/latest/download/Ganot.apk" download
-                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3.5 py-2 rounded-xl transition-all shadow-sm">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -364,8 +362,8 @@
                     </a>
                     <a href="https://github.com/RieStudio/Ganot/releases/latest/download/Ganot.apk" download
                         title="APK İndir"
-                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
-                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -440,8 +438,8 @@
                             <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
                         </button>
                         <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download
-                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3.5 py-2 rounded-xl transition-all shadow-sm">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -476,8 +474,8 @@
                     </div>
                     <a href="https://github.com/RieStudio/OneriBul/releases/latest/download/OneriBul.apk" download
                         title="APK İndir"
-                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
-                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -552,8 +550,8 @@
                             <span data-i18n="btnScreenshots">Ekran Görüntüleri</span>
                         </button>
                         <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download
-                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] px-3 sm:px-3.5 py-2 rounded-xl transition-all shadow-sm">
-                            <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-3 sm:px-3.5 py-2 rounded-xl transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -590,8 +588,8 @@
                     </div>
                     <a href="https://github.com/RieStudio/Planca/releases/latest/download/Planca.apk" download
                         title="APK İndir"
-                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-black bg-[#65D46E] hover:bg-[#4CC45B] rounded-xl transition-all shadow-sm flex-shrink-0">
-                        <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        class="h-7 sm:h-9 md:hidden inline-flex items-center justify-center gap-1.5 px-2 sm:px-3 py-1 text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] rounded-xl transition-all shadow-sm flex-shrink-0">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -780,9 +778,9 @@
 
                 <!-- OpsBare Showcase Box (Framed inside the 3D Laser Beams) -->
                 <div id="opsbareShowcaseBox"
-                    class="opsbare-showcase-container w-full max-w-4xl mt-6 sm:mt-8 z-20 px-4 sm:px-6">
+                    class="opsbare-showcase-container w-full max-w-4xl mt-6 sm:mt-8 z-20 px-0 sm:px-6">
                     <div
-                        class="opsbare-showcase-box bg-zinc-950/70 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
+                        class="opsbare-showcase-box bg-zinc-950/70 border border-zinc-800/80 rounded-2xl sm:rounded-3xl p-4 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
 
                         <!-- Top Accent Glow Line -->
                         <div
