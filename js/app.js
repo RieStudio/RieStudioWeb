@@ -479,3 +479,52 @@ function initCardSpotlightGlow() {
 
 initCardSpotlightGlow();
 
+// Animated Parallelogram (-15deg) Navbar Sliding Active Indicator Controller
+function initNavSlidingIndicator() {
+    const container = document.getElementById('navTabsContainer');
+    const indicator = document.getElementById('navSlidingIndicator');
+    if (!container || !indicator) return;
+
+    const links = container.querySelectorAll('.nav-link-item');
+    let activeLink = container.querySelector('.active-nav-item') || links[0];
+
+    function moveIndicatorTo(el) {
+        if (!el) return;
+        const containerRect = container.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+
+        const insetPadding = 6;
+        const left = (elRect.left - containerRect.left) + insetPadding;
+        const width = Math.max(elRect.width - (insetPadding * 2), 20);
+
+        indicator.style.left = `${left}px`;
+        indicator.style.width = `${width}px`;
+        indicator.style.opacity = '1';
+    }
+
+    const updatePosition = () => moveIndicatorTo(activeLink);
+
+    // Initial triggers to ensure DOM measurements are accurate
+    updatePosition();
+    setTimeout(updatePosition, 50);
+    setTimeout(updatePosition, 250);
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            activeLink = link;
+            links.forEach(l => l.classList.remove('active-nav-item'));
+            link.classList.add('active-nav-item');
+            moveIndicatorTo(link);
+        });
+    });
+
+    window.updateNavSlidingIndicator = updatePosition;
+    window.addEventListener('resize', updatePosition);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavSlidingIndicator);
+} else {
+    initNavSlidingIndicator();
+}
+

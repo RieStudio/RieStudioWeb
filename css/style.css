@@ -2194,6 +2194,7 @@ html:not(.dark) .tools-3d-card .slab-front {
     .tools-3d-card .slab-front {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15) !important;
     }
+
     html:not(.dark) .tools-3d-card .slab-front {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
     }
@@ -2354,11 +2355,9 @@ html.dark .opsbare-showcase-box::before,
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(
-        160px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(255, 255, 255, 0.08),
-        transparent 70%
-    );
+    background: radial-gradient(160px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.08),
+            transparent 70%);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -2476,4 +2475,66 @@ html:not(.dark) .opsbare-badge .opsbare-badge-text {
 
 html:not(.dark) .opsbare-showcase-box .opsbare-subheading {
     color: #52525b !important;
+}
+
+/* Animated Parallelogram (-15deg) Navbar Indicator */
+.nav-sliding-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    transform: skewX(-15deg);
+    border-radius: 0 !important;
+    transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+}
+
+/* KOYU MOD (Dark Mode): Opak Sıcak Krem Beyazı (#FAF8F5) + Siyah Yazı */
+html.dark .nav-sliding-indicator,
+.dark .nav-sliding-indicator {
+    background-color: #FAF8F5 !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark #navTabsContainer .nav-link-item {
+    color: #a1a1aa !important;
+    transition: color 0.2s ease;
+}
+
+html.dark #navTabsContainer .nav-link-item.active-nav-item,
+html.dark #navTabsContainer .nav-link-item.active-nav-item span {
+    color: #09090b !important;
+    font-weight: 600 !important;
+}
+
+/* AÇIK MOD (Light Mode): #0B0B0B Koyu Paralelkenar + Beyaz Yazı */
+html:not(.dark) .nav-sliding-indicator {
+    background-color: #0B0B0B !important;
+    box-shadow: 0 4px 15px rgba(11, 11, 11, 0.3) !important;
+}
+
+html:not(.dark) #navTabsContainer .nav-link-item {
+    color: #52525b !important;
+    transition: color 0.2s ease;
+}
+
+html:not(.dark) #navTabsContainer .nav-link-item.active-nav-item,
+html:not(.dark) #navTabsContainer .nav-link-item.active-nav-item span {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Koyu Mod (Dark Mode): Navbar İnce & Şık Kalınlaştırılmış Beyaz Çerçeve */
+html.dark nav,
+.dark nav {
+    border-width: 1.5px !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Açık Mod (Light Mode): Navbar Yumuşatılmış Şeffaf Siyah Çerçeve */
+html:not(.dark) nav {
+    border-width: 1.5px !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
 }
