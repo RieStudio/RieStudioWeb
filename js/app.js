@@ -461,7 +461,7 @@ function initCardSpotlightGlow() {
     };
 
     const attachListeners = () => {
-        const cards = document.querySelectorAll('.product-card, .service-card, .spotlight-card');
+        const cards = document.querySelectorAll('.product-card, .service-card, .spotlight-card, .opsbare-showcase-box');
         cards.forEach(card => {
             if (!card.dataset.spotlightBound) {
                 card.dataset.spotlightBound = 'true';

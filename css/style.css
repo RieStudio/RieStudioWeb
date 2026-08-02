@@ -2347,7 +2347,47 @@ html:not(.dark) .laser-beam-path {
     }
 }
 
+/* OpsBare Showcase Box Cursor Spotlight Glow (Sadece Koyu Modda - Ufak ve Hassas Hüzme) */
+html.dark .opsbare-showcase-box::before,
+.dark .opsbare-showcase-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        160px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.08),
+        transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+html.dark .opsbare-showcase-box:hover::before,
+.dark .opsbare-showcase-box:hover::before {
+    opacity: 1;
+}
+
+/* Özellik kartları kesinlikle parlamasın ve spot ışığı altlarında kalsın */
+.opsbare-showcase-box .opsbare-feature-card {
+    position: relative;
+    z-index: 2;
+    background-color: #18181b !important;
+}
+
+.opsbare-showcase-box .opsbare-feature-card::before {
+    display: none !important;
+    opacity: 0 !important;
+}
+
 /* Light mode overrides for OpsBare showcase box */
+html:not(.dark) .opsbare-showcase-box::before {
+    display: none !important;
+    opacity: 0 !important;
+}
+
 html:not(.dark) .opsbare-showcase-box {
     background-color: rgba(255, 255, 255, 0.88) !important;
     border-color: rgba(212, 212, 216, 0.9) !important;
