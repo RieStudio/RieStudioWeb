@@ -2185,14 +2185,18 @@ html:not(.dark) #tools3DViewport {
 }
 
 html:not(.dark) .tools-3d-card .slab-front {
-    background: #ffffff !important;
-    border: 1px solid rgba(229, 231, 235, 0.9) !important;
-    box-shadow: 0 12px 24px -2px rgba(0, 0, 0, 0.08) !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(228, 228, 231, 0.9) !important;
+    box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04) !important;
 }
 
-html:not(.dark) .tools-3d-card .slab-front {
-    background-color: rgba(255, 255, 255, 0.92) !important;
-    border-color: rgba(228, 228, 231, 0.9) !important;
+@media (max-width: 639px) {
+    .tools-3d-card .slab-front {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+    }
+    html:not(.dark) .tools-3d-card .slab-front {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
 }
 
 html:not(.dark) .tools-3d-card .slab-front div.w-8 {
@@ -2217,12 +2221,25 @@ html:not(.dark) .tools-3d-card .slab-bottom {
     border-color: #d4d4d8 !important;
 }
 
+/* Açık Mod (Light Mode): Sağ ve Sol Ok Butonları Smokey Black (#121215) */
 html:not(.dark) #tools3DPrevBtn,
 html:not(.dark) #tools3DNextBtn {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(229, 231, 235, 0.9) !important;
-    color: #111827 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    background-color: #121215 !important;
+    border-color: #27272a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28) !important;
+}
+
+html:not(.dark) #tools3DPrevBtn svg,
+html:not(.dark) #tools3DNextBtn svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+html:not(.dark) #tools3DPrevBtn:hover,
+html:not(.dark) #tools3DNextBtn:hover {
+    background-color: #27272a !important;
+    border-color: #3f3f46 !important;
 }
 
 html:not(.dark) .tools-3d-card span {

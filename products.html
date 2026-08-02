@@ -246,7 +246,7 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
     <!-- Main Content -->
-    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto max-w-full overflow-x-hidden">
         <!-- Page Header -->
         <div class="text-center mb-12">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 gradient-text py-2 leading-normal"
@@ -653,15 +653,15 @@
 
             <!-- 6. Yazılım Araçları 3D Döner İsim Şeridi Sahnesi (Boundary-less Infinite 3D Revolver) -->
             <div data-category="tools" id="tools3DStageContainer"
-                class="w-full relative -mt-6 sm:-mt-7 pt-0 pb-12 min-h-[520px] sm:min-h-[620px] select-none flex flex-col items-center">
+                class="w-full relative -mt-6 sm:-mt-7 pt-0 pb-12 min-h-[520px] sm:min-h-[620px] select-none flex flex-col items-center max-w-full overflow-x-hidden px-3 sm:px-0">
 
-                <!-- 3D Boundary-less Viewport Stage (No box border, overflow visible) -->
+                <!-- 3D Viewport Stage (Centered, prevents mobile right-shift) -->
                 <div id="tools3DViewport"
-                    class="relative w-full max-w-2xl h-[76px] sm:h-[86px] flex items-center justify-center cursor-grab active:cursor-grabbing overflow-visible">
+                    class="relative w-full max-w-2xl h-[76px] sm:h-[86px] flex items-center justify-center cursor-grab active:cursor-grabbing max-w-full px-2 sm:px-0">
 
                     <!-- Left Nav Arrow Button -->
                     <button id="tools3DPrevBtn" aria-label="Previous Tool"
-                        class="absolute left-1 sm:left-4 z-30 w-9 h-9 sm:w-10 sm:h-10 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 rounded-full flex items-center justify-center cursor-pointer shadow-xl transition-all duration-150 active:scale-90 hover:scale-105">
+                        class="absolute left-2.5 sm:left-12 md:left-24 z-30 w-9 h-9 sm:w-10 sm:h-10 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-150 active:scale-90 hover:scale-105">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                 d="M15 19l-7-7 7-7" />
@@ -670,14 +670,14 @@
 
                     <!-- Right Nav Arrow Button -->
                     <button id="tools3DNextBtn" aria-label="Next Tool"
-                        class="absolute right-1 sm:right-4 z-30 w-9 h-9 sm:w-10 sm:h-10 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 rounded-full flex items-center justify-center cursor-pointer shadow-xl transition-all duration-150 active:scale-90 hover:scale-105">
+                        class="absolute right-2.5 sm:right-12 md:right-24 z-30 w-9 h-9 sm:w-10 sm:h-10 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 rounded-full flex items-center justify-center cursor-pointer shadow-lg transition-all duration-150 active:scale-90 hover:scale-105">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
 
                     <!-- 3D Name Pills Ring Container -->
-                    <div id="tools3DRing" class="relative w-[230px] sm:w-[260px] h-[54px]"
+                    <div id="tools3DRing" class="relative w-[200px] min-[380px]:w-[220px] sm:w-[260px] h-[54px]"
                         style="transform-style: preserve-3d; perspective: 1000px;">
 
                         <!-- Item 0: OpsBare -->
@@ -705,7 +705,8 @@
                                             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide"
+                                    data-i18n="comingSoon">Yakında</span>
                             </div>
                         </div>
 
@@ -721,7 +722,8 @@
                                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide"
+                                    data-i18n="comingSoon">Yakında</span>
                             </div>
                         </div>
 
@@ -737,7 +739,8 @@
                                             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide"
+                                    data-i18n="comingSoon">Yakında</span>
                             </div>
                         </div>
 
@@ -777,10 +780,10 @@
                     </defs>
 
                     <!-- Animating glowing laser beams -->
-                    <path id="laserPathLeft" fill="none" stroke-width="1.8"
-                        stroke-linejoin="round" stroke-linecap="round" filter="url(#laserGlow)" />
-                    <path id="laserPathRight" fill="none" stroke-width="1.8"
-                        stroke-linejoin="round" stroke-linecap="round" filter="url(#laserGlow)" />
+                    <path id="laserPathLeft" fill="none" stroke-width="1.8" stroke-linejoin="round"
+                        stroke-linecap="round" filter="url(#laserGlow)" />
+                    <path id="laserPathRight" fill="none" stroke-width="1.8" stroke-linejoin="round"
+                        stroke-linecap="round" filter="url(#laserGlow)" />
                 </svg>
 
                 <!-- OpsBare Showcase Box (Framed inside the 3D Laser Beams) -->
@@ -788,12 +791,15 @@
                     class="opsbare-showcase-container w-full max-w-4xl mt-6 sm:mt-8 z-20 px-4 sm:px-6">
                     <div
                         class="opsbare-showcase-box bg-zinc-950/70 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
-                        
+
                         <!-- Top Accent Glow Line -->
-                        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent"></div>
+                        <div
+                            class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent">
+                        </div>
 
                         <!-- Header: OpsBare Logo & Headline -->
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/60">
+                        <div
+                            class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/60">
                             <div class="space-y-1.5">
                                 <div class="flex items-center gap-3">
                                     <!-- Dark Mode Logo -->
@@ -803,88 +809,136 @@
                                     <img src="assets/opsbare-light.png" alt="OpsBare Logo Light" draggable="false"
                                         class="opsbare-light-logo h-7 sm:h-8 object-contain drop-shadow-md select-none pointer-events-none">
                                 </div>
-                                <h3 class="opsbare-heading text-lg sm:text-xl font-extrabold text-white tracking-tight" data-i18n="opsbareShowcaseTitle">
+                                <h3 class="opsbare-heading text-lg sm:text-xl font-extrabold text-white tracking-tight"
+                                    data-i18n="opsbareShowcaseTitle">
                                     Yerel Firebase ve Supabase Kontrol Paneli
                                 </h3>
                             </div>
-                            <p class="opsbare-subheading text-xs sm:text-sm text-zinc-400 max-w-md leading-relaxed" data-i18n="opsbareShowcaseDesc">
-                                Firebase ve Supabase projelerini tek panelden yönetmek için geliştirilen hızlı, hafif ve tamamen yerel çalışan açık kaynak kontrol paneli.
+                            <p class="opsbare-subheading text-xs sm:text-sm text-zinc-400 max-w-md leading-relaxed"
+                                data-i18n="opsbareShowcaseDesc">
+                                Firebase ve Supabase projelerini tek panelden yönetmek için geliştirilen hızlı, hafif ve
+                                tamamen yerel çalışan açık kaynak kontrol paneli.
                             </p>
                         </div>
 
                         <!-- Grid: 4 Core Feature Cards -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
                             <!-- Feature 1: Firebase Yönetimi -->
-                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
-                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
-                                    <svg class="w-5 h-5" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#FF9100" d="M213.918 560.499c23.248 9.357 48.469 14.909 74.952 15.834 35.84 1.252 69.922-6.158 100.391-20.234-36.537-14.355-69.627-35.348-97.869-61.448-18.306 29.31-45.382 52.462-77.474 65.848Z"/>
-                                        <path fill="#FFC400" d="M291.389 494.66c-64.466-59.622-103.574-145.917-100.269-240.568.108-3.073.27-6.145.46-9.216a166.993 166.993 0 0 0-36.004-5.241 167.001 167.001 0 0 0-51.183 6.153c-17.21 30.145-27.594 64.733-28.888 101.781-3.339 95.611 54.522 179.154 138.409 212.939 32.093-13.387 59.168-36.51 77.475-65.848Z"/>
-                                        <path fill="#FF9100" d="M291.39 494.657c14.988-23.986 24.075-52.106 25.133-82.403 2.783-79.695-50.792-148.251-124.942-167.381-.19 3.071-.352 6.143-.46 9.216-3.305 94.651 35.803 180.946 100.269 240.568Z"/>
-                                        <path fill="#DD2C00" d="M308.231 20.858C266 54.691 232.652 99.302 212.475 150.693c-11.551 29.436-18.81 61.055-20.929 94.2 74.15 19.13 127.726 87.686 124.943 167.38-1.058 30.297-10.172 58.39-25.134 82.404 28.24 26.127 61.331 47.093 97.868 61.447 73.337-33.9 125.37-106.846 128.383-193.127 1.952-55.901-19.526-105.724-49.875-147.778-32.051-44.477-159.5-194.36-159.5-194.36Z"/>
+                            <div
+                                class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div
+                                    class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5" viewBox="0 0 600 600" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#FF9100"
+                                            d="M213.918 560.499c23.248 9.357 48.469 14.909 74.952 15.834 35.84 1.252 69.922-6.158 100.391-20.234-36.537-14.355-69.627-35.348-97.869-61.448-18.306 29.31-45.382 52.462-77.474 65.848Z" />
+                                        <path fill="#FFC400"
+                                            d="M291.389 494.66c-64.466-59.622-103.574-145.917-100.269-240.568.108-3.073.27-6.145.46-9.216a166.993 166.993 0 0 0-36.004-5.241 167.001 167.001 0 0 0-51.183 6.153c-17.21 30.145-27.594 64.733-28.888 101.781-3.339 95.611 54.522 179.154 138.409 212.939 32.093-13.387 59.168-36.51 77.475-65.848Z" />
+                                        <path fill="#FF9100"
+                                            d="M291.39 494.657c14.988-23.986 24.075-52.106 25.133-82.403 2.783-79.695-50.792-148.251-124.942-167.381-.19 3.071-.352 6.143-.46 9.216-3.305 94.651 35.803 180.946 100.269 240.568Z" />
+                                        <path fill="#DD2C00"
+                                            d="M308.231 20.858C266 54.691 232.652 99.302 212.475 150.693c-11.551 29.436-18.81 61.055-20.929 94.2 74.15 19.13 127.726 87.686 124.943 167.38-1.058 30.297-10.172 58.39-25.134 82.404 28.24 26.127 61.331 47.093 97.868 61.447 73.337-33.9 125.37-106.846 128.383-193.127 1.952-55.901-19.526-105.724-49.875-147.778-32.051-44.477-159.5-194.36-159.5-194.36Z" />
                                     </svg>
                                 </div>
-                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat1Title">Firebase Yönetimi</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat1Desc">Authentication, Firestore ve Realtime Database servislerini tek panelden yönetin.</p>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat1Title">Firebase
+                                    Yönetimi</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat1Desc">
+                                    Authentication, Firestore ve Realtime Database servislerini tek panelden yönetin.
+                                </p>
                             </div>
 
                             <!-- Feature 2: Supabase Yönetimi -->
-                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
-                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
-                                    <svg class="w-5 h-5" viewBox="0 0 109 113" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#sp0)"/>
-                                        <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#sp1)" fill-opacity="0.2"/>
-                                        <path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z" fill="#3ECF8E"/>
+                            <div
+                                class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div
+                                    class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5" viewBox="0 0 109 113" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                                            fill="url(#sp0)" />
+                                        <path
+                                            d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                                            fill="url(#sp1)" fill-opacity="0.2" />
+                                        <path
+                                            d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
+                                            fill="#3ECF8E" />
                                         <defs>
-                                            <linearGradient id="sp0" x1="53.9738" y1="54.974" x2="94.1635" y2="71.8295" gradientUnits="userSpaceOnUse"><stop stop-color="#249361"/><stop offset="1" stop-color="#3ECF8E"/></linearGradient>
-                                            <linearGradient id="sp1" x1="36.1558" y1="30.578" x2="54.4844" y2="65.0806" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stop-opacity="0"/></linearGradient>
+                                            <linearGradient id="sp0" x1="53.9738" y1="54.974" x2="94.1635" y2="71.8295"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#249361" />
+                                                <stop offset="1" stop-color="#3ECF8E" />
+                                            </linearGradient>
+                                            <linearGradient id="sp1" x1="36.1558" y1="30.578" x2="54.4844" y2="65.0806"
+                                                gradientUnits="userSpaceOnUse">
+                                                <stop />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
                                         </defs>
                                     </svg>
                                 </div>
-                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat2Title">Supabase Yönetimi</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat2Desc">Supabase projelerinizi tek arayüz üzerinden yönetin.</p>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat2Title">Supabase
+                                    Yönetimi</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat2Desc">Supabase
+                                    projelerinizi tek arayüz üzerinden yönetin.</p>
                             </div>
 
                             <!-- Feature 3: Yerel Çalışma -->
-                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
-                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
-                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            <div
+                                class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div
+                                    class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
-                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat3Title">Yerel Çalışma</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat3Desc">Kurulum sonrası tamamen kendi bilgisayarınızda çalışır, harici sunucu gerektirmez.</p>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat3Title">Yerel
+                                    Çalışma</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat3Desc">Kurulum
+                                    sonrası tamamen kendi bilgisayarınızda çalışır, harici sunucu gerektirmez.</p>
                             </div>
 
                             <!-- Feature 4: Kolay Kullanım -->
-                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
-                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
-                                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            <div
+                                class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div
+                                    class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat4Title">Kolay Kullanım</h4>
-                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat4Desc">Öğrenmesi kolay, günlük kullanım için optimize edilmiş deneyim.</p>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat4Title">Kolay
+                                    Kullanım</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat4Desc">Öğrenmesi
+                                    kolay, günlük kullanım için optimize edilmiş deneyim.</p>
                             </div>
                         </div>
 
                         <!-- Footer Actions & Open Source Status (Side-by-Side on Mobile) -->
-                        <div class="pt-4 border-t border-zinc-800/60 flex flex-row items-center justify-between gap-2 sm:gap-4 w-full">
+                        <div
+                            class="pt-4 border-t border-zinc-800/60 flex flex-row items-center justify-between gap-2 sm:gap-4 w-full">
                             <!-- Open Source Status Badge (Single line) -->
-                            <div class="opsbare-badge opsbare-terminal-widget rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 inline-flex items-center gap-2 sm:gap-3 text-xs font-mono whitespace-nowrap shrink-0 border transition-all">
+                            <div
+                                class="opsbare-badge opsbare-terminal-widget rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 inline-flex items-center gap-2 sm:gap-3 text-xs font-mono whitespace-nowrap shrink-0 border transition-all">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                                <span class="opsbare-badge-text font-semibold tracking-wide whitespace-nowrap" data-i18n="opsbareFooterBadge">Açık Kaynak</span>
+                                <span class="opsbare-badge-text font-semibold tracking-wide whitespace-nowrap"
+                                    data-i18n="opsbareFooterBadge">Açık Kaynak</span>
                             </div>
 
                             <!-- Buttons (Single line) -->
                             <div class="flex items-center gap-3 shrink-0">
                                 <a href="https://github.com/RieStudio/OpsBare" target="_blank" rel="noopener noreferrer"
+                                    title="GitHub Üzerinde İncele" aria-label="GitHub Üzerinde İncele"
                                     class="opsbare-github-btn px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold border rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
                                     <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                             d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                                     </svg>
-                                    <span data-i18n="btnGithubExplore" class="whitespace-nowrap">GitHub Üzerinde İncele</span>
+                                    <span data-i18n="btnGithubExplore" class="whitespace-nowrap hidden sm:inline">GitHub Üzerinde İncele</span>
                                 </a>
                             </div>
                         </div>
@@ -1477,7 +1531,9 @@
             let startAngle = 0;
 
             function getRadius() {
-                return window.innerWidth < 640 ? 190 : 250;
+                if (window.innerWidth < 380) return 110;
+                if (window.innerWidth < 640) return 135;
+                return 250;
             }
 
             function updateLaserPaths() {
