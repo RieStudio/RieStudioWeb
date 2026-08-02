@@ -56,7 +56,7 @@
     </script>
 </head>
 
-<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
     <!-- Navbar -->
     <nav
         class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
@@ -653,7 +653,7 @@
 
             <!-- 6. Yazılım Araçları 3D Döner İsim Şeridi Sahnesi (Boundary-less Infinite 3D Revolver) -->
             <div data-category="tools" id="tools3DStageContainer"
-                class="w-full relative -mt-6 sm:-mt-7 pt-0 pb-1 select-none flex flex-col items-center">
+                class="w-full relative -mt-6 sm:-mt-7 pt-0 pb-12 min-h-[520px] sm:min-h-[620px] select-none flex flex-col items-center">
 
                 <!-- 3D Boundary-less Viewport Stage (No box border, overflow visible) -->
                 <div id="tools3DViewport"
@@ -682,15 +682,18 @@
 
                         <!-- Item 0: OpsBare -->
                         <div class="tools-3d-card absolute inset-0 w-full h-full cursor-pointer" data-index="0">
-                            <div class="slab-front absolute inset-0 w-full h-full rounded-2xl px-5 py-2.5 flex items-center justify-center gap-3 shadow-xl backdrop-blur-xl">
+                            <div
+                                class="slab-front absolute inset-0 w-full h-full rounded-2xl px-5 py-2.5 flex items-center justify-center gap-3 shadow-xl backdrop-blur-xl">
                                 <!-- Dark Mode Logo -->
-                                <img src="assets/opsbarelogo.png" alt="OpsBare Logo Dark" draggable="false" class="opsbare-dark-logo h-8 sm:h-9 max-w-[170px] object-contain flex-shrink-0 drop-shadow-md select-none pointer-events-none">
+                                <img src="assets/opsbarelogo.png" alt="OpsBare Logo Dark" draggable="false"
+                                    class="opsbare-dark-logo h-8 sm:h-9 max-w-[170px] object-contain flex-shrink-0 drop-shadow-md select-none pointer-events-none">
                                 <!-- Light Mode Logo -->
-                                <img src="assets/opsbare-light.png" alt="OpsBare Logo Light" draggable="false" class="opsbare-light-logo h-8 sm:h-9 max-w-[170px] object-contain flex-shrink-0 drop-shadow-md select-none pointer-events-none">
+                                <img src="assets/opsbare-light.png" alt="OpsBare Logo Light" draggable="false"
+                                    class="opsbare-light-logo h-8 sm:h-9 max-w-[170px] object-contain flex-shrink-0 drop-shadow-md select-none pointer-events-none">
                             </div>
                         </div>
 
-                        <!-- Item 1: Deneme1 -->
+                        <!-- Item 1: Yakında -->
                         <div class="tools-3d-card absolute inset-0 w-full h-full cursor-pointer" data-index="1">
                             <div
                                 class="slab-front absolute inset-0 w-full h-full rounded-2xl px-5 py-3 flex items-center justify-center gap-3 shadow-xl backdrop-blur-xl">
@@ -702,11 +705,11 @@
                                             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide">Deneme1</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
                             </div>
                         </div>
 
-                        <!-- Item 2: Deneme2 -->
+                        <!-- Item 2: Yakında -->
                         <div class="tools-3d-card absolute inset-0 w-full h-full cursor-pointer" data-index="2">
                             <div
                                 class="slab-front absolute inset-0 w-full h-full rounded-2xl px-5 py-3 flex items-center justify-center gap-3 shadow-xl backdrop-blur-xl">
@@ -718,11 +721,11 @@
                                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide">Deneme2</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
                             </div>
                         </div>
 
-                        <!-- Item 3: Deneme3 -->
+                        <!-- Item 3: Yakında -->
                         <div class="tools-3d-card absolute inset-0 w-full h-full cursor-pointer" data-index="3">
                             <div
                                 class="slab-front absolute inset-0 w-full h-full rounded-2xl px-5 py-3 flex items-center justify-center gap-3 shadow-xl backdrop-blur-xl">
@@ -734,7 +737,155 @@
                                             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
-                                <span class="text-base sm:text-lg font-bold text-white tracking-wide">Deneme3</span>
+                                <span class="text-base sm:text-lg font-bold text-white tracking-wide" data-i18n="comingSoon">Yakında</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3D Laser Beams SVG Overlay (Only visible when OpsBare is selected) -->
+                <svg id="tools3DLaserSvg"
+                    class="absolute top-[38px] left-0 w-full h-[800px] pointer-events-none overflow-visible z-30 opacity-0">
+                    <defs>
+                        <!-- Dark Mode White Gradient (Gentle fade-out at bottom) -->
+                        <linearGradient id="laserGradDark" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+                            <stop offset="55%" stop-color="#ffffff" stop-opacity="0.95" />
+                            <stop offset="80%" stop-color="#ffffff" stop-opacity="0.55" />
+                            <stop offset="95%" stop-color="#ffffff" stop-opacity="0.18" />
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                        </linearGradient>
+
+                        <!-- Light Mode Black Gradient (Gentle fade-out at bottom) -->
+                        <linearGradient id="laserGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#000000" stop-opacity="1" />
+                            <stop offset="55%" stop-color="#000000" stop-opacity="0.9" />
+                            <stop offset="80%" stop-color="#000000" stop-opacity="0.5" />
+                            <stop offset="95%" stop-color="#000000" stop-opacity="0.15" />
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                        </linearGradient>
+
+                        <!-- Extra Glow Filter Effect -->
+                        <filter id="laserGlow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="1.8" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Animating glowing laser beams -->
+                    <path id="laserPathLeft" fill="none" stroke-width="1.8"
+                        stroke-linejoin="round" stroke-linecap="round" filter="url(#laserGlow)" />
+                    <path id="laserPathRight" fill="none" stroke-width="1.8"
+                        stroke-linejoin="round" stroke-linecap="round" filter="url(#laserGlow)" />
+                </svg>
+
+                <!-- OpsBare Showcase Box (Framed inside the 3D Laser Beams) -->
+                <div id="opsbareShowcaseBox"
+                    class="opsbare-showcase-container w-full max-w-4xl mt-6 sm:mt-8 z-20 px-4 sm:px-6">
+                    <div
+                        class="opsbare-showcase-box bg-zinc-950/70 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
+                        
+                        <!-- Top Accent Glow Line -->
+                        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-400/40 to-transparent"></div>
+
+                        <!-- Header: OpsBare Logo & Headline -->
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/60">
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-3">
+                                    <!-- Dark Mode Logo -->
+                                    <img src="assets/opsbarelogo.png" alt="OpsBare Logo Dark" draggable="false"
+                                        class="opsbare-dark-logo h-7 sm:h-8 object-contain drop-shadow-md select-none pointer-events-none">
+                                    <!-- Light Mode Logo -->
+                                    <img src="assets/opsbare-light.png" alt="OpsBare Logo Light" draggable="false"
+                                        class="opsbare-light-logo h-7 sm:h-8 object-contain drop-shadow-md select-none pointer-events-none">
+                                </div>
+                                <h3 class="opsbare-heading text-lg sm:text-xl font-extrabold text-white tracking-tight" data-i18n="opsbareShowcaseTitle">
+                                    Yerel Firebase ve Supabase Kontrol Paneli
+                                </h3>
+                            </div>
+                            <p class="opsbare-subheading text-xs sm:text-sm text-zinc-400 max-w-md leading-relaxed" data-i18n="opsbareShowcaseDesc">
+                                Firebase ve Supabase projelerini tek panelden yönetmek için geliştirilen hızlı, hafif ve tamamen yerel çalışan açık kaynak kontrol paneli.
+                            </p>
+                        </div>
+
+                        <!-- Grid: 4 Core Feature Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+                            <!-- Feature 1: Firebase Yönetimi -->
+                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#FF9100" d="M213.918 560.499c23.248 9.357 48.469 14.909 74.952 15.834 35.84 1.252 69.922-6.158 100.391-20.234-36.537-14.355-69.627-35.348-97.869-61.448-18.306 29.31-45.382 52.462-77.474 65.848Z"/>
+                                        <path fill="#FFC400" d="M291.389 494.66c-64.466-59.622-103.574-145.917-100.269-240.568.108-3.073.27-6.145.46-9.216a166.993 166.993 0 0 0-36.004-5.241 167.001 167.001 0 0 0-51.183 6.153c-17.21 30.145-27.594 64.733-28.888 101.781-3.339 95.611 54.522 179.154 138.409 212.939 32.093-13.387 59.168-36.51 77.475-65.848Z"/>
+                                        <path fill="#FF9100" d="M291.39 494.657c14.988-23.986 24.075-52.106 25.133-82.403 2.783-79.695-50.792-148.251-124.942-167.381-.19 3.071-.352 6.143-.46 9.216-3.305 94.651 35.803 180.946 100.269 240.568Z"/>
+                                        <path fill="#DD2C00" d="M308.231 20.858C266 54.691 232.652 99.302 212.475 150.693c-11.551 29.436-18.81 61.055-20.929 94.2 74.15 19.13 127.726 87.686 124.943 167.38-1.058 30.297-10.172 58.39-25.134 82.404 28.24 26.127 61.331 47.093 97.868 61.447 73.337-33.9 125.37-106.846 128.383-193.127 1.952-55.901-19.526-105.724-49.875-147.778-32.051-44.477-159.5-194.36-159.5-194.36Z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat1Title">Firebase Yönetimi</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat1Desc">Authentication, Firestore ve Realtime Database servislerini tek panelden yönetin.</p>
+                            </div>
+
+                            <!-- Feature 2: Supabase Yönetimi -->
+                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5" viewBox="0 0 109 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#sp0)"/>
+                                        <path d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z" fill="url(#sp1)" fill-opacity="0.2"/>
+                                        <path d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z" fill="#3ECF8E"/>
+                                        <defs>
+                                            <linearGradient id="sp0" x1="53.9738" y1="54.974" x2="94.1635" y2="71.8295" gradientUnits="userSpaceOnUse"><stop stop-color="#249361"/><stop offset="1" stop-color="#3ECF8E"/></linearGradient>
+                                            <linearGradient id="sp1" x1="36.1558" y1="30.578" x2="54.4844" y2="65.0806" gradientUnits="userSpaceOnUse"><stop/><stop offset="1" stop-opacity="0"/></linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat2Title">Supabase Yönetimi</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat2Desc">Supabase projelerinizi tek arayüz üzerinden yönetin.</p>
+                            </div>
+
+                            <!-- Feature 3: Yerel Çalışma -->
+                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat3Title">Yerel Çalışma</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat3Desc">Kurulum sonrası tamamen kendi bilgisayarınızda çalışır, harici sunucu gerektirmez.</p>
+                            </div>
+
+                            <!-- Feature 4: Kolay Kullanım -->
+                            <div class="opsbare-feature-card bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-4 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900/80">
+                                <div class="w-9 h-9 bg-zinc-800/80 rounded-xl flex items-center justify-center text-zinc-200 mb-3 border border-zinc-700/50 shadow-inner">
+                                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-zinc-100 mb-1" data-i18n="opsbareFeat4Title">Kolay Kullanım</h4>
+                                <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="opsbareFeat4Desc">Öğrenmesi kolay, günlük kullanım için optimize edilmiş deneyim.</p>
+                            </div>
+                        </div>
+
+                        <!-- Footer Actions & Open Source Status (Side-by-Side on Mobile) -->
+                        <div class="pt-4 border-t border-zinc-800/60 flex flex-row items-center justify-between gap-2 sm:gap-4 w-full">
+                            <!-- Open Source Status Badge (Single line) -->
+                            <div class="opsbare-badge opsbare-terminal-widget rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 inline-flex items-center gap-2 sm:gap-3 text-xs font-mono whitespace-nowrap shrink-0 border transition-all">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                                <span class="opsbare-badge-text font-semibold tracking-wide whitespace-nowrap" data-i18n="opsbareFooterBadge">Açık Kaynak</span>
+                            </div>
+
+                            <!-- Buttons (Single line) -->
+                            <div class="flex items-center gap-3 shrink-0">
+                                <a href="https://github.com/RieStudio/OpsBare" target="_blank" rel="noopener noreferrer"
+                                    class="opsbare-github-btn px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold border rounded-xl transition-all shadow-sm flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
+                                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                    <span data-i18n="btnGithubExplore" class="whitespace-nowrap">GitHub Üzerinde İncele</span>
+                                </a>
                             </div>
                         </div>
 
@@ -806,7 +957,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8">
+    <footer class="mt-auto bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
@@ -1029,13 +1180,24 @@
                 webAppsDesc: 'Modern web standartlarına yön veren, kullanıcı odaklı ve yüksek performanslı yeni nesil web uygulamaları üzerinde çalışıyoruz. Çok yakında yayında!',
                 newMobileAppDesc: 'Yeni ürünlerimiz geliştiriliyor...',
                 newWebAppDesc: 'Yeni web uygulamalarımız geliştiriliyor...',
-                comingSoon: 'Çok Yakında',
+                comingSoon: 'Yakında',
                 toolsStageSub: 'Yazılım Araçları Koleksiyonu',
                 toolsStageTitle: 'İnteraktif 3D Araç Çarkı',
                 toolsDragHint: 'İmleci gezdirin veya çevirin',
                 opsBareTitle: 'OpsBare',
-                opsBareSub: 'Bare-Metal & Sunucu Otomasyonu',
-                opsBareDesc: 'Sunucu yönetimi, bare-metal otomasyonu ve sistem izleme süreçlerini basitleştiren güçlü ve hafif altyapı otomasyon aracı.',
+                opsBareSub: 'Yerel Firebase & Supabase Kontrol Paneli',
+                opsBareDesc: 'Firebase ve Supabase projelerini tek panelden yönetmek için geliştirilen hızlı, hafif ve tamamen yerel çalışan açık kaynak kontrol paneli.',
+                opsbareShowcaseTitle: 'Yerel Firebase ve Supabase Kontrol Paneli',
+                opsbareShowcaseDesc: 'Firebase ve Supabase projelerini tek panelden yönetmek için geliştirilen hızlı, hafif ve tamamen yerel çalışan açık kaynak kontrol paneli.',
+                opsbareFeat1Title: 'Firebase Yönetimi',
+                opsbareFeat1Desc: 'Authentication, Firestore ve Realtime Database servislerini tek panelden yönetin.',
+                opsbareFeat2Title: 'Supabase Yönetimi',
+                opsbareFeat2Desc: 'Supabase projelerinizi tek arayüz üzerinden yönetin.',
+                opsbareFeat3Title: 'Yerel Çalışma',
+                opsbareFeat3Desc: 'Kurulum sonrası tamamen kendi bilgisayarınızda çalışır, harici sunucu gerektirmez.',
+                opsbareFeat4Title: 'Kolay Kullanım',
+                opsbareFeat4Desc: 'Öğrenmesi kolay, günlük kullanım için optimize edilmiş deneyim.',
+                opsbareFooterBadge: 'Açık Kaynak',
                 btnGithubExplore: 'GitHub Üzerinde İncele',
                 btnScreenshots: 'Ekran Görüntüleri',
                 btnSecurityReport: 'Güvenlik Raporu',
@@ -1093,8 +1255,19 @@
                 toolsStageTitle: 'Interactive 3D Tools Wheel',
                 toolsDragHint: 'Hover cursor or drag to rotate',
                 opsBareTitle: 'OpsBare',
-                opsBareSub: 'Bare-Metal & Server Automation',
-                opsBareDesc: 'A powerful infrastructure automation tool simplifying server management, bare-metal automation, and monitoring.',
+                opsBareSub: 'Local Firebase & Supabase Dashboard',
+                opsBareDesc: 'A fast, lightweight, and fully local open-source control panel developed to manage Firebase and Supabase projects from a single dashboard.',
+                opsbareShowcaseTitle: 'Local Firebase & Supabase Control Panel',
+                opsbareShowcaseDesc: 'A fast, lightweight, and fully local open-source control panel developed to manage Firebase and Supabase projects from a single dashboard.',
+                opsbareFeat1Title: 'Firebase Management',
+                opsbareFeat1Desc: 'Manage Authentication, Firestore, and Realtime Database services from a single dashboard.',
+                opsbareFeat2Title: 'Supabase Management',
+                opsbareFeat2Desc: 'Manage your Supabase projects seamlessly from a unified interface.',
+                opsbareFeat3Title: 'Local Execution',
+                opsbareFeat3Desc: 'Runs entirely on your local machine after setup—no external servers required.',
+                opsbareFeat4Title: 'Easy to Use',
+                opsbareFeat4Desc: 'Easy to learn, optimized experience for daily usage.',
+                opsbareFooterBadge: 'Open Source',
                 btnGithubExplore: 'Explore on GitHub',
                 btnScreenshots: 'Screenshots',
                 btnSecurityReport: 'Security Report',
@@ -1245,7 +1418,15 @@
                         }
 
                         const category = card.getAttribute('data-category');
-                        if (filter === 'all' || category === filter) {
+                        const isSkeleton = card.classList.contains('skeleton-dev-card');
+
+                        let shouldShow = (filter === 'all' || category === filter);
+                        // Do not show the "Yeni ürünlerimiz geliştiriliyor..." skeleton box under Software Tools tab
+                        if (isSkeleton && filter === 'tools') {
+                            shouldShow = false;
+                        }
+
+                        if (shouldShow) {
                             card.style.display = 'flex';
                             card.style.transition = 'none';
                             card.style.opacity = '0';
@@ -1299,6 +1480,71 @@
                 return window.innerWidth < 640 ? 190 : 250;
             }
 
+            function updateLaserPaths() {
+                const laserContainer = document.getElementById('tools3DLaserSvg');
+                if (!laserContainer) return;
+
+                const activeCard = cards[0]; // OpsBare Card
+                if (!activeCard) return;
+
+                const showcaseBox = document.getElementById('opsbareShowcaseBox');
+
+                // Measure visible slab-front of OpsBare card pill
+                const slabFront = activeCard.querySelector('.slab-front');
+                const cardRect = slabFront ? slabFront.getBoundingClientRect() : activeCard.getBoundingClientRect();
+                const containerRect = laserContainer.getBoundingClientRect();
+
+                const width = containerRect.width;
+
+                // Precision corner inset matching rounded-2xl (16px) corner of the OpsBare title pill
+                const pillCornerInset = window.innerWidth < 640 ? 10 : 16;
+                const startLeftX = cardRect.left - containerRect.left + pillCornerInset;
+                const startRightX = cardRect.right - containerRect.left - pillCornerInset;
+                const startY = Math.max(0, cardRect.bottom - containerRect.top - 2);
+
+                // Zero offset margin so laser passes directly on the exact box border line
+                const margin = 0;
+                // Corner curve radius matching box's rounded-3xl corner
+                const r = window.innerWidth < 640 ? 16 : 24;
+
+                let leftBorderX = window.innerWidth < 640 ? 16 : 32;
+                let rightBorderX = width - (window.innerWidth < 640 ? 16 : 32);
+                let boxTopY = startY + (window.innerWidth < 640 ? 16 : 24);
+                let endY = containerRect.height - 20;
+
+                if (showcaseBox) {
+                    const innerBox = showcaseBox.querySelector('.opsbare-showcase-box');
+                    const targetEl = innerBox || showcaseBox;
+                    const boxRect = targetEl.getBoundingClientRect();
+
+                    leftBorderX = boxRect.left - containerRect.left;
+                    rightBorderX = boxRect.right - containerRect.left;
+                    boxTopY = boxRect.top - containerRect.top;
+                    endY = boxRect.bottom - containerRect.top;
+
+                    // Pass boxTopY to CSS so top stem from OpsBare logo remains unclipped on initial entrance
+                    laserContainer.style.setProperty('--box-top-y', Math.max(0, boxTopY) + 'px');
+                    laserContainer.style.height = (endY + 30) + 'px';
+                }
+
+                laserContainer.setAttribute('viewBox', `0 0 ${width} ${endY + 20}`);
+
+                // Path Left: OpsBare logo -> top shoulder -> 100% circular top-left arc -> left border -> 100% circular bottom-left arc -> bottom sweep
+                const leftPath = `M ${startLeftX} ${startY} V ${boxTopY} H ${leftBorderX + r} A ${r} ${r} 0 0 0 ${leftBorderX} ${boxTopY + r} V ${endY - r} A ${r} ${r} 0 0 0 ${leftBorderX + r} ${endY} H ${leftBorderX + r + 80}`;
+
+                // Path Right: OpsBare logo -> top shoulder -> 100% circular top-right arc -> right border -> 100% circular bottom-right arc -> bottom sweep
+                const rightPath = `M ${startRightX} ${startY} V ${boxTopY} H ${rightBorderX - r} A ${r} ${r} 0 0 1 ${rightBorderX} ${boxTopY + r} V ${endY - r} A ${r} ${r} 0 0 1 ${rightBorderX - r} ${endY} H ${rightBorderX - r - 80}`;
+
+                const leftPathEl = document.getElementById('laserPathLeft');
+                const rightPathEl = document.getElementById('laserPathRight');
+
+                if (leftPathEl) leftPathEl.setAttribute('d', leftPath);
+                if (rightPathEl) rightPathEl.setAttribute('d', rightPath);
+            }
+
+            let laserTimer = null;
+            let lastActiveIndex = -1;
+
             function updateCardPositions() {
                 const radius = getRadius();
                 const activeIndex = (Math.round(-currentAngle / angleStep) % totalCards + totalCards) % totalCards;
@@ -1318,10 +1564,55 @@
                     card.style.transform = `translate3d(${x}px, 0px, ${z}px) rotateY(${cardAngle}deg) scale(${scale})`;
                     card.style.opacity = opacity;
                     card.style.zIndex = zIndex;
-
-
                 });
+
+                // Laser beam animation and OpsBare Showcase Box trigger simultaneously when activeIndex is 0 (OpsBare)
+                const laserContainer = document.getElementById('tools3DLaserSvg');
+                const showcaseBox = document.getElementById('opsbareShowcaseBox');
+
+                if (activeIndex === 0) {
+                    if (lastActiveIndex !== 0) {
+                        const leftPathEl = document.getElementById('laserPathLeft');
+                        const rightPathEl = document.getElementById('laserPathRight');
+
+                        if (laserContainer) laserContainer.classList.remove('opsbare-box-active');
+                        if (showcaseBox) showcaseBox.classList.remove('opsbare-box-active');
+                        if (leftPathEl) leftPathEl.classList.remove('laser-beam-path');
+                        if (rightPathEl) rightPathEl.classList.remove('laser-beam-path');
+
+                        if (laserTimer) clearTimeout(laserTimer);
+
+                        laserTimer = setTimeout(() => {
+                            updateLaserPaths();
+
+                            // Force DOM reflow on showcaseBox to ensure 0% animation keyframe reset
+                            if (showcaseBox) void showcaseBox.offsetWidth;
+
+                            // 100% synchronous trigger for both box reveal and laser flow at the exact same frame
+                            if (showcaseBox) showcaseBox.classList.add('opsbare-box-active');
+                            if (laserContainer) laserContainer.classList.add('opsbare-box-active');
+                            if (leftPathEl) leftPathEl.classList.add('laser-beam-path');
+                            if (rightPathEl) rightPathEl.classList.add('laser-beam-path');
+                        }, 180);
+                    } else if (laserContainer && laserContainer.classList.contains('opsbare-box-active')) {
+                        updateLaserPaths();
+                    }
+                } else {
+                    if (laserTimer) {
+                        clearTimeout(laserTimer);
+                        laserTimer = null;
+                    }
+                    const leftPathEl = document.getElementById('laserPathLeft');
+                    const rightPathEl = document.getElementById('laserPathRight');
+                    if (leftPathEl) leftPathEl.classList.remove('laser-beam-path');
+                    if (rightPathEl) rightPathEl.classList.remove('laser-beam-path');
+                    if (laserContainer) laserContainer.classList.remove('opsbare-box-active');
+                    if (showcaseBox) showcaseBox.classList.remove('opsbare-box-active');
+                }
+                lastActiveIndex = activeIndex;
             }
+
+            window.addEventListener('resize', updateLaserPaths);
 
             function animate() {
                 // Fast lerp rotation angle (0.22 for snappy physics)

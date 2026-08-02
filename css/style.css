@@ -2190,12 +2190,23 @@ html:not(.dark) .tools-3d-card .slab-front {
     box-shadow: 0 12px 24px -2px rgba(0, 0, 0, 0.08) !important;
 }
 
+html:not(.dark) .tools-3d-card .slab-front {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(228, 228, 231, 0.9) !important;
+}
+
+html:not(.dark) .tools-3d-card .slab-front div.w-8 {
+    background-color: #f4f4f5 !important;
+    border-color: #e4e4e7 !important;
+}
+
 html:not(.dark) .tools-3d-card .slab-front span {
     color: #111827 !important;
 }
 
 html:not(.dark) .tools-3d-card .slab-front svg {
-    color: #111827 !important;
+    color: #18181b !important;
+    stroke: #18181b !important;
 }
 
 html:not(.dark) .tools-3d-card .slab-side-right,
@@ -2220,4 +2231,192 @@ html:not(.dark) .tools-3d-card span {
 
 html:not(.dark) .tools-3d-dot.bg-white {
     background-color: #111827 !important;
+}
+
+/* 3D Laser Beams Animation (OpsBare logosundan doğup alt kavisli köşeleri dönerek biten ışık akışı) */
+@keyframes laserFlow {
+    0% {
+        stroke-dashoffset: 450;
+    }
+
+    100% {
+        stroke-dashoffset: -900;
+    }
+}
+
+/* Koyu Mod (Dark Mode): BEYAZ Işık Işınları (Tek Seferlik Giriş Işını - Tekrarlanmaz) */
+.laser-beam-path {
+    stroke: url(#laserGradDark) !important;
+    stroke-dasharray: 450 1800;
+    /* Tek seferlik yavaşlatılmış süzülme animasyonu (Forwards) */
+    animation: laserFlow 5.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    stroke-linecap: round;
+    will-change: stroke-dashoffset;
+}
+
+#laserPathLeftBg,
+#laserPathRightBg {
+    display: none !important;
+}
+
+/* Açık Mod (Light Mode): SİYAH Işık Işınları */
+html:not(.dark) .laser-beam-path {
+    stroke: url(#laserGradLight) !important;
+}
+
+/* OpsBare Laser-Framed Showcase Box - GPU-Accelerated Ultra-Smooth Unroll Reveal */
+.opsbare-showcase-container {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(0, -12px, 0);
+    transform-origin: top center;
+    clip-path: inset(0 0 100% 0);
+    will-change: transform, opacity, clip-path;
+    backface-visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.5s ease, clip-path 0.5s ease;
+}
+
+.opsbare-showcase-container.opsbare-box-active {
+    opacity: 1 !important;
+    pointer-events: auto;
+    animation: opsbareUnrollReveal 3.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* SVG Laser Container Reveal (Keeps OpsBare logo top stem unclipped so first beam emerges from logo corners) */
+#tools3DLaserSvg {
+    opacity: 0;
+    pointer-events: none;
+    clip-path: polygon(0 0, 100% 0, 100% var(--box-top-y, 40px), 0 var(--box-top-y, 40px));
+    will-change: opacity, clip-path;
+    transition: opacity 0.4s ease, clip-path 0.5s ease;
+}
+
+#tools3DLaserSvg.opsbare-box-active {
+    opacity: 1 !important;
+    animation: laserSvgUnroll 3.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes opsbareUnrollReveal {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -14px, 0);
+        clip-path: inset(0 0 100% 0);
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+@keyframes laserSvgUnroll {
+    0% {
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0, 100% var(--box-top-y, 40px), 0 var(--box-top-y, 40px));
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+/* Light mode overrides for OpsBare showcase box */
+html:not(.dark) .opsbare-showcase-box {
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border-color: rgba(212, 212, 216, 0.9) !important;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 25px rgba(0, 0, 0, 0.03) !important;
+}
+
+html:not(.dark) .opsbare-showcase-box .opsbare-feature-card {
+    background-color: rgba(244, 244, 245, 0.9) !important;
+    border-color: rgba(228, 228, 231, 0.9) !important;
+}
+
+html:not(.dark) .opsbare-showcase-box .opsbare-feature-card h4 {
+    color: #18181b !important;
+}
+
+html:not(.dark) .opsbare-showcase-box .opsbare-feature-card p {
+    color: #52525b !important;
+}
+
+html:not(.dark) .opsbare-showcase-box .opsbare-heading {
+    color: #09090b !important;
+}
+
+/* OpsBare Footer Status Badge & GitHub Button Theme Styling */
+
+/* KOYU MOD (Dark Mode): Şık, Göz Yormayan Koyu Çelik Tonları (Glare-Free Dark Steel) */
+html.dark .opsbare-badge,
+.dark .opsbare-badge {
+    background-color: rgba(24, 24, 27, 0.95) !important;
+    border-color: rgba(63, 63, 70, 0.8) !important;
+    color: #f4f4f5 !important;
+}
+
+html.dark .opsbare-badge .opsbare-badge-text,
+.dark .opsbare-badge .opsbare-badge-text {
+    color: #f4f4f5 !important;
+}
+
+html.dark .opsbare-github-btn,
+.dark .opsbare-github-btn {
+    background-color: #27272a !important;
+    border-color: #3f3f46 !important;
+    color: #ffffff !important;
+}
+
+html.dark .opsbare-github-btn svg,
+.dark .opsbare-github-btn svg,
+html.dark .opsbare-github-btn span,
+.dark .opsbare-github-btn span {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+html.dark .opsbare-github-btn:hover,
+.dark .opsbare-github-btn:hover {
+    background-color: #3f3f46 !important;
+    border-color: #52525b !important;
+}
+
+/* AÇIK MOD (Light Mode): Temiz Siyah Buton + Beyaz Yazı */
+html:not(.dark) .opsbare-github-btn {
+    background-color: #18181b !important;
+    border-color: #27272a !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .opsbare-github-btn svg,
+html:not(.dark) .opsbare-github-btn span {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+html:not(.dark) .opsbare-github-btn:hover {
+    background-color: #27272a !important;
+}
+
+html:not(.dark) .opsbare-badge {
+    background-color: #f4f4f5 !important;
+    border-color: #e4e4e7 !important;
+    color: #18181b !important;
+}
+
+html:not(.dark) .opsbare-badge .opsbare-badge-text {
+    color: #18181b !important;
+}
+
+html:not(.dark) .opsbare-showcase-box .opsbare-subheading {
+    color: #52525b !important;
 }
