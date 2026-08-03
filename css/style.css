@@ -382,6 +382,11 @@ html:not(.dark) #app-security-note p {
     color: #4b5563 !important;
 }
 
+#app-security-note svg,
+html:not(.dark) #app-security-note svg {
+    color: #9C035D !important;
+}
+
 /* Screenshot Lightbox Modal Light Mode */
 html:not(.dark) #screenshotModal .bg-zinc-950 {
     background-color: #ffffff !important;
@@ -2503,41 +2508,28 @@ html.dark .opsbare-badge .opsbare-badge-text,
 }
 
 html.dark .opsbare-github-btn,
-.dark .opsbare-github-btn {
-    background-color: #27272a !important;
-    border-color: #3f3f46 !important;
+.dark .opsbare-github-btn,
+html:not(.dark) .opsbare-github-btn {
+    background-color: #9C035D !important;
+    border-color: #9C035D !important;
     color: #ffffff !important;
 }
 
 html.dark .opsbare-github-btn svg,
 .dark .opsbare-github-btn svg,
 html.dark .opsbare-github-btn span,
-.dark .opsbare-github-btn span {
-    color: #ffffff !important;
-    fill: #ffffff !important;
-}
-
-html.dark .opsbare-github-btn:hover,
-.dark .opsbare-github-btn:hover {
-    background-color: #3f3f46 !important;
-    border-color: #52525b !important;
-}
-
-/* AÇIK MOD (Light Mode): Temiz Siyah Buton + Beyaz Yazı */
-html:not(.dark) .opsbare-github-btn {
-    background-color: #18181b !important;
-    border-color: #27272a !important;
-    color: #ffffff !important;
-}
-
+.dark .opsbare-github-btn span,
 html:not(.dark) .opsbare-github-btn svg,
 html:not(.dark) .opsbare-github-btn span {
     color: #ffffff !important;
     fill: #ffffff !important;
 }
 
+html.dark .opsbare-github-btn:hover,
+.dark .opsbare-github-btn:hover,
 html:not(.dark) .opsbare-github-btn:hover {
-    background-color: #27272a !important;
+    background-color: #b8046e !important;
+    border-color: #b8046e !important;
 }
 
 html:not(.dark) .opsbare-badge {
@@ -2591,13 +2583,14 @@ html:not(.dark) .nav-bg-beam {
     background-color: #9C035D !important;
     box-shadow: 0 4px 20px rgba(156, 3, 93, 0.45) !important;
     border-radius: 4px !important;
-    transition: opacity 0.15s ease;
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease !important;
     pointer-events: none;
     z-index: 1;
     opacity: 0;
 }
 
 #navTabsContainer .nav-link-item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2606,6 +2599,27 @@ html:not(.dark) .nav-bg-beam {
     padding-right: 0.85rem !important;
     color: #a1a1aa;
     transition: color 0.2s ease;
+}
+
+/* Thin Elegant White Parallelogram Outline on Hover for Non-Active Nav Links */
+#navTabsContainer .nav-link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    right: 2px;
+    transform: skewX(-15deg);
+    border: 0.5px solid rgba(255, 255, 255, 0.45);
+    background: transparent !important;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#navTabsContainer .nav-link-item:hover:not(.active-nav-item)::before {
+    opacity: 1;
 }
 
 #navTabsContainer .nav-link-item span {
@@ -2827,3 +2841,232 @@ footer.bg-transparent {
         width: 100% !important;
     }
 }
+
+/* === İletişim Penceresi (Contact Modal): Gradyent Kaldırma & #9C035D Magenta Tema === */
+
+/* "Bize Ulaşın" ve diğer başlık yazıları: gradyent yerine düz magenta */
+#contactModal .gradient-text {
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html:not(.dark) #contactModal .gradient-text {
+    background-image: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #9C035D !important;
+    -webkit-text-fill-color: #9C035D !important;
+}
+
+/* "Projenizi Bizimle Başlatın" ve diğer butonlar: gradyent yerine düz magenta */
+#contactModal .btn-gradient {
+    background-image: none !important;
+    background-color: #9C035D !important;
+    box-shadow: 0 10px 25px -5px rgba(156, 3, 93, 0.3) !important;
+}
+
+#contactModal .btn-gradient:hover {
+    background-image: none !important;
+    background-color: #b3046b !important;
+    box-shadow: 0 10px 25px -5px rgba(156, 3, 93, 0.45) !important;
+}
+
+html:not(.dark) #contactModal .btn-gradient {
+    background-image: none !important;
+    background-color: #9C035D !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) #contactModal .btn-gradient:hover {
+    background-image: none !important;
+    background-color: #b3046b !important;
+    color: #ffffff !important;
+}
+
+/* Sosyal medya butonları: Hover'da hiçbir renk/ışık değişmesin, sadece hafifçe büyüsün (scale 1.03) */
+#contactModal a.group {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#contactModal a.group,
+#contactModal a.group:hover,
+html:not(.dark) #contactModal a.group,
+html:not(.dark) #contactModal a.group:hover {
+    background-image: none !important;
+}
+
+#contactModal a.group:hover,
+html:not(.dark) #contactModal a.group:hover,
+#contactModal .box-gradient-hover:hover,
+html:not(.dark) #contactModal .box-gradient-hover:hover,
+html:not(.dark) #contactModal a.group.bg-zinc-900\/40:hover {
+    transform: scale(1.03) !important;
+    border-color: #9C035D !important;
+}
+
+/* Arkaplan parlamasını ve ikon kutusu renk değişimini tamamen engelle */
+#contactModal .glow-gradient,
+#contactModal a.group .glow-gradient,
+#contactModal a.group:hover .glow-gradient {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+#contactModal a.group:hover .w-12,
+#contactModal a.group .w-12 {
+    background-color: #09090b !important;
+}
+
+html:not(.dark) #contactModal a.group:hover .w-12,
+html:not(.dark) #contactModal a.group .w-12 {
+    background-color: #f4f4f5 !important;
+}
+
+/* Form odak (focus) renkleri: turuncu yerine magenta */
+#contactModal input:focus,
+#contactModal select:focus,
+#contactModal textarea:focus {
+    border-color: rgba(156, 3, 93, 0.5) !important;
+    --tw-ring-color: rgba(156, 3, 93, 0.5) !important;
+    box-shadow: 0 0 0 1px rgba(156, 3, 93, 0.5) !important;
+}
+
+/* Hero Hizmetlerimiz Butonu: Magenta Arka Plan ve Beyaz Yazı (Hem Açık hem Koyu Mod) */
+.hero-services-btn,
+html.dark .hero-services-btn,
+html:not(.dark) .hero-services-btn {
+    background-color: #9C035D !important;
+    border-color: #9C035D !important;
+    color: #ffffff !important;
+}
+
+.hero-services-btn span,
+html.dark .hero-services-btn span,
+html:not(.dark) .hero-services-btn span {
+    color: #ffffff !important;
+}
+
+.hero-services-btn:hover,
+html.dark .hero-services-btn:hover,
+html:not(.dark) .hero-services-btn:hover {
+    background-color: #b8046e !important;
+    border-color: #b8046e !important;
+    color: #ffffff !important;
+}
+
+/* Hero Ürünlerimizi İncele Butonu: Açık Modda Başlık Rengi Arka Plan (#111827) ve Beyaz Yazı */
+html:not(.dark) .hero-products-btn {
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .hero-products-btn span {
+    color: #ffffff !important;
+}
+
+html:not(.dark) .hero-products-btn:hover {
+    background-color: #1f2937 !important;
+    border-color: #1f2937 !important;
+    color: #ffffff !important;
+}
+
+/* Service Cards Light Mode Adjustments */
+html:not(.dark) .service-card {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .service-card .w-14 {
+    background-color: #f4f4f5 !important;
+    border-color: #e5e7eb !important;
+}
+
+/* Hemen Başlayın Butonu Styles */
+.btn-get-started,
+html.dark .btn-get-started {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.btn-get-started span,
+html.dark .btn-get-started span,
+html:not(.dark) .btn-get-started span {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+.btn-get-started:hover,
+html.dark .btn-get-started:hover {
+    background-color: #f3f4f6 !important;
+    border-color: #f3f4f6 !important;
+    color: #000000 !important;
+}
+
+html:not(.dark) .btn-get-started {
+    background-color: #0B0B0B !important;
+    border-color: #0B0B0B !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .btn-get-started:hover {
+    background-color: #1f2937 !important;
+    border-color: #1f2937 !important;
+    color: #ffffff !important;
+}
+
+/* Universal Fix for Button/Link Inner Elements & Mobile Tap Highlight */
+button,
+a,
+button *,
+a * {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+button span,
+a span,
+button svg,
+a svg,
+.btn-get-started span,
+.product-card button span,
+.product-card a span,
+.service-card button span,
+.service-card a span {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+html:not(.dark) .service-card .bg-\[\#9C035D\] {
+    background-color: #9C035D !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .service-card .bg-\[\#9C035D\]:hover {
+    background-color: #b8046e !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .text-zinc-300 {
+    color: #374151 !important;
+}
+
+/* Mobile Scattered 3D Cubes Animation */
+@keyframes floatCubeSlow {
+    0% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-12px) rotate(6deg) scale(1.05); }
+    100% { transform: translateY(0px) rotate(0deg) scale(1); }
+}
+@keyframes floatCubeFast {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(-10deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+.cube-animate-slow { animation: floatCubeSlow 5s ease-in-out infinite; }
+.cube-animate-fast { animation: floatCubeFast 3.5s ease-in-out infinite; }
+.cube-animate-mid  { animation: floatCubeSlow 4.2s ease-in-out infinite 1s; }

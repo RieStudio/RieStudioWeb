@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" class="dark">
+<html lang="tr" class="dark max-lg:overflow-hidden max-lg:h-full">
 
 <head>
     <script>
@@ -57,7 +57,7 @@
     </script>
 </head>
 
-<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-transparent text-zinc-100 font-sans antialiased max-lg:fixed max-lg:inset-0 max-lg:overflow-hidden max-lg:h-full min-h-screen flex flex-col">
     <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
     <div id="navBgBeam" class="nav-bg-beam"></div>
 
@@ -248,33 +248,53 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
     <!-- Hero Section -->
-    <main class="pt-36 pb-8 sm:pt-44 sm:pb-24 relative flex-grow flex flex-col justify-start sm:justify-center">
+    <main class="pt-28 pb-8 sm:pt-28 relative flex-grow flex flex-col justify-center mt-2 sm:-mt-10 lg:-mt-14">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                 <!-- Left Content Column -->
-                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left w-full">
+                <div class="lg:col-span-7 flex flex-col items-start text-left w-full">
 
+                    <!-- Mobile Title & Buttons Row (hidden on lg) -->
+                    <div class="flex flex-row items-center justify-start gap-3 sm:gap-6 w-full mb-5 lg:hidden">
+                        <h1 class="text-white text-[42px] min-[380px]:text-[46px] sm:text-5xl font-black tracking-tighter leading-[1.1] text-left flex-shrink-0 w-[140px] sm:w-[170px]"
+                            data-i18n-html="heroTitle">
+                            Sade.<br>Hızlı.<br>Üretken.
+                        </h1>
 
-                    <h1 class="text-white text-[46px] sm:text-5xl lg:text-[72px] font-black tracking-tighter leading-[1.1] mb-5 w-full"
+                        <div
+                            class="flex flex-col items-end justify-start gap-3 w-[155px] sm:w-[190px] flex-shrink-0 -mt-11">
+                            <a href="products.html"
+                                class="hero-products-btn inline-flex items-center justify-center text-center w-auto self-end px-3.5 sm:px-5 py-2.5 text-[11px] min-[380px]:text-xs sm:text-sm font-semibold rounded-xl md:rounded-2xl text-zinc-950 bg-white hover:bg-zinc-200 transition-all duration-200 shadow-md active:scale-[0.98]">
+                                <span data-i18n="exploreProducts" class="whitespace-nowrap">Ürünlerimizi İncele</span>
+                            </a>
+                            <a href="services.html"
+                                class="hero-services-btn inline-flex items-center justify-center text-center w-auto self-end px-3.5 sm:px-5 py-1.5 text-[11px] min-[380px]:text-xs sm:text-sm font-semibold rounded-xl md:rounded-2xl text-white bg-transparent border-2 border-[#9C035D] hover:border-[#b8046e] hover:bg-[#9C035D]/10 transition-all duration-300 active:scale-[0.98]">
+                                <span data-i18n="services" class="whitespace-nowrap">Hizmetlerimiz</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Title (hidden below lg) -->
+                    <h1 class="hidden lg:block text-white lg:text-[72px] font-black tracking-tighter leading-[1.1] mb-5 w-full text-left"
                         data-i18n-html="heroTitle">
-                        Teknoloji,<br class="sm:hidden"> Gelecek ve<br class="sm:hidden"> İnovasyon
+                        Sade.<br>Hızlı.<br>Üretken.
                     </h1>
 
-                    <p class="text-[4.2vw] sm:text-base lg:text-lg text-zinc-400 text-center lg:text-left text-balance mb-14 sm:mb-8 max-w-[300px] mx-auto sm:mx-0 sm:max-w-none leading-[1.6]"
+                    <!-- Description -->
+                    <p class="text-[4.2vw] sm:text-base lg:text-lg text-zinc-400 text-left text-balance mb-6 sm:mb-8 max-w-[300px] sm:max-w-none leading-[1.6]"
                         data-i18n-html="heroDescription">
-                        Güçlü otomasyon, kullanıcı dostu mobil uygulamalar ve web projeleri. Teknoloji ve
-                        üretime dair her şey RieStudio çatısı altında.
+                        Yazılım üreten bir stüdyo.<br>Ürünler geliştiriyor, fikirleri gerçeğe dönüştürüyoruz.
                     </p>
 
-                    <div
-                        class="flex flex-col items-stretch sm:flex-row sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
+                    <!-- Desktop Buttons (hidden below lg) -->
+                    <div class="hidden lg:flex flex-col items-start justify-start gap-3.5 w-full sm:w-auto">
                         <a href="products.html"
-                            class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 text-sm font-semibold rounded-lg text-zinc-950 bg-white hover:bg-zinc-200 transition-all duration-200 shadow-md active:scale-[0.98]">
-                            <span data-i18n="products">Ürünlerimiz</span>
+                            class="hero-products-btn inline-flex items-center justify-start text-left w-auto px-6 py-2.5 text-sm sm:text-base font-semibold rounded-xl md:rounded-2xl text-zinc-950 bg-white hover:bg-zinc-200 transition-all duration-200 shadow-md active:scale-[0.98]">
+                            <span data-i18n="exploreProducts">Ürünlerimizi İncele</span>
                         </a>
                         <a href="services.html"
-                            class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 text-sm font-semibold rounded-lg text-white bg-transparent border border-white/30 hover:border-white/80 hover:bg-white/5 transition-all duration-300 active:scale-[0.98]">
+                            class="hero-services-btn inline-flex items-center justify-start text-left w-auto px-6 py-2 text-sm sm:text-base font-semibold rounded-xl md:rounded-2xl text-white bg-transparent border-2 border-[#9C035D] hover:border-[#b8046e] hover:bg-[#9C035D]/10 transition-all duration-300 active:scale-[0.98]">
                             <span data-i18n="services">Hizmetlerimiz</span>
                         </a>
                     </div>
@@ -290,6 +310,83 @@
             </div>
         </div>
     </main>
+
+    <!-- Mobile Floating Front-Facing Square Tiles (Right above footer for phone users) -->
+    <div class="lg:hidden relative w-full h-36 overflow-hidden pointer-events-none z-0 mt-6 mb-2">
+        <div class="max-w-md mx-auto h-full relative opacity-90">
+            <!-- Tile 1 (Large - Left) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <div class="absolute left-[5%] top-[10%] cube-animate-slow">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-[#9C035D] border border-[#b8046e] shadow-lg shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                </div>
+            </div>
+
+            <!-- Tile 2 (Medium - Center Left) -> #0C0C0C / dark: #F9FAFB -->
+            <div class="absolute left-[26%] top-[30%] cube-animate-fast">
+                <div
+                    class="w-9 h-9 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/40 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 3 (Small - Center) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <div class="absolute left-[48%] top-[8%] cube-animate-mid">
+                <div
+                    class="w-7 h-7 rounded-lg bg-[#9C035D] border border-[#b8046e] shadow-md shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                </div>
+            </div>
+
+            <!-- Tile 4 (Tiny - Mid Right) -> #0C0C0C / dark: #F9FAFB -->
+            <div class="absolute left-[66%] top-[35%] cube-animate-slow">
+                <div
+                    class="w-6 h-6 rounded-lg bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-sm flex items-center justify-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 5 (Large - Right) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <div class="absolute left-[82%] top-[15%] cube-animate-fast">
+                <div
+                    class="w-11 h-11 rounded-2xl bg-[#9C035D] border border-[#b8046e] shadow-lg shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                </div>
+            </div>
+
+            <!-- Tile 6 (Lower Left/Center) -> #0C0C0C / dark: #F9FAFB -->
+            <div class="absolute left-[16%] top-[62%] cube-animate-mid">
+                <div
+                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/40 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tile 7 (Lower Right) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <div class="absolute left-[72%] top-[60%] cube-animate-slow">
+                <div
+                    class="w-8 h-8 rounded-xl bg-[#9C035D] border border-[#b8046e] shadow-md shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                </div>
+            </div>
+
+            <!-- Tile 8 (Center Tile) -> #0C0C0C / dark: #F9FAFB -->
+            <div class="absolute left-[44%] top-[42%] cube-animate-slow">
+                <div
+                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/50 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer
@@ -334,14 +431,25 @@
                     </svg>
                 </a>
             </div>
-            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-                <span data-i18n="copyright">&copy; RieStudio 2026 Tüm hakları saklıdır.</span>
-                <span class="hidden sm:inline text-zinc-500">•</span>
-                <a href="privacy/index.html" class="hover:text-white hover-thick transition-colors duration-200"
-                    data-i18n="privacyPolicy">Gizlilik Politikası</a>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="privacy/index.html" class="hover:text-white hover-thick transition-colors duration-200"
+                        data-i18n="privacyPolicy">Gizlilik Politikası</a>
+                    <span class="text-zinc-500">•</span>
+                    <a href="terms/index.html" class="hover:text-white hover-thick transition-colors duration-200"
+                        data-i18n="termsOfUse">Kullanım Koşulları</a>
+                </div>
                 <span class="hidden sm:inline text-zinc-500">•</span>
                 <a href="mailto:contact@riestudio.com.tr"
-                    class="hover:text-white hover-thick transition-colors duration-200">contact@riestudio.com.tr</a>
+                    class="inline-flex items-center gap-1.5 hover:text-white hover-thick transition-colors duration-200">
+                    <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>contact@riestudio.com.tr</span>
+                </a>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <span class="text-zinc-500 text-xs mt-0.5 sm:mt-0">&copy; 2026 RieStudio</span>
             </div>
         </div>
     </footer>
@@ -501,7 +609,6 @@
                             <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
                                 data-i18n="formDetails">Proje Detayları ve Açıklama</label>
                             <textarea id="projectDetails" rows="3" required
-                                placeholder="Proje Detayları / Project Details..."
                                 class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm resize-none"></textarea>
                         </div>
 
@@ -542,13 +649,14 @@
             tr: {
                 about: "Hakkımızda",
                 products: "Ürünlerimiz",
+                exploreProducts: "Ürünlerimizi İncele",
                 services: "Hizmetlerimiz",
                 projects: "Projeler",
                 contact: "İletişim",
                 heroSubtitle: "Sınırların Ötesinde:",
                 heroBadge: "RieStudio • Dijital Çözümler",
-                heroTitle: "Teknoloji,<br class=\"sm:hidden\"> Gelecek ve<br class=\"sm:hidden\"> İnovasyon",
-                heroDescription: "Güçlü otomasyon, kullanıcı dostu mobil uygulamalar ve web projeleri. Teknoloji ve üretime dair her şey RieStudio çatısı altında.",
+                heroTitle: "Sade.<br>Hızlı.<br>Üretken.",
+                heroDescription: "Yazılım üreten bir stüdyo.<br>Ürünler geliştiriyor, fikirleri gerçeğe dönüştürüyoruz.",
                 contactUs: "Bize Ulaşın",
                 email: "E-posta",
                 phone: "Telefon",
@@ -557,6 +665,7 @@
                 english: "English",
                 copyright: "© RieStudio 2026 Tüm hakları saklıdır.",
                 privacyPolicy: "Gizlilik Politikası",
+                termsOfUse: "Kullanım Koşulları",
                 viewProjects: "Neler Yapıyoruz?",
                 appTitle: "Öneri Bul",
                 appDesc: "Hayatınızı kolaylaştıran yepyeni mobil uygulamamız. Güvenle indirin, hemen kullanmaya başlayın.",
@@ -581,13 +690,14 @@
             en: {
                 about: "About Us",
                 products: "Products",
+                exploreProducts: "Explore Our Products",
                 services: "Services",
                 projects: "Projects",
                 contact: "Contact",
                 heroSubtitle: "Beyond Boundaries:",
                 heroBadge: "RieStudio • Digital Solutions",
-                heroTitle: "Technology,<br class=\"sm:hidden\"> Future and<br class=\"sm:hidden\"> Innovation",
-                heroDescription: "Powerful automation, user-friendly mobile apps and web projects. Everything about technology and production, under the RieStudio roof.",
+                heroTitle: "Clean.<br>Fast.<br>Productive.",
+                heroDescription: "A software development studio.<br>Developing products, turning ideas into reality.",
                 contactUs: "Contact Us",
                 email: "Email",
                 phone: "Phone",
@@ -596,6 +706,7 @@
                 english: "English",
                 copyright: "© RieStudio 2026 All rights reserved.",
                 privacyPolicy: "Privacy Policy",
+                termsOfUse: "Terms of Use",
                 viewProjects: "What We Do",
                 appTitle: "Öneri Bul",
                 appDesc: "Our brand new mobile app that makes your life easier. Download safely and start using it right away.",
@@ -1085,11 +1196,13 @@
             const particleCount = 650;
             const particles = [];
             const targetsWeb = [];
-            const targetsMobile = [];
             const targetsAutomation = [];
             const targetsFloat = [];
             const targetsLogo = [];
-            let mode = 'float'; // 'float', 'web', 'mobile', 'automation', 'logo'
+            const targetsCalendar = [];
+            const targetsOneribul = [];
+            const targetsOpsbare = [];
+            let mode = 'float'; // 'float', 'web', 'automation', 'calendar', 'oneribul', 'opsbare', 'logo'
             let prevMode = 'float';
             let modeTransitionStart = 0;
             const TRANSITION_DURATION = 1800; // ms
@@ -1151,101 +1264,48 @@
                     }
                 }
 
-                // 3. Mobile Shape (Smartphone layout)
-                const phW = 110, phH = 220, phX = 145, phY = 50;
-                // Phone frame outer bezel: 220 points
-                for (let i = 0; i < 220; i++) {
-                    const p = i / 220;
-                    let px, py;
-                    if (p < 0.3) {
-                        px = phX + (p / 0.3) * phW;
-                        py = phY;
-                    } else if (p < 0.5) {
-                        px = phX + phW;
-                        py = phY + ((p - 0.3) / 0.2) * phH;
-                    } else if (p < 0.8) {
-                        px = phX + phW - ((p - 0.5) / 0.3) * phW;
-                        py = phY + phH;
-                    } else {
-                        px = phX;
-                        py = phY + phH - ((p - 0.8) / 0.2) * phH;
-                    }
-                    targetsMobile.push({ x: px, y: py });
+                // 4. Planca Checkmark 'P' Logo Shape
+                const stemX = 115;
+                const stemTopY = 65;
+                const stemBottomY = 285;
+                // Vertical stem line (130 points)
+                for (let i = 0; i < 130; i++) {
+                    targetsAutomation.push({
+                        x: stemX,
+                        y: stemTopY + (i / 129) * (stemBottomY - stemTopY)
+                    });
                 }
-                // Phone inner screen bezel: 150 points
-                const scrW = 96, scrH = 196, scrX = 152, scrY = 62;
-                for (let i = 0; i < 150; i++) {
-                    const p = i / 150;
-                    let px, py;
-                    if (p < 0.3) {
-                        px = scrX + (p / 0.3) * scrW;
-                        py = scrY;
-                    } else if (p < 0.5) {
-                        px = scrX + scrW;
-                        py = scrY + ((p - 0.3) / 0.2) * scrH;
-                    } else if (p < 0.8) {
-                        px = scrX + scrW - ((p - 0.5) / 0.3) * scrW;
-                        py = scrY + scrH;
-                    } else {
-                        px = scrX;
-                        py = scrY + scrH - ((p - 0.8) / 0.2) * scrH;
-                    }
-                    targetsMobile.push({ x: px, y: py });
-                }
-                // Phone speaker and Home bar: 50 points
-                for (let i = 0; i < 25; i++) {
-                    targetsMobile.push({ x: phX + 42 + (i / 25) * 26, y: phY + 4 });
-                }
-                for (let i = 0; i < 25; i++) {
-                    targetsMobile.push({ x: phX + 40 + (i / 25) * 30, y: phY + phH - 12 });
-                }
-                // Mock mobile application view cards: 230 points
+                // Circle loop of 'p' (230 points)
+                const circleX = 185;
+                const circleY = 145;
+                const circleR = 70;
                 for (let i = 0; i < 230; i++) {
-                    if (i < 70) {
-                        targetsMobile.push({ x: scrX + 10 + (i / 70) * (scrW - 20), y: scrY + 30 + Math.cos(i) * 10 });
-                    } else if (i < 140) {
-                        targetsMobile.push({ x: scrX + 10 + ((i - 70) / 70) * (scrW - 20), y: scrY + 80 + Math.cos(i) * 10 });
-                    } else {
-                        targetsMobile.push({ x: scrX + 10 + ((i - 140) / 90) * (scrW - 20), y: scrY + 130 + Math.cos(i) * 10 });
-                    }
+                    const th = (i / 230) * Math.PI * 2;
+                    targetsAutomation.push({
+                        x: circleX + Math.cos(th) * circleR,
+                        y: circleY + Math.sin(th) * circleR
+                    });
                 }
-
-                // 4. Automation Shape (Connected Graph Nodes)
-                const nodes = [
-                    { x: 200, y: 70 },
-                    { x: 110, y: 175 },
-                    { x: 290, y: 175 },
-                    { x: 200, y: 280 }
-                ];
-                // 4 circles (80 points each -> 320 points)
-                nodes.forEach(c => {
-                    for (let i = 0; i < 80; i++) {
-                        const th = (i / 80) * 2 * Math.PI;
-                        targetsAutomation.push({
-                            x: c.x + Math.cos(th) * 25,
-                            y: c.y + Math.sin(th) * 25
-                        });
-                    }
-                });
-                // Connections (66 points each -> 330 points)
-                const edges = [
-                    [nodes[0], nodes[1]], // A to B
-                    [nodes[0], nodes[2]], // A to C
-                    [nodes[1], nodes[3]], // B to D
-                    [nodes[2], nodes[3]], // C to D
-                    [nodes[1], nodes[2]]  // B to C
-                ];
-                edges.forEach(edge => {
-                    const steps = 66;
-                    const p1 = edge[0];
-                    const p2 = edge[1];
-                    for (let i = 0; i < steps; i++) {
-                        targetsAutomation.push({
-                            x: p1.x + (p2.x - p1.x) * (i / steps),
-                            y: p1.y + (p2.y - p1.y) * (i / steps)
-                        });
-                    }
-                });
+                // Short arm of checkmark (80 points)
+                const checkStartX = 140;
+                const checkStartY = 135;
+                const checkCornerX = 175;
+                const checkCornerY = 170;
+                for (let i = 0; i < 80; i++) {
+                    targetsAutomation.push({
+                        x: checkStartX + (i / 79) * (checkCornerX - checkStartX),
+                        y: checkStartY + (i / 79) * (checkCornerY - checkStartY)
+                    });
+                }
+                // Long arm of checkmark extending up-right (210 points)
+                const checkEndX = 275;
+                const checkEndY = 70;
+                for (let i = 0; i < 210; i++) {
+                    targetsAutomation.push({
+                        x: checkCornerX + (i / 209) * (checkEndX - checkCornerX),
+                        y: checkCornerY + (i / 209) * (checkEndY - checkCornerY)
+                    });
+                }
 
                 // 5. Logo Shape — RieStudio icon (correct geometry)
                 // Square icon, diagonal bands at 45°
@@ -1291,6 +1351,220 @@
                         : Math.random() * iconS;
                     targetsLogo.push({ x: iconX + gx, y: iconY + gy, r: 190, g: 15, b: 145 });
                 }
+
+                // 6. Calendar Growth Chart Shape ('calendar')
+                const calX = 90, calY = 70, calW = 220, calH = 210;
+                // Outer calendar box outline: 220 points
+                for (let i = 0; i < 220; i++) {
+                    const p = i / 220;
+                    let px, py;
+                    if (p < 0.3) {
+                        px = calX + (p / 0.3) * calW;
+                        py = calY;
+                    } else if (p < 0.5) {
+                        px = calX + calW;
+                        py = calY + ((p - 0.3) / 0.2) * calH;
+                    } else if (p < 0.8) {
+                        px = calX + calW - ((p - 0.5) / 0.3) * calW;
+                        py = calY + calH;
+                    } else {
+                        px = calX;
+                        py = calY + calH - ((p - 0.8) / 0.2) * calH;
+                    }
+                    targetsCalendar.push({ x: px, y: py });
+                }
+
+                // Top Header Line: 40 points
+                for (let i = 0; i < 40; i++) {
+                    targetsCalendar.push({ x: calX + (i / 39) * calW, y: calY + 35 });
+                }
+
+                // 4 Top Binder Rings/Pegs: 60 points total (15 each)
+                const ringXPositions = [125, 175, 225, 275];
+                ringXPositions.forEach(rx => {
+                    for (let i = 0; i < 15; i++) {
+                        const th = (i / 14) * Math.PI;
+                        targetsCalendar.push({ x: rx + Math.cos(th) * 7, y: calY - 5 - Math.sin(th) * 12 });
+                    }
+                });
+
+                // Inner Grid Lines: 120 points
+                // 3 horizontal grid lines (20 points each = 60)
+                [145, 185, 225].forEach(gy => {
+                    for (let i = 0; i < 20; i++) {
+                        targetsCalendar.push({ x: calX + 10 + (i / 19) * (calW - 20), y: gy });
+                    }
+                });
+                // 3 vertical grid lines (20 points each = 60)
+                [145, 200, 255].forEach(gx => {
+                    for (let i = 0; i < 20; i++) {
+                        targetsCalendar.push({ x: gx, y: calY + 45 + (i / 19) * (calH - 55) });
+                    }
+                });
+
+                // Rising Trend Graph Line: 210 points along 5 line segments
+                const trendPoints = [
+                    { x: 105, y: 250 },
+                    { x: 150, y: 195 },
+                    { x: 175, y: 215 },
+                    { x: 225, y: 155 },
+                    { x: 250, y: 175 },
+                    { x: 305, y: 115 }
+                ];
+                for (let seg = 0; seg < trendPoints.length - 1; seg++) {
+                    const p1 = trendPoints[seg];
+                    const p2 = trendPoints[seg + 1];
+                    const steps = 42;
+                    for (let i = 0; i < steps; i++) {
+                        targetsCalendar.push({
+                            x: p1.x + (i / (steps - 1)) * (p2.x - p1.x),
+                            y: p1.y + (i / (steps - 1)) * (p2.y - p1.y)
+                        });
+                    }
+                }
+
+                // 7. ÖneriBul Geometric Crystal Mesh Shape ('oneribul')
+                const polyV = [
+                    { x: 220, y: 65 },
+                    { x: 305, y: 105 },
+                    { x: 325, y: 180 },
+                    { x: 275, y: 250 },
+                    { x: 175, y: 275 },
+                    { x: 105, y: 240 },
+                    { x: 75, y: 160 },
+                    { x: 125, y: 90 }
+                ];
+                // Outer octagonal rim (240 points)
+                for (let i = 0; i < 8; i++) {
+                    const p1 = polyV[i];
+                    const p2 = polyV[(i + 1) % 8];
+                    for (let j = 0; j < 30; j++) {
+                        targetsOneribul.push({
+                            x: p1.x + (j / 30) * (p2.x - p1.x),
+                            y: p1.y + (j / 30) * (p2.y - p1.y)
+                        });
+                    }
+                }
+
+                // Interior nodes
+                const intNodes = [
+                    { x: 195, y: 125 },
+                    { x: 255, y: 130 },
+                    { x: 165, y: 185 },
+                    { x: 235, y: 195 },
+                    { x: 200, y: 225 },
+                    { x: 145, y: 135 }
+                ];
+
+                // Interior constellation triangulation edges (410 points)
+                const innerEdges = [
+                    [polyV[0], intNodes[0]], [polyV[0], intNodes[1]], [polyV[1], intNodes[1]],
+                    [polyV[2], intNodes[1]], [polyV[2], intNodes[3]], [polyV[3], intNodes[3]],
+                    [polyV[3], intNodes[4]], [polyV[4], intNodes[4]], [polyV[4], intNodes[2]],
+                    [polyV[5], intNodes[2]], [polyV[6], intNodes[2]], [polyV[6], intNodes[5]],
+                    [polyV[7], intNodes[5]], [polyV[7], intNodes[0]],
+                    [intNodes[0], intNodes[1]], [intNodes[1], intNodes[3]], [intNodes[3], intNodes[4]],
+                    [intNodes[4], intNodes[2]], [intNodes[2], intNodes[5]], [intNodes[5], intNodes[0]],
+                    [intNodes[0], intNodes[3]], [intNodes[2], intNodes[4]], [intNodes[0], intNodes[4]]
+                ];
+
+                innerEdges.forEach(edge => {
+                    const p1 = edge[0];
+                    const p2 = edge[1];
+                    const steps = 17;
+                    for (let k = 0; k < steps; k++) {
+                        targetsOneribul.push({
+                            x: p1.x + (k / steps) * (p2.x - p1.x),
+                            y: p1.y + (k / steps) * (p2.y - p1.y)
+                        });
+                    }
+                });
+                while (targetsOneribul.length < particleCount) {
+                    targetsOneribul.push({ x: 210, y: 165 });
+                }
+
+                // 8. OpsBare Pipeline Shape ('opsbare')
+                const silverColor = { r: 230, g: 232, b: 235 };
+                const greenColor = { r: 16, g: 185, b: 129 };
+
+                // Top Pill (160 points, y = 75)
+                const pill1X = 90, pill1Y = 75, pillW = 220, pillH = 36, pillR = 18;
+                for (let i = 0; i < 160; i++) {
+                    const p = i / 160;
+                    let px, py;
+                    if (p < 0.4) {
+                        px = pill1X + pillR + (p / 0.4) * (pillW - 2 * pillR);
+                        py = pill1Y;
+                    } else if (p < 0.5) {
+                        const th = ((p - 0.4) / 0.1) * Math.PI - Math.PI / 2;
+                        px = pill1X + pillW - pillR + Math.cos(th) * pillR;
+                        py = pill1Y + pillR + Math.sin(th) * pillR;
+                    } else if (p < 0.9) {
+                        px = pill1X + pillW - pillR - ((p - 0.5) / 0.4) * (pillW - 2 * pillR);
+                        py = pill1Y + pillH;
+                    } else {
+                        const th = ((p - 0.9) / 0.1) * Math.PI + Math.PI / 2;
+                        px = pill1X + pillR + Math.cos(th) * pillR;
+                        py = pill1Y + pillR + Math.sin(th) * pillR;
+                    }
+                    targetsOpsbare.push({ x: px, y: py, ...silverColor });
+                }
+
+                // Left Connector (40 points)
+                for (let i = 0; i < 40; i++) {
+                    targetsOpsbare.push({ x: 125, y: 111 + (i / 39) * 34, ...silverColor });
+                }
+
+                // Middle Pill (160 points, y = 145)
+                const pill2Y = 145;
+                for (let i = 0; i < 160; i++) {
+                    const p = i / 160;
+                    let px, py;
+                    if (p < 0.4) {
+                        px = pill1X + pillR + (p / 0.4) * (pillW - 2 * pillR);
+                        py = pill2Y;
+                    } else if (p < 0.5) {
+                        const th = ((p - 0.4) / 0.1) * Math.PI - Math.PI / 2;
+                        px = pill1X + pillW - pillR + Math.cos(th) * pillR;
+                        py = pill2Y + pillR + Math.sin(th) * pillR;
+                    } else if (p < 0.9) {
+                        px = pill1X + pillW - pillR - ((p - 0.5) / 0.4) * (pillW - 2 * pillR);
+                        py = pill2Y + pillH;
+                    } else {
+                        const th = ((p - 0.9) / 0.1) * Math.PI + Math.PI / 2;
+                        px = pill1X + pillR + Math.cos(th) * pillR;
+                        py = pill2Y + pillR + Math.sin(th) * pillR;
+                    }
+                    targetsOpsbare.push({ x: px, y: py, ...silverColor });
+                }
+
+                // Right Connector (40 points)
+                for (let i = 0; i < 40; i++) {
+                    targetsOpsbare.push({ x: 275, y: 181 + (i / 39) * 34, ...silverColor });
+                }
+
+                // Bottom Green Pill (250 points, y = 215)
+                const pill3Y = 215;
+                for (let i = 0; i < 250; i++) {
+                    const p = i / 250;
+                    let px, py;
+                    if (p < 0.4) {
+                        px = pill1X + pillR + (p / 0.4) * (pillW - 2 * pillR);
+                        py = pill3Y;
+                    } else if (p < 0.5) {
+                        const th = ((p - 0.4) / 0.1) * Math.PI - Math.PI / 2;
+                        px = pill1X + pillW - pillR + Math.cos(th) * pillR;
+                        py = pill3Y + pillR + Math.sin(th) * pillR;
+                    } else if (p < 0.9) {
+                        px = pill1X + pillW - pillR - ((p - 0.5) / 0.4) * (pillW - 2 * pillR);
+                        py = pill3Y + pillH;
+                    } else {
+                        const th = ((p - 0.9) / 0.1) * Math.PI + Math.PI / 2;
+                        px = pill1X + pillR + Math.cos(th) * pillR;
+                        py = pill3Y + pillR + Math.sin(th) * pillR;
+                    }
+                    targetsOpsbare.push({ x: px, y: py, ...greenColor });
+                }
             }
 
             // Easing function for smooth transition
@@ -1301,8 +1575,10 @@
             function getTargetForMode(m, idx) {
                 if (m === 'float') return null;
                 if (m === 'web') return targetsWeb[idx];
-                if (m === 'mobile') return targetsMobile[idx];
                 if (m === 'automation') return targetsAutomation[idx];
+                if (m === 'calendar') return targetsCalendar[idx];
+                if (m === 'oneribul') return targetsOneribul[idx];
+                if (m === 'opsbare') return targetsOpsbare[idx];
                 if (m === 'logo') return targetsLogo[idx];
                 return null;
             }
@@ -1407,13 +1683,23 @@
                             return isDarkTheme ? [200, 210, 255, alpha] : [75, 85, 99, alpha];
                         }
                         if (m === 'web') {
-                            return isDarkTheme ? [139, 92, 246, 0.75] : [109, 40, 217, 0.9];
-                        }
-                        if (m === 'mobile') {
-                            return isDarkTheme ? [249, 115, 22, 0.75] : [194, 65, 12, 0.9];
+                            return isDarkTheme ? [156, 3, 93, 0.85] : [156, 3, 93, 0.95];
                         }
                         if (m === 'automation') {
-                            return isDarkTheme ? [255, 255, 255, 0.65] : [17, 24, 39, 0.85];
+                            return isDarkTheme ? [96, 165, 250, 0.85] : [59, 130, 246, 0.95];
+                        }
+                        if (m === 'calendar') {
+                            return isDarkTheme ? [0, 150, 255, 0.85] : [0, 110, 230, 0.95];
+                        }
+                        if (m === 'oneribul') {
+                            return isDarkTheme ? [168, 85, 247, 0.85] : [126, 34, 206, 0.95];
+                        }
+                        if (m === 'opsbare') {
+                            const tgt = targetsOpsbare[this.index];
+                            if (tgt) {
+                                return isDarkTheme ? [tgt.r, tgt.g, tgt.b, 0.9] : [Math.max(0, tgt.r - 20), Math.max(0, tgt.g - 20), Math.max(0, tgt.b - 20), 0.95];
+                            }
+                            return [16, 185, 129, 0.9];
                         }
                         if (m === 'logo') {
                             const tgt = targetsLogo[this.index];
@@ -1472,27 +1758,33 @@
                     connectRange(220, 319, false); // base
                     connectRange(320, 359, false); // stand base feet
                     connectRange(360, 439, false); // nav bar line
-                } else if (mode === 'mobile' && lineAlpha > 0.05) {
-                    ctx.strokeStyle = isDarkTheme
-                        ? `rgba(249, 115, 22, ${(0.22 * lineAlpha).toFixed(3)})`
-                        : `rgba(194, 65, 12, ${(0.35 * lineAlpha).toFixed(3)})`;
-                    connectRange(0, 219, true); // frame outer
-                    connectRange(220, 369, true); // screen outer
-                    connectRange(370, 394, false); // speaker
-                    connectRange(395, 419, false); // home indicator
                 } else if (mode === 'automation' && lineAlpha > 0.05) {
                     ctx.strokeStyle = isDarkTheme
-                        ? `rgba(255, 255, 255, ${(0.18 * lineAlpha).toFixed(3)})`
-                        : `rgba(17, 24, 39, ${(0.30 * lineAlpha).toFixed(3)})`;
-                    connectRange(0, 79, true); // node circle 1
-                    connectRange(80, 159, true); // node circle 2
-                    connectRange(160, 239, true); // node circle 3
-                    connectRange(240, 319, true); // node circle 4
-                    connectRange(320, 385, false); // line 1
-                    connectRange(386, 451, false); // line 2
-                    connectRange(452, 517, false); // line 3
-                    connectRange(518, 583, false); // line 4
-                    connectRange(584, 649, false); // line 5
+                        ? `rgba(96, 165, 250, ${(0.22 * lineAlpha).toFixed(3)})`
+                        : `rgba(59, 130, 246, ${(0.35 * lineAlpha).toFixed(3)})`;
+                    connectRange(0, 129, false); // vertical stem
+                    connectRange(130, 359, true); // circle loop
+                    connectRange(360, 439, false); // checkmark short arm
+                    connectRange(440, 649, false); // checkmark long arm
+                } else if (mode === 'calendar' && lineAlpha > 0.05) {
+                    ctx.strokeStyle = isDarkTheme
+                        ? `rgba(0, 150, 255, ${(0.22 * lineAlpha).toFixed(3)})`
+                        : `rgba(0, 110, 230, ${(0.35 * lineAlpha).toFixed(3)})`;
+                    connectRange(0, 219, true); // outer calendar box
+                    connectRange(220, 259, false); // top header line
+                    connectRange(440, 649, false); // rising trend line
+                } else if (mode === 'oneribul' && lineAlpha > 0.05) {
+                    ctx.strokeStyle = isDarkTheme
+                        ? `rgba(168, 85, 247, ${(0.22 * lineAlpha).toFixed(3)})`
+                        : `rgba(126, 34, 206, ${(0.35 * lineAlpha).toFixed(3)})`;
+                    connectRange(0, 239, true); // outer polygon rim
+                } else if (mode === 'opsbare' && lineAlpha > 0.05) {
+                    ctx.strokeStyle = isDarkTheme
+                        ? `rgba(16, 185, 129, ${(0.22 * lineAlpha).toFixed(3)})`
+                        : `rgba(5, 150, 105, ${(0.35 * lineAlpha).toFixed(3)})`;
+                    connectRange(0, 159, true); // top pill
+                    connectRange(200, 359, true); // middle pill
+                    connectRange(400, 649, true); // bottom green pill
                 }
             }
 
@@ -1531,7 +1823,7 @@
                 animationId = requestAnimationFrame(animate);
             }
 
-            const modes = ['float', 'web', 'mobile', 'automation', 'logo'];
+            const modes = ['float', 'web', 'automation', 'calendar', 'oneribul', 'opsbare', 'logo'];
             let autoCycleInterval = null;
 
             function switchMode(newMode) {

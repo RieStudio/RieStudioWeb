@@ -258,10 +258,10 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
     <!-- Main Content -->
-    <main class="pt-24 md:pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <main class="flex-1 pt-24 md:pt-28 pb-20 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl mx-auto px-0">
 
         <!-- Category Filter Tabs -->
-        <div class="flex items-center justify-center mb-14 w-full px-1">
+        <div class="flex items-center justify-center mb-6 sm:mb-8 w-full px-1">
             <div id="servicesTabContainer"
                 class="relative bg-zinc-950/90 backdrop-blur-xl border border-zinc-800/80 rounded-full p-1.5 sm:p-2 inline-flex items-center gap-1 sm:gap-2 shadow-2xl max-w-full overflow-hidden">
 
@@ -286,62 +286,75 @@
 
             <!-- 1. Mobil Uygulama Geliştirme Hizmet Kartı -->
             <div data-category="mobile"
-                class="service-card bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 relative overflow-hidden transition-all duration-300 hover:border-orange-500/30 group flex flex-col justify-between">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl"></div>
+                class="service-card lg:col-span-2 bg-zinc-950/80 backdrop-blur-xl border border-zinc-800/80 rounded-[2rem] p-8 sm:p-10 relative overflow-hidden transition-all duration-300 group flex flex-col lg:flex-row lg:items-start justify-between gap-8">
 
-                <div class="relative z-10">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-orange-500/20 border border-orange-500/20 text-orange-400">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div class="ml-6">
-                            <span class="text-xs font-bold tracking-widest text-orange-400 uppercase"
-                                data-i18n="badgeCustomSoftware">● ÖZEL YAZILIM</span>
-                            <h2 class="text-3xl font-bold text-white mt-1" data-i18n="mobileDevTitle">Mobil Uygulama
-                                Geliştirme</h2>
-                        </div>
+                <div class="relative z-10 max-w-3xl">
+                    <div class="mb-5">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight" data-i18n="mobileDevTitle">
+                            Mobil Uygulama
+                            Geliştirme</h2>
                     </div>
 
-                    <p class="text-gray-400 mb-6 leading-relaxed" data-i18n="mobileDevDesc">
-                        iOS ve Android platformları için yüksek performanslı, akıcı kullanıcı deneyimine (UX) sahip ve
-                        ölçeklenebilir yerel ve çapraz platform mobil uygulamalar tasarlıyor ve geliştiriyoruz.
+                    <p class="text-zinc-400 mb-6 leading-relaxed" data-i18n="mobileDevDesc">
+                        İşletmeler ve girişimlerin ihtiyaçlarına özel mobil uygulamalar geliştiriyoruz. Fikirden yayına<br>kadar tüm süreci RieStudio çatısı altında yönetiyoruz.
                     </p>
 
-                    <div class="space-y-2 mb-8 text-sm text-gray-300">
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span data-i18n="mobileBullet1">Flutter & Native Çözümler</span>
+                    <div class="flex flex-wrap gap-y-2.5 gap-x-6 text-sm text-zinc-300">
+                        <div class="flex items-center gap-2.5">
+                            <img src="assets/riestudioicon.png" alt="Icon"
+                                class="w-4 h-4 object-contain flex-shrink-0 rotate-90">
+                            <span data-i18n="mobileBullet0">Android &amp; iOS</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span data-i18n="mobileBullet2">Play Store & App Store Yayınlama Desteği</span>
+                        <div class="flex items-center gap-2.5">
+                            <img src="assets/riestudioicon.png" alt="Icon"
+                                class="w-4 h-4 object-contain flex-shrink-0 rotate-90">
+                            <span data-i18n="mobileBullet2">Play Store &amp; App Store Yayınlama Desteği</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span data-i18n="mobileBullet3">Güvenli API ve Backend Entegrasyonları</span>
+                        <div class="flex items-center gap-2.5">
+                            <img src="assets/riestudioicon.png" alt="Icon"
+                                class="w-4 h-4 object-contain flex-shrink-0 rotate-90">
+                            <span data-i18n="mobileBulletCloud">Bulut Servisleri Entegrasyonu</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <img src="assets/riestudioicon.png" alt="Icon"
+                                class="w-4 h-4 object-contain flex-shrink-0 rotate-90">
+                            <span data-i18n="mobileBulletSupport">Teknik Destek ve Bakım</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative z-10 pt-4">
+                <div
+                    class="relative z-10 flex flex-col items-center sm:items-end gap-3 w-full lg:w-auto flex-shrink-0 lg:pt-0.5">
                     <button onclick="if(typeof openContactModal === 'function') openContactModal();"
-                        class="w-full py-4 bg-gradient-to-r from-orange-500 via-magenta to-red-600 hover:opacity-95 text-white font-bold rounded-xl text-sm tracking-wider uppercase transition-all shadow-lg shadow-orange-500/20">
-                        <span data-i18n="btnGetStarted">Hemen Başlayın</span>
+                        class="btn-get-started w-full sm:w-56 px-6 py-3.5 font-semibold rounded-xl text-sm transition-all duration-200 text-center active:scale-[0.98] whitespace-nowrap">
+                        <span data-i18n="btnGetStarted">Hemen Başlayalım</span>
+                    </button>
+                    <button type="button"
+                        class="w-full sm:w-56 px-6 py-3.5 bg-[#9C035D] hover:bg-[#b8046e] text-white font-semibold rounded-xl text-sm transition-all duration-200 shadow-md text-center active:scale-[0.98] whitespace-nowrap">
+                        <span data-i18n="btnCompletedProjects">Tamamlanan Projeler</span>
                     </button>
                 </div>
+
+                <!-- Diagonal Overlapping iOS & Android Mockups Aligned with Background Beam -->
+                <div
+                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-[270px] lg:right-[290px] md:top-1/2 md:bottom-auto md:-translate-y-1/2 w-64 h-56 sm:w-72 sm:h-64 md:w-64 md:h-64 pointer-events-none opacity-25 dark:opacity-40 md:opacity-80 md:dark:opacity-80 transition-all duration-300 z-0 overflow-visible">
+                    <div class="relative w-full h-full">
+                        <!-- Android Mockup (Bottom/Left Layer) -->
+                        <img id="mockupAndroid" src="assets/dark-mockup-android-tr.png" alt="Android App Mockup"
+                            class="absolute top-0 right-28 sm:right-32 md:right-14 w-40 sm:w-44 md:w-46 h-auto transform rotate-[14deg] translate-y-2 drop-shadow-2xl">
+                        <!-- iOS Mockup (Top/Right Overlapping Layer) -->
+                        <img id="mockupIos" src="assets/dark-mockup-ios-tr.png" alt="iOS App Mockup"
+                            class="absolute top-4 sm:top-8 md:top-12 -right-4 sm:-right-2 md:-right-2.5 w-40 sm:w-44 md:w-46 h-auto transform -rotate-[8deg] translate-y-3 md:translate-y-10 drop-shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Bionluk Link Icon (Top Right on Mobile, Bottom Right on Desktop) -->
+                <a href="https://bionluk.com/riestudio" target="_blank" rel="noopener noreferrer"
+                    title="Bionluk Profilimiz"
+                    class="absolute top-6 right-6 sm:top-auto sm:bottom-6 sm:right-8 z-20 transition-transform duration-200 hover:scale-110 opacity-90 hover:opacity-100">
+                    <img src="assets/bionluk.png" alt="Bionluk"
+                        class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm">
+                </a>
             </div>
 
             <!-- 2. Web Geliştirme Referans Kartı (Kadayıfçıoğlu Gıda) -->
@@ -353,7 +366,7 @@
                     <div class="flex items-center mb-6">
                         <div
                             class="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg shadow-red-500/20">
-                            <img src="assets/kadayifcioglu_gida_logo.jpg" alt="Kadayıfçıoğlu Logo"
+                            <img src="assets/kadayifcioglu.png" alt="Kadayıfçıoğlu Logo"
                                 class="w-full h-full object-cover">
                         </div>
                         <div class="ml-6">
@@ -384,7 +397,7 @@
                 </div>
 
                 <div class="relative z-10 pt-4">
-                    <a href="https://kadayifcioglugida.com" target="_blank"
+                    <a href="https://kadayifcioglugida.com.tr" target="_blank"
                         class="flex items-center justify-center w-full py-4 bg-gray-900/60 border border-gray-700/50 hover:bg-gray-900 text-white font-bold rounded-xl text-sm tracking-wider uppercase transition-all gap-2">
                         <span data-i18n="btnVisitWebsite">Web Sitesini Ziyaret Et</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -401,59 +414,66 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="index.html" class="flex items-center">
-                        <img id="footerLogo" src="assets/hedef.png" alt="Logo" class="h-16 w-auto">
-                    </a>
+    <footer class="mt-auto bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-6">
+        <div
+            class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-xs">
+            <div class="flex items-center space-x-5">
+                <!-- GitHub -->
+                <a href="https://github.com/RieStudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/riestudioterminal" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Telegram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/riestudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="privacy/index.html" class="hover:text-white hover-thick transition-colors duration-200"
+                        data-i18n="privacyPolicy">Gizlilik Politikası</a>
+                    <span class="text-zinc-500">•</span>
+                    <a href="terms/index.html" class="hover:text-white hover-thick transition-colors duration-200"
+                        data-i18n="termsOfUse">Kullanım Koşulları</a>
                 </div>
-                <div class="text-center md:text-right">
-                    <p class="text-xs text-gray-400">© 2026 RieStudio. <span data-i18n="allRightsReserved">Tüm hakları
-                            saklıdır.</span> • <a href="privacy/index.html"
-                            class="hover:text-white hover-thick transition-colors duration-200"
-                            data-i18n="privacyPolicy">Gizlilik Politikası</a></p>
-                    <a href="mailto:contact@riestudio.com.tr"
-                        class="text-gray-400 hover:text-white hover-thick text-xs transition-colors duration-200">
-                        contact@riestudio.com.tr
-                    </a>
-                    <div class="flex justify-center md:justify-end space-x-4 mt-2">
-                        <a href="https://github.com/RieStudio" target="_blank"
-                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
-                            <span class="sr-only">GitHub</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/riestudio.co" target="_blank"
-                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
-                            <span class="sr-only">Instagram</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <a href="https://t.me/riestudioterminal" target="_blank"
-                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
-                            <span class="sr-only">Telegram</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.83 8.217l-1.717 8.07c-.126.57-.449.71-1.11.45l-3.07-1.25-1.48 1.41c-.163.163-.3.3-.616.3l.221-3.13 5.7-5.15c.247-.22-.054-.34-.383-.12l-7.12 4.65-3.05-.95c-.62-.2-.63-.62.14-.92l11.9-4.58c.51-.24.96.15.78.92z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/company/riestudio" target="_blank"
-                            class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-200">
-                            <span class="sr-only">LinkedIn</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <a href="mailto:contact@riestudio.com.tr"
+                    class="inline-flex items-center gap-1.5 hover:text-white hover-thick transition-colors duration-200">
+                    <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>contact@riestudio.com.tr</span>
+                </a>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <span class="text-zinc-500 text-xs mt-0.5 sm:mt-0">&copy; 2026 RieStudio</span>
             </div>
         </div>
     </footer>
@@ -475,36 +495,98 @@
                 <div id="modalStep1" class="text-center w-full">
                     <h3 class="text-3xl font-bold mb-8 gradient-text" data-i18n="contactUs">Bize Ulaşın</h3>
                     <div class="grid grid-cols-2 gap-4">
-                        <a href="https://www.instagram.com/riestudio.co" target="_blank"
-                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/riestudio.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
                             <div class="flex flex-col items-center justify-center h-full">
-                                <span class="font-medium text-gray-300 group-hover:text-white">Instagram</span>
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Instagram</span>
                             </div>
                         </a>
+
+                        <!-- Telegram -->
                         <a href="https://t.me/riestudioterminal" target="_blank"
-                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
                             <div class="flex flex-col items-center justify-center h-full">
-                                <span class="font-medium text-gray-300 group-hover:text-white">Telegram</span>
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.598.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.54-4.458c.538-.196 1.006.139.832.941z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Telegram</span>
                             </div>
                         </a>
+
+                        <!-- LinkedIn -->
                         <a href="https://linkedin.com/company/riestudio" target="_blank"
-                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
                             <div class="flex flex-col items-center justify-center h-full">
-                                <span class="font-medium text-gray-300 group-hover:text-white">LinkedIn</span>
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">LinkedIn</span>
                             </div>
                         </a>
+
+                        <!-- Email -->
                         <a href="mailto:contact@riestudio.com.tr"
-                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
                             <div class="flex flex-col items-center justify-center h-full">
-                                <span class="font-medium text-gray-300 group-hover:text-white"
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300"
                                     data-i18n="email">E-posta</span>
                             </div>
                         </a>
                     </div>
 
                     <button id="startProjectBtn"
-                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
-                        <span data-i18n="startProject">Projenizi Bizimle Başlatın</span>
+                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span data-i18n="startProject"
+                            class="whitespace-nowrap text-xs min-[375px]:text-sm sm:text-base">Projenizi Bizimle
+                            Başlatın</span>
                     </button>
                 </div>
 
@@ -542,7 +624,7 @@
                         <div>
                             <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
                                 data-i18n="formDetails">Proje Detayları</label>
-                            <textarea id="projectDetails" rows="3" required placeholder="Proje Detayları..."
+                            <textarea id="projectDetails" rows="3" required
                                 class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 transition-all text-sm resize-none"></textarea>
                         </div>
 
@@ -582,11 +664,13 @@
                 tabWebDev: 'Web Geliştirme',
                 badgeCustomSoftware: '● ÖZEL YAZILIM',
                 mobileDevTitle: 'Mobil Uygulama Geliştirme',
-                mobileDevDesc: 'iOS ve Android platformları için yüksek performanslı, akıcı kullanıcı deneyimine (UX) sahip ve ölçeklenebilir yerel ve çapraz platform mobil uygulamalar tasarlıyor ve geliştiriyoruz.',
-                mobileBullet1: 'Flutter & Native Çözümler',
+                mobileDevDesc: 'İşletmeler ve girişimlerin ihtiyaçlarına özel mobil uygulamalar geliştiriyoruz. Fikirden yayına<br>kadar tüm süreci RieStudio çatısı altında yönetiyoruz.',
+                mobileBullet0: 'Android & iOS',
                 mobileBullet2: 'Play Store & App Store Yayınlama Desteği',
-                mobileBullet3: 'Güvenli API ve Backend Entegrasyonları',
-                btnGetStarted: 'Hemen Başlayın',
+                mobileBulletCloud: 'Bulut Servisleri Entegrasyonu',
+                mobileBulletSupport: 'Teknik Destek ve Bakım',
+                btnCompletedProjects: 'Tamamlanan Projeler',
+                btnGetStarted: 'Hemen Başlayalım',
                 kadayifciogluTitle: 'Kadayıfçıoğlu Gıda',
                 kadayifciogluSub: 'Kurumsal Web Platformu',
                 kadayifciogluDesc: 'Gıda sektöründe öncü markalardan Kadayıfçıoğlu Gıda için hazırladığımız modern, hızlı ve mobil uyumlu kurumsal web portalı projemiz.',
@@ -598,6 +682,7 @@
                 webDevDesc: 'İşletmeniz veya girişiminiz için yüksek dönüşüm sağlayan modern web siteleri, SaaS ürünleri ve kurumsal yönetim panelleri inşa ediyoruz.',
                 allRightsReserved: 'Tüm hakları saklıdır.',
                 privacyPolicy: 'Gizlilik Politikası',
+                termsOfUse: 'Kullanım Koşulları',
                 contactUs: 'Bize Ulaşın',
                 email: 'E-posta',
                 startProject: 'Projenizi Bizimle Başlatın',
@@ -625,11 +710,13 @@
                 tabWebDev: 'Web Development',
                 badgeCustomSoftware: '● CUSTOM SOFTWARE',
                 mobileDevTitle: 'Mobile App Development',
-                mobileDevDesc: 'We design and build high-performance, smooth UX, scalable native and cross-platform mobile apps for iOS and Android.',
-                mobileBullet1: 'Flutter & Native Solutions',
+                mobileDevDesc: 'We develop custom mobile applications tailored to the needs of businesses and startups. We manage the entire process from concept to deployment under the RieStudio umbrella.',
+                mobileBullet0: 'Android & iOS',
                 mobileBullet2: 'Play Store & App Store Publishing Support',
-                mobileBullet3: 'Secure API & Backend Integrations',
-                btnGetStarted: 'Get Started Now',
+                mobileBulletCloud: 'Cloud Services Integration',
+                mobileBulletSupport: 'Technical Support & Maintenance',
+                btnCompletedProjects: 'Completed Projects',
+                btnGetStarted: "Let's Get Started",
                 kadayifciogluTitle: 'Kadayıfçıoğlu Food',
                 kadayifciogluSub: 'Corporate Web Platform',
                 kadayifciogluDesc: 'A modern, fast, and mobile-friendly corporate web portal designed for Kadayıfçıoğlu Food, a leading brand in the food sector.',
@@ -641,6 +728,7 @@
                 webDevDesc: 'We build high-converting modern websites, SaaS products, and corporate management dashboards tailored for your business or startup.',
                 allRightsReserved: 'All rights reserved.',
                 privacyPolicy: 'Privacy Policy',
+                termsOfUse: 'Terms of Use',
                 contactUs: 'Contact Us',
                 email: 'Email',
                 startProject: 'Start Your Project With Us',
@@ -658,6 +746,19 @@
             }
         };
 
+        function updateCardMockups() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const lang = localStorage.getItem('userLanguage') || document.documentElement.lang || 'tr';
+            const themePrefix = isDark ? 'dark' : 'light';
+            const mockupAndroid = document.getElementById('mockupAndroid');
+            const mockupIos = document.getElementById('mockupIos');
+            if (mockupAndroid) mockupAndroid.src = `assets/${themePrefix}-mockup-android-${lang}.png`;
+            if (mockupIos) mockupIos.src = `assets/${themePrefix}-mockup-ios-${lang}.png`;
+        }
+
+        const themeObserver = new MutationObserver(updateCardMockups);
+        themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
         function setLanguage(lang) {
             document.documentElement.lang = lang;
             localStorage.setItem('userLanguage', lang);
@@ -665,9 +766,11 @@
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+                    element.innerHTML = translations[lang][key];
                 }
             });
+
+            updateCardMockups();
 
             const currentLangElements = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
             currentLangElements.forEach(el => {

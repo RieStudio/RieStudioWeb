@@ -171,6 +171,8 @@ function initContactModal() {
         if (step2) step2.classList.add('hidden');
         if (step3) step3.classList.add('hidden');
         if (projectForm) projectForm.reset();
+        const projectDetails = document.getElementById('projectDetails');
+        if (projectDetails) projectDetails.value = '';
     }
 
     function openModal() {
@@ -179,12 +181,25 @@ function initContactModal() {
         document.body.style.overflow = 'hidden';
     }
 
+    // Expose openContactModal globally on window
+    window.openContactModal = openModal;
+
+    if (contactBtn) contactBtn.addEventListener('click', openModal);
+
+    const openContactModalBtn = document.getElementById('openContactModalBtn');
+    if (openContactModalBtn) openContactModalBtn.addEventListener('click', openModal);
+
+    document.querySelectorAll('.btn-get-started').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
     function closeModal() {
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     }
-
-    if (contactBtn) contactBtn.addEventListener('click', openModal);
 
     if (mobileContactBtn) {
         mobileContactBtn.addEventListener('click', (e) => {
