@@ -2740,6 +2740,7 @@ html:not(.dark) body.page-services nav {
 
 /* Mobile Menu: Navbar ile Birleşik Görünüm */
 @media (max-width: 767px) {
+
     /* Menü açıkken navbar alt köşelerini düzleştir ve alt çizgiyi kaldır */
     nav.mobile-menu-open {
         border-bottom-left-radius: 0 !important;
@@ -2759,7 +2760,8 @@ html:not(.dark) body.page-services nav {
     /* Menüyü navbar'ın hemen altına yerleştir */
     #mobile-menu:not(.hidden) {
         position: fixed;
-        top: calc(1.25rem + 3.5rem) !important; /* top-5 (1.25rem) + h-14 (3.5rem) */
+        top: calc(1.25rem + 3.5rem) !important;
+        /* top-5 (1.25rem) + h-14 (3.5rem) */
         left: 50% !important;
         transform: translateX(-50%) !important;
     }
@@ -3058,15 +3060,41 @@ html:not(.dark) .text-zinc-300 {
 
 /* Mobile Scattered 3D Cubes Animation */
 @keyframes floatCubeSlow {
-    0% { transform: translateY(0px) rotate(0deg) scale(1); }
-    50% { transform: translateY(-12px) rotate(6deg) scale(1.05); }
-    100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(6deg) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
 }
+
 @keyframes floatCubeFast {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-18px) rotate(-10deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
-.cube-animate-slow { animation: floatCubeSlow 5s ease-in-out infinite; }
-.cube-animate-fast { animation: floatCubeFast 3.5s ease-in-out infinite; }
-.cube-animate-mid  { animation: floatCubeSlow 4.2s ease-in-out infinite 1s; }
+
+.cube-animate-slow {
+    animation: floatCubeSlow 5s ease-in-out infinite;
+}
+
+.cube-animate-fast {
+    animation: floatCubeFast 3.5s ease-in-out infinite;
+}
+
+.cube-animate-mid {
+    animation: floatCubeSlow 4.2s ease-in-out infinite 1s;
+}
