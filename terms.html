@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme ? (savedTheme === 'dark') : true;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="description" content="RieStudio Kullanım Koşulları — web sitesi ve hizmetlerimize ilişkin kullanım şartları.">
+    <title>RieStudio — Kullanım Koşulları</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" type="text/tailwindcss" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+            }
+            html:not(.dark) .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+            }
+        }
+
+        html.dark, html.dark body {
+            background-color: #050505 !important;
+        }
+        html:not(.dark), html:not(.dark) body {
+            background-color: #f9fafb !important;
+            color: #1f2937 !important;
+        }
+
+        /* Navbar light mode */
+        html:not(.dark) nav {
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+        html:not(.dark) nav.mobile-menu-open {
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
+            backdrop-filter: blur(20px) !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+        html:not(.dark) #mobile-menu {
+            background-color: rgba(255,255,255,0.95) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #mobile-menu a span,
+        html:not(.dark) #mobile-menu button span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover span,
+        html:not(.dark) #mobile-menu button:hover span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover,
+        html:not(.dark) #mobile-menu button:hover {
+            background-color: rgba(243,244,246,0.8) !important;
+        }
+        html:not(.dark) nav a,
+        html:not(.dark) nav button {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) nav a:hover,
+        html:not(.dark) nav button:hover {
+            color: #111827 !important;
+        }
+        html:not(.dark) #themeToggleBtn {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #themeToggleBtn:hover {
+            background-color: rgba(0,0,0,0.05) !important;
+            color: #111827 !important;
+        }
+        html:not(.dark) #languageDropdown,
+        html:not(.dark) #mobileLanguageDropdown {
+            background-color: rgba(255,255,255,0.98) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #languageDropdown a,
+        html:not(.dark) #mobileLanguageDropdown a {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #languageDropdown a:hover,
+        html:not(.dark) #mobileLanguageDropdown a:hover {
+            background-color: rgba(243,244,246,0.8) !important;
+            color: #111827 !important;
+        }
+        html:not(.dark) #mobile-menu {
+            background-color: rgba(255,255,255,0.95) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #mobile-menu a {
+            color: #4b5563 !important;
+        }
+
+        /* Content light mode */
+        html:not(.dark) h1:not(.gradient-text),
+        html:not(.dark) h2:not(.gradient-text),
+        html:not(.dark) h3:not(.gradient-text) {
+            color: #111827 !important;
+        }
+        html:not(.dark) .text-white {
+            color: #111827 !important;
+        }
+        html:not(.dark) .text-zinc-400,
+        html:not(.dark) .text-zinc-500,
+        html:not(.dark) .text-gray-400 {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) .section-card {
+            background-color: #ffffff !important;
+            border-color: rgba(229,231,235,0.9) !important;
+            box-shadow: 0 2px 16px -2px rgba(0,0,0,0.06) !important;
+        }
+        html:not(.dark) .divider {
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) footer {
+            background-color: rgba(255,255,255,0.8) !important;
+            border-color: rgba(229,231,235,0.7) !important;
+        }
+        html:not(.dark) footer span,
+        html:not(.dark) footer a {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) .effective-badge {
+            background-color: rgba(243,244,246,0.9) !important;
+            border-color: rgba(229,231,235,0.9) !important;
+            color: #4b5563 !important;
+        }
+        html:not(.dark) footer a[href^="mailto"] span {
+            color: #1f2937 !important;
+        }
+        html:not(.dark) #contact-email {
+            color: #ffffff !important;
+        }
+        html:not(.dark) #contact-email-icon {
+            stroke: #ffffff !important;
+        }
+        html:not(.dark) .nav-link-item.active-nav-item {
+            color: #ffffff !important;
+        }
+        html:not(.dark) .nav-link-item.active-nav-item span {
+            color: #ffffff !important;
+        }
+        html:not(.dark) #navSlidingIndicator {
+            display: none !important;
+        }
+        #navBgBeam {
+            z-index: -1 !important;
+        }
+        #navSlidingIndicator {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+
+    <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
+    <div id="navBgBeam" class="nav-bg-beam"></div>
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
+        <div class="w-full px-8">
+            <div class="flex justify-between items-center h-14 md:h-16 w-full">
+                <!-- Logo -->
+                <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
+                    <a href="index.html" class="flex items-center">
+                        <img id="navbarLogo" src="assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-36">
+                    </a>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-zinc-800/50 flex items-center justify-center"
+                        aria-label="Temayı Değiştir">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu Wrapper -->
+                <div class="hidden md:flex items-center space-x-6 h-full">
+                    <!-- Nav Tabs Container with Animated Parallelogram Indicator -->
+                    <div id="navTabsContainer" class="relative flex items-center space-x-1 h-full py-0">
+                        <!-- Parallelogram (Paralelkenar) Sliding Active Background Indicator -->
+                        <div id="navSlidingIndicator" class="nav-sliding-indicator"></div>
+
+                        <a href="index.html#about" data-nav="about"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="about">Hakkımızda</span>
+                        </a>
+                        <a href="products.html" data-nav="products"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="products">Ürünlerimiz</span>
+                        </a>
+                        <a href="services.html" data-nav="services"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="services">Hizmetlerimiz</span>
+                        </a>
+                        <button id="contactBtn" data-nav="contact"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="contact">İletişim</span>
+                        </button>
+                    </div>
+
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button id="languageButton"
+                            class="flex items-center px-3 py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="current-lang-text" class="mr-2">TR</span>
+                                <svg class="w-4 h-4 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="languageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu container -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Mobile Language Selector -->
+                    <div class="relative group">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="mobile-lang-text" class="mr-2">TR</span>
+                                <svg class="w-3 h-3 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="mobileLanguageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
+                            aria-label="Menüyü Aç">
+                            <svg id="menu-icon" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu"
+        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3 transition-all duration-300">
+        <div class="space-y-1 w-full">
+            <a href="index.html#about"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                        </path>
+                    </svg>
+                    <span data-i18n="about" class="text-gray-300 hover:text-white">Hakkımızda</span>
+                </div>
+            </a>
+            <a href="products.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                        </path>
+                    </svg>
+                    <span data-i18n="products" class="text-gray-300 hover:text-white">Ürünlerimiz</span>
+                </div>
+            </a>
+            <a href="services.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="services" class="text-gray-300 hover:text-white">Hizmetlerimiz</span>
+                </div>
+            </a>
+            <button id="mobileContactBtn"
+                class="w-full px-4 py-3 text-left text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="contact" class="text-gray-300 hover:text-white">İletişim</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[9999] hidden">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity z-[9998]"></div>
+
+        <!-- Modal Content -->
+        <div class="fixed inset-0 flex items-center justify-center p-4 z-[10000]">
+            <div
+                class="relative bg-zinc-950/95 backdrop-blur-md rounded-2xl p-8 max-w-md w-full border border-zinc-800/80 shadow-2xl z-[10001]">
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Step 1: Social Links -->
+                <div id="modalStep1" class="text-center w-full">
+                    <h3 class="text-3xl font-bold mb-8 gradient-text">Bize Ulaşın</h3>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/riestudio.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Instagram</span>
+                            </div>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/riestudioterminal" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.598.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.54-4.458c.538-.196 1.006.139.832.941z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Telegram</span>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/company/riestudio" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">LinkedIn</span>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:contact@riestudio.com.tr"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">E-posta</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Start Project Button -->
+                    <button id="startProjectBtn"
+                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span
+                            class="whitespace-nowrap text-xs min-[375px]:text-sm sm:text-base">Projenizi Bizimle
+                            Başlatın</span>
+                    </button>
+                </div>
+
+                <!-- Step 2: Project Form -->
+                <div id="modalStep2" class="w-full hidden text-left">
+                    <!-- Back Button -->
+                    <button id="backToStep1Btn" type="button"
+                        class="absolute top-4 left-4 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </button>
+                    <!-- Title Row -->
+                    <h3 class="text-2xl font-bold text-white gradient-text text-center mb-6">
+                        Projenizi Başlatın</h3>
+
+                    <form id="projectForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5">
+                                E-posta Adresiniz</label>
+                            <input type="email" id="projectEmail" required placeholder="name@example.com"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5">
+                                Proje Kategorisi</label>
+                            <select id="projectCategory"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                                <option value="Web Sitesi">Web Sitesi</option>
+                                <option value="Mobil Uygulama">Mobil Uygulama</option>
+                                <option value="Özel Yazılım / SaaS">Özel Yazılım / SaaS</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5">
+                                Proje Detayları ve Açıklama</label>
+                            <textarea id="projectDetails" rows="3" required
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 text-center block">
+                            Talebi Gönder
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Success State -->
+                <div id="modalStep3" class="text-center w-full hidden">
+                    <div
+                        class="w-16 h-16 glow-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-8 gradient-text">Talebiniz
+                        Alındı!</h3>
+
+                    <button id="closeSuccessModalBtn"
+                        class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-36 pb-24 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+
+        <!-- Page Header -->
+        <div class="mb-14">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight" id="page-title">
+                Kullanım Koşulları
+            </h1>
+            <p class="text-zinc-400 text-base leading-relaxed mb-3" id="page-desc">
+                Bu sayfa; <strong class="text-white font-medium">riestudio.com.tr</strong> alan adı üzerinden sunulan içeriklerin ve hizmetlerin kullanımına ilişkin koşulları kapsamaktadır.
+            </p>
+            <div class="effective-badge inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-900/60 border border-zinc-800/60 text-xs text-zinc-400">
+                <svg class="w-3.5 h-3.5 text-[#9C035D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span id="effective-date">Son güncelleme: Ağustos 2026</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="space-y-px">
+
+            <!-- 1. Genel -->
+            <section class="section-card bg-zinc-900/40 border border-zinc-800/60 rounded-t-2xl p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section1-title">1. Genel</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section1-text">
+                    Bu web sitesini kullanarak aşağıdaki koşulları kabul etmiş sayılırsınız. Bu koşullar RieStudio'nun sunduğu içerikler, hizmet tanıtımları ve iletişim kanalları için geçerlidir. Hizmet ilişkisinin kapsamı ve özel koşullar, her proje için taraflar arasında ayrıca yazılı olarak belirlenir.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 2. Sunulan Hizmetler -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section2-title">2. Sunulan Hizmetler</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-4" id="section2-text1">
+                    RieStudio; işletmeler ve girişimler için web sitesi, mobil uygulama ve özel yazılım geliştirme hizmetleri sunmakta; aynı zamanda kendi bünyesinde bağımsız yazılım ürünleri geliştirmektedir.
+                </p>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section2-text2">
+                    Bu sitede yer alan hizmet açıklamaları genel bilgi amaçlıdır. Herhangi bir hizmetin kapsamı, süresi, fiyatlandırması ve teslimat koşulları yalnızca taraflar arasında imzalanan sözleşme veya mutabakat belgesiyle kesinlik kazanır.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 3. Fikri Mülkiyet -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section3-title">3. Fikri Mülkiyet</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-4" id="section3-text1">
+                    Bu sitede yer alan tüm içerikler — yazılar, görseller, marka unsurları ve tasarım öğeleri — aksi belirtilmediği sürece RieStudio'ya aittir. İzin alınmadan ticari amaçla kullanılamaz, çoğaltılamaz veya dağıtılamaz.
+                </p>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section3-text2">
+                    Müşterilere teslim edilen yazılım projelerinde fikri mülkiyet haklarının devrine ilişkin koşullar proje sözleşmesinde ayrıca düzenlenir. Herhangi bir devir hükmü yoksa geliştirilen yazılım üzerindeki haklar RieStudio'da kalır.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 4. Açık Kaynak Ürünler -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section4-title">4. Açık Kaynak Projeler</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section4-text">
+                    RieStudio bünyesindeki bazı projeler açık kaynak lisanslarıyla (MIT, Apache vb.) yayınlanmaktadır. Bu projelerin kullanımı ilgili lisans koşullarına tabidir. Projelere ait lisans bilgileri ilgili kaynak deposunda açıkça belirtilmiştir. Açık kaynak kapsamı dışındaki tüm ürün ve kodlar kapalı kaynak olup yukarıdaki fikri mülkiyet hükümleri geçerliliğini korur.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 5. Üçüncü Taraf Platform ve Servisler -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section5-title">5. Üçüncü Taraf Servisler</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-4" id="section5-text1">
+                    Bu site ve RieStudio'nun ürünleri; Google, Apple, GitHub gibi üçüncü taraf servislerle entegrasyon içerebilir. Bu servislerin kullanımı kendi gizlilik politikaları ve kullanım koşullarına tabidir; RieStudio bu servislerin işleyişinden sorumlu tutulamaz.
+                </p>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section5-text2">
+                    Bu siteden bağlantı verilen harici sayfalara ilişkin RieStudio herhangi bir sorumluluk üstlenmez.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 6. Kullanıcı Yükümlülükleri -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section6-title">6. Kullanıcı Yükümlülükleri</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-3" id="section6-intro">
+                    Bu siteyi kullananlar aşağıdaki yükümlülükleri kabul eder:
+                </p>
+                <ul class="space-y-2 text-sm text-zinc-400">
+                    <li class="flex items-start gap-2.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#9C035D] mt-1.5 flex-shrink-0"></span>
+                        <span id="section6-item1">Site içeriklerini veya sistemlerini kötüye kullanmamak, izinsiz erişim girişiminde bulunmamak.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#9C035D] mt-1.5 flex-shrink-0"></span>
+                        <span id="section6-item2">İletişim formunu gerçek ve doğru bilgilerle doldurmak; yanıltıcı talepte bulunmamak.</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#9C035D] mt-1.5 flex-shrink-0"></span>
+                        <span id="section6-item3">Site içeriklerini kaynak belirtmeksizin ticari amaçla kullanmamak veya çoğaltmamak.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 7. Sorumluluğun Sınırlandırılması -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section7-title">7. Sorumluluğun Sınırlandırılması</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-4" id="section7-text1">
+                    Bu sitedeki bilgiler genel bilgilendirme amacıyla sunulmaktadır. RieStudio, içeriklerin eksiksizliği veya güncelliği konusunda garanti vermez.
+                </p>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section7-text2">
+                    Sunulan yazılım hizmetlerine ilişkin sorumluluklar proje kapsamında yazılı olarak belirlenir. RieStudio, sitenin kullanımından ya da ulaşılamamasından kaynaklanabilecek dolaylı zararlardan sorumlu değildir.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 8. Gizlilik -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section8-title">8. Gizlilik</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section8-text">
+                    Kişisel verilerin toplanması ve işlenmesine ilişkin koşullar
+                    <a href="privacy/index.html" class="text-[#9C035D] hover:underline font-medium transition-colors duration-200">Gizlilik Politikamız</a>
+                    kapsamında ayrıca düzenlenmektedir. Bu koşullar, işbu kullanım koşullarının ayrılmaz bir parçasını oluşturur.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 9. Güncellemeler -->
+            <section class="section-card bg-zinc-900/40 border-x border-zinc-800/60 p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section9-title">9. Koşulların Güncellenmesi</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm" id="section9-text">
+                    RieStudio bu koşulları önceden bildirim yapmaksızın güncelleyebilir. Değişiklikler bu sayfada yayımlandığı tarih itibarıyla yürürlüğe girer. Siteyi kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.
+                </p>
+            </section>
+
+            <!-- Divider -->
+            <div class="h-px bg-zinc-800/30 divider"></div>
+
+            <!-- 10. İletişim -->
+            <section class="section-card bg-zinc-900/40 border border-zinc-800/60 rounded-b-2xl p-7 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-3" id="section10-title">10. İletişim</h2>
+                <p class="text-zinc-400 leading-relaxed text-sm mb-5" id="section10-text">
+                    Bu koşullara ilişkin sorularınız için bizimle iletişime geçebilirsiniz.
+                </p>
+                <a href="mailto:contact@riestudio.com.tr"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] transition-all duration-200 shadow-md active:scale-[0.98]">
+                    <svg id="contact-email-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span id="contact-email">contact@riestudio.com.tr</span>
+                </a>
+            </section>
+
+        </div>
+        <!-- End Content -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-6">
+        <div
+            class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-xs">
+            <div class="flex items-center space-x-5">
+                <!-- GitHub -->
+                <a href="https://github.com/RieStudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/riestudioterminal" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Telegram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/riestudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="privacy/index.html" class="hover:text-white hover-thick transition-colors duration-200" id="privacy-policy">Gizlilik Politikası</a>
+                    <span class="text-zinc-500">•</span>
+                    <a href="terms.html" class="hover:text-white hover-thick transition-colors duration-200" id="terms-of-use">Kullanım Koşulları</a>
+                </div>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <a href="mailto:contact@riestudio.com.tr"
+                    class="inline-flex items-center gap-1.5 hover:text-white hover-thick transition-colors duration-200">
+                    <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>contact@riestudio.com.tr</span>
+                </a>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <span class="text-zinc-500 text-xs mt-0.5 sm:mt-0">&copy; 2026 RieStudio</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Theme ──────────────────────────────────────────────
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeUI(isDark);
+        }
+
+        function updateThemeUI(isDark) {
+            const navbarLogo = document.getElementById('navbarLogo');
+            const sunIcon    = document.getElementById('sunIcon');
+            const moonIcon   = document.getElementById('moonIcon');
+            if (isDark) {
+                if (navbarLogo) navbarLogo.src = 'assets/hedef.png';
+                if (sunIcon)  sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                if (navbarLogo) navbarLogo.src = 'assets/beyazrs.png';
+                if (sunIcon)  sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const overlay = document.getElementById('overlay');
+            const nav = document.querySelector('nav');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) mobileMenuButton.classList.remove('is-active');
+                if (overlay) overlay.classList.add('hidden');
+                if (nav) nav.classList.remove('mobile-menu-open');
+                if (menuIcon) menuIcon.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        window.closeMobileMenu = closeMobileMenu;
+
+        // ── Language ──────────────────────────────────────────
+        const i18n = {
+            tr: {
+                pageTitle:     'Kullanım Koşulları',
+                effectiveDate: 'Son güncelleme: Ağustos 2026',
+                pageDesc:      'Bu sayfa; <strong class="text-white font-medium">riestudio.com.tr</strong> alan adı üzerinden sunulan içeriklerin ve hizmetlerin kullanımına ilişkin koşulları kapsamaktadır.',
+                section1Title:  '1. Genel',
+                section1Text:   'Bu web sitesini kullanarak aşağıdaki koşulları kabul etmiş sayılırsınız. Bu koşullar RieStudio\'nun sunduğu içerikler, hizmet tanıtımları ve iletişim kanalları için geçerlidir. Hizmet ilişkisinin kapsamı ve özel koşullar, her proje için taraflar arasında ayrıca yazılı olarak belirlenir.',
+                section2Title:  '2. Sunulan Hizmetler',
+                section2Text1:  'RieStudio; işletmeler ve girişimler için web sitesi, mobil uygulama ve özel yazılım geliştirme hizmetleri sunmakta; aynı zamanda kendi bünyesinde bağımsız yazılım ürünleri geliştirmektedir.',
+                section2Text2:  'Bu sitede yer alan hizmet açıklamaları genel bilgi amaçlıdır. Herhangi bir hizmetin kapsamı, süresi, fiyatlandırması ve teslimat koşulları yalnızca taraflar arasında imzalanan sözleşme veya mutabakat belgesiyle kesinlik kazanır.',
+                section3Title:  '3. Fikri Mülkiyet',
+                section3Text1:  'Bu sitede yer alan tüm içerikler — yazılar, görseller, marka unsurları ve tasarım öğeleri — aksi belirtilmediği sürece RieStudio\'ya aittir. İzin alınmadan ticari amaçla kullanılamaz, çoğaltılamaz veya dağıtılamaz.',
+                section3Text2:  'Müşterilere teslim edilen yazılım projelerinde fikri mülkiyet haklarının devrine ilişkin koşullar proje sözleşmesinde ayrıca düzenlenir. Herhangi bir devir hükmü yoksa geliştirilen yazılım üzerindeki haklar RieStudio\'da kalır.',
+                section4Title:  '4. Açık Kaynak Projeler',
+                section4Text:   'RieStudio bünyesindeki bazı projeler açık kaynak lisanslarıyla (MIT, Apache vb.) yayınlanmaktadır. Bu projelerin kullanımı ilgili lisans koşullarına tabidir. Projelere ait lisans bilgileri ilgili kaynak deposunda açıkça belirtilmiştir. Açık kaynak kapsamı dışındaki tüm ürün ve kodlar kapalı kaynak olup yukarıdaki fikri mülkiyet hükümleri geçerliliğini korur.',
+                section5Title:  '5. Üçüncü Taraf Servisler',
+                section5Text1:  'Bu site ve RieStudio\'nun ürünleri; Google, Apple, GitHub gibi üçüncü taraf servislerle entegrasyon içerebilir. Bu servislerin kullanımı kendi gizlilik politikaları ve kullanım koşullarına tabidir; RieStudio bu servislerin işleyişinden sorumlu tutulamaz.',
+                section5Text2:  'Bu siteden bağlantı verilen harici sayfalara ilişkin RieStudio herhangi bir sorumluluk üstlenmez.',
+                section6Title:  '6. Kullanıcı Yükümlülükleri',
+                section6Intro:  'Bu siteyi kullananlar aşağıdaki yükümlülükleri kabul eder:',
+                section6Item1:  'Site içeriklerini veya sistemlerini kötüye kullanmamak, izinsiz erişim girişiminde bulunmamak.',
+                section6Item2:  'İletişim formunu gerçek ve doğru bilgilerle doldurmak; yanıltıcı talepte bulunmamak.',
+                section6Item3:  'Site içeriklerini kaynak belirtmeksizin ticari amaçla kullanmamak veya çoğaltmamak.',
+                section7Title:  '7. Sorumluluğun Sınırlandırılması',
+                section7Text1:  'Bu sitedeki bilgiler genel bilgilendirme amacıyla sunulmaktadır. RieStudio, içeriklerin eksiksizliği veya güncelliği konusunda garanti vermez.',
+                section7Text2:  'Sunulan yazılım hizmetlerine ilişkin sorumluluklar proje kapsamında yazılı olarak belirlenir. RieStudio, sitenin kullanımından ya da ulaşılamamasından kaynaklanabilecek dolaylı zararlardan sorumlu değildir.',
+                section8Title:  '8. Gizlilik',
+                section8Text:   'Kişisel verilerin toplanması ve işlenmesine ilişkin koşullar <a href="privacy/index.html" class="text-[#9C035D] hover:underline font-medium transition-colors duration-200">Gizlilik Politikamız</a> kapsamında ayrıca düzenlenmektedir. Bu koşullar, işbu kullanım koşullarının ayrılmaz bir parçasını oluşturur.',
+                section9Title:  '9. Koşulların Güncellenmesi',
+                section9Text:   'RieStudio bu koşulları önceden bildirim yapmaksızın güncelleyebilir. Değişiklikler bu sayfada yayımlandığı tarih itibarıyla yürürlüğe girer. Siteyi kullanmaya devam etmeniz güncel koşulları kabul ettiğiniz anlamına gelir.',
+                section10Title: '10. İletişim',
+                section10Text:  'Bu koşullara ilişkin sorularınız için bizimle iletişime geçebilirsiniz.',
+                contactEmail:   'contact@riestudio.com.tr',
+                privacyPolicy: 'Gizlilik Politikası',
+                termsOfUse:    'Kullanım Koşulları',
+                about:         'Hakkımızda',
+                products:      'Ürünlerimiz',
+                services:      'Hizmetlerimiz',
+                contact:       'İletişim'
+            },
+            en: {
+                pageTitle:     'Terms of Service',
+                effectiveDate: 'Last updated: August 2026',
+                pageDesc:      'This page covers the terms governing the use of content and services provided via <strong class="text-white font-medium">riestudio.com.tr</strong>.',
+                section1Title:  '1. General',
+                section1Text:   'By using this website, you agree to the following terms. These terms apply to the content, service introductions, and communication channels offered by RieStudio. The scope of service relationship and specific conditions are determined in writing between the parties for each project.',
+                section2Title:  '2. Services Offered',
+                section2Text1:  'RieStudio provides website, mobile application, and custom software development services for businesses and startups; it also develops independent software products within its own organization.',
+                section2Text2:  'The service descriptions on this site are for general information purposes only. The scope, duration, pricing, and delivery conditions of any service are finalized only through a contract or agreement signed between the parties.',
+                section3Title:  '3. Intellectual Property',
+                section3Text1:  'All content on this site — articles, visuals, brand elements, and design elements — belong to RieStudio unless otherwise stated. They may not be used, reproduced, or distributed for commercial purposes without permission.',
+                section3Text2:  'Conditions regarding the transfer of intellectual property rights in software projects delivered to customers are regulated separately in the project contract. If there is no transfer provision, rights to the developed software remain with RieStudio.',
+                section4Title:  '4. Open Source Projects',
+                section4Text:   'Some projects within RieStudio are published under open source licenses (MIT, Apache, etc.). Use of these projects is subject to the relevant license conditions. License information for projects is clearly stated in the relevant repository. All products and codes outside the open source scope are proprietary, and the above intellectual property provisions remain valid.',
+                section5Title:  '5. Third-Party Services',
+                section5Text1:  'This site and RieStudio\'s products may include integrations with third-party services such as Google, Apple, and GitHub. Use of these services is subject to their own privacy policies and terms of service; RieStudio cannot be held responsible for their operation.',
+                section5Text2:  'RieStudio assumes no responsibility for external pages linked from this site.',
+                section6Title:  '6. User Obligations',
+                section6Intro:  'Users of this site accept the following obligations:',
+                section6Item1:  'Not to misuse site content or systems, or attempt unauthorized access.',
+                section6Item2:  'To fill out the contact form with real and accurate information; not to make misleading requests.',
+                section6Item3:  'Not to use or reproduce site content for commercial purposes without attribution.',
+                section7Title:  '7. Limitation of Liability',
+                section7Text1:  'The information on this site is provided for general information purposes. RieStudio makes no guarantees regarding the completeness or currency of the content.',
+                section7Text2:  'Liabilities regarding the software services provided are determined in writing within the project scope. RieStudio is not responsible for indirect damages that may arise from the use or inaccessibility of the site.',
+                section8Title:  '8. Privacy',
+                section8Text:   'Conditions regarding the collection and processing of personal data are regulated separately under our <a href="privacy/index.html" class="text-[#9C035D] hover:underline font-medium transition-colors duration-200">Privacy Policy</a>. These conditions form an integral part of these terms of service.',
+                section9Title:  '9. Updates to Terms',
+                section9Text:   'RieStudio may update these terms without prior notice. Changes become effective as of the date they are published on this page. Continuing to use the site means you accept the current terms.',
+                section10Title: '10. Contact',
+                section10Text:  'You can contact us with questions regarding these terms.',
+                contactEmail:   'contact@riestudio.com.tr',
+                privacyPolicy: 'Privacy Policy',
+                termsOfUse:    'Terms of Service',
+                about:         'About',
+                products:      'Products',
+                services:      'Services',
+                contact:       'Contact'
+            }
+        };
+
+        // Update active state of language selectors
+        function updateLanguageSelectors(lang) {
+            const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
+            selectors.forEach(item => {
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('active-lang-option');
+                } else {
+                    item.classList.remove('active-lang-option');
+                }
+            });
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('userLanguage', lang);
+            document.documentElement.lang = lang;
+
+            const t = i18n[lang] || i18n.tr;
+            const pageTitleEl    = document.getElementById('page-title');
+            const effectiveDateEl = document.getElementById('effective-date');
+            const pageDescEl     = document.getElementById('page-desc');
+
+            if (pageTitleEl)     pageTitleEl.textContent = t.pageTitle;
+            if (effectiveDateEl) effectiveDateEl.textContent = t.effectiveDate;
+            if (pageDescEl)      pageDescEl.innerHTML = t.pageDesc;
+
+            // Navbar translations
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (t[key]) {
+                    element.textContent = t[key];
+                }
+            });
+
+            // Section 1
+            if (document.getElementById('section1-title')) document.getElementById('section1-title').textContent = t.section1Title;
+            if (document.getElementById('section1-text')) document.getElementById('section1-text').textContent = t.section1Text;
+
+            // Section 2
+            if (document.getElementById('section2-title')) document.getElementById('section2-title').textContent = t.section2Title;
+            if (document.getElementById('section2-text1')) document.getElementById('section2-text1').textContent = t.section2Text1;
+            if (document.getElementById('section2-text2')) document.getElementById('section2-text2').textContent = t.section2Text2;
+
+            // Section 3
+            if (document.getElementById('section3-title')) document.getElementById('section3-title').textContent = t.section3Title;
+            if (document.getElementById('section3-text1')) document.getElementById('section3-text1').textContent = t.section3Text1;
+            if (document.getElementById('section3-text2')) document.getElementById('section3-text2').textContent = t.section3Text2;
+
+            // Section 4
+            if (document.getElementById('section4-title')) document.getElementById('section4-title').textContent = t.section4Title;
+            if (document.getElementById('section4-text')) document.getElementById('section4-text').textContent = t.section4Text;
+
+            // Section 5
+            if (document.getElementById('section5-title')) document.getElementById('section5-title').textContent = t.section5Title;
+            if (document.getElementById('section5-text1')) document.getElementById('section5-text1').textContent = t.section5Text1;
+            if (document.getElementById('section5-text2')) document.getElementById('section5-text2').textContent = t.section5Text2;
+
+            // Section 6
+            if (document.getElementById('section6-title')) document.getElementById('section6-title').textContent = t.section6Title;
+            if (document.getElementById('section6-intro')) document.getElementById('section6-intro').textContent = t.section6Intro;
+            if (document.getElementById('section6-item1')) document.getElementById('section6-item1').textContent = t.section6Item1;
+            if (document.getElementById('section6-item2')) document.getElementById('section6-item2').textContent = t.section6Item2;
+            if (document.getElementById('section6-item3')) document.getElementById('section6-item3').textContent = t.section6Item3;
+
+            // Section 7
+            if (document.getElementById('section7-title')) document.getElementById('section7-title').textContent = t.section7Title;
+            if (document.getElementById('section7-text1')) document.getElementById('section7-text1').textContent = t.section7Text1;
+            if (document.getElementById('section7-text2')) document.getElementById('section7-text2').textContent = t.section7Text2;
+
+            // Section 8
+            if (document.getElementById('section8-title')) document.getElementById('section8-title').textContent = t.section8Title;
+            if (document.getElementById('section8-text')) document.getElementById('section8-text').innerHTML = t.section8Text;
+
+            // Section 9
+            if (document.getElementById('section9-title')) document.getElementById('section9-title').textContent = t.section9Title;
+            if (document.getElementById('section9-text')) document.getElementById('section9-text').textContent = t.section9Text;
+
+            // Section 10
+            if (document.getElementById('section10-title')) document.getElementById('section10-title').textContent = t.section10Title;
+            if (document.getElementById('section10-text')) document.getElementById('section10-text').textContent = t.section10Text;
+            if (document.getElementById('contact-email')) document.getElementById('contact-email').textContent = t.contactEmail;
+
+            // Footer
+            if (document.getElementById('privacy-policy')) document.getElementById('privacy-policy').textContent = t.privacyPolicy;
+            if (document.getElementById('terms-of-use')) document.getElementById('terms-of-use').textContent = t.termsOfUse;
+
+            const langEls = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
+            langEls.forEach(el => el.textContent = lang.toUpperCase());
+
+            updateLanguageSelectors(lang);
+        }
+
+        // ── Init ──────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('userLanguage') ||
+                (navigator.language.startsWith('tr') ? 'tr' : 'en');
+            setLanguage(savedLang);
+            updateThemeUI(document.documentElement.classList.contains('dark'));
+
+            // Language dropdowns
+            const langBtn        = document.getElementById('languageButton');
+            const langDrop       = document.getElementById('languageDropdown');
+            const mobileLangBtn  = document.getElementById('mobileLanguageButton');
+            const mobileLangDrop = document.getElementById('mobileLanguageDropdown');
+
+            function toggleDrop(drop, btn, other, otherBtn) {
+                const isHidden = drop.classList.toggle('hidden');
+                const arrow = btn.querySelector('svg');
+                if (arrow) arrow.classList.toggle('rotate-180', !isHidden);
+                if (other) {
+                    other.classList.add('hidden');
+                    const otherArrow = otherBtn?.querySelector('svg');
+                    if (otherArrow) otherArrow.classList.remove('rotate-180');
+                }
+            }
+
+            langBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(langDrop, langBtn, mobileLangDrop, mobileLangBtn);
+            });
+
+            mobileLangBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(mobileLangDrop, mobileLangBtn, langDrop, langBtn);
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.addEventListener('click', e => {
+                    e.preventDefault();
+                    setLanguage(el.getAttribute('data-lang'));
+                    langDrop?.classList.add('hidden');
+                    mobileLangDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                });
+            });
+
+            document.addEventListener('click', e => {
+                if (!langDrop?.contains(e.target) && !langBtn?.contains(e.target)) {
+                    langDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                }
+                if (!mobileLangDrop?.contains(e.target) && !mobileLangBtn?.contains(e.target)) {
+                    mobileLangDrop?.classList.add('hidden');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                }
+            });
+
+            // Language selection
+            document.querySelectorAll('[data-lang]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = button.getAttribute('data-lang');
+                    setLanguage(lang);
+
+                    // Close dropdowns after selection
+                    langDrop?.classList.add('hidden');
+                    mobileLangDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                });
+            });
+
+            // Mobile menu
+            const mobileMenuBtn  = document.getElementById('mobile-menu-button');
+            const mobileMenu     = document.getElementById('mobile-menu');
+            const overlay        = document.getElementById('overlay');
+            const nav            = document.querySelector('nav');
+            const menuIcon       = document.getElementById('menu-icon');
+
+            if (!mobileMenuBtn || !mobileMenu) return;
+
+            function toggleMobileMenu() {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.classList.toggle('is-active', !isHidden);
+                if (overlay) overlay.classList.toggle('hidden', isHidden);
+                if (nav) nav.classList.toggle('mobile-menu-open', !isHidden);
+                if (menuIcon) menuIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(90deg)';
+                document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+            }
+
+            mobileMenuBtn.onclick = function (e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            };
+
+            if (overlay) {
+                overlay.onclick = closeMobileMenu;
+            }
+
+            document.addEventListener('click', function (e) {
+                if (!mobileMenu.classList.contains('hidden') &&
+                    !mobileMenu.contains(e.target) &&
+                    !mobileMenuBtn.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Contact modal initialization
+            const modal = document.getElementById('contactModal');
+            const contactBtn = document.getElementById('contactBtn');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const closeBtn = document.getElementById('closeModal');
+
+            const step1 = document.getElementById('modalStep1');
+            const step2 = document.getElementById('modalStep2');
+            const step3 = document.getElementById('modalStep3');
+
+            const startProjectBtn = document.getElementById('startProjectBtn');
+            const backToStep1Btn = document.getElementById('backToStep1Btn');
+            const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+            const projectForm = document.getElementById('projectForm');
+
+            if (modal) {
+                function resetModalSteps() {
+                    if (step1) step1.classList.remove('hidden');
+                    if (step2) step2.classList.add('hidden');
+                    if (step3) step3.classList.add('hidden');
+                    if (projectForm) projectForm.reset();
+                }
+
+                function openModal() {
+                    resetModalSteps();
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeModal() {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+
+                if (contactBtn) contactBtn.addEventListener('click', openModal);
+
+                if (mobileContactBtn) {
+                    mobileContactBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        closeMobileMenu();
+                        openModal();
+                    });
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeModal);
+
+                if (startProjectBtn) {
+                    startProjectBtn.addEventListener('click', () => {
+                        if (step1) step1.classList.add('hidden');
+                        if (step2) step2.classList.remove('hidden');
+                    });
+                }
+
+                if (backToStep1Btn) {
+                    backToStep1Btn.addEventListener('click', () => {
+                        if (step2) step2.classList.add('hidden');
+                        if (step1) step1.classList.remove('hidden');
+                    });
+                }
+
+                const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzbUvHSAW_cb1s3kJ9UDQq1Zk-B21DeBGZ0NUKe0qSwqnUZGV_nCInrlK0XKbM59DpoZA/exec";
+
+                if (projectForm) {
+                    projectForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+
+                        const email = document.getElementById('projectEmail').value.trim();
+                        const category = document.getElementById('projectCategory').value;
+                        const details = document.getElementById('projectDetails').value.trim();
+                        const page = window.location.pathname.split('/').pop() || 'index.html';
+
+                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!email || !emailRegex.test(email) || email.length > 150) {
+                            alert("Lütfen geçerli bir e-posta adresi giriniz.");
+                            return;
+                        }
+
+                        if (!details || details.length > 5000) {
+                            alert("Lütfen geçerli bir açıklama giriniz (en fazla 5000 karakter).");
+                            return;
+                        }
+
+                        const sanitizeHTML = (str) => {
+                            return str
+                                .replace(/&/g, "&amp;")
+                                .replace(/</g, "&lt;")
+                                .replace(/>/g, "&gt;")
+                                .replace(/"/g, "&quot;")
+                                .replace(/'/g, "&#039;")
+                                .replace(/\//g, "&#x2F;");
+                        };
+
+                        const sanitizedEmail = sanitizeHTML(email);
+                        const sanitizedCategory = sanitizeHTML(category);
+                        const sanitizedDetails = sanitizeHTML(details);
+                        const sanitizedPage = sanitizeHTML(page);
+
+                        const submitBtn = projectForm.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.innerHTML;
+
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>';
+
+                        try {
+                            const res = await fetch(WEBHOOK_URL, {
+                                method: "POST",
+                                body: JSON.stringify({
+                                    email: sanitizedEmail,
+                                    category: sanitizedCategory,
+                                    details: sanitizedDetails,
+                                    page: sanitizedPage
+                                }),
+                            });
+
+                            const json = await res.json();
+                            if (json.status === "ok") {
+                                if (step2) step2.classList.add('hidden');
+                                if (step3) step3.classList.remove('hidden');
+                                if (projectForm) projectForm.reset();
+                            } else {
+                                throw new Error(json.message || "Sunucu hatası");
+                            }
+                        } catch (err) {
+                            console.error("Form gönderme hatası:", err);
+                            alert("Gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+                        } finally {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalText;
+                        }
+                    });
+                }
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

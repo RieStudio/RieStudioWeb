@@ -97,12 +97,17 @@ function closeMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const overlay = document.getElementById('overlay');
     const nav = document.querySelector('nav');
+    const menuIcon = document.getElementById('menu-icon');
 
     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
         if (mobileMenuButton) mobileMenuButton.classList.remove('is-active');
         if (overlay) overlay.classList.add('hidden');
         if (nav) nav.classList.remove('mobile-menu-open');
+        if (menuIcon) {
+            menuIcon.style.transform = 'rotate(0deg)';
+            setTimeout(() => menuIcon.style.transform = '', 300);
+        }
         document.body.style.overflow = 'auto';
     }
 }
@@ -113,6 +118,7 @@ function initMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const overlay = document.getElementById('overlay');
     const nav = document.querySelector('nav');
+    const menuIcon = document.getElementById('menu-icon');
 
     if (!mobileMenuButton || !mobileMenu) return;
 
@@ -121,6 +127,7 @@ function initMobileMenu() {
         mobileMenuButton.classList.toggle('is-active', !isHidden);
         if (overlay) overlay.classList.toggle('hidden', isHidden);
         if (nav) nav.classList.toggle('mobile-menu-open', !isHidden);
+        if (menuIcon) menuIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(90deg)';
         document.body.style.overflow = isHidden ? 'auto' : 'hidden';
     }
 
