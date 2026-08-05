@@ -903,9 +903,13 @@
 
                 // ONLY AFTER text sliding finishes (~210ms), reveal title header & card body!
                 setTimeout(() => {
-                    if (headerGroup) headerGroup.style.opacity = '1';
                     if (clone.parentNode) {
                         clone.parentNode.removeChild(clone);
+                    }
+                    // Show header INSTANTLY (no transition) so clone→title swap is seamless in one frame
+                    if (headerGroup) {
+                        headerGroup.style.transition = 'none';
+                        headerGroup.style.opacity = '1';
                     }
                     if (cardBody) {
                         cardBody.style.transition = 'opacity 250ms ease-out, transform 250ms ease-out';
