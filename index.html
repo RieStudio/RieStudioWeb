@@ -57,7 +57,8 @@
     </script>
 </head>
 
-<body class="bg-transparent text-zinc-100 font-sans antialiased max-lg:fixed max-lg:inset-0 max-lg:overflow-hidden max-lg:h-full min-h-screen flex flex-col">
+<body
+    class="bg-transparent text-zinc-100 font-sans antialiased max-lg:fixed max-lg:inset-0 max-lg:overflow-hidden max-lg:h-full min-h-screen flex flex-col">
     <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
     <div id="navBgBeam" class="nav-bg-beam"></div>
 
@@ -248,7 +249,7 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
 
     <!-- Hero Section -->
-    <main class="pt-28 pb-8 sm:pt-28 relative flex-grow flex flex-col justify-center mt-2 sm:-mt-10 lg:-mt-14">
+    <main class="pt-36 pb-8 sm:pt-28 relative flex-grow flex flex-col justify-center mt-2 sm:-mt-10 lg:-mt-14">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -269,7 +270,7 @@
                                 <span data-i18n="exploreProducts" class="whitespace-nowrap">Ürünlerimizi İncele</span>
                             </a>
                             <a href="services.html"
-                                class="hero-services-btn inline-flex items-center justify-center text-center w-auto self-end px-3.5 sm:px-5 py-1.5 text-[11px] min-[380px]:text-xs sm:text-sm font-semibold rounded-xl md:rounded-2xl text-white bg-transparent border-2 border-[#9C035D] hover:border-[#b8046e] hover:bg-[#9C035D]/10 transition-all duration-300 active:scale-[0.98]">
+                                class="hero-services-btn inline-flex items-center justify-center text-center w-auto self-end px-3.5 sm:px-5 py-2.5 text-[11px] min-[380px]:text-xs sm:text-sm font-semibold rounded-xl md:rounded-2xl text-white bg-transparent border-2 border-[#9C035D] hover:border-[#b8046e] hover:bg-[#9C035D]/10 transition-all duration-300 active:scale-[0.98]">
                                 <span data-i18n="services" class="whitespace-nowrap">Hizmetlerimiz</span>
                             </a>
                         </div>
@@ -311,78 +312,84 @@
         </div>
     </main>
 
-    <!-- Mobile Floating Front-Facing Square Tiles (Right above footer for phone users) -->
-    <div class="lg:hidden relative w-full h-36 overflow-hidden pointer-events-none z-0 mt-6 mb-2">
+    <!-- Mobile Floating 3D Cubes (Right above footer for phone users) -->
+    <div class="lg:hidden relative w-full h-36 overflow-visible pointer-events-none z-0 mt-6 mb-2">
         <div class="max-w-md mx-auto h-full relative opacity-90">
-            <!-- Tile 1 (Large - Left) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <!-- Cube 1 (Large - Left) -> #9C035D -->
             <div class="absolute left-[5%] top-[10%] cube-animate-slow">
                 <div
-                    class="w-12 h-12 rounded-2xl bg-[#9C035D] border border-[#b8046e] shadow-lg shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                    class="w-12 h-12 rounded-2xl bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
+                    <img src="assets/kelimego-box.png" alt="KelimeGO" class="w-8 h-8 object-contain">
                 </div>
             </div>
 
-            <!-- Tile 2 (Medium - Center Left) -> #0C0C0C / dark: #F9FAFB -->
+            <!-- Cube 2 (Medium - Center Left) -> #0C0C0C / dark: #F9FAFB -->
             <div class="absolute left-[26%] top-[30%] cube-animate-fast">
                 <div
-                    class="w-9 h-9 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/40 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
-                    </div>
+                    class="w-9 h-9 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
+                    <img src="assets/planca-box.png" alt="Planca" class="w-6 h-6 object-contain">
                 </div>
             </div>
 
-            <!-- Tile 3 (Small - Center) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <!-- Cube 3 (Small - Center) -> #9C035D -->
             <div class="absolute left-[48%] top-[8%] cube-animate-mid">
                 <div
-                    class="w-7 h-7 rounded-lg bg-[#9C035D] border border-[#b8046e] shadow-md shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                    class="w-7 h-7 rounded-lg bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
+                    <img src="assets/opsbare-box.png" alt="OpsBare" class="w-5 h-5 object-contain">
                 </div>
             </div>
 
-            <!-- Tile 4 (Tiny - Mid Right) -> #0C0C0C / dark: #F9FAFB -->
+            <!-- Cube 4 (Tiny - Mid Right) -> #0C0C0C / dark: #F9FAFB -->
             <div class="absolute left-[66%] top-[35%] cube-animate-slow">
                 <div
-                    class="w-6 h-6 rounded-lg bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-sm flex items-center justify-center relative overflow-hidden">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
-                    </div>
+                    class="w-6 h-6 rounded-lg bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="w-3.5 h-3.5">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
                 </div>
             </div>
 
-            <!-- Tile 5 (Large - Right) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <!-- Cube 5 (Large - Right) -> #9C035D -->
             <div class="absolute left-[82%] top-[15%] cube-animate-fast">
                 <div
-                    class="w-11 h-11 rounded-2xl bg-[#9C035D] border border-[#b8046e] shadow-lg shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                    class="w-11 h-11 rounded-2xl bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                        <line x1="12" y1="18" x2="12" y2="18" />
+                    </svg>
                 </div>
             </div>
 
-            <!-- Tile 6 (Lower Left/Center) -> #0C0C0C / dark: #F9FAFB -->
+            <!-- Cube 6 (Lower Left/Center) -> #0C0C0C / dark: #F9FAFB -->
             <div class="absolute left-[16%] top-[62%] cube-animate-mid">
                 <div
-                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/40 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
-                    </div>
+                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
+                    <img src="assets/oneribul-box.png" alt="ÖneriBul" class="w-8 h-8 object-contain">
                 </div>
             </div>
 
-            <!-- Tile 7 (Lower Right) -> #9C035D (Hizmetlerimiz Rengi) -->
+            <!-- Cube 7 (Lower Right) -> #9C035D -->
             <div class="absolute left-[72%] top-[60%] cube-animate-slow">
                 <div
-                    class="w-8 h-8 rounded-xl bg-[#9C035D] border border-[#b8046e] shadow-md shadow-[#9C035D]/30 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                    class="w-8 h-8 rounded-xl bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
                 </div>
             </div>
 
-            <!-- Tile 8 (Center Tile) -> #0C0C0C / dark: #F9FAFB -->
+            <!-- Cube 8 (Center Tile) -> #0C0C0C / dark: #F9FAFB -->
             <div class="absolute left-[44%] top-[42%] cube-animate-slow">
                 <div
-                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] border border-white/20 dark:border-black/20 shadow-lg shadow-black/50 dark:shadow-white/10 flex items-center justify-center relative overflow-hidden">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-white/10 dark:from-black/10 to-transparent opacity-50">
-                    </div>
+                    class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
+                    <img src="assets/ganot-box.png" alt="Ganot" class="w-6 h-6 object-contain">
                 </div>
             </div>
         </div>

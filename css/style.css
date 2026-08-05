@@ -3065,7 +3065,51 @@ html:not(.dark) .text-zinc-300 {
     color: #374151 !important;
 }
 
-/* Mobile Scattered 3D Cubes Animation */
+/* Mobile Scattered 3D Cubes Animation — Dice Style */
+
+/* Base dice cube: layered box-shadows create 3D depth with rounded corners */
+.cube-dice {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+}
+
+/* Magenta dice (#9C035D) — dark side edges via stacked shadows */
+.cube-dice-magenta {
+    box-shadow:
+        1px 1px 0 0 #8a0352,
+        2px 2px 0 0 #7a024a,
+        3px 3px 0 0 #6b0241,
+        4px 4px 0 0 #5c0138,
+        5px 5px 0 0 #4d012f,
+        6px 6px 8px 0 rgba(156, 3, 93, 0.35);
+    border-color: rgba(184, 4, 110, 0.6);
+}
+
+/* Neutral dice (dark mode: white face, light gray depth edges) */
+.cube-dice-neutral {
+    box-shadow:
+        1px 1px 0 0 #d4d4d8,
+        2px 2px 0 0 #c4c4c8,
+        3px 3px 0 0 #b4b4b8,
+        4px 4px 0 0 #a4a4a8,
+        5px 5px 0 0 #9a9a9e,
+        6px 6px 10px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+html:not(.dark) .cube-dice-neutral {
+    box-shadow:
+        1px 1px 0 0 #e4e4e7,
+        2px 2px 0 0 #d4d4d8,
+        3px 3px 0 0 #c4c4c8,
+        4px 4px 0 0 #b4b4b8,
+        5px 5px 0 0 #a4a4a8,
+        6px 6px 8px 0 rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, transparent 60%);
+}
+
 @keyframes floatCubeSlow {
     0% {
         transform: translateY(0px) rotate(0deg) scale(1);
