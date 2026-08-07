@@ -19,8 +19,11 @@
     <title>RieStudio - Gizlilik Politikası / Privacy Policy</title>
     <link class="favicon" rel="icon" type="image/png" href="../assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/app.js"></script>
+    <link rel="stylesheet" type="text/tailwindcss" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script>
         tailwind.config = {
@@ -29,21 +32,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            600: '#2563eb',
-                        },
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.25s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.95)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                    },
+                    }
                 }
             }
         }
@@ -56,23 +45,43 @@
             html:not(.dark) .gradient-text {
                 @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
             }
-            .card-hover {
-                @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-xl hover:shadow-pink-500/5;
-            }
         }
-        html.dark,
-        html.dark body {
+
+        html.dark, html.dark body {
             background-color: #050505 !important;
         }
-        html:not(.dark),
-        html:not(.dark) body {
+        html:not(.dark), html:not(.dark) body {
             background-color: #f9fafb !important;
             color: #1f2937 !important;
         }
+
+        /* Navbar light mode */
         html:not(.dark) nav {
-            background-color: rgba(255, 255, 255, 0.45) !important;
-            border-color: rgba(229, 231, 235, 0.4) !important;
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
             backdrop-filter: blur(20px) !important;
+        }
+        html:not(.dark) nav.mobile-menu-open {
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
+            backdrop-filter: blur(20px) !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+        html:not(.dark) #mobile-menu {
+            background-color: rgba(255,255,255,0.95) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #mobile-menu a span,
+        html:not(.dark) #mobile-menu button span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover span,
+        html:not(.dark) #mobile-menu button:hover span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover,
+        html:not(.dark) #mobile-menu button:hover {
+            background-color: rgba(243,244,246,0.8) !important;
         }
         html:not(.dark) nav a,
         html:not(.dark) nav button {
@@ -86,13 +95,13 @@
             color: #4b5563 !important;
         }
         html:not(.dark) #themeToggleBtn:hover {
-            background-color: rgba(0, 0, 0, 0.05) !important;
+            background-color: rgba(0,0,0,0.05) !important;
             color: #111827 !important;
         }
         html:not(.dark) #languageDropdown,
         html:not(.dark) #mobileLanguageDropdown {
-            background-color: rgba(255, 255, 255, 0.98) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
+            background-color: rgba(255,255,255,0.98) !important;
+            border-color: rgba(229,231,235,0.8) !important;
         }
         html:not(.dark) #languageDropdown a,
         html:not(.dark) #mobileLanguageDropdown a {
@@ -100,73 +109,98 @@
         }
         html:not(.dark) #languageDropdown a:hover,
         html:not(.dark) #mobileLanguageDropdown a:hover {
-            background-color: rgba(243, 244, 246, 0.8) !important;
+            background-color: rgba(243,244,246,0.8) !important;
             color: #111827 !important;
         }
 
-        html:not(.dark) #languageDropdown a.bg-gray-700\/50,
-        html:not(.dark) #mobileLanguageDropdown a.bg-gray-700\/50 {
-            background-color: rgba(229, 231, 235, 0.9) !important;
-            color: #111827 !important;
-            font-weight: 600 !important;
-        }
-        html:not(.dark) #mobile-menu {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-        }
-        html:not(.dark) #mobile-menu a {
-            color: #4b5563 !important;
-        }
+        /* Content light mode */
         html:not(.dark) h1:not(.gradient-text),
         html:not(.dark) h2:not(.gradient-text),
-        html:not(.dark) h3:not(.gradient-text),
-        html:not(.dark) .text-white,
-        html:not(.dark) .text-zinc-100 {
+        html:not(.dark) h3:not(.gradient-text) {
             color: #111827 !important;
         }
-        html:not(.dark) p:not(.gradient-text),
+        html:not(.dark) #privacyTitle {
+            color: #000000 !important;
+        }
+        html.dark #privacyTitle {
+            color: #ffffff !important;
+        }
+        html:not(.dark) .text-white {
+            color: #111827 !important;
+        }
         html:not(.dark) .text-zinc-400,
-        html:not(.dark) .text-gray-400,
         html:not(.dark) .text-zinc-500,
-        html:not(.dark) .text-gray-500 {
+        html:not(.dark) .text-gray-400 {
             color: #4b5563 !important;
         }
-        html:not(.dark) .bg-gray-800\/30,
-        html:not(.dark) .bg-zinc-900\/40,
-        html:not(.dark) .bg-zinc-950\/40,
-        html:not(.dark) .bg-gray-900\/40 {
+        html:not(.dark) .section-card {
             background-color: #ffffff !important;
-            border-color: rgba(229, 231, 235, 0.8) !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+            border-color: rgba(229,231,235,0.9) !important;
+            box-shadow: 0 2px 16px -2px rgba(0,0,0,0.06) !important;
+        }
+        html:not(.dark) .section-card a.bg-\[\#9C035D\] {
+            color: #ffffff !important;
+        }
+        html:not(.dark) .divider {
+            border-color: rgba(229,231,235,0.8) !important;
         }
         html:not(.dark) footer {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-color: rgba(229, 231, 235, 0.7) !important;
+            background-color: rgba(255,255,255,0.8) !important;
+            border-color: rgba(229,231,235,0.7) !important;
         }
-        html:not(.dark) footer p,
         html:not(.dark) footer span,
         html:not(.dark) footer a {
             color: #4b5563 !important;
         }
-        .hover-thick {
-            transition: color 0.2s ease, text-shadow 0.2s ease !important;
+        html:not(.dark) .effective-badge {
+            background-color: rgba(243,244,246,0.9) !important;
+            border-color: rgba(229,231,235,0.9) !important;
+            color: #4b5563 !important;
         }
-        .hover-thick:hover {
-            text-shadow: 0.03em 0 0 currentColor;
+        html:not(.dark) footer a[href^="mailto"] span {
+            color: #1f2937 !important;
+        }
+        html:not(.dark) #privacy-email {
+            color: #9C035D !important;
+        }
+        html:not(.dark) #contact-email {
+            color: #ffffff !important;
+        }
+        html:not(.dark) #contact-email-icon {
+            stroke: #ffffff !important;
+        }
+        html:not(.dark) .nav-link-item.active-nav-item {
+            color: #ffffff !important;
+        }
+        html:not(.dark) .nav-link-item.active-nav-item span {
+            color: #ffffff !important;
+        }
+        html:not(.dark) #navSlidingIndicator {
+            display: none !important;
+        }
+        #navBgBeam {
+            z-index: -1 !important;
+        }
+        #navSlidingIndicator {
+            display: none !important;
         }
     </style>
 </head>
 
 <body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+
+    <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
+    <div id="navBgBeam" class="nav-bg-beam"></div>
+
     <!-- Navbar -->
     <nav
         class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
         <div class="w-full px-8">
-            <div class="flex justify-between items-center h-16 md:h-24 w-full">
+            <div class="flex justify-between items-center h-14 md:h-16 w-full">
                 <!-- Logo -->
                 <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
                     <a href="../index.html" class="flex items-center">
-                        <img id="navbarLogo" src="../assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-44">
+                        <img id="navbarLogo" src="../assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-36">
                     </a>
                     <!-- Theme Toggle -->
                     <button id="themeToggleBtn" onclick="toggleTheme()"
@@ -175,7 +209,7 @@
                         <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707-.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
                         </svg>
                         <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             stroke-width="2">
@@ -185,24 +219,30 @@
                     </button>
                 </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="../index.html"
-                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
-                        <span class="relative z-10" data-i18n="home">Ana Sayfa</span>
-                    </a>
-                    <a href="../products.html"
-                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
-                        <span class="relative z-10" data-i18n="products">Ürünlerimiz</span>
-                        <span
-                            class="absolute inset-0 rounded-md bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/10 group-hover:to-red-600/10 transition-all duration-300"></span>
-                    </a>
-                    <a href="../services.html"
-                        class="px-4 py-2.5 rounded-md text-base font-semibold text-gray-300 hover:text-white transition-all duration-300 relative group">
-                        <span class="relative z-10" data-i18n="services">Hizmetlerimiz</span>
-                        <span
-                            class="absolute inset-0 rounded-md bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/10 group-hover:to-red-600/10 transition-all duration-300"></span>
-                    </a>
+                <!-- Desktop Menu Wrapper -->
+                <div class="hidden md:flex items-center space-x-6 h-full">
+                    <!-- Nav Tabs Container with Animated Parallelogram Indicator -->
+                    <div id="navTabsContainer" class="relative flex items-center space-x-1 h-full py-0">
+                        <!-- Parallelogram (Paralelkenar) Sliding Active Background Indicator -->
+                        <div id="navSlidingIndicator" class="nav-sliding-indicator"></div>
+
+                        <a href="../index.html#about" data-nav="about"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="about">Hakkımızda</span>
+                        </a>
+                        <a href="../products.html" data-nav="products"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="products">Ürünlerimiz</span>
+                        </a>
+                        <a href="../services.html" data-nav="services"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="services">Hizmetlerimiz</span>
+                        </a>
+                        <button id="contactBtn" data-nav="contact"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="contact">İletişim</span>
+                        </button>
+                    </div>
 
                     <!-- Language Selector -->
                     <div class="relative group">
@@ -210,8 +250,8 @@
                             class="flex items-center px-3 py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors duration-300">
                             <span class="relative z-10 flex items-center">
                                 <span id="current-lang-text" class="mr-2">TR</span>
-                                <svg class="w-4 h-4 transition-transform duration-200 transform"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -241,8 +281,8 @@
                             class="flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
                             <span class="relative z-10 flex items-center">
                                 <span id="mobile-lang-text" class="mr-2">TR</span>
-                                <svg class="w-3 h-3 transition-transform duration-200 transform"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3 h-3 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -263,14 +303,16 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Menu button -->
-                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
-                        aria-label="Menüyü Aç">
-                        <svg id="menu-icon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
+                            aria-label="Menüyü Aç">
+                            <svg id="menu-icon" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -278,65 +320,316 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-white/10 dark:border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3">
-        <a href="../index.html"
-            class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
-            Ana Sayfa
-        </a>
-        <a href="../products.html"
-            class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
-            Ürünlerimiz
-        </a>
-        <a href="../services.html"
-            class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
-            Hizmetlerimiz
-        </a>
+        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 backdrop-blur-xl border border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3 transition-all duration-300">
+        <div class="space-y-1 w-full">
+            <a href="../index.html#about"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                        </path>
+                    </svg>
+                    <span data-i18n="about" class="text-gray-300 hover:text-white">Hakkımızda</span>
+                </div>
+            </a>
+            <a href="../products.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                        </path>
+                    </svg>
+                    <span data-i18n="products" class="text-gray-300 hover:text-white">Ürünlerimiz</span>
+                </div>
+            </a>
+            <a href="../services.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="services" class="text-gray-300 hover:text-white">Hizmetlerimiz</span>
+                </div>
+            </a>
+            <button id="mobileContactBtn"
+                class="w-full px-4 py-3 text-left text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="contact" class="text-gray-300 hover:text-white">İletişim</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[9999] hidden">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity z-[9998]"></div>
+
+        <!-- Modal Content -->
+        <div class="fixed inset-0 flex items-center justify-center p-4 z-[10000]">
+            <div
+                class="relative bg-zinc-950/95 backdrop-blur-md rounded-2xl p-8 max-w-md w-full border border-zinc-800/80 shadow-2xl z-[10001]">
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Step 1: Social Links -->
+                <div id="modalStep1" class="text-center w-full">
+                    <h3 class="text-3xl font-bold mb-8 gradient-text" data-i18n="contactUs">Bize Ulaşın</h3>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/riestudio.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Instagram</span>
+                            </div>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/riestudioterminal" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.598.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.54-4.458c.538-.196 1.006.139.832.941z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Telegram</span>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/company/riestudio" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">LinkedIn</span>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:contact@riestudio.com.tr"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">E-posta</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Start Project Button -->
+                    <button id="startProjectBtn"
+                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span data-i18n="startProject"
+                            class="whitespace-nowrap text-xs min-[375px]:text-sm sm:text-base">Projenizi Bizimle
+                            Başlatın</span>
+                    </button>
+                </div>
+
+                <!-- Step 2: Project Form -->
+                <div id="modalStep2" class="w-full hidden text-left">
+                    <!-- Back Button -->
+                    <button id="backToStep1Btn" type="button"
+                        class="absolute top-4 left-4 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </button>
+                    <!-- Title Row -->
+                    <h3 class="text-2xl font-bold text-white gradient-text text-center mb-6"
+                        data-i18n="startProjectTitle">Projenizi Başlatın</h3>
+
+                    <form id="projectForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formEmail">E-posta Adresiniz</label>
+                            <input type="email" id="projectEmail" required placeholder="name@example.com"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formCategory">Proje Kategorisi</label>
+                            <select id="projectCategory"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                                <option value="Web Sitesi" data-i18n="optWeb">Web Sitesi</option>
+                                <option value="Mobil Uygulama" data-i18n="optMobile">Mobil Uygulama</option>
+                                <option value="Özel Yazılım / SaaS" data-i18n="optSaaS">Özel Yazılım / SaaS</option>
+                                <option value="Diğer" data-i18n="optOther">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formDetails">Proje Detayları ve Açıklama</label>
+                            <textarea id="projectDetails" rows="3" required
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 text-center block">
+                            <span data-i18n="btnSubmit">Talebi Gönder</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Success State -->
+                <div id="modalStep3" class="text-center w-full hidden">
+                    <div
+                        class="w-16 h-16 glow-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-8 gradient-text" data-i18n="formSuccessTitle">Talebiniz
+                        Alındı!</h3>
+
+                    <button id="closeSuccessModalBtn"
+                        class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20"
+                        data-i18n="btnClose">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Main Content -->
-    <main class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-6 gradient-text py-2 leading-normal"
+    <main class="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+            <h1 id="privacyTitle" class="text-4xl sm:text-5xl font-bold mb-6 py-2 leading-normal"
                 data-i18n="privacyTitle">
-                Gizlilik Politikaları
+                Gizlilik Merkezi
             </h1>
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto" data-i18n="privacyDesc">
-                RieStudio olarak gizliliğinize önem veriyoruz. Web sitemiz ve mobil uygulamalarımızın gizlilik politikalarına buradan ulaşabilirsiniz.
-            </p>
         </div>
 
         <div class="space-y-8">
             <!-- Web Site Privacy Policy -->
-            <div class="bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-8 card-hover">
-                <h2 class="text-2xl font-bold text-white mb-4" data-i18n="webPolicyTitle">Web Sitesi Gizlilik Politikası</h2>
-                <p class="text-gray-400 mb-4 leading-relaxed" data-i18n="webPolicyDesc">
-                    RieStudio resmi web sitesini (riestudio.com.tr) kullanırken paylaştığınız veya otomatik olarak toplanan bilgilerin nasıl işlendiğine ve korunduğuna dair detaylar.
+            <div class="section-card bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-7 sm:p-8">
+                <h2 class="text-2xl font-bold text-white mb-2" data-i18n="webPolicyTitle">Web Sitesi Gizlilik Politikası</h2>
+                <p class="text-sm text-zinc-500 mb-4">Son Güncelleme: Ağustos 2026</p>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    RieStudio olarak kişisel verilerin gizliliğine önem veriyoruz. Bu politika, RieStudio web sitesi üzerinden sağlanan kişisel verilerin nasıl işlendiğini açıklar.
                 </p>
-                <p class="text-gray-400 mb-6 leading-relaxed border-t border-white/5 pt-4" data-i18n="webPolicyForm">
-                    Sitemiz üzerinden doldurduğunuz Proje Talep Formu bilgileri (E-posta, Proje Kategorisi, Proje Detayları) yalnızca talebinizi işlemek ve size ulaşmak amacıyla kullanılır. Bu veriler üçüncü taraflarla reklam veya ticari amaçlarla paylaşılmaz.
+                
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">1. İşlenen Veriler</h3>
+                <p class="text-gray-400 mb-3 leading-relaxed">
+                    İletişim formu aracılığıyla aşağıdaki bilgiler alınabilir:
                 </p>
-                <div class="border-t border-white/5 pt-4">
-                    <p class="text-xs text-zinc-500 mb-2" data-i18n="webPolicyNote">
-                        * Bu site çerezleri yalnızca temel site işlevlerini optimize etmek amacıyla kullanır. Üçüncü taraflarla kişisel veri paylaşımı yapılmamaktadır.
-                    </p>
-                </div>
+                <ul class="text-gray-400 mb-4 leading-relaxed list-disc list-inside space-y-1">
+                    <li>E-posta adresi</li>
+                    <li>Proje kategorisi</li>
+                    <li>Kullanıcı tarafından sağlanan proje detayları ve açıklamalar</li>
+                </ul>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Web sitesi üzerinden kullanıcı hesabı oluşturulmaz, satış işlemi gerçekleştirilmez ve kullanıcı davranışlarını takip etmeye yönelik analitik veya reklam sistemleri kullanılmaz.
+                </p>
+                
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">2. Verilerin Kullanım Amacı</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Form aracılığıyla sağlanan bilgiler yalnızca proje talebini değerlendirmek, talep hakkında iletişim kurmak ve gerekli geri dönüşü sağlamak amacıyla kullanılır.
+                </p>
+                
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">3. Verilerin Aktarılması</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Form aracılığıyla gönderilen bilgiler, taleplerin alınması ve yönetilmesi amacıyla kullanılan teknik altyapı ve hizmet sağlayıcılarına aktarılabilir.
+                </p>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Kişisel veriler reklam veya pazarlama amacıyla satılmaz.
+                </p>
+                
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">4. İletişim</h3>
+                <p class="text-gray-400 mb-2 leading-relaxed">
+                    Gizlilik ve kişisel verilerinizle ilgili sorularınız için:
+                </p>
+                <a id="privacy-email" href="mailto:contact@riestudio.com.tr" class="text-[#9C035D] leading-relaxed font-medium hover:underline">
+                    contact@riestudio.com.tr
+                </a>
             </div>
 
             <!-- Mobile Apps Directory (List Style) -->
-            <div class="bg-gray-800/30 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
-                <h3 class="text-xl font-bold text-white mb-4" data-i18n="mobileAppsTitle">Mobil Uygulamalarımız</h3>
+            <div class="section-card bg-zinc-900/40 border border-zinc-800/60 rounded-2xl p-6 sm:p-8 space-y-4">
+                <h3 class="text-xl font-bold text-white mb-4" data-i18n="mobileAppsTitle">Mobil Ürünlerimiz</h3>
                 <div class="divide-y divide-white/5">
                     <!-- Öneri Bul -->
                     <div class="flex items-center justify-between py-4 first:pt-0 last:pb-0">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-pink-500/10 flex-shrink-0">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img src="../assets/oneribullogo.png" alt="Öneri Bul" class="w-full h-full object-cover">
                             </div>
                             <span class="font-bold text-white text-base">Öneri Bul</span>
                         </div>
-                        <a href="oneribul.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                        <a href="oneribul.html" class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-2 py-1.5 sm:px-3.5 sm:py-2 rounded-xl transition-all shadow-sm">
                             <span data-i18n="readPolicy">Politikayı Oku</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
@@ -345,14 +638,14 @@
                     <!-- Ganot -->
                     <div class="flex items-center justify-between py-4 last:pb-0">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-blue-500/10 flex-shrink-0">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img src="../assets/ganotlogo.png" alt="Ganot" class="w-full h-full object-cover">
                             </div>
                             <span class="font-bold text-white text-base">Ganot</span>
                         </div>
-                        <a href="ganot.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                        <a href="ganot.html" class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-2 py-1.5 sm:px-3.5 sm:py-2 rounded-xl transition-all shadow-sm">
                             <span data-i18n="readPolicy">Politikayı Oku</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
@@ -361,14 +654,14 @@
                     <!-- Planca -->
                     <div class="flex items-center justify-between py-4 last:pb-0">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-sky-500/10 flex-shrink-0">
+                            <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img src="../assets/plancalogo.png" alt="Planca" class="w-full h-full object-cover">
                             </div>
                             <span class="font-bold text-white text-base">Planca</span>
                         </div>
-                        <a href="planca.html" class="inline-flex items-center text-zinc-400 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm font-medium">
+                        <a href="planca.html" class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-semibold text-white bg-[#9C035D] hover:bg-[#b8046e] px-2 py-1.5 sm:px-3.5 sm:py-2 rounded-xl transition-all shadow-sm">
                             <span data-i18n="readPolicy">Politikayı Oku</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
@@ -379,73 +672,139 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="../index.html" class="flex items-center">
-                        <img id="footerLogo" src="../assets/hedef.png" alt="Logo" class="h-16 w-auto">
-                    </a>
+    <footer class="mt-auto bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-6">
+        <div
+            class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-xs">
+            <div class="flex items-center space-x-5">
+                <!-- GitHub -->
+                <a href="https://github.com/RieStudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/riestudioterminal" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Telegram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/riestudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="index.html" class="hover:text-white hover-thick transition-colors duration-200" id="privacy-policy">Gizlilik Politikası</a>
+                    <span class="text-zinc-500">•</span>
+                    <a href="../terms.html" class="hover:text-white hover-thick transition-colors duration-200" id="terms-of-use">Kullanım Koşulları</a>
                 </div>
-                <div class="text-center md:text-right">
-                    <p class="text-xs text-gray-400">© 2026 RieStudio. <span data-i18n="allRightsReserved">Tüm hakları saklıdır.</span></p>
-                    <a href="mailto:contact@riestudio.com.tr"
-                        class="text-gray-400 hover:text-white hover-thick text-xs transition-colors duration-200">
-                        contact@riestudio.com.tr
-                    </a>
-                </div>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <a href="mailto:contact@riestudio.com.tr"
+                    class="inline-flex items-center gap-1.5 hover:text-white hover-thick transition-colors duration-200">
+                    <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>contact@riestudio.com.tr</span>
+                </a>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <span class="text-zinc-500 text-xs mt-0.5 sm:mt-0">&copy; 2026 RieStudio</span>
             </div>
         </div>
     </footer>
 
     <script>
-        const translations = {
+        // ── Theme ──────────────────────────────────────────────
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeUI(isDark);
+        }
+
+        function updateThemeUI(isDark) {
+            const navbarLogo = document.getElementById('navbarLogo');
+            const sunIcon    = document.getElementById('sunIcon');
+            const moonIcon   = document.getElementById('moonIcon');
+            if (isDark) {
+                if (navbarLogo) navbarLogo.src = '../assets/hedef.png';
+                if (sunIcon)  sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                if (navbarLogo) navbarLogo.src = '../assets/beyazrs.png';
+                if (sunIcon)  sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const overlay = document.getElementById('overlay');
+            const nav = document.querySelector('nav');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) mobileMenuButton.classList.remove('is-active');
+                if (overlay) overlay.classList.add('hidden');
+                if (nav) nav.classList.remove('mobile-menu-open');
+                if (menuIcon) menuIcon.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        window.closeMobileMenu = closeMobileMenu;
+
+        // ── Language ──────────────────────────────────────────
+        const i18n = {
             tr: {
-                home: 'Ana Sayfa',
-                apps: 'Uygulamalar',
-                privacyTitle: 'Gizlilik Politikaları',
-                privacyDesc: 'RieStudio olarak gizliliğinize önem veriyoruz. Web sitemiz ve mobil uygulamalarımızın gizlilik politikalarına buradan ulaşabilirsiniz.',
+                privacyTitle: 'Gizlilik Merkezi',
                 webPolicyTitle: 'Web Sitesi Gizlilik Politikası',
-                webPolicyDesc: 'RieStudio resmi web sitesini (riestudio.com.tr) kullanırken paylaştığınız veya otomatik olarak toplanan bilgilerin nasıl işlendiğine ve korunduğuna dair detaylar.',
-                webPolicyForm: 'Sitemiz üzerinden doldurduğunuz Proje Talep Formu bilgileri (E-posta, Proje Kategorisi, Proje Detayları) yalnızca talebinizi işlemek ve size ulaşmak amacıyla kullanılır. Bu veriler üçüncü taraflarla reklam veya ticari amaçlarla paylaşılmaz.',
-                webPolicyNote: '* Bu site çerezleri yalnızca temel site işlevlerini optimize etmek amacıyla kullanır. Üçüncü taraflarla kişisel veri paylaşımı yapılmamaktadır.',
-                mobileAppsTitle: 'Mobil Uygulamalarımız',
+                mobileAppsTitle: 'Mobil Ürünlerimiz',
                 readPolicy: 'Politikayı Oku',
-                allRightsReserved: 'Tüm hakları saklıdır.'
+                privacyPolicy: 'Gizlilik Politikası',
+                termsOfUse: 'Kullanım Koşulları',
+                about: 'Hakkımızda',
+                products: 'Ürünlerimiz',
+                services: 'Hizmetlerimiz',
+                contact: 'İletişim',
+                contactUs: 'Bize Ulaşın'
             },
             en: {
-                home: 'Home',
-                apps: 'Apps',
-                privacyTitle: 'Privacy Policies',
-                privacyDesc: 'At RieStudio, we value your privacy. You can access the privacy policies of our website and mobile applications here.',
+                privacyTitle: 'Privacy Center',
                 webPolicyTitle: 'Website Privacy Policy',
-                webPolicyDesc: 'Details on how information you share or that is automatically collected when using the official RieStudio website (riestudio.com.tr) is processed and protected.',
-                webPolicyForm: 'The Project Request Form details you fill out on our website (Email, Project Category, Project Details) are used solely to process your request and communicate with you. This data is never shared with third parties for marketing or commercial purposes.',
-                webPolicyNote: '* This site uses cookies only to optimize basic site functions. No personal data is shared with third parties.',
-                mobileAppsTitle: 'Our Mobile Applications',
+                mobileAppsTitle: 'Our Mobile Products',
                 readPolicy: 'Read Policy',
-                allRightsReserved: 'All rights reserved.'
+                privacyPolicy: 'Privacy Policy',
+                termsOfUse: 'Terms of Service',
+                about: 'About',
+                products: 'Products',
+                services: 'Services',
+                contact: 'Contact',
+                contactUs: 'Contact Us'
             }
         };
-
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('userLanguage', lang);
-
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-
-            const currentLangElements = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
-            currentLangElements.forEach(el => {
-                el.textContent = lang.toUpperCase();
-            });
-
-            updateLanguageSelectors(lang);
-        }
 
         // Update active state of language selectors
         function updateLanguageSelectors(lang) {
@@ -459,137 +818,261 @@
             });
         }
 
-        function initLanguage() {
-            const savedLang = localStorage.getItem('userLanguage');
-            const browserLang = navigator.language.startsWith('tr') ? 'tr' : 'en';
-            const defaultLang = savedLang || browserLang;
-            setLanguage(defaultLang);
+        function setLanguage(lang) {
+            localStorage.setItem('userLanguage', lang);
+            document.documentElement.lang = lang;
+
+            const t = i18n[lang] || i18n.tr;
+
+            // Navbar translations
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (t[key]) {
+                    element.textContent = t[key];
+                }
+            });
+
+            // Content translations
+            if (document.getElementById('privacyTitle')) document.getElementById('privacyTitle').textContent = t.privacyTitle;
+            if (document.getElementById('webPolicyTitle')) document.getElementById('webPolicyTitle').textContent = t.webPolicyTitle;
+            if (document.getElementById('webPolicyDesc')) document.getElementById('webPolicyDesc').textContent = t.webPolicyDesc;
+            if (document.getElementById('webPolicyForm')) document.getElementById('webPolicyForm').textContent = t.webPolicyForm;
+            if (document.getElementById('webPolicyNote')) document.getElementById('webPolicyNote').textContent = t.webPolicyNote;
+            if (document.getElementById('mobileAppsTitle')) document.getElementById('mobileAppsTitle').textContent = t.mobileAppsTitle;
+            if (document.getElementById('readPolicy')) document.getElementById('readPolicy').textContent = t.readPolicy;
+
+            // Footer
+            if (document.getElementById('privacy-policy')) document.getElementById('privacy-policy').textContent = t.privacyPolicy;
+            if (document.getElementById('terms-of-use')) document.getElementById('terms-of-use').textContent = t.termsOfUse;
+
+            const langEls = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
+            langEls.forEach(el => el.textContent = lang.toUpperCase());
+
+            updateLanguageSelectors(lang);
         }
 
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateThemeUI(isDark);
-        }
+        // ── Contact Modal ─────────────────────────────────────────
+        function initContactModal() {
+            const modal = document.getElementById('contactModal');
+            const mobileContactBtn = document.getElementById('mobileContactBtn');
+            const closeBtn = document.getElementById('closeModal');
 
-        function updateThemeUI(isDark) {
-            const navbarLogo = document.getElementById('navbarLogo');
-            const footerLogo = document.getElementById('footerLogo');
-            const sunIcon = document.getElementById('sunIcon');
-            const moonIcon = document.getElementById('moonIcon');
+            const step1 = document.getElementById('modalStep1');
+            const step2 = document.getElementById('modalStep2');
+            const step3 = document.getElementById('modalStep3');
 
-            if (isDark) {
-                if (navbarLogo) navbarLogo.src = '../assets/hedef.png';
-                if (footerLogo) footerLogo.src = '../assets/hedef.png';
-                if (sunIcon) sunIcon.classList.remove('hidden');
-                if (moonIcon) moonIcon.classList.add('hidden');
-            } else {
-                if (navbarLogo) navbarLogo.src = '../assets/beyazrs.png';
-                if (footerLogo) footerLogo.src = '../assets/beyazrs.png';
-                if (sunIcon) sunIcon.classList.add('hidden');
-                if (moonIcon) moonIcon.classList.remove('hidden');
+            const startProjectBtn = document.getElementById('startProjectBtn');
+            const backToStep1Btn = document.getElementById('backToStep1Btn');
+            const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+            const projectForm = document.getElementById('projectForm');
+
+            if (!modal) return;
+
+            function resetModalSteps() {
+                if (step1) step1.classList.remove('hidden');
+                if (step2) step2.classList.add('hidden');
+                if (step3) step3.classList.add('hidden');
+                if (projectForm) projectForm.reset();
+            }
+
+            function openModal() {
+                resetModalSteps();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            if (mobileContactBtn) {
+                mobileContactBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeMobileMenu();
+                    openModal();
+                });
+            }
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeModal);
+
+            if (startProjectBtn) {
+                startProjectBtn.addEventListener('click', () => {
+                    if (step1) step1.classList.add('hidden');
+                    if (step2) step2.classList.remove('hidden');
+                });
+            }
+
+            if (backToStep1Btn) {
+                backToStep1Btn.addEventListener('click', () => {
+                    if (step2) step2.classList.add('hidden');
+                    if (step1) step1.classList.remove('hidden');
+                });
+            }
+
+            // ── Google Apps Script Webhook URL ──────────────────────────
+            const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzbUvHSAW_cb1s3kJ9UDQq1Zk-B21DeBGZ0NUKe0qSwqnUZGV_nCInrlK0XKbM59DpoZA/exec";
+            // ─────────────────────────────────────────────────────────────
+
+            if (projectForm) {
+                projectForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const email = document.getElementById('projectEmail').value.trim();
+                    const category = document.getElementById('projectCategory').value;
+                    const details = document.getElementById('projectDetails').value.trim();
+                    const page = window.location.pathname.split('/').pop() || 'index.html';
+
+                    // Strict Input Validation & Sanitization (XSS Önleme)
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!email || !emailRegex.test(email) || email.length > 150) {
+                        alert("Lütfen geçerli bir e-posta adresi giriniz.");
+                        return;
+                    }
+
+                    if (!details || details.length > 5000) {
+                        alert("Lütfen geçerli bir açıklama giriniz (en fazla 5000 karakter).");
+                        return;
+                    }
+
+                    // HTML sanitization function
+                    const sanitizeHTML = (str) => {
+                        return str
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;")
+                            .replace(/\//g, "&#x2F;");
+                    };
+
+                    const sanitizedEmail = sanitizeHTML(email);
+                    const sanitizedCategory = sanitizeHTML(category);
+                    const sanitizedDetails = sanitizeHTML(details);
+
+                    try {
+                        const response = await fetch(WEBHOOK_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                email: sanitizedEmail,
+                                category: sanitizedCategory,
+                                details: sanitizedDetails,
+                                page: page,
+                                timestamp: new Date().toISOString()
+                            })
+                        });
+
+                        if (step2) step2.classList.add('hidden');
+                        if (step3) step3.classList.remove('hidden');
+                    } catch (error) {
+                        alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.");
+                    }
+                });
             }
         }
 
+        // ── Init ──────────────────────────────────────────────
         document.addEventListener('DOMContentLoaded', () => {
-            initLanguage();
+            const savedLang = localStorage.getItem('userLanguage') ||
+                (navigator.language.startsWith('tr') ? 'tr' : 'en');
+            setLanguage(savedLang);
             updateThemeUI(document.documentElement.classList.contains('dark'));
 
-            // Language selectors
-            const languageButton = document.getElementById('languageButton');
-            const languageDropdown = document.getElementById('languageDropdown');
-            const mobileLanguageButton = document.getElementById('mobileLanguageButton');
-            const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+            // Language dropdowns
+            const langBtn        = document.getElementById('languageButton');
+            const langDrop       = document.getElementById('languageDropdown');
+            const mobileLangBtn  = document.getElementById('mobileLanguageButton');
+            const mobileLangDrop = document.getElementById('mobileLanguageDropdown');
 
-            if (languageButton && languageDropdown) {
-                languageButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isHidden = languageDropdown.classList.toggle('hidden');
-                    const arrow = languageButton.querySelector('svg');
-                    if (arrow) {
-                        if (isHidden) {
-                            arrow.classList.remove('rotate-180');
-                        } else {
-                            arrow.classList.add('rotate-180');
-                        }
-                    }
-                    if (mobileLanguageDropdown) {
-                        mobileLanguageDropdown.classList.add('hidden');
-                        const mobileArrow = mobileLanguageButton ? mobileLanguageButton.querySelector('svg') : null;
-                        if (mobileArrow) mobileArrow.classList.remove('rotate-180');
-                    }
-                });
+            function toggleDrop(drop, btn, other, otherBtn) {
+                const isHidden = drop.classList.toggle('hidden');
+                const arrow = btn.querySelector('svg');
+                if (arrow) arrow.classList.toggle('rotate-180', !isHidden);
+                if (other) {
+                    other.classList.add('hidden');
+                    const otherArrow = otherBtn?.querySelector('svg');
+                    if (otherArrow) otherArrow.classList.remove('rotate-180');
+                }
             }
 
-            if (mobileLanguageButton && mobileLanguageDropdown) {
-                mobileLanguageButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isHidden = mobileLanguageDropdown.classList.toggle('hidden');
-                    const mobileArrow = mobileLanguageButton.querySelector('svg');
-                    if (mobileArrow) {
-                        if (isHidden) {
-                            mobileArrow.classList.remove('rotate-180');
-                        } else {
-                            mobileArrow.classList.add('rotate-180');
-                        }
-                    }
-                    if (languageDropdown) {
-                        languageDropdown.classList.add('hidden');
-                        const arrow = languageButton ? languageButton.querySelector('svg') : null;
-                        if (arrow) arrow.classList.remove('rotate-180');
-                    }
-                });
-            }
+            langBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(langDrop, langBtn, mobileLangDrop, mobileLangBtn);
+            });
 
-            document.querySelectorAll('[data-lang]').forEach(button => {
-                button.addEventListener('click', (e) => {
+            mobileLangBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(mobileLangDrop, mobileLangBtn, langDrop, langBtn);
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.addEventListener('click', e => {
                     e.preventDefault();
-                    const lang = button.getAttribute('data-lang');
-                    setLanguage(lang);
-                    if (languageDropdown) {
-                        languageDropdown.classList.add('hidden');
-                        const arrow = languageButton.querySelector('svg');
-                        if (arrow) arrow.classList.remove('rotate-180');
-                    }
-                    if (mobileLanguageDropdown) {
-                        mobileLanguageDropdown.classList.add('hidden');
-                        const mobileArrow = mobileLanguageButton.querySelector('svg');
-                        if (mobileArrow) mobileArrow.classList.remove('rotate-180');
-                    }
+                    setLanguage(el.getAttribute('data-lang'));
+                    langDrop?.classList.add('hidden');
+                    mobileLangDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
                 });
             });
 
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
+            document.addEventListener('click', e => {
+                if (!langDrop?.contains(e.target) && !langBtn?.contains(e.target)) {
+                    langDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                }
+                if (!mobileLangDrop?.contains(e.target) && !mobileLangBtn?.contains(e.target)) {
+                    mobileLangDrop?.classList.add('hidden');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                }
+            });
 
-            if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
-                mobileMenuButton.addEventListener('click', () => {
-                    const isHidden = mobileMenu.classList.toggle('hidden');
-                    menuIcon.classList.toggle('hidden');
-                    closeIcon.classList.toggle('hidden');
-                });
+            // Mobile menu
+            const mobileMenuBtn  = document.getElementById('mobile-menu-button');
+            const mobileMenu     = document.getElementById('mobile-menu');
+            const overlay        = document.getElementById('overlay');
+            const nav            = document.querySelector('nav');
+            const menuIcon       = document.getElementById('menu-icon');
+
+            if (!mobileMenuBtn || !mobileMenu) return;
+
+            function toggleMobileMenu() {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.classList.toggle('is-active', !isHidden);
+                if (overlay) overlay.classList.toggle('hidden', isHidden);
+                if (nav) nav.classList.toggle('mobile-menu-open', !isHidden);
+                if (menuIcon) menuIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(90deg)';
+                document.body.style.overflow = isHidden ? 'auto' : 'hidden';
             }
 
-            // Close dropdowns on outside click
-            document.addEventListener('click', (e) => {
-                if (languageDropdown && !languageDropdown.contains(e.target) &&
-                    languageButton && !languageButton.contains(e.target)) {
-                    languageDropdown.classList.add('hidden');
-                    const arrow = languageButton.querySelector('svg');
-                    if (arrow) arrow.classList.remove('rotate-180');
-                }
+            mobileMenuBtn.onclick = function (e) {
+                e.stopPropagation();
+                toggleMobileMenu();
+            };
 
-                if (mobileLanguageDropdown && !mobileLanguageDropdown.contains(e.target) &&
-                    mobileLanguageButton && !mobileLanguageButton.contains(e.target)) {
-                    mobileLanguageDropdown.classList.add('hidden');
-                    const mobileArrow = mobileLanguageButton.querySelector('svg');
-                    if (mobileArrow) mobileArrow.classList.remove('rotate-180');
+            if (overlay) {
+                overlay.onclick = closeMobileMenu;
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu?.contains(e.target) && !mobileMenuBtn?.contains(e.target)) {
+                    closeMobileMenu();
                 }
             });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Initialize contact modal
+            initContactModal();
         });
     </script>
 </body>

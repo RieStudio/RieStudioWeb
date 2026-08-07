@@ -1019,6 +1019,12 @@
                 });
             }
 
+            // Auto-open modal if navigated with contact=open URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('contact') === 'open') {
+                openModal();
+            }
+
             if (closeBtn) closeBtn.addEventListener('click', closeModal);
             if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeModal);
 
