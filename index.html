@@ -17,7 +17,7 @@
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <title>RieStudio</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/brand/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" type="text/tailwindcss" href="css/style.css">
@@ -70,7 +70,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
                     <a href="index.html" class="flex items-center">
-                        <img id="navbarLogo" src="assets/hedef.png" alt="Logo" class="h-24 w-auto md:h-36">
+                        <img id="navbarLogo" src="assets/images/brand/hedef.png" alt="Logo" class="h-24 w-auto md:h-36">
                     </a>
                     <!-- Theme Toggle -->
                     <button id="themeToggleBtn" onclick="toggleTheme()"
@@ -319,7 +319,7 @@
             <div class="absolute left-[5%] top-[10%] cube-animate-slow">
                 <div
                     class="w-12 h-12 rounded-2xl bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
-                    <img src="assets/kelimego-box.png" alt="KelimeGO" class="w-8 h-8 object-contain">
+                    <img decoding="async" loading="lazy" src="assets/images/apps/kelimego-box.png" alt="KelimeGO" class="w-8 h-8 object-contain">
                 </div>
             </div>
 
@@ -327,7 +327,7 @@
             <div class="absolute left-[26%] top-[30%] cube-animate-fast">
                 <div
                     class="w-9 h-9 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
-                    <img src="assets/planca-box.png" alt="Planca" class="w-6 h-6 object-contain">
+                    <img decoding="async" loading="lazy" src="assets/images/apps/planca-box.png" alt="Planca" class="w-6 h-6 object-contain">
                 </div>
             </div>
 
@@ -335,7 +335,7 @@
             <div class="absolute left-[48%] top-[8%] cube-animate-mid">
                 <div
                     class="w-7 h-7 rounded-lg bg-[#9C035D] cube-dice cube-dice-magenta flex items-center justify-center">
-                    <img src="assets/opsbare-box.png" alt="OpsBare" class="w-5 h-5 object-contain">
+                    <img decoding="async" loading="lazy" src="assets/images/apps/opsbare-box.png" alt="OpsBare" class="w-5 h-5 object-contain">
                 </div>
             </div>
 
@@ -369,7 +369,7 @@
             <div class="absolute left-[16%] top-[62%] cube-animate-mid">
                 <div
                     class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
-                    <img src="assets/oneribul-box.png" alt="ÖneriBul" class="w-8 h-8 object-contain">
+                    <img decoding="async" loading="lazy" src="assets/images/apps/oneribul-box.png" alt="ÖneriBul" class="w-8 h-8 object-contain">
                 </div>
             </div>
 
@@ -389,7 +389,7 @@
             <div class="absolute left-[44%] top-[42%] cube-animate-slow">
                 <div
                     class="w-10 h-10 rounded-xl bg-[#0C0C0C] dark:bg-[#F9FAFB] cube-dice cube-dice-neutral flex items-center justify-center">
-                    <img src="assets/ganot-box.png" alt="Ganot" class="w-6 h-6 object-contain">
+                    <img decoding="async" loading="lazy" src="assets/images/apps/ganot-box.png" alt="Ganot" class="w-6 h-6 object-contain">
                 </div>
             </div>
         </div>
@@ -1912,13 +1912,13 @@
             const moonIcon = document.getElementById('moonIcon');
 
             if (isDark) {
-                if (navbarLogo) navbarLogo.src = 'assets/hedef.png';
-                if (footerLogo) footerLogo.src = 'assets/hedef.png';
+                if (navbarLogo) navbarLogo.src = 'assets/images/brand/hedef.png';
+                if (footerLogo) footerLogo.src = 'assets/images/brand/hedef.png';
                 if (sunIcon) sunIcon.classList.remove('hidden');
                 if (moonIcon) moonIcon.classList.add('hidden');
             } else {
-                if (navbarLogo) navbarLogo.src = 'assets/beyazrs.png';
-                if (footerLogo) footerLogo.src = 'assets/beyazrs.png';
+                if (navbarLogo) navbarLogo.src = 'assets/images/brand/beyazrs.png';
+                if (footerLogo) footerLogo.src = 'assets/images/brand/beyazrs.png';
                 if (sunIcon) sunIcon.classList.add('hidden');
                 if (moonIcon) moonIcon.classList.remove('hidden');
             }
