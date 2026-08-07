@@ -805,8 +805,8 @@
             const themePrefix = isDark ? 'dark' : 'light';
             const mockupAndroid = document.getElementById('mockupAndroid');
             const mockupIos = document.getElementById('mockupIos');
-            if (mockupAndroid) mockupAndroid.src = `assets/${themePrefix}-mockup-android-${lang}.png`;
-            if (mockupIos) mockupIos.src = `assets/${themePrefix}-mockup-ios-${lang}.png`;
+            if (mockupAndroid) mockupAndroid.src = `assets/images/mockups/${themePrefix}-mockup-android-${lang}.png`;
+            if (mockupIos) mockupIos.src = `assets/images/mockups/${themePrefix}-mockup-ios-${lang}.png`;
         }
 
         const themeObserver = new MutationObserver(updateCardMockups);
