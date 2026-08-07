@@ -56,7 +56,7 @@ function updateThemeUI(isDark) {
     const sunIcon = document.getElementById('sunIcon');
     const moonIcon = document.getElementById('moonIcon');
 
-    const pathPrefix = window.location.pathname.includes('/privacy/') ? '../assets/' : 'assets/';
+    const pathPrefix = window.location.pathname.includes('/privacy/') ? '../assets/images/brand/' : 'assets/images/brand/';
 
     if (isDark) {
         if (navbarLogo) navbarLogo.src = pathPrefix + 'hedef.png';
