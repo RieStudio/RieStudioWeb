@@ -7,7 +7,7 @@ Official website source code for RieStudio.
 ---
 
 <p align="center">
-  <img src="assets/website.png" width="100%">
+  <img src="assets/images/mockups/dark-mockup-android-tr.png" width="100%">
 </p>
 
 ## Overview

@@ -59,13 +59,13 @@ function updateThemeUI(isDark) {
     const pathPrefix = window.location.pathname.includes('/privacy/') ? '../assets/images/brand/' : 'assets/images/brand/';
 
     if (isDark) {
-        if (navbarLogo) navbarLogo.src = pathPrefix + 'hedef.png';
-        if (footerLogo) footerLogo.src = pathPrefix + 'hedef.png';
+        if (navbarLogo) navbarLogo.src = pathPrefix + 'riestudio-dark.png';
+        if (footerLogo) footerLogo.src = pathPrefix + 'riestudio-dark.png';
         if (sunIcon) sunIcon.classList.remove('hidden');
         if (moonIcon) moonIcon.classList.add('hidden');
     } else {
-        if (navbarLogo) navbarLogo.src = pathPrefix + 'beyazrs.png';
-        if (footerLogo) footerLogo.src = pathPrefix + 'beyazrs.png';
+        if (navbarLogo) navbarLogo.src = pathPrefix + 'riestudio-light.png';
+        if (footerLogo) footerLogo.src = pathPrefix + 'riestudio-light.png';
         if (sunIcon) sunIcon.classList.add('hidden');
         if (moonIcon) moonIcon.classList.remove('hidden');
     }
