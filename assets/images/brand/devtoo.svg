@@ -1,6 +1,12 @@
 <svg viewBox="18 7 28 52" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Devtoo Swift Chili Brand Icon -->
-  <path d="M36 8C39 8 42 10.5 43 13C40 13.5 37 15 35 17.5L32 15C33.5 12 34.5 9 36 8Z" fill="#CBD5E1" />
+  <style>
+    .stem { fill: #000000; }
+    @media (prefers-color-scheme: dark) {
+      .stem { fill: #CBD5E1; }
+    }
+  </style>
+  <path d="M36 8C39 8 42 10.5 43 13C40 13.5 37 15 35 17.5L32 15C33.5 12 34.5 9 36 8Z" class="stem" fill="#000000" />
   <path d="M35 17.5C39 18 43 22 43.5 27C44 34 38 43 33 49C29.5 53.5 25 57 23 58C23.5 55 25.5 50.5 25 46C24 39.5 19.5 31.5 22 24C24 18.5 30 17 35 17.5Z" fill="#D90429" />
   <path d="M35 17.5C39 18 43 22 43.5 27C44 34 38 43 33 49L31 38C32 30 33 22 35 17.5Z" fill="#A00C24" />
 </svg>
