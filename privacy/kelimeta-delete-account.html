@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const isDark = savedTheme ? (savedTheme === 'dark') : true;
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; img-src 'self' data: https:; frame-src 'none'; frame-ancestors 'none'; object-src 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Kelimeta - Hesap ve Veri Silme / Account Deletion</title>
+    <link class="favicon" rel="icon" type="image/png" href="../assets/icons/riestudio.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/app.js"></script>
+    <link rel="stylesheet" type="text/tailwindcss" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-[#8a004b] to-red-600;
+            }
+            html:not(.dark) .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-rose-500 to-red-600;
+            }
+        }
+
+        html.dark, html.dark body {
+            background-color: #050505 !important;
+        }
+        html:not(.dark), html:not(.dark) body {
+            background-color: #f9fafb !important;
+            color: #1f2937 !important;
+        }
+
+        /* Navbar light mode */
+        html:not(.dark) nav {
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+        html:not(.dark) nav.mobile-menu-open {
+            background-color: rgba(255,255,255,0.45) !important;
+            border-color: rgba(229,231,235,0.4) !important;
+            backdrop-filter: blur(20px) !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+        html:not(.dark) #mobile-menu {
+            background-color: rgba(255,255,255,0.95) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #mobile-menu a span,
+        html:not(.dark) #mobile-menu button span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover span,
+        html:not(.dark) #mobile-menu button:hover span {
+            color: #000000 !important;
+        }
+        html:not(.dark) #mobile-menu a:hover,
+        html:not(.dark) #mobile-menu button:hover {
+            background-color: rgba(243,244,246,0.8) !important;
+        }
+        html:not(.dark) nav a,
+        html:not(.dark) nav button {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) nav a:hover,
+        html:not(.dark) nav button:hover {
+            color: #111827 !important;
+        }
+        html:not(.dark) #themeToggleBtn {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #themeToggleBtn:hover {
+            background-color: rgba(0,0,0,0.05) !important;
+            color: #111827 !important;
+        }
+        html:not(.dark) #languageDropdown,
+        html:not(.dark) #mobileLanguageDropdown {
+            background-color: rgba(255,255,255,0.98) !important;
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+        html:not(.dark) #languageDropdown a,
+        html:not(.dark) #mobileLanguageDropdown a {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) #languageDropdown a:hover,
+        html:not(.dark) #mobileLanguageDropdown a:hover {
+            background-color: rgba(243,244,246,0.8) !important;
+            color: #111827 !important;
+        }
+
+        /* Hide sliding indicator on privacy pages */
+        #navSlidingIndicator {
+            display: none !important;
+        }
+        #navBgBeam {
+            display: none !important;
+        }
+
+        /* Navbar dark mode text colors */
+        html.dark nav a,
+        html.dark nav button {
+            color: #d1d5db !important;
+        }
+        html.dark nav a:hover,
+        html.dark nav button:hover {
+            color: #ffffff !important;
+        }
+        html.dark #themeToggleBtn {
+            color: #d1d5db !important;
+        }
+        html.dark #themeToggleBtn:hover {
+            color: #ffffff !important;
+        }
+
+        /* Content light mode */
+        html:not(.dark) h1:not(.gradient-text),
+        html:not(.dark) h2:not(.gradient-text),
+        html:not(.dark) h3:not(.gradient-text) {
+            color: #111827 !important;
+        }
+        html:not(.dark) .text-white {
+            color: #111827 !important;
+        }
+        html:not(.dark) .text-zinc-300 {
+            color: #374151 !important;
+        }
+        html:not(.dark) .text-zinc-400,
+        html:not(.dark) .text-zinc-500,
+        html:not(.dark) .text-gray-400 {
+            color: #4b5563 !important;
+        }
+        html:not(.dark) .bg-gray-800\/30 {
+            background-color: #ffffff !important;
+            border-color: rgba(229,231,235,0.9) !important;
+            box-shadow: 0 2px 16px -2px rgba(0,0,0,0.06) !important;
+        }
+        html:not(.dark) .border-white\/5,
+        html:not(.dark) .border-white\/10 {
+            border-color: rgba(229,231,235,0.8) !important;
+        }
+
+
+        html:not(.dark) .form-input {
+            background-color: #f9fafb !important;
+            border-color: #d1d5db !important;
+            color: #111827 !important;
+        }
+        html:not(.dark) .form-input::placeholder {
+            color: #9ca3af !important;
+        }
+        html:not(.dark) .form-input:focus {
+            background-color: #ffffff !important;
+            border-color: #9C035D !important;
+            box-shadow: 0 0 0 2px rgba(156, 3, 93, 0.15) !important;
+        }
+        html:not(.dark) .form-label {
+            color: #374151 !important;
+        }
+        html:not(.dark) .form-warning {
+            background-color: #fef2f2 !important;
+            border-color: #fecaca !important;
+            color: #b91c1c !important;
+        }
+        html:not(.dark) #delSubmitBtn {
+            color: #ffffff !important;
+        }
+        html:not(.dark) footer {
+            background-color: rgba(255,255,255,0.8) !important;
+            border-color: rgba(229,231,235,0.7) !important;
+        }
+        html:not(.dark) footer span,
+        html:not(.dark) footer a {
+            color: #4b5563 !important;
+        }
+        #navBgBeam {
+            z-index: -1 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-transparent text-zinc-100 font-sans antialiased min-h-screen">
+
+    <!-- Full Viewport Background Parallelogram Beam (Behind Page Content) -->
+    <div id="navBgBeam" class="nav-bg-beam"></div>
+
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-7xl z-50 bg-white/45 dark:bg-zinc-950/40 backdrop-blur-xl border border-gray-200/40 dark:border-white/10 rounded-[1.25rem] md:rounded-[1.5rem] shadow-2xl transition-all duration-300">
+        <div class="w-full px-8">
+            <div class="flex justify-between items-center h-14 md:h-16 w-full">
+                <!-- Logo -->
+                <div class="flex-shrink-0 -ml-4 md:ml-0 flex items-center gap-4">
+                    <a href="../index.html" class="flex items-center">
+                        <img id="navbarLogo" src="../assets/images/brand/riestudio-dark.png" alt="Logo" class="h-24 w-auto md:h-36">
+                    </a>
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300 p-2 rounded-full hover:bg-zinc-800/50 flex items-center justify-center"
+                        aria-label="Temayı Değiştir">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707-.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Menu Wrapper -->
+                <div class="hidden md:flex items-center space-x-6 h-full">
+                    <!-- Nav Tabs Container with Animated Parallelogram Indicator -->
+                    <div id="navTabsContainer" class="relative flex items-center space-x-1 h-full py-0">
+                        <div id="navSlidingIndicator" class="nav-sliding-indicator"></div>
+
+                        <a href="../index.html#about" data-nav="about"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="about">Hakkımızda</span>
+                        </a>
+                        <a href="../products.html" data-nav="products"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="products">Ürünlerimiz</span>
+                        </a>
+                        <a href="../services.html" data-nav="services"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="services">Hizmetlerimiz</span>
+                        </a>
+                        <button id="contactBtn" data-nav="contact"
+                            class="nav-link-item relative z-10 px-4 h-full flex items-center text-base font-medium">
+                            <span data-i18n="contact">İletişim</span>
+                        </button>
+                    </div>
+
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button id="languageButton"
+                            class="flex items-center px-3 py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="current-lang-text" class="mr-2">TR</span>
+                                <svg class="w-4 h-4 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="languageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu container -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Mobile Language Selector -->
+                    <div class="relative group">
+                        <button id="mobileLanguageButton"
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                            <span class="relative z-10 flex items-center">
+                                <span id="mobile-lang-text" class="mr-2">TR</span>
+                                <svg class="w-3 h-3 transition-transform duration-200 transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div id="mobileLanguageDropdown"
+                            class="hidden absolute right-0 mt-2 w-36 bg-zinc-900/95 backdrop-blur-md rounded-lg shadow-xl border border-zinc-800/50 overflow-hidden z-50">
+                            <a href="#" data-lang="tr"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">TR</span>
+                                <span class="ml-2 text-gray-400">Türkçe</span>
+                            </a>
+                            <a href="#" data-lang="en"
+                                class="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors duration-200">
+                                <span class="font-medium">EN</span>
+                                <span class="ml-2 text-gray-400">English</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="flex items-center">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"
+                            aria-label="Menüyü Aç">
+                            <svg id="menu-icon" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="md:hidden hidden fixed top-[80px] left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] bg-zinc-950/95 backdrop-blur-xl border border-white/10 rounded-[1.25rem] shadow-2xl z-40 p-4 flex flex-col justify-start space-y-3 transition-all duration-300">
+        <div class="space-y-1 w-full">
+            <a href="../index.html#about"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                        </path>
+                    </svg>
+                    <span data-i18n="about" class="text-gray-300 hover:text-white">Hakkımızda</span>
+                </div>
+            </a>
+            <a href="../products.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                        </path>
+                    </svg>
+                    <span data-i18n="products" class="text-gray-300 hover:text-white">Ürünlerimiz</span>
+                </div>
+            </a>
+            <a href="../services.html"
+                class="block w-full px-4 py-3 text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200"
+                onclick="closeMobileMenu()">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="services" class="text-gray-300 hover:text-white">Hizmetlerimiz</span>
+                </div>
+            </a>
+            <button id="mobileContactBtn"
+                class="w-full px-4 py-3 text-left text-base font-semibold text-gray-300 hover:bg-zinc-900/50 hover:text-white rounded-xl transition-all duration-200">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span data-i18n="contact" class="text-gray-300 hover:text-white">İletişim</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden"></div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[9999] hidden">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity z-[9998]"></div>
+
+        <!-- Modal Content -->
+        <div class="fixed inset-0 flex items-center justify-center p-4 z-[10000]">
+            <div
+                class="relative bg-zinc-950/95 backdrop-blur-md rounded-2xl p-8 max-w-md w-full border border-zinc-800/80 shadow-2xl z-[10001]">
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Step 1: Social Links -->
+                <div id="modalStep1" class="text-center w-full">
+                    <h3 class="text-3xl font-bold mb-8 gradient-text" data-i18n="contactUs">Bize Ulaşın</h3>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/riestudio.co?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Instagram</span>
+                            </div>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/riestudioterminal" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.598.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.54-4.458c.538-.196 1.006.139.832.941z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Telegram</span>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/company/riestudio" target="_blank"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">LinkedIn</span>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:contact@riestudio.com.tr"
+                            class="group relative p-6 bg-zinc-900/40 border border-zinc-800/30 rounded-2xl transition-all duration-300 hover:scale-[1.02] box-gradient-hover">
+                            <div
+                                class="absolute inset-0 rounded-2xl glow-gradient opacity-0 group-hover:opacity-20 -z-10 blur-md transition-opacity duration-300">
+                            </div>
+                            <div class="flex flex-col items-center justify-center h-full">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center bg-zinc-950 group-hover:bg-transparent rounded-xl mb-3 transition-colors duration-300">
+                                    <svg class="h-8 w-8 text-gray-300 group-hover:text-white transition-colors duration-300"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">E-posta</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Start Project Button -->
+                    <button id="startProjectBtn"
+                        class="w-full mt-6 py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span data-i18n="startProject"
+                            class="whitespace-nowrap text-xs min-[375px]:text-sm sm:text-base">Projenizi Bizimle
+                            Başlatın</span>
+                    </button>
+                </div>
+
+                <!-- Step 2: Project Form -->
+                <div id="modalStep2" class="w-full hidden text-left">
+                    <!-- Back Button -->
+                    <button id="backToStep1Btn" type="button"
+                        class="absolute top-4 left-4 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </button>
+                    <!-- Title Row -->
+                    <h3 class="text-2xl font-bold text-white gradient-text text-center mb-6"
+                        data-i18n="startProjectTitle">Projenizi Başlatın</h3>
+
+                    <form id="projectForm" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formEmail">E-posta Adresiniz</label>
+                            <input type="email" id="projectEmail" required placeholder="name@example.com"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formCategory">Proje Kategorisi</label>
+                            <select id="projectCategory"
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm">
+                                <option value="Web Sitesi" data-i18n="optWeb">Web Sitesi</option>
+                                <option value="Mobil Uygulama" data-i18n="optMobile">Mobil Uygulama</option>
+                                <option value="Özel Yazılım / SaaS" data-i18n="optSaaS">Özel Yazılım / SaaS</option>
+                                <option value="Diğer" data-i18n="optOther">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-zinc-400 mb-1.5"
+                                data-i18n="formDetails">Proje Detayları ve Açıklama</label>
+                            <textarea id="projectDetails" rows="3" required
+                                class="w-full bg-zinc-900/60 border border-zinc-800/60 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all duration-300 text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20 text-center block">
+                            <span data-i18n="btnSubmit">Talebi Gönder</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Success State -->
+                <div id="modalStep3" class="text-center w-full hidden">
+                    <div
+                        class="w-16 h-16 glow-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-orange-500/20">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-8 gradient-text" data-i18n="formSuccessTitle">Talebiniz
+                        Alındı!</h3>
+
+                    <button id="closeSuccessModalBtn"
+                        class="w-full py-3.5 px-6 rounded-xl font-bold text-white btn-gradient transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-orange-500/20"
+                        data-i18n="btnClose">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="bg-gray-800/30 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-gray-700/30 space-y-10">
+            
+            <!-- Page Header -->
+            <section class="border-b border-white/5 pb-6 space-y-3">
+                <h1 class="text-3xl font-bold text-white mb-2" data-i18n="pageTitle">Kelimeta - Hesap ve Veri Silme</h1>
+                <p class="text-sm text-zinc-500" data-i18n="lastUpdated">Son Güncelleme: 19 Ekim 2026</p>
+                <p class="leading-relaxed text-zinc-300 text-sm sm:text-base pt-2" data-i18n="pageIntro">
+                    Bu sayfa, RieStudio tarafından geliştirilen <strong>Kelimeta</strong> mobil oyunundaki hesabınızı ve oyunla ilişkili tüm kişisel verilerinizi nasıl silebileceğinizi açıklamaktadır. Google Play Veri Güvenliği ve 6698 sayılı KVKK gereksinimlerine tam uyumlu olarak, oyunu cihazınızdan kaldırmış olsanız dahi hesabınızı dilediğiniz zaman web üzerinden sildirebilirsiniz.
+                </p>
+            </section>
+
+            <!-- Yöntem 1: Oyun İçinden Silme -->
+            <section class="space-y-4">
+                <h2 class="text-xl font-semibold text-white" data-i18n="method1Title">1. Uygulama İçinden Hesap Silme (Anında)</h2>
+                <p class="leading-relaxed text-sm text-zinc-300" data-i18n="method1Desc">
+                    Eğer Kelimeta uygulaması cihazınızda yüklüyse, hesabınızı doğrudan oyun içerisinden anında silebilirsiniz:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-sm text-zinc-300">
+                    <li data-i18n="method1Step1">Cihazınızda <strong>Kelimeta</strong> oyununu açın.</li>
+                    <li data-i18n="method1Step2">Ana menüde yer alan <strong>Profil</strong> veya <strong>Ayarlar</strong> simgesine dokunun.</li>
+                    <li data-i18n="method1Step3">Sayfanın en altındaki <strong>"Hesabımı ve Verilerimi Sil"</strong> seçeneğini seçin.</li>
+                    <li data-i18n="method1Step4">Açılan onay penceresinde işlemi onayladığınızda hesabınız ve sunucudaki tüm oyun verileriniz derhal kalıcı olarak silinir.</li>
+                </ul>
+            </section>
+
+            <!-- Yöntem 2: Web Formu ile Silme Talebi -->
+            <section class="space-y-4">
+                <h2 class="text-xl font-semibold text-white" data-i18n="method2Title">2. Web Üzerinden Silme Talebi Gönderme</h2>
+                <p class="leading-relaxed text-sm text-zinc-300" data-i18n="method2Desc">
+                    Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz veri sorumlusu ekibimiz tarafından en geç 30 gün içinde (genellikle 48 saatte) işleme alınır:
+                </p>
+
+                <form id="deleteAccountForm" class="space-y-4 pt-2">
+                    <div>
+                        <label class="form-label block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" data-i18n="formNicknameLabel">
+                            Oyundaki Takma Adınız (Nickname) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="delNickname" required
+                            class="form-input w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#9C035D] transition-colors"
+                            placeholder="Örn: KelimeUstası42">
+                    </div>
+
+                    <div>
+                        <label class="form-label block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" data-i18n="formEmailLabel">
+                            E-posta Adresiniz (Google ile bağladıysanız bağlı e-posta) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="delEmail" required
+                            class="form-input w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#9C035D] transition-colors"
+                            placeholder="name@example.com">
+                    </div>
+
+                    <div>
+                        <label class="form-label block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2" data-i18n="formDetailsLabel">
+                            Ek Açıklama veya Not (İsteğe Bağlı)
+                        </label>
+                        <textarea id="delDetails" rows="3"
+                            class="form-input w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#9C035D] transition-colors resize-none"
+                            placeholder="Hesabımı ve verilerimi kalıcı olarak sildirmek istiyorum."></textarea>
+                    </div>
+
+                    <div class="form-warning p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300 leading-relaxed" data-i18n="formWarning">
+                        <strong>Önemli Uyarı:</strong> Hesap silindiğinde tüm jetonlar, galibiyetler ve sıralamalar kalıcı olarak imha edilir. Bu işlem geri alınamaz.
+                    </div>
+
+                    <button type="submit" id="delSubmitBtn"
+                        class="w-full sm:w-auto min-w-[240px] py-3.5 px-6 rounded-xl font-bold text-white bg-[#9C035D] hover:bg-[#b8046e] transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-[#9C035D]/20 text-sm flex items-center justify-center gap-2">
+                        <span data-i18n="btnSubmitDelete">Hesap Silme Talebini Gönder</span>
+                    </button>
+                </form>
+
+                <!-- Success Feedback Card -->
+                <div id="delSuccessMsg" class="hidden text-center py-8 space-y-3">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white" data-i18n="successTitle">Hesap Silme Talebiniz Alındı</h4>
+                    <p class="text-xs sm:text-sm text-zinc-400 max-w-md mx-auto" data-i18n="successDesc">
+                        Talebiniz sistemimize kaydedilmiştir. Güvenlik doğrulamalarının ardından hesabınız ve ilişkili verileriniz en geç 30 gün içinde kalıcı olarak silinecektir.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Yöntem 3: E-posta ile Silme -->
+            <section class="space-y-3">
+                <h2 class="text-xl font-semibold text-white" data-i18n="method3Title">3. E-posta ile Doğrudan Başvuru</h2>
+                <p class="leading-relaxed text-sm text-zinc-300" data-i18n="method3Desc">
+                    Dilerseniz doğrudan resmi iletişim e-posta adresimize yazarak da hesabınızı sildirebilirsiniz:
+                </p>
+                <p class="leading-relaxed text-sm text-zinc-300" data-i18n="method3Content">
+                    Konu satırına <strong>"Kelimeta Hesap Silme"</strong> yazarak, oyundaki <strong>takma adınızı</strong> ve (varsa) bağlı <strong>Google e-posta adresinizi</strong> <a href="mailto:contact@riestudio.com.tr" class="text-[#9C035D] dark:text-[#ff4da6] hover:underline font-semibold">contact@riestudio.com.tr</a> adresine göndermeniz yeterlidir.
+                </p>
+            </section>
+
+            <!-- Silinen ve Saklanan Veriler -->
+            <section class="space-y-4">
+                <h2 class="text-xl font-semibold text-white" data-i18n="dataScopeTitle">4. Hangi Veriler Silinir, Hangileri Saklanır?</h2>
+                <div class="space-y-4 text-sm text-zinc-300 leading-relaxed">
+                    <div class="space-y-2">
+                        <h3 class="text-base font-semibold text-white" data-i18n="deletedDataHeader">Kalıcı Olarak Silinen Veriler:</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-sm text-zinc-300">
+                            <li data-i18n="delItem1"><strong>Takma Ad (Nickname):</strong> Profil adınız tamamen silinir.</li>
+                            <li data-i18n="delItem2"><strong>Jeton ve Ödüller:</strong> Kazanılan ve mevcut jeton bakiyesi sıfırlanır.</li>
+                            <li data-i18n="delItem3"><strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.</li>
+                            <li data-i18n="delItem4"><strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.</li>
+                            <li data-i18n="delItem5"><strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        <h3 class="text-base font-semibold text-white" data-i18n="retainedDataHeader">Saklama Süreleri &amp; İstisnalar:</h3>
+                        <p class="text-sm text-zinc-300 leading-relaxed" data-i18n="retainedDataDesc">
+                            Hesabınız silindiğinde hiçbir kişisel oyun kaydı tutulmaz. Yalnızca ağ güvenliği, kötüye kullanımı engelleme ve yasal zorunluluk gerektiren teknik bağlantı logları hizmet sağlayıcılarımız (Google, Cloudflare) tarafından mevzuatın izin verdiği asgari süre boyunca tutulup ardından otomatik imha edilir.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-zinc-950/60 backdrop-blur-md border-t border-zinc-900/50 py-6">
+        <div
+            class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-xs">
+            <div class="flex items-center space-x-5">
+                <!-- GitHub -->
+                <a href="https://github.com/RieStudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/riestudio.co" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Instagram">
+                    <svg class="w-[22px] h-[22px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <!-- Telegram -->
+                <a href="https://t.me/riestudioterminal" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="Telegram">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/riestudio" target="_blank"
+                    class="text-zinc-500 hover:text-white hover:-translate-y-1 transition-all duration-200"
+                    title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-right">
+                <div class="flex flex-row items-center gap-2">
+                    <a href="index.html" class="hover:text-white hover-thick transition-colors duration-200" id="privacy-policy">Gizlilik Politikası</a>
+                    <span class="text-zinc-500">•</span>
+                    <a href="../terms.html" class="hover:text-white hover-thick transition-colors duration-200" id="terms-of-use">Kullanım Koşulları</a>
+                </div>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <a href="mailto:contact@riestudio.com.tr"
+                    class="inline-flex items-center gap-1.5 hover:text-white hover-thick transition-colors duration-200">
+                    <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>contact@riestudio.com.tr</span>
+                </a>
+                <span class="hidden sm:inline text-zinc-500">•</span>
+                <span class="text-zinc-500 text-xs mt-0.5 sm:mt-0">&copy; 2026 RieStudio</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Theme ──────────────────────────────────────────────
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeUI(isDark);
+        }
+
+        function updateThemeUI(isDark) {
+            const navbarLogo = document.getElementById('navbarLogo');
+            const sunIcon    = document.getElementById('sunIcon');
+            const moonIcon   = document.getElementById('moonIcon');
+            if (isDark) {
+                if (navbarLogo) navbarLogo.src = '../assets/images/brand/riestudio-dark.png';
+                if (sunIcon)  sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                if (navbarLogo) navbarLogo.src = '../assets/images/brand/riestudio-light.png';
+                if (sunIcon)  sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const overlay = document.getElementById('overlay');
+            const nav = document.querySelector('nav');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                if (mobileMenuButton) mobileMenuButton.classList.remove('is-active');
+                if (overlay) overlay.classList.add('hidden');
+                if (nav) nav.classList.remove('mobile-menu-open');
+                if (menuIcon) menuIcon.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        window.closeMobileMenu = closeMobileMenu;
+
+        // ── Language ──────────────────────────────────────────
+        const i18n = {
+            tr: {
+                about: 'Hakkımızda',
+                products: 'Ürünlerimiz',
+                services: 'Hizmetlerimiz',
+                contact: 'İletişim',
+                privacyPolicy: 'Gizlilik Politikası',
+                termsOfUse: 'Kullanım Koşulları',
+                contactUs: 'Bize Ulaşın',
+                startProject: 'Projenizi Bizimle Başlatın',
+                startProjectTitle: 'Projenizi Başlatın',
+                formEmail: 'E-posta Adresiniz',
+                formCategory: 'Proje Kategorisi',
+                formDetails: 'Proje Detayları ve Açıklama',
+                optWeb: 'Web Sitesi',
+                optMobile: 'Mobil Uygulama',
+                optSaaS: 'Özel Yazılım / SaaS',
+                optOther: 'Diğer',
+                btnSubmit: 'Talebi Gönder',
+                formSuccessTitle: 'Talebiniz Alındı!',
+                btnClose: 'Kapat',
+
+                pageTitle: 'Kelimeta - Hesap ve Veri Silme',
+                lastUpdated: 'Son Güncelleme: 19 Ekim 2026',
+                pageIntro: 'Bu sayfa, RieStudio tarafından geliştirilen <strong>Kelimeta</strong> mobil oyunundaki hesabınızı ve oyunla ilişkili tüm kişisel verilerinizi nasıl silebileceğinizi açıklamaktadır. Google Play Veri Güvenliği ve 6698 sayılı KVKK gereksinimlerine tam uyumlu olarak, oyunu cihazınızdan kaldırmış olsanız dahi hesabınızı dilediğiniz zaman web üzerinden sildirebilirsiniz.',
+
+                method1Title: '1. Uygulama İçinden Hesap Silme (Anında)',
+                method1Desc: 'Eğer Kelimeta uygulaması cihazınızda yüklüyse, hesabınızı doğrudan oyun içerisinden anında silebilirsiniz:',
+                method1Step1: 'Cihazınızda <strong>Kelimeta</strong> oyununu açın.',
+                method1Step2: 'Ana menüde yer alan <strong>Profil</strong> veya <strong>Ayarlar</strong> simgesine dokunun.',
+                method1Step3: 'Sayfanın en altındaki <strong>"Hesabımı ve Verilerimi Sil"</strong> seçeneğini seçin.',
+                method1Step4: 'Açılan onay penceresinde işlemi onayladığınızda hesabınız ve sunucudaki tüm oyun verileriniz derhal kalıcı olarak silinir.',
+
+                method2Title: '2. Web Üzerinden Silme Talebi Gönderme',
+                method2Desc: 'Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz veri sorumlusu ekibimiz tarafından en geç 30 gün içinde (genellikle 48 saatte) işleme alınır:',
+                formNicknameLabel: 'Oyundaki Takma Adınız (Nickname) <span class="text-red-500">*</span>',
+                formEmailLabel: 'E-posta Adresiniz (Google ile bağladıysanız bağlı e-posta) <span class="text-red-500">*</span>',
+                formDetailsLabel: 'Ek Açıklama veya Not (İsteğe Bağlı)',
+                formWarning: '<strong>Önemli Uyarı:</strong> Hesap silindiğinde tüm jetonlar, galibiyetler ve sıralamalar kalıcı olarak imha edilir. Bu işlem geri alınamaz.',
+                btnSubmitDelete: 'Hesap Silme Talebini Gönder',
+                successTitle: 'Hesap Silme Talebiniz Alındı',
+                successDesc: 'Talebiniz sistemimize kaydedilmiştir. Güvenlik doğrulamalarının ardından hesabınız ve ilişkili verileriniz en geç 30 gün içinde kalıcı olarak silinecektir.',
+
+                method3Title: '3. E-posta ile Doğrudan Başvuru',
+                method3Desc: 'Dilerseniz doğrudan resmi iletişim e-posta adresimize yazarak da hesabınızı sildirebilirsiniz:',
+                method3Content: 'Konu satırına <strong>"Kelimeta Hesap Silme"</strong> yazarak, oyundaki <strong>takma adınızı</strong> ve (varsa) bağlı <strong>Google e-posta adresinizi</strong> <a href="mailto:contact@riestudio.com.tr" class="text-[#9C035D] dark:text-[#ff4da6] hover:underline font-semibold">contact@riestudio.com.tr</a> adresine göndermeniz yeterlidir.',
+
+                dataScopeTitle: '4. Hangi Veriler Silinir, Hangileri Saklanır?',
+                deletedDataHeader: 'Kalıcı Olarak Silinen Veriler:',
+                delItem1: '<strong>Takma Ad (Nickname):</strong> Profil adınız tamamen silinir.',
+                delItem2: '<strong>Jeton ve Ödüller:</strong> Kazanılan ve mevcut jeton bakiyesi sıfırlanır.',
+                delItem3: '<strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.',
+                delItem4: '<strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.',
+                delItem5: '<strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.',
+                retainedDataHeader: 'Saklama Süreleri & İstisnalar:',
+                retainedDataDesc: 'Hesabınız silindiğinde hiçbir kişisel oyun kaydı tutulmaz. Yalnızca ağ güvenliği, kötüye kullanımı engelleme ve yasal zorunluluk gerektiren teknik bağlantı logları hizmet sağlayıcılarımız (Google, Cloudflare) tarafından mevzuatın izin verdiği asgari süre boyunca tutulup ardından otomatik imha edilir.'
+            },
+            en: {
+                about: 'About',
+                products: 'Products',
+                services: 'Services',
+                contact: 'Contact',
+                privacyPolicy: 'Privacy Policy',
+                termsOfUse: 'Terms of Service',
+                contactUs: 'Contact Us',
+                startProject: 'Start Your Project With Us',
+                startProjectTitle: 'Start Your Project',
+                formEmail: 'Your Email Address',
+                formCategory: 'Project Category',
+                formDetails: 'Project Details and Description',
+                optWeb: 'Website',
+                optMobile: 'Mobile Application',
+                optSaaS: 'Custom Software / SaaS',
+                optOther: 'Other',
+                btnSubmit: 'Submit Request',
+                formSuccessTitle: 'Request Received!',
+                btnClose: 'Close',
+
+                pageTitle: 'Kelimeta - Account and Data Deletion',
+                lastUpdated: 'Last Updated: October 19, 2026',
+                pageIntro: 'This page describes how you can delete your account and all associated personal data in the <strong>Kelimeta</strong> mobile game developed by RieStudio. In full compliance with Google Play Data Safety requirements and data protection laws, you can request account deletion directly from this web page even if you have already uninstalled the game.',
+
+                method1Title: '1. Account Deletion from Within the App (Instant)',
+                method1Desc: 'If Kelimeta is currently installed on your mobile device, you can delete your account directly inside the game:',
+                method1Step1: 'Open <strong>Kelimeta</strong> on your device.',
+                method1Step2: 'Tap the <strong>Profile</strong> or <strong>Settings</strong> icon from the main menu.',
+                method1Step3: 'Scroll down and select <strong>"Delete My Account and Data"</strong>.',
+                method1Step4: 'Confirm the action in the prompt. Your account and cloud records are immediately and permanently removed.',
+
+                method2Title: '2. Submit a Deletion Request via Web Form',
+                method2Desc: 'If you have uninstalled the game or cannot access your device, submit the deletion request form below. Requests are processed within 30 days maximum (typically within 48 hours):',
+                formNicknameLabel: 'In-Game Nickname <span class="text-red-500">*</span>',
+                formEmailLabel: 'Email Address (Google email if linked) <span class="text-red-500">*</span>',
+                formDetailsLabel: 'Additional Notes or Request Details (Optional)',
+                formWarning: '<strong>Warning:</strong> Deleting your account permanently eliminates all coins, rankings, and match stats. This operation is irreversible.',
+                btnSubmitDelete: 'Submit Account Deletion Request',
+                successTitle: 'Deletion Request Received',
+                successDesc: 'Your request has been logged. Following identity verification, your account and associated records will be permanently erased within 30 days.',
+
+                method3Title: '3. Request Directly via Email',
+                method3Desc: 'You may also email us directly at our official contact address:',
+                method3Content: 'Send an email with the subject line <strong>"Kelimeta Account Deletion"</strong> including your in-game <strong>nickname</strong> and linked <strong>Google email</strong> to <a href="mailto:contact@riestudio.com.tr" class="text-[#9C035D] dark:text-[#ff4da6] hover:underline font-semibold">contact@riestudio.com.tr</a>.',
+
+                dataScopeTitle: '4. What Data is Deleted and What is Retained?',
+                deletedDataHeader: 'Permanently Deleted Data:',
+                delItem1: '<strong>Nickname:</strong> Your in-game public profile name is deleted.',
+                delItem2: '<strong>Coins and Balance:</strong> All earned and accumulated tokens are wiped.',
+                delItem3: '<strong>Game Statistics:</strong> Match counts, win/loss records, round breakdowns.',
+                delItem4: '<strong>Leaderboard Ranks:</strong> All weekly and seasonal leaderboard entries.',
+                delItem5: '<strong>Account Linking:</strong> Associated Google Auth tokens and emails are permanently unlinked.',
+                retainedDataHeader: 'Retention Periods & Exceptions:',
+                retainedDataDesc: 'No personal gameplay data is retained after deletion. Low-level connection and security logs maintained by cloud providers (Google, Cloudflare) are purged automatically following minimal statutory security periods.'
+            }
+        };
+
+        function updateLanguageSelectors(lang) {
+            const selectors = document.querySelectorAll('#languageDropdown [data-lang], #mobileLanguageDropdown [data-lang]');
+            selectors.forEach(item => {
+                if (item.getAttribute('data-lang') === lang) {
+                    item.classList.add('active-lang-option');
+                } else {
+                    item.classList.remove('active-lang-option');
+                }
+            });
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('userLanguage', lang);
+            document.documentElement.lang = lang;
+
+            const t = i18n[lang] || i18n.tr;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (t[key]) {
+                    element.innerHTML = t[key];
+                }
+            });
+
+            if (document.getElementById('privacy-policy')) document.getElementById('privacy-policy').textContent = t.privacyPolicy;
+            if (document.getElementById('terms-of-use')) document.getElementById('terms-of-use').textContent = t.termsOfUse;
+
+            const langEls = document.querySelectorAll('#current-lang-text, #mobile-lang-text');
+            langEls.forEach(el => el.textContent = lang.toUpperCase());
+
+            updateLanguageSelectors(lang);
+        }
+
+        // ── Deletion Request Form Submission ─────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('userLanguage') ||
+                (navigator.language.startsWith('tr') ? 'tr' : 'en');
+            setLanguage(savedLang);
+            updateThemeUI(document.documentElement.classList.contains('dark'));
+
+            // Language dropdowns
+            const langBtn        = document.getElementById('languageButton');
+            const langDrop       = document.getElementById('languageDropdown');
+            const mobileLangBtn  = document.getElementById('mobileLanguageButton');
+            const mobileLangDrop = document.getElementById('mobileLanguageDropdown');
+
+            function toggleDrop(drop, btn, other, otherBtn) {
+                const isHidden = drop.classList.toggle('hidden');
+                const arrow = btn.querySelector('svg');
+                if (arrow) arrow.classList.toggle('rotate-180', !isHidden);
+                if (other) {
+                    other.classList.add('hidden');
+                    const otherArrow = otherBtn?.querySelector('svg');
+                    if (otherArrow) otherArrow.classList.remove('rotate-180');
+                }
+            }
+
+            langBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(langDrop, langBtn, mobileLangDrop, mobileLangBtn);
+            });
+
+            mobileLangBtn?.addEventListener('click', e => {
+                e.stopPropagation();
+                toggleDrop(mobileLangDrop, mobileLangBtn, langDrop, langBtn);
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.addEventListener('click', e => {
+                    e.preventDefault();
+                    setLanguage(el.getAttribute('data-lang'));
+                    langDrop?.classList.add('hidden');
+                    mobileLangDrop?.classList.add('hidden');
+                    langBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                    mobileLangBtn?.querySelector('svg')?.classList.remove('rotate-180');
+                });
+            });
+
+            // Mobile menu
+            const mobileMenuBtn  = document.getElementById('mobile-menu-button');
+            const mobileMenu     = document.getElementById('mobile-menu');
+            const overlay        = document.getElementById('overlay');
+            const nav            = document.querySelector('nav');
+            const menuIcon       = document.getElementById('menu-icon');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.onclick = function (e) {
+                    e.stopPropagation();
+                    const isHidden = mobileMenu.classList.toggle('hidden');
+                    mobileMenuBtn.classList.toggle('is-active', !isHidden);
+                    if (overlay) overlay.classList.toggle('hidden', isHidden);
+                    if (nav) nav.classList.toggle('mobile-menu-open', !isHidden);
+                    if (menuIcon) menuIcon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(90deg)';
+                    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+                };
+
+                if (overlay) overlay.onclick = closeMobileMenu;
+
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu?.contains(e.target) && !mobileMenuBtn?.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
+            // Contact Modal
+            function initContactModal() {
+                const modal = document.getElementById('contactModal');
+                const contactBtn = document.getElementById('contactBtn');
+                const mobileContactBtn = document.getElementById('mobileContactBtn');
+                const closeBtn = document.getElementById('closeModal');
+
+                const step1 = document.getElementById('modalStep1');
+                const step2 = document.getElementById('modalStep2');
+                const step3 = document.getElementById('modalStep3');
+
+                const startProjectBtn = document.getElementById('startProjectBtn');
+                const backToStep1Btn = document.getElementById('backToStep1Btn');
+                const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+                const projectForm = document.getElementById('projectForm');
+
+                if (!modal) return;
+
+                function resetModalSteps() {
+                    if (step1) step1.classList.remove('hidden');
+                    if (step2) step2.classList.add('hidden');
+                    if (step3) step3.classList.add('hidden');
+                    if (projectForm) projectForm.reset();
+                }
+
+                function openModal() {
+                    resetModalSteps();
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeModal() {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+
+                if (contactBtn) contactBtn.addEventListener('click', openModal);
+
+                if (mobileContactBtn) {
+                    mobileContactBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (typeof closeMobileMenu === 'function') closeMobileMenu();
+                        openModal();
+                    });
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeModal);
+
+                if (startProjectBtn) {
+                    startProjectBtn.addEventListener('click', () => {
+                        if (step1) step1.classList.add('hidden');
+                        if (step2) step2.classList.remove('hidden');
+                    });
+                }
+
+                if (backToStep1Btn) {
+                    backToStep1Btn.addEventListener('click', () => {
+                        if (step2) step2.classList.add('hidden');
+                        if (step1) step1.classList.remove('hidden');
+                    });
+                }
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || (e.target.classList.contains('backdrop-blur-sm') && e.target.parentElement === modal)) {
+                        closeModal();
+                    }
+                });
+
+                const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzbUvHSAW_cb1s3kJ9UDQq1Zk-B21DeBGZ0NUKe0qSwqnUZGV_nCInrlK0XKbM59DpoZA/exec";
+
+                if (projectForm) {
+                    projectForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+
+                        const email = document.getElementById('projectEmail').value.trim();
+                        const category = document.getElementById('projectCategory').value;
+                        const details = document.getElementById('projectDetails').value.trim();
+                        const page = 'kelimeta-delete-account.html';
+
+                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!email || !emailRegex.test(email) || email.length > 150) {
+                            alert("Lütfen geçerli bir e-posta adresi giriniz.");
+                            return;
+                        }
+
+                        if (!details || details.length > 5000) {
+                            alert("Lütfen geçerli bir açıklama giriniz (en fazla 5000 karakter).");
+                            return;
+                        }
+
+                        const sanitizeHTML = (str) => {
+                            return str
+                                .replace(/&/g, "&amp;")
+                                .replace(/</g, "&lt;")
+                                .replace(/>/g, "&gt;")
+                                .replace(/"/g, "&quot;")
+                                .replace(/'/g, "&#039;")
+                                .replace(/\//g, "&#x2F;");
+                        };
+
+                        try {
+                            await fetch(WEBHOOK_URL, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email: sanitizeHTML(email),
+                                    category: sanitizeHTML(category),
+                                    details: sanitizeHTML(details),
+                                    page: page,
+                                    timestamp: new Date().toISOString()
+                                })
+                            });
+
+                            if (step2) step2.classList.add('hidden');
+                            if (step3) step3.classList.remove('hidden');
+                        } catch (error) {
+                            alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.");
+                        }
+                    });
+                }
+            }
+
+            initContactModal();
+
+            // Webhook Form Submission
+            const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzbUvHSAW_cb1s3kJ9UDQq1Zk-B21DeBGZ0NUKe0qSwqnUZGV_nCInrlK0XKbM59DpoZA/exec";
+            const deleteForm = document.getElementById('deleteAccountForm');
+            const delSuccessMsg = document.getElementById('delSuccessMsg');
+            const delSubmitBtn = document.getElementById('delSubmitBtn');
+
+            if (deleteForm) {
+                deleteForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const nickname = document.getElementById('delNickname').value.trim();
+                    const email = document.getElementById('delEmail').value.trim();
+                    const details = document.getElementById('delDetails').value.trim();
+
+                    if (!nickname || !email) {
+                        alert("Lütfen takma adınızı ve e-posta adresinizi eksiksiz giriniz.");
+                        return;
+                    }
+
+                    delSubmitBtn.disabled = true;
+                    delSubmitBtn.innerHTML = "<span>İşleniyor...</span>";
+
+                    try {
+                        await fetch(WEBHOOK_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: email,
+                                category: 'Kelimeta Hesap Silme Talebi',
+                                details: `Takma Ad: ${nickname}\nNotlar: ${details || 'Belirtilmedi'}`,
+                                page: 'kelimeta-delete-account.html',
+                                timestamp: new Date().toISOString()
+                            })
+                        });
+
+                        deleteForm.classList.add('hidden');
+                        if (delSuccessMsg) delSuccessMsg.classList.remove('hidden');
+                    } catch (err) {
+                        alert("Talebiniz gönderilirken bir hata oluştu. Lütfen doğrudan contact@riestudio.com.tr adresine e-posta gönderiniz.");
+                        delSubmitBtn.disabled = false;
+                        delSubmitBtn.innerHTML = "<span>Hesap Silme Talebini Gönder</span>";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
