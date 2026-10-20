@@ -686,13 +686,14 @@
                             <li data-i18n="delItem3"><strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.</li>
                             <li data-i18n="delItem4"><strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.</li>
                             <li data-i18n="delItem5"><strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.</li>
+                            <li data-i18n="delItem6"><strong>Engel Listesi:</strong> Engellediğiniz oyuncuların yer aldığı listeniz tamamen silinir.</li>
                         </ul>
                     </div>
 
                     <div class="space-y-2 pt-2">
                         <h3 class="text-base font-semibold text-white" data-i18n="retainedDataHeader">Saklama Süreleri &amp; İstisnalar:</h3>
                         <p class="text-sm text-zinc-300 leading-relaxed" data-i18n="retainedDataDesc">
-                            Hesabınız silindiğinde hiçbir kişisel oyun kaydı tutulmaz. Yalnızca ağ güvenliği, kötüye kullanımı engelleme ve yasal zorunluluk gerektiren teknik bağlantı logları hizmet sağlayıcılarımız (Google, Cloudflare) tarafından mevzuatın izin verdiği asgari süre boyunca tutulup ardından otomatik imha edilir.
+                            Hesabınız silindiğinde kişisel oyun verileriniz silinir; yalnızca güvenlik amacıyla tutulan bildirim kayıtları (yaptığınız veya hakkınızda yapılan) bildirim tarihinden itibaren en geç 90 gün içinde otomatik olarak silinir (hesabınız silinse dahi bu süre boyunca güvenlik ve kötüye kullanımı önleme amacıyla muhafaza edilir). Ağ güvenliği ve kötüye kullanımı engellemeye yönelik teknik bağlantı kayıtları ise hizmet sağlayıcıların (Google, Cloudflare) kısa saklama süreleriyle sınırlıdır.
                         </p>
                     </div>
                 </div>
@@ -864,8 +865,9 @@
                 delItem3: '<strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.',
                 delItem4: '<strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.',
                 delItem5: '<strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.',
+                delItem6: '<strong>Engel Listesi:</strong> Engellediğiniz oyuncuların yer aldığı listeniz tamamen silinir.',
                 retainedDataHeader: 'Saklama Süreleri & İstisnalar:',
-                retainedDataDesc: 'Hesabınız silindiğinde hiçbir kişisel oyun kaydı tutulmaz. Yalnızca ağ güvenliği, kötüye kullanımı engelleme ve yasal zorunluluk gerektiren teknik bağlantı logları hizmet sağlayıcılarımız (Google, Cloudflare) tarafından mevzuatın izin verdiği asgari süre boyunca tutulup ardından otomatik imha edilir.'
+                retainedDataDesc: 'Hesabınız silindiğinde kişisel oyun verileriniz silinir; yalnızca güvenlik amacıyla tutulan bildirim kayıtları (yaptığınız veya hakkınızda yapılan) bildirim tarihinden itibaren en geç 90 gün içinde otomatik olarak silinir (hesabınız silinse dahi bu süre boyunca güvenlik ve kötüye kullanımı önleme amacıyla muhafaza edilir). Ağ güvenliği ve kötüye kullanımı engellemeye yönelik teknik bağlantı kayıtları ise hizmet sağlayıcıların (Google, Cloudflare) kısa saklama süreleriyle sınırlıdır.'
             },
             en: {
                 about: 'About',
@@ -920,8 +922,9 @@
                 delItem3: '<strong>Game Statistics:</strong> Match counts, win/loss records, round breakdowns.',
                 delItem4: '<strong>Leaderboard Ranks:</strong> All weekly and seasonal leaderboard entries.',
                 delItem5: '<strong>Account Linking:</strong> Associated Google Auth tokens and emails are permanently unlinked.',
+                delItem6: '<strong>Block List:</strong> Your list of blocked opponents is permanently erased.',
                 retainedDataHeader: 'Retention Periods & Exceptions:',
-                retainedDataDesc: 'No personal gameplay data is retained after deletion. Low-level connection and security logs maintained by cloud providers (Google, Cloudflare) are purged automatically following minimal statutory security periods.'
+                retainedDataDesc: 'When your account is deleted, personal gameplay data is erased; only safety-related report logs (submitted by or made against you) are retained for up to 90 days from the report date for abuse prevention before being permanently purged. Technical connection and security logs are limited to service providers\' (Google, Cloudflare) brief operational retention windows.'
             }
         };
 
