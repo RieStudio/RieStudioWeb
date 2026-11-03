@@ -585,7 +585,7 @@
             <!-- Page Header -->
             <section class="border-b border-white/5 pb-6 space-y-3">
                 <h1 class="text-3xl font-bold text-white mb-2" data-i18n="pageTitle">KelimeVS - Hesap ve Veri Silme</h1>
-                <p class="text-sm text-zinc-500" data-i18n="lastUpdated">Son Güncelleme: 20 Ekim 2026</p>
+                <p class="text-sm text-zinc-500" data-i18n="lastUpdated">Son Güncelleme: 3 Kasım 2026</p>
                 <p class="leading-relaxed text-zinc-300 text-sm sm:text-base pt-2" data-i18n="pageIntro">
                     Bu sayfa, RieStudio tarafından geliştirilen <strong>KelimeVS</strong> (Paket Adı: <code>com.kelimevs.app</code>) mobil oyunundaki hesabınızı ve oyunla ilişkili tüm kişisel verilerinizi nasıl silebileceğinizi açıklamaktadır. Google Play Veri Güvenliği ve 6698 sayılı KVKK gereksinimlerine tam uyumlu olarak, oyunu cihazınızdan kaldırmış olsanız dahi hesabınızı dilediğiniz zaman web üzerinden sildirebilirsiniz.
                 </p>
@@ -609,7 +609,7 @@
             <section class="space-y-4">
                 <h2 class="text-xl font-semibold text-white" data-i18n="method2Title">2. Web Üzerinden Silme Talebi Gönderme</h2>
                 <p class="leading-relaxed text-sm text-zinc-300" data-i18n="method2Desc">
-                    Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz veri sorumlusu ekibimiz tarafından en geç 30 gün içinde (genellikle 48 saatte) işleme alınır:
+                    Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz kimlik doğrulaması yapıldıktan sonra en geç 30 gün içinde işleme alınır:
                 </p>
 
                 <form id="deleteAccountForm" class="space-y-4 pt-2">
@@ -684,6 +684,8 @@
                         <ul class="list-disc pl-6 space-y-2 text-sm text-zinc-300">
                             <li data-i18n="delItem1"><strong>Takma Ad (Nickname):</strong> Profil adınız tamamen silinir.</li>
                             <li data-i18n="delItem2"><strong>Jeton ve Ödüller:</strong> Kazanılan ve mevcut jeton bakiyesi sıfırlanır.</li>
+                            <li data-i18n="delItem7"><strong>Enerji Bakiyesi:</strong> Mevcut ve yenilenen enerji bakiyeniz kalıcı olarak silinir.</li>
+                            <li data-i18n="delItem8"><strong>Avatar Çerçeveleri:</strong> Satın alınan ve kuşanılan tüm avatar çerçeveleri kalıcı olarak silinir.</li>
                             <li data-i18n="delItem3"><strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.</li>
                             <li data-i18n="delItem4"><strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.</li>
                             <li data-i18n="delItem5"><strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.</li>
@@ -835,7 +837,7 @@
                 btnClose: 'Kapat',
 
                 pageTitle: 'KelimeVS - Hesap ve Veri Silme',
-                lastUpdated: 'Son Güncelleme: 20 Ekim 2026',
+                lastUpdated: 'Son Güncelleme: 3 Kasım 2026',
                 pageIntro: 'Bu sayfa, RieStudio tarafından geliştirilen <strong>KelimeVS</strong> (Paket Adı: <code>com.kelimevs.app</code>) mobil oyunundaki hesabınızı ve oyunla ilişkili tüm kişisel verilerinizi nasıl silebileceğinizi açıklamaktadır. Google Play Veri Güvenliği ve 6698 sayılı KVKK gereksinimlerine tam uyumlu olarak, oyunu cihazınızdan kaldırmış olsanız dahi hesabınızı dilediğiniz zaman web üzerinden sildirebilirsiniz.',
 
                 method1Title: '1. Uygulama İçinden Hesap Silme (Anında)',
@@ -846,7 +848,7 @@
                 method1Step4: 'Açılan onay penceresinde işlemi onayladığınızda hesabınız ve sunucudaki tüm oyun verileriniz derhal kalıcı olarak silinir.',
 
                 method2Title: '2. Web Üzerinden Silme Talebi Gönderme',
-                method2Desc: 'Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz veri sorumlusu ekibimiz tarafından en geç 30 gün içinde (genellikle 48 saatte) işleme alınır:',
+                method2Desc: 'Uygulamayı sildiyseniz veya oyuna erişemiyorsanız, aşağıdaki resmi silme talebi formunu doldurarak başvuruda bulunabilirsiniz. Talebiniz kimlik doğrulaması yapıldıktan sonra en geç 30 gün içinde işleme alınır:',
                 formNicknameLabel: 'Oyundaki Takma Adınız (Nickname) <span class="text-red-500">*</span>',
                 formEmailLabel: 'E-posta Adresiniz (Google ile bağladıysanız bağlı e-posta) <span class="text-red-500">*</span>',
                 formDetailsLabel: 'Ek Açıklama veya Not (İsteğe Bağlı)',
@@ -863,6 +865,8 @@
                 deletedDataHeader: 'Kalıcı Olarak Silinen Veriler:',
                 delItem1: '<strong>Takma Ad (Nickname):</strong> Profil adınız tamamen silinir.',
                 delItem2: '<strong>Jeton ve Ödüller:</strong> Kazanılan ve mevcut jeton bakiyesi sıfırlanır.',
+                delItem7: '<strong>Enerji Bakiyesi:</strong> Mevcut ve yenilenen enerji bakiyeniz kalıcı olarak silinir.',
+                delItem8: '<strong>Avatar Çerçeveleri:</strong> Satın alınan ve kuşanılan tüm avatar çerçeveleri kalıcı olarak silinir.',
                 delItem3: '<strong>Oyun İstatistikleri:</strong> Oynanan, kazanılan, kaybedilen maç sayıları ve süre kayıtları.',
                 delItem4: '<strong>Liderlik Sıralamaları:</strong> Haftalık galibiyet ve puan sıralama kayıtları.',
                 delItem5: '<strong>Kimlik Eşleşmeleri:</strong> Varsa Google hesap kimliği (Auth token) ve e-posta bağı kalıcı olarak koparılır.',
@@ -892,7 +896,7 @@
                 btnClose: 'Close',
 
                 pageTitle: 'KelimeVS - Account and Data Deletion',
-                lastUpdated: 'Last Updated: October 20, 2026',
+                lastUpdated: 'Last Updated: November 3, 2026',
                 pageIntro: 'This page describes how you can delete your account and all associated personal data in the <strong>KelimeVS</strong> (Package Name: <code>com.kelimevs.app</code>) mobile game developed by RieStudio. In full compliance with Google Play Data Safety requirements and data protection laws, you can request account deletion directly from this web page even if you have already uninstalled the game.',
 
                 method1Title: '1. Account Deletion from Within the App (Instant)',
@@ -903,7 +907,7 @@
                 method1Step4: 'Confirm the action in the prompt. Your account and cloud records are immediately and permanently removed.',
 
                 method2Title: '2. Submit a Deletion Request via Web Form',
-                method2Desc: 'If you have uninstalled the game or cannot access your device, submit the deletion request form below. Requests are processed within 30 days maximum (typically within 48 hours):',
+                method2Desc: 'If you have uninstalled the game or prefer to request deletion via the web form, submit the deletion request form below. Requests are processed within 30 days following identity verification:',
                 formNicknameLabel: 'In-Game Nickname <span class="text-red-500">*</span>',
                 formEmailLabel: 'Email Address (Google email if linked) <span class="text-red-500">*</span>',
                 formDetailsLabel: 'Additional Notes or Request Details (Optional)',
@@ -920,6 +924,8 @@
                 deletedDataHeader: 'Permanently Deleted Data:',
                 delItem1: '<strong>Nickname:</strong> Your in-game public profile name is deleted.',
                 delItem2: '<strong>Coins and Balance:</strong> All earned and accumulated tokens are wiped.',
+                delItem7: '<strong>Energy Balance:</strong> Your current and regenerating energy balances are permanently deleted.',
+                delItem8: '<strong>Avatar Frames:</strong> All purchased and equipped avatar frames are permanently deleted.',
                 delItem3: '<strong>Game Statistics:</strong> Match counts, win/loss records, round breakdowns.',
                 delItem4: '<strong>Leaderboard Ranks:</strong> All weekly and seasonal leaderboard entries.',
                 delItem5: '<strong>Account Linking:</strong> Associated Google Auth tokens and emails are permanently unlinked.',
